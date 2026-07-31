@@ -42,8 +42,43 @@
   .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
   .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
   footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a {
+    color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px;
+  }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] {
+    color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default;
+  }
+  .page-nav .nav-sep { color: var(--rule); }
 </style>
 <div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group">
+        <span class="nav-label">離散数学編</span>
+        <a href="https://claude.ai/code/artifact/500aad15-d573-4942-9fcf-b37239af3beb">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/67301827-5d1b-44e1-ad93-b71c3f78924e">リスト</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/9ddc06c8-5f09-4de8-be5a-2d688806d181">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">応用数学編</span>
+        <a href="https://claude.ai/code/artifact/f6656f93-1f2d-48d5-83e3-6e49e19b7dc4">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/5827fe8a-43f7-4480-af97-d02879754ba1" aria-current="page">リスト</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/38515c13-8cc4-4a5f-83e1-4762fbad61ba">穴埋め</a>
+      </div>
+    </nav>
   <header class="masthead">
     <p class="breadcrumb">基礎理論 &gt; 応用数学</p>
     <h1>応用数学編</h1>
