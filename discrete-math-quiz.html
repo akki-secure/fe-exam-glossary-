@@ -1,0 +1,239 @@
+<title>離散数学編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8;
+    --surface: #ffffff;
+    --text: #1b1f27;
+    --text-muted: #5b6472;
+    --accent: #2a5db0;
+    --accent-soft: #e8eef9;
+    --rule: #d8dce3;
+    --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b;
+      --surface: #1a1e26;
+      --text: #e7eaf0;
+      --text-muted: #9aa3b2;
+      --accent: #7fa6f2;
+      --accent-soft: rgba(127, 166, 242, 0.12);
+      --rule: #2b3140;
+      --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b;
+    --surface: #1a1e26;
+    --text: #e7eaf0;
+    --text-muted: #9aa3b2;
+    --accent: #7fa6f2;
+    --accent-soft: rgba(127, 166, 242, 0.12);
+    --rule: #2b3140;
+    --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8;
+    --surface: #ffffff;
+    --text: #1b1f27;
+    --text-muted: #5b6472;
+    --accent: #2a5db0;
+    --accent-soft: #e8eef9;
+    --rule: #d8dce3;
+    --group-label: #8892a3;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI",
+      "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.masthead {
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 6vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .count-badge {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .source-note {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  section.group {
+    margin-top: 44px;
+  }
+
+  .group-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--group-label);
+    text-transform: uppercase;
+    margin: 0 0 4px;
+  }
+
+  .group-divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 0 0 18px;
+  }
+
+  .term-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .term-line {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text);
+  }
+
+  .term-line .bullet {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 2px;
+  }
+
+  .term-line .name {
+    font-weight: 700;
+  }
+
+  .term-line .arrow {
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 2px;
+  }
+
+  footer.page-footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+</style>
+
+<div class="page">
+  <header class="masthead">
+    <p class="breadcrumb">基礎理論 &gt; 離散数学 &gt; 穴埋め問題</p>
+    <h1>離散数学編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">34 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+
+  <section class="group">
+    <p class="group-label">数の表現</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>数を表す時の「土台」になる数の事。10進数なら基数は10、2進数なら基数は2になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>2進数で負の数を表すための方法の事。ある数を2の補数にしておくと、引き算をわざわざしなくても足し算だけでマイナスの計算ができるようになる。例えば4ビットで-3を表す場合、3=0011を反転して1100、それに1を足して1101になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>小数点の位置をあらかじめ決めておく数の表し方の事。位置が動かない分、計算がシンプルで速い。下2桁を小数部と決めておけば、内部では整数1234として持ちつつ12.34として扱える。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>32ビットを使って、符号部・指数部・仮数部の3つに分けて数を表す形式の事。内訳は符号部1ビット+指数部8ビット+仮数部23ビットで合計32ビットになる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>64ビットを使って数を表す形式の事。単精度よりビット数が多い分、広い範囲・高い精度の数を扱える。内訳は符号部1ビット+指数部11ビット+仮数部52ビットで合計64ビットになる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>浮動小数点数の中で、数値の「中身(有効数字の部分)」を表すところの事。1.25×10³なら「1.25」の部分が仮数部にあたる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>浮動小数点数の中で、小数点をどれだけずらすか、つまり数の大きさ(スケール)を表すところの事。1.25×10³なら「3」の部分が指数部にあたる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>10進数の1桁1桁を、それぞれ4ビットの2進数に置きかえて表す方式の事。10進数の25なら2→0010、5→0101なので00100101になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>10進数の数字を、1バイトに2桁ずつ詰め込んで効率よく格納するデータ形式の事。10進数の25なら上位4ビットに2(0010)、下位4ビットに5(0101)を詰めて1バイトにまとめる。</p>
+    </div>
+  </section>
+
+  <section class="group">
+    <p class="group-label">シフト演算と誤差</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ビット列を左右にずらす操作の事。空いたところには0が入る。符号のことは考えない、単純な移動。00010110を左に1ビットシフトすると00101100になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ビット列を左右にずらす操作の事。論理シフトと違い符号ビットを保ったまま行い、2倍・1/2倍のような掛け算・割り算の代わりに使える。4ビットの1110(-2)を算術右シフトすると1111(-1)になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>値が近い数どうしを引き算した時に、有効な桁数が大きく減ってしまい、計算結果の精度が落ちる現象の事。1.234567-1.234000=0.000567のように、有効な桁数が7桁から3桁に減ってしまう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>桁の大きさが極端に違う数どうしを計算した時、小さい方の数の情報が丸められて消えてしまう現象の事。1×10⁸に1を足しても、桁の差が大きすぎて結果は1×10⁸のままになる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>計算結果が、その型で表現できる最大値を超えてしまう現象の事。桁あふれともいう。8ビット符号付き整数の最大値127に1を足すと-128になってしまう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>計算結果が、表現できる最小の範囲より小さくなってしまう現象の事。0に近すぎて表せなくなる。非常に小さい数どうしを掛けると、結果が0として扱われることがある。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>数値をコンピュータで表す方式の一つの事。32ビットを使う。単精度浮動小数点数とほぼ同じ意味で使われる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>数値をコンピュータで表す方式の一つの事。64ビットを使う。単精度より広い範囲・高い精度を扱える。</p>
+    </div>
+  </section>
+
+  <section class="group">
+    <p class="group-label">集合</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>集合どうしの関係を、円を重ねて視覚的に表した図の事。重なった部分が、共通する要素を表す。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の集合に含まれる要素を、全部合わせた集合の事。A∪Bと書く。A={1,2,3}、B={2,3,4}なら、A∪B={1,2,3,4}になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の集合に共通して含まれる要素だけを集めた集合の事。A∩Bと書く。A={1,2,3}、B={2,3,4}なら、A∩B={2,3}になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある集合に含まれていない要素を、全部集めた集合の事。全体集合U={1,2,3,4,5}、A={1,2,3}なら、Aの補集合は{4,5}になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある集合の中の要素だけを取り出して作った、元の集合に含まれる小さな集合の事。A={1,2,3}なら、{1,2}や{3}、空集合もすべてAの部分集合になる。</p>
+    </div>
+  </section>
+
+  <section class="group">
+    <p class="group-label">論理演算</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>論理学で「正しい」「成り立っている」ことを表す状態の事。True。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>論理学で「正しくない」「成り立っていない」ことを表す状態の事。False。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「真か偽かがはっきり決まる文(命題)」を組み合わせて考える論理の体系の事。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>真偽をひっくり返す操作の事。真なら偽に、偽なら真になる。NOT。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>二つの条件のうち、どちらか一方でも真なら真になる演算の事。OR。真OR偽=真、偽OR偽=偽になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>二つの条件が両方とも真の時だけ真になる演算の事。AND。真AND真=真、真AND偽=偽になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>二つの値のうち、どちらか片方だけが真の時に真になる演算の事。XOR。1 XOR 1=0、1 XOR 0=1になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>論理和(OR)の結果を、さらに否定した演算の事。NOR。0 NOR 0=1、それ以外は0になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>論理積(AND)の結果を、さらに否定した演算の事。NAND。1 NAND 1=0、それ以外は1になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>真か偽の値を受け取って、真か偽の値を返す関数の事。f(A,B)=A AND Bのように、論理演算はすべてこの一種として書ける。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「AとBのORを、CとさらにANDする」のような式を、項ごとに分けて計算しても同じ結果になるという法則の事。A AND (B OR C) = (A AND B) OR (A AND C)になる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「ANDの否定はORになり、ORの否定はANDになる」という、否定と論理演算の関係を表す法則の事。NOT(A AND B) = (NOT A) OR (NOT B)になる。</p>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    出典: fe-siken.com「基本情報技術者試験ドットコム 用語集」を参考に、説明文を平易な表現へ書き直して作成。
+  </footer>
+</div>

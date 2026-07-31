@@ -1,0 +1,424 @@
+<title>離散数学編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8;
+    --surface: #ffffff;
+    --text: #1b1f27;
+    --text-muted: #5b6472;
+    --accent: #2a5db0;
+    --accent-soft: #e8eef9;
+    --rule: #d8dce3;
+    --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b;
+      --surface: #1a1e26;
+      --text: #e7eaf0;
+      --text-muted: #9aa3b2;
+      --accent: #7fa6f2;
+      --accent-soft: rgba(127, 166, 242, 0.12);
+      --rule: #2b3140;
+      --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b;
+    --surface: #1a1e26;
+    --text: #e7eaf0;
+    --text-muted: #9aa3b2;
+    --accent: #7fa6f2;
+    --accent-soft: rgba(127, 166, 242, 0.12);
+    --rule: #2b3140;
+    --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8;
+    --surface: #ffffff;
+    --text: #1b1f27;
+    --text-muted: #5b6472;
+    --accent: #2a5db0;
+    --accent-soft: #e8eef9;
+    --rule: #d8dce3;
+    --group-label: #8892a3;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI",
+      "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  header.masthead {
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 6vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .count-badge {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .source-note {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .intro {
+    margin-top: 20px;
+    color: var(--text-muted);
+    font-size: 15px;
+    max-width: 62ch;
+  }
+
+  section.group {
+    margin-top: 44px;
+  }
+
+  .group-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--group-label);
+    text-transform: uppercase;
+    margin: 0 0 4px;
+  }
+
+  .group-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0 0 18px;
+  }
+
+  .group-divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 0 0 18px;
+  }
+
+  dl.term-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+  }
+
+  .term-entry {
+    display: grid;
+    grid-template-columns: minmax(120px, auto) 1fr;
+    gap: 4px 14px;
+    align-items: baseline;
+  }
+
+  dt.term {
+    font-weight: 700;
+    color: var(--text);
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  dt.term .arrow {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 2px;
+  }
+
+  dd.desc {
+    margin: 0;
+    color: var(--text);
+    font-size: 15.5px;
+    line-height: 1.75;
+  }
+
+  p.example {
+    grid-column: 2;
+    margin: 2px 0 0;
+    padding: 6px 10px;
+    background: var(--accent-soft);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+
+  p.example .ex-label {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  @media (max-width: 560px) {
+    .term-entry {
+      grid-template-columns: 1fr;
+    }
+    dt.term {
+      white-space: normal;
+    }
+    p.example {
+      grid-column: 1;
+    }
+  }
+
+  footer.page-footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+</style>
+
+<div class="page">
+  <header class="masthead">
+    <p class="breadcrumb">基礎理論 &gt; 離散数学</p>
+    <h1>離散数学編</h1>
+    <div class="meta-row">
+      <span class="count-badge">34 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">
+      基本情報技術者試験「基礎理論」の中の離散数学分野の用語集です。数の表現方法、
+      シフト演算、誤差、集合、論理演算の5つのまとまりに分けています。
+    </p>
+  </header>
+
+  <section class="group">
+    <p class="group-label">数の表現</p>
+    <p class="group-desc">2進数・10進数のいろいろな表し方に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>基数</dt>
+        <dd class="desc">数を表す時の「土台」になる数の事。10進数なら基数は10、2進数なら基数は2になる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>2の補数</dt>
+        <dd class="desc">2進数で負の数を表すための方法。ある数を2の補数にしておくと、引き算をわざわざしなくても足し算だけでマイナスの計算ができるようになる。</dd>
+        <p class="example"><span class="ex-label">例</span>4ビットで-3を表す場合、まず3=0011を反転して1100、それに1を足して1101。この1101が-3の2の補数表現。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>固定小数点数</dt>
+        <dd class="desc">小数点の位置をあらかじめ決めておく数の表し方。位置が動かない分、計算がシンプルで速い。</dd>
+        <p class="example"><span class="ex-label">例</span>下2桁を小数部と決めておけば、内部では整数1234として持ちつつ、表示するときだけ12.34として扱える。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>単精度浮動小数点数</dt>
+        <dd class="desc">32ビットを使って、符号部・指数部・仮数部の3つに分けて数を表す形式。表せる精度はそこそこ。</dd>
+        <p class="example"><span class="ex-label">例</span>32ビットの内訳は、符号部1ビット+指数部8ビット+仮数部23ビット=合計32ビット。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>倍精度浮動小数点数</dt>
+        <dd class="desc">64ビットを使って数を表す形式。単精度よりビット数が多い分、広い範囲・高い精度の数を扱える。</dd>
+        <p class="example"><span class="ex-label">例</span>64ビットの内訳は、符号部1ビット+指数部11ビット+仮数部52ビット=合計64ビット。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>仮数部</dt>
+        <dd class="desc">浮動小数点数の中で、数値の「中身(有効数字の部分)」を表すところ。</dd>
+        <p class="example"><span class="ex-label">例</span>1.25×10³ を浮動小数点で表すとき、「1.25」の部分が仮数部にあたる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>指数部</dt>
+        <dd class="desc">浮動小数点数の中で、小数点をどれだけずらすか、つまり数の大きさ(スケール)を表すところ。</dd>
+        <p class="example"><span class="ex-label">例</span>1.25×10³ を浮動小数点で表すとき、「3」の部分が指数部にあたる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BCD</dt>
+        <dd class="desc">10進数の1桁1桁を、それぞれ4ビットの2進数に置きかえて表す方式。Binary-Coded Decimalの略。</dd>
+        <p class="example"><span class="ex-label">例</span>10進数の25をBCDで表すと、2→0010、5→0101なので 0010 0101 になる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パック10進数</dt>
+        <dd class="desc">10進数の数字を、1バイトに2桁ずつ詰め込んで効率よく格納するデータ形式。</dd>
+        <p class="example"><span class="ex-label">例</span>10進数の25なら、1バイトの上位4ビットに2(0010)、下位4ビットに5(0101)を詰めて 00100101 の1バイトにまとめる。</p>
+      </div>
+    </dl>
+  </section>
+
+  <section class="group">
+    <p class="group-label">シフト演算と誤差</p>
+    <p class="group-desc">ビットをずらす操作と、計算でずれが生じる現象に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>論理シフト</dt>
+        <dd class="desc">ビット列を左右にずらす操作。空いたところには0が入る。符号のことは考えない、単純な移動。</dd>
+        <p class="example"><span class="ex-label">例</span>00010110を左に1ビット論理シフトすると 00101100 になる(空いた右端に0が入る)。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>算術シフト</dt>
+        <dd class="desc">ビット列を左右にずらす操作。論理シフトと違い符号ビットを保ったまま行い、2倍・1/2倍のような掛け算・割り算の代わりに使える。</dd>
+        <p class="example"><span class="ex-label">例</span>4ビットの1110(-2を表す)を算術右シフトすると 1111(-1)になる。符号ビットの1が保たれたまま右に広がる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>桁落ち</dt>
+        <dd class="desc">値が近い数どうしを引き算した時に、有効な桁数が大きく減ってしまい、計算結果の精度が落ちる現象。</dd>
+        <p class="example"><span class="ex-label">例</span>1.234567 - 1.234000 = 0.000567 のように、近い値どうしを引くと有効な桁数が7桁から3桁に減ってしまう。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報落ち</dt>
+        <dd class="desc">桁の大きさが極端に違う数どうしを計算した時、小さい方の数の情報が丸められて消えてしまう現象。</dd>
+        <p class="example"><span class="ex-label">例</span>1×10⁸ に 1 を足しても、桁の差が大きすぎて扱える精度を超え、結果は1×10⁸のまま(「1」の情報が消える)。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オーバーフロー</dt>
+        <dd class="desc">計算結果が、その型で表現できる最大値を超えてしまう現象。桁あふれ。</dd>
+        <p class="example"><span class="ex-label">例</span>8ビット符号付き整数の最大値127(01111111)に1を足すと、桁あふれして-128(10000000)になってしまう。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アンダーフロー</dt>
+        <dd class="desc">計算結果が、表現できる最小の範囲より小さくなってしまう現象。0に近すぎて表せなくなる。</dd>
+        <p class="example"><span class="ex-label">例</span>表現できる最小値が10⁻³⁸程度の形式で、10⁻²⁰ どうしを掛け算すると10⁻⁴⁰になり、小さすぎて0として扱われる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>単精度</dt>
+        <dd class="desc">数値をコンピュータで表す方式の一つで、32ビットを使う。単精度浮動小数点数とほぼ同じ意味で使われる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>倍精度</dt>
+        <dd class="desc">数値をコンピュータで表す方式の一つで、64ビットを使う。単精度より広い範囲・高い精度を扱える。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="group">
+    <p class="group-label">集合</p>
+    <p class="group-desc">複数のものの集まりをどう扱うかに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ベン図</dt>
+        <dd class="desc">集合どうしの関係を、円を重ねて視覚的に表した図。重なった部分が、共通する要素を表す。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>和集合</dt>
+        <dd class="desc">複数の集合に含まれる要素を、全部合わせた集合。A∪Bと書く。</dd>
+        <p class="example"><span class="ex-label">例</span>A={1,2,3}、B={2,3,4}のとき、A∪B={1,2,3,4}。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>積集合</dt>
+        <dd class="desc">複数の集合に共通して含まれる要素だけを集めた集合。A∩Bと書く。</dd>
+        <p class="example"><span class="ex-label">例</span>A={1,2,3}、B={2,3,4}のとき、A∩B={2,3}。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>補集合</dt>
+        <dd class="desc">ある集合に含まれていない要素を、全部集めた集合。</dd>
+        <p class="example"><span class="ex-label">例</span>全体集合U={1,2,3,4,5}、A={1,2,3}のとき、Aの補集合は{4,5}。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>部分集合</dt>
+        <dd class="desc">ある集合の中の要素だけを取り出して作った、元の集合に含まれる小さな集合。</dd>
+        <p class="example"><span class="ex-label">例</span>A={1,2,3}のとき、{1,2}や{3}、空集合{}もすべてAの部分集合。</p>
+      </div>
+    </dl>
+  </section>
+
+  <section class="group">
+    <p class="group-label">論理演算</p>
+    <p class="group-desc">真か偽かを組み合わせて考える演算に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>真</dt>
+        <dd class="desc">論理学で「正しい」「成り立っている」ことを表す状態。True。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>偽</dt>
+        <dd class="desc">論理学で「正しくない」「成り立っていない」ことを表す状態。False。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>命題論理</dt>
+        <dd class="desc">「真か偽かがはっきり決まる文(命題)」を組み合わせて考える論理の体系。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>否定</dt>
+        <dd class="desc">真偽をひっくり返す操作。真なら偽に、偽なら真になる。NOT。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>論理和</dt>
+        <dd class="desc">二つの条件のうち、どちらか一方でも真なら真になる演算。OR。</dd>
+        <p class="example"><span class="ex-label">例</span>真OR偽=真、偽OR偽=偽。両方偽の時だけ結果が偽になる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>論理積</dt>
+        <dd class="desc">二つの条件が両方とも真の時だけ真になる演算。AND。</dd>
+        <p class="example"><span class="ex-label">例</span>真AND真=真、真AND偽=偽。片方でも偽なら結果は偽になる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>排他的論理和</dt>
+        <dd class="desc">二つの値のうち、どちらか片方だけが真の時に真になる演算。XOR。</dd>
+        <p class="example"><span class="ex-label">例</span>1 XOR 1=0、1 XOR 0=1、0 XOR 0=0。両方が同じ値だと結果は0になる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>否定論理和</dt>
+        <dd class="desc">論理和(OR)の結果を、さらに否定した演算。NOR。</dd>
+        <p class="example"><span class="ex-label">例</span>0 NOR 0=1(両方0の時だけ真になり、それ以外は0)。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>否定論理積</dt>
+        <dd class="desc">論理積(AND)の結果を、さらに否定した演算。NAND。</dd>
+        <p class="example"><span class="ex-label">例</span>1 NAND 1=0(両方1の時だけ偽になり、それ以外は1)。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>論理関数</dt>
+        <dd class="desc">真か偽の値を受け取って、真か偽の値を返す関数。論理和や論理積などの論理演算は、すべてこの一種。</dd>
+        <p class="example"><span class="ex-label">例</span>f(A,B)=A AND B のように、AとBの真偽値を入れると1つの真偽値が返ってくる関数として書ける。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>分配則</dt>
+        <dd class="desc">「AとBのORを、CとさらにANDする」のような式を、項ごとに分けて計算しても同じ結果になるという法則。</dd>
+        <p class="example"><span class="ex-label">例</span>A AND (B OR C) = (A AND B) OR (A AND C)。左辺と右辺は常に同じ真偽値になる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ド・モルガンの法則</dt>
+        <dd class="desc">「ANDの否定はORになり、ORの否定はANDになる」という、否定と論理演算の関係を表す法則。</dd>
+        <p class="example"><span class="ex-label">例</span>NOT(A AND B) = (NOT A) OR (NOT B)、NOT(A OR B) = (NOT A) AND (NOT B)。</p>
+      </div>
+    </dl>
+  </section>
+
+  <footer class="page-footer">
+    出典: fe-siken.com「基本情報技術者試験ドットコム 用語集」を参考に、説明文を平易な表現へ書き直して作成。
+  </footer>
+</div>
