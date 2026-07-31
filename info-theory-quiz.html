@@ -1,0 +1,217 @@
+<title>情報理論編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+        <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group">
+        <span class="nav-label">離散数学編</span>
+        <a href="https://claude.ai/code/artifact/500aad15-d573-4942-9fcf-b37239af3beb">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/9ddc06c8-5f09-4de8-be5a-2d688806d181">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">応用数学編</span>
+        <a href="https://claude.ai/code/artifact/f6656f93-1f2d-48d5-83e3-6e49e19b7dc4">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/38515c13-8cc4-4a5f-83e1-4762fbad61ba">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">情報理論編</span>
+        <a href="https://claude.ai/code/artifact/7eb488e6-f500-42e7-ae52-7b5a6da8d0ee">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/ac3dfa91-001f-49a4-a331-7460ed2fd0a0" aria-current="page">穴埋め</a>
+      </div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">基礎理論 &gt; 情報に関する理論 &gt; 穴埋め問題</p>
+    <h1>情報理論編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">62 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+  <section class="group">
+    <p class="group-label">符号化・文字コード</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを送る時に、誤り検出・訂正用の冗長なビット(チェックビットなど)を付け加える技術の事。ノイズが多い回線でも、データが正しく届いたか確認・修復できるようになる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>よく出てくるデータには短いビット列を、あまり出てこないデータには長いビット列を割り当てて、全体のデータ量を小さくする圧縮方式。「A」が50%出るなら短い符号、「D」が5%しか出ないなら長い符号、というように出現頻度に応じて符号の長さを変える。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの中にある無駄(冗長性)を取り除いて、サイズを小さくする技術。圧縮全般を指す言葉で、ハフマン符号もこの一種。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>英字・数字・記号など128種類の文字を、7ビットの数値に対応させた、文字コードの基本規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>UNIX系OSで使われてきた、拡張UNIXコードと呼ばれる文字コード。日本語の漢字なども扱えるよう拡張されている。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>日本語の文字(漢字・ひらがな・カタカナなど)を扱うために、日本工業規格で定められた文字コード。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ASCIIコードをベースに、特定のビットパターンを使って日本語の文字も表現できるようにした文字コード。Windowsなどでよく使われてきた。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>世界中の文字や記号を、1つの体系でまとめて表現できるようにした文字コードの標準規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Unicodeのもとになった、世界中の文字を収録することを目指した符号化文字集合の事。Universal Coded Character Setの略。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">論理・計算理論</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「AはBである」のような文を、主語・述語・対象の関係として細かく分析できるようにした論理体系。命題論理より詳しく表現できる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>一般的な前提から、必ず正しい結論を導く推論方法。「すべての人は死ぬ。ソクラテスは人である。よってソクラテスは死ぬ」。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>個別の事例から、一般的な法則を推測する推論方法。必ず正しいとは限らない。「これまで見たカラスが全部黒かったから、カラスは黒いだろう」。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文法のルールが厳密に決められている、機械が処理しやすいように作られた言語。プログラミング言語などが該当する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>演算子を数の後ろに置く数式の書き方。かっこが要らず、コンピュータが計算しやすい。「3+4」を逆ポーランドでは「3 4 +」と書く。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>決まった数の「状態」を持ち、文字を1つ受け取るたびに状態が変化していく、計算のモデル。文字列が特定のパターンに合うかを判定するのに使われる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力に応じて内部の状態を変化させながら動作する、計算の仕組み全般を指す言葉。有限オートマトンはその代表例。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アルゴリズムが答えを出すまでに、データ量に応じてどれくらいの時間がかかるかを表す尺度。O(n)やO(n²)のように書く。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">AI基礎・知識工学</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>専門家の知識をルールとして蓄積し、その知識をもとに推論して助言や診断を行う人工知能の仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが使う知識やルールをまとめて整理・保存しておくデータベース。エキスパートシステムの中核となる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>知識ベースに蓄えられたルールをもとに、新しい結論を導き出す(推論する)プログラム部分。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>個々の事例やデータから、共通するルールや特徴を見つけて、幅広く使えるようにまとめる事。機械学習では、未知のデータにも対応できる力として重要。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">機械学習の種類</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータがデータから自動的にパターンを学び、新しいデータに対する予測や判断ができるようになる技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「入力とその正解(ラベル)」がセットになったデータを使って学習する方法。スパムメール判定など。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>正解ラベルのないデータから、データ同士の似ている・似ていないといったパターンを見つけ出す学習方法。顧客のグループ分け(クラスタリング)など。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータ(エージェント)が実際に行動し、その結果得られる報酬をもとに、より良い行動を試行錯誤しながら学んでいく学習方法。ゲームAIなど。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">代表的な機械学習アルゴリズム</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力(説明変数)と出力(目的変数)の関係を、直線の式で予測するシンプルな機械学習の手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「はい/いいえ」のような2択の結果が起こる確率を予測する統計手法。線形回帰の考え方をもとに、結果を0〜1の確率に変換する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「もし〜なら」という条件分岐を木の形に並べて、データを分類・予測するモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>たくさんの決定木を作って、それぞれの予測結果を多数決でまとめる事で、精度を上げる手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを2つのグループに分ける境界線(または境界面)を、できるだけ余裕を持たせて引く分類手法。SVMと略される。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>たくさんある変数の情報を、できるだけ失わずに少ない変数(主成分)にまとめて、データを見やすくする手法。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">機械学習の評価・データ分割</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モデルにパターンを覚えさせるために使う、訓練用のデータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習の途中で、モデルの設定(パラメータ)がうまくいっているかを確認するために使うデータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習が終わったモデルの、最終的な性能を確かめるために使う、学習には使っていないデータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習に使っていない新しいデータに対しても、どれだけ正しく予測できるかを表す能力。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習データに合わせすぎてしまい、新しいデータへの予測精度がかえって下がってしまう現象。オーバーフィッティングともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データをいくつかに分割し、順番にテスト用と学習用を入れ替えながら、モデルの性能を何度も確かめる評価方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データをあらかじめ「学習用」と「テスト用」の2つに分けておき、1回だけ評価を行うシンプルな検証方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>分類モデルの性能を、閾値を変えながら視覚的に評価するためのグラフ。曲線が左上に近いほど性能が良い。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">ディープラーニングの基礎</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人間の脳の仕組みを参考にした「ニューラルネットワーク」を何層も重ねて、複雑なパターンを学習する機械学習の手法。深層学習。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>脳の神経細胞(ニューロン)のつながりを模した、機械学習のモデルの仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力層・中間層(隠れ層)・出力層のように、ニューロンを何層にも重ねた基本的なニューラルネットワークの構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ニューラルネットワークの予測の誤差を、出力側から入力側に向かって逆に伝えながら、各ニューロンのパラメータを調整していく学習方法。誤差逆伝播法ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ニューラルネットワークの層を深くしすぎると、誤差を逆伝播する際にその影響がどんどん小さくなり、うまく学習が進まなくなる問題。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ニューロンに入ってきた値を、そのまま出さずに変換して次の層へ渡すための関数。シグモイド関数やReLUなどがある。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">学習の応用テクニック</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>本番の目的で学習させる前に、大量のデータで基礎的なパターンをあらかじめ学習させておく事。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>事前学習させたモデルを、特定の目的のデータで追加学習させて、その用途に合わせて微調整する事。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>あるタスクで学習した知識を、別の似たタスクに応用して活用する学習方法。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">ニューラルネットワークの種類・生成AI</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>画像の特徴(輪郭や模様など)を効率よく捉えるための、畳み込み処理を使ったニューラルネットワーク。CNN。画像認識でよく使われる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>過去の情報を内部に記憶しながら処理する、時系列データ(文章や音声など)に強いニューラルネットワーク。RNN。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習したデータの特徴をもとに、それらしい新しいデータ(画像や文章など)を作り出すモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「本物そっくりのデータを作る生成器」と「本物か偽物かを見抜く識別器」を競わせながら学習させる、生成モデルの手法。GAN。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>大量のデータで事前学習された、様々な用途に応用できる汎用的な大規模モデル。ファウンデーションモデルともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データに徐々にノイズを加えて壊し、そのノイズを取り除く過程を学習することで、新しい画像などを生成するモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「次にどんな単語が来やすいか」といった、言葉のつながりの確率を学習したモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>非常に大量のテキストデータと、多くのパラメータを使って学習させた言語モデル。LLM。文章生成や対話に使われる。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">生成AIの学習・活用</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの一部を隠すなどして、人がラベルを付けなくても、データ自身から答えを作り出して学習する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIから望む出力を引き出すために、指示文(プロンプト)の書き方を工夫する技術。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">プログラム言語の分類・処理</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードを機械語に変換する途中で使われる、コンピュータの種類に依存しない橋渡し用のプログラム表現。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードをコンパイルしてできた、コンピュータが直接実行できる形式のプログラム。オブジェクトプログラムともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「何をどの順番で行うか」という手続き(処理の流れ)を記述していく、昔からある伝統的なプログラミング言語の分類。C言語などが該当する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データとそれを操作する処理をひとまとめにした「オブジェクト」を中心にプログラムを組み立てる言語。Javaなどが該当する。</p>
+    </div>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム 用語集」を参考に、説明文を平易な表現へ書き直して作成。</footer>
+</div>

@@ -1,0 +1,456 @@
+<title>情報理論編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(160px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+        <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group">
+        <span class="nav-label">離散数学編</span>
+        <a href="https://claude.ai/code/artifact/500aad15-d573-4942-9fcf-b37239af3beb">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/9ddc06c8-5f09-4de8-be5a-2d688806d181">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">応用数学編</span>
+        <a href="https://claude.ai/code/artifact/f6656f93-1f2d-48d5-83e3-6e49e19b7dc4">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/38515c13-8cc4-4a5f-83e1-4762fbad61ba">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">情報理論編</span>
+        <a href="https://claude.ai/code/artifact/7eb488e6-f500-42e7-ae52-7b5a6da8d0ee" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/ac3dfa91-001f-49a4-a331-7460ed2fd0a0">穴埋め</a>
+      </div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">基礎理論 &gt; 情報に関する理論</p>
+    <h1>情報理論編</h1>
+    <div class="meta-row">
+      <span class="count-badge">62 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「基礎理論」の中の情報に関する理論分野の用語集です。文字コード・符号化、論理と計算理論、そして機械学習・ディープラーニング・生成AIまで幅広く含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">符号化・文字コード</p>
+    <p class="group-desc">データを圧縮したり、誤りを検出・訂正したり、文字を数値で表したりする方式に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>通信路符号化</dt>
+        <dd class="desc">データを送る時に、誤り検出・訂正用の冗長なビット(チェックビットなど)を付け加える技術の事。ノイズが多い回線でも、データが正しく届いたか確認・修復できるようになる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ハフマン符号</dt>
+        <dd class="desc">よく出てくるデータには短いビット列を、あまり出てこないデータには長いビット列を割り当てて、全体のデータ量を小さくする圧縮方式。</dd>
+        <p class="example"><span class="ex-label">例</span>「A」が50%出るなら短い符号、「D」が5%しか出ないなら長い符号、というように出現頻度に応じて符号の長さを変える。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報源符号化</dt>
+        <dd class="desc">データの中にある無駄(冗長性)を取り除いて、サイズを小さくする技術。圧縮全般を指す言葉で、ハフマン符号もこの一種。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ASCIIコード</dt>
+        <dd class="desc">英字・数字・記号など128種類の文字を、7ビットの数値に対応させた、文字コードの基本規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>EUC</dt>
+        <dd class="desc">UNIX系OSで使われてきた、拡張UNIXコードと呼ばれる文字コード。日本語の漢字なども扱えるよう拡張されている。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JISコード</dt>
+        <dd class="desc">日本語の文字(漢字・ひらがな・カタカナなど)を扱うために、日本工業規格で定められた文字コード。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シフトJISコード</dt>
+        <dd class="desc">ASCIIコードをベースに、特定のビットパターンを使って日本語の文字も表現できるようにした文字コード。</dd>
+        <p class="example"><span class="ex-label">例</span>Windowsなどでよく使われてきた。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Unicode</dt>
+        <dd class="desc">世界中の文字や記号を、1つの体系でまとめて表現できるようにした文字コードの標準規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UCS</dt>
+        <dd class="desc">Unicodeのもとになった、世界中の文字を収録することを目指した符号化文字集合の事。Universal Coded Character Setの略。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">論理・計算理論</p>
+    <p class="group-desc">推論の方法や、記号・計算の仕組みを扱う理論に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>述語論理</dt>
+        <dd class="desc">「AはBである」のような文を、主語・述語・対象の関係として細かく分析できるようにした論理体系。命題論理より詳しく表現できる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>演繹推論</dt>
+        <dd class="desc">一般的な前提から、必ず正しい結論を導く推論方法。</dd>
+        <p class="example"><span class="ex-label">例</span>「すべての人は死ぬ。ソクラテスは人である。よってソクラテスは死ぬ」。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>帰納推論</dt>
+        <dd class="desc">個別の事例から、一般的な法則を推測する推論方法。必ず正しいとは限らない。</dd>
+        <p class="example"><span class="ex-label">例</span>「これまで見たカラスが全部黒かったから、カラスは黒いだろう」。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>形式言語</dt>
+        <dd class="desc">文法のルールが厳密に決められている、機械が処理しやすいように作られた言語。プログラミング言語などが該当する。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>逆ポーランド表記法</dt>
+        <dd class="desc">演算子を数の後ろに置く数式の書き方。かっこが要らず、コンピュータが計算しやすい。</dd>
+        <p class="example"><span class="ex-label">例</span>「3+4」を逆ポーランドでは「3 4 +」と書く。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>有限オートマトン</dt>
+        <dd class="desc">決まった数の「状態」を持ち、文字を1つ受け取るたびに状態が変化していく、計算のモデル。文字列が特定のパターンに合うかを判定するのに使われる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オートマトン</dt>
+        <dd class="desc">入力に応じて内部の状態を変化させながら動作する、計算の仕組み全般を指す言葉。有限オートマトンはその代表例。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>時間計算量</dt>
+        <dd class="desc">アルゴリズムが答えを出すまでに、データ量に応じてどれくらいの時間がかかるかを表す尺度。</dd>
+        <p class="example"><span class="ex-label">例</span>O(n)やO(n²)のように書く。</p>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">AI基礎・知識工学</p>
+    <p class="group-desc">知識をルール化して推論するAIの初期の考え方に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>エキスパートシステム</dt>
+        <dd class="desc">専門家の知識をルールとして蓄積し、その知識をもとに推論して助言や診断を行う人工知能の仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>知識ベース</dt>
+        <dd class="desc">システムが使う知識やルールをまとめて整理・保存しておくデータベース。エキスパートシステムの中核となる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>推論エンジン</dt>
+        <dd class="desc">知識ベースに蓄えられたルールをもとに、新しい結論を導き出す(推論する)プログラム部分。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>汎化</dt>
+        <dd class="desc">個々の事例やデータから、共通するルールや特徴を見つけて、幅広く使えるようにまとめる事。機械学習では、未知のデータにも対応できる力として重要。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">機械学習の種類</p>
+    <p class="group-desc">学習の仕方によって分けられる機械学習の分類に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>機械学習</dt>
+        <dd class="desc">コンピュータがデータから自動的にパターンを学び、新しいデータに対する予測や判断ができるようになる技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>教師あり学習</dt>
+        <dd class="desc">「入力とその正解(ラベル)」がセットになったデータを使って学習する方法。</dd>
+        <p class="example"><span class="ex-label">例</span>スパムメール判定など。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>教師なし学習</dt>
+        <dd class="desc">正解ラベルのないデータから、データ同士の似ている・似ていないといったパターンを見つけ出す学習方法。</dd>
+        <p class="example"><span class="ex-label">例</span>顧客のグループ分け(クラスタリング)など。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>強化学習</dt>
+        <dd class="desc">コンピュータ(エージェント)が実際に行動し、その結果得られる報酬をもとに、より良い行動を試行錯誤しながら学んでいく学習方法。</dd>
+        <p class="example"><span class="ex-label">例</span>ゲームAIなど。</p>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">代表的な機械学習アルゴリズム</p>
+    <p class="group-desc">実際にデータを分類・予測するための代表的な手法に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>線形回帰</dt>
+        <dd class="desc">入力(説明変数)と出力(目的変数)の関係を、直線の式で予測するシンプルな機械学習の手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロジスティック回帰</dt>
+        <dd class="desc">「はい/いいえ」のような2択の結果が起こる確率を予測する統計手法。</dd>
+        <p class="example"><span class="ex-label">例</span>線形回帰の考え方をもとに、結果を0〜1の確率に変換する。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>決定木</dt>
+        <dd class="desc">「もし〜なら」という条件分岐を木の形に並べて、データを分類・予測するモデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ランダムフォレスト</dt>
+        <dd class="desc">たくさんの決定木を作って、それぞれの予測結果を多数決でまとめる事で、精度を上げる手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サポートベクターマシン</dt>
+        <dd class="desc">データを2つのグループに分ける境界線(または境界面)を、できるだけ余裕を持たせて引く分類手法。SVMと略される。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>主成分分析</dt>
+        <dd class="desc">たくさんある変数の情報を、できるだけ失わずに少ない変数(主成分)にまとめて、データを見やすくする手法。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">機械学習の評価・データ分割</p>
+    <p class="group-desc">モデルの性能を正しく測るためのデータの使い方に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>学習データ</dt>
+        <dd class="desc">モデルにパターンを覚えさせるために使う、訓練用のデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>検証データ</dt>
+        <dd class="desc">学習の途中で、モデルの設定(パラメータ)がうまくいっているかを確認するために使うデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>テストデータ</dt>
+        <dd class="desc">学習が終わったモデルの、最終的な性能を確かめるために使う、学習には使っていないデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>汎化性能</dt>
+        <dd class="desc">学習に使っていない新しいデータに対しても、どれだけ正しく予測できるかを表す能力。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>過学習</dt>
+        <dd class="desc">学習データに合わせすぎてしまい、新しいデータへの予測精度がかえって下がってしまう現象。</dd>
+        <p class="example"><span class="ex-label">例</span>オーバーフィッティングともいう。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>交差検証</dt>
+        <dd class="desc">データをいくつかに分割し、順番にテスト用と学習用を入れ替えながら、モデルの性能を何度も確かめる評価方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ホールドアウト検証</dt>
+        <dd class="desc">データをあらかじめ「学習用」と「テスト用」の2つに分けておき、1回だけ評価を行うシンプルな検証方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ROC曲線</dt>
+        <dd class="desc">分類モデルの性能を、閾値を変えながら視覚的に評価するためのグラフ。曲線が左上に近いほど性能が良い。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">ディープラーニングの基礎</p>
+    <p class="group-desc">人間の脳を参考にしたニューラルネットワークの仕組みに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ディープラーニング</dt>
+        <dd class="desc">人間の脳の仕組みを参考にした「ニューラルネットワーク」を何層も重ねて、複雑なパターンを学習する機械学習の手法。深層学習。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ニューラルネットワーク</dt>
+        <dd class="desc">脳の神経細胞(ニューロン)のつながりを模した、機械学習のモデルの仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>多層パーセプトロン</dt>
+        <dd class="desc">入力層・中間層(隠れ層)・出力層のように、ニューロンを何層にも重ねた基本的なニューラルネットワークの構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バックプロパゲーション</dt>
+        <dd class="desc">ニューラルネットワークの予測の誤差を、出力側から入力側に向かって逆に伝えながら、各ニューロンのパラメータを調整していく学習方法。</dd>
+        <p class="example"><span class="ex-label">例</span>誤差逆伝播法ともいう。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>勾配消失問題</dt>
+        <dd class="desc">ニューラルネットワークの層を深くしすぎると、誤差を逆伝播する際にその影響がどんどん小さくなり、うまく学習が進まなくなる問題。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>活性化関数</dt>
+        <dd class="desc">ニューロンに入ってきた値を、そのまま出さずに変換して次の層へ渡すための関数。</dd>
+        <p class="example"><span class="ex-label">例</span>シグモイド関数やReLUなどがある。</p>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">学習の応用テクニック</p>
+    <p class="group-desc">既に学習させたモデルを、効率よく再利用するための工夫に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>事前学習</dt>
+        <dd class="desc">本番の目的で学習させる前に、大量のデータで基礎的なパターンをあらかじめ学習させておく事。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ファインチューニング</dt>
+        <dd class="desc">事前学習させたモデルを、特定の目的のデータで追加学習させて、その用途に合わせて微調整する事。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>転移学習</dt>
+        <dd class="desc">あるタスクで学習した知識を、別の似たタスクに応用して活用する学習方法。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">ニューラルネットワークの種類・生成AI</p>
+    <p class="group-desc">画像・文章など特定の用途に強いネットワークや、新しいデータを作る生成AIに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>畳み込みニューラルネットワーク</dt>
+        <dd class="desc">画像の特徴(輪郭や模様など)を効率よく捉えるための、畳み込み処理を使ったニューラルネットワーク。CNN。</dd>
+        <p class="example"><span class="ex-label">例</span>画像認識でよく使われる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リカレントニューラルネットワーク</dt>
+        <dd class="desc">過去の情報を内部に記憶しながら処理する、時系列データ(文章や音声など)に強いニューラルネットワーク。RNN。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>生成モデル</dt>
+        <dd class="desc">学習したデータの特徴をもとに、それらしい新しいデータ(画像や文章など)を作り出すモデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>敵対的生成ネットワーク</dt>
+        <dd class="desc">「本物そっくりのデータを作る生成器」と「本物か偽物かを見抜く識別器」を競わせながら学習させる、生成モデルの手法。GAN。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>基盤モデル</dt>
+        <dd class="desc">大量のデータで事前学習された、様々な用途に応用できる汎用的な大規模モデル。ファウンデーションモデルともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>拡散モデル</dt>
+        <dd class="desc">データに徐々にノイズを加えて壊し、そのノイズを取り除く過程を学習することで、新しい画像などを生成するモデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>言語モデル</dt>
+        <dd class="desc">「次にどんな単語が来やすいか」といった、言葉のつながりの確率を学習したモデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>大規模言語モデル</dt>
+        <dd class="desc">非常に大量のテキストデータと、多くのパラメータを使って学習させた言語モデル。LLM。</dd>
+        <p class="example"><span class="ex-label">例</span>文章生成や対話に使われる。</p>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">生成AIの学習・活用</p>
+    <p class="group-desc">ラベル無しでの学習方法や、生成AIをうまく使うための工夫に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自己教師あり学習</dt>
+        <dd class="desc">データの一部を隠すなどして、人がラベルを付けなくても、データ自身から答えを作り出して学習する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロンプトエンジニアリング</dt>
+        <dd class="desc">AIから望む出力を引き出すために、指示文(プロンプト)の書き方を工夫する技術。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">プログラム言語の分類・処理</p>
+    <p class="group-desc">プログラムの書き方の分類や、コンパイル途中の姿に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>中間言語</dt>
+        <dd class="desc">ソースコードを機械語に変換する途中で使われる、コンピュータの種類に依存しない橋渡し用のプログラム表現。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>目的プログラム</dt>
+        <dd class="desc">ソースコードをコンパイルしてできた、コンピュータが直接実行できる形式のプログラム。</dd>
+        <p class="example"><span class="ex-label">例</span>オブジェクトプログラムともいう。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>手続型言語</dt>
+        <dd class="desc">「何をどの順番で行うか」という手続き(処理の流れ)を記述していく、昔からある伝統的なプログラミング言語の分類。</dd>
+        <p class="example"><span class="ex-label">例</span>C言語などが該当する。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オブジェクト指向言語</dt>
+        <dd class="desc">データとそれを操作する処理をひとまとめにした「オブジェクト」を中心にプログラムを組み立てる言語。</dd>
+        <p class="example"><span class="ex-label">例</span>Javaなどが該当する。</p>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム 用語集」を参考に、説明文を平易な表現へ書き直して作成。</footer>
+</div>
