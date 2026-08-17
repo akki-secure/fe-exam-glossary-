@@ -1,0 +1,148 @@
+<title>通信理論編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+        <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group">
+        <span class="nav-label">離散数学編</span>
+        <a href="https://claude.ai/code/artifact/500aad15-d573-4942-9fcf-b37239af3beb">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/9ddc06c8-5f09-4de8-be5a-2d688806d181">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">応用数学編</span>
+        <a href="https://claude.ai/code/artifact/f6656f93-1f2d-48d5-83e3-6e49e19b7dc4">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/38515c13-8cc4-4a5f-83e1-4762fbad61ba">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">情報理論編</span>
+        <a href="https://claude.ai/code/artifact/7eb488e6-f500-42e7-ae52-7b5a6da8d0ee">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/ac3dfa91-001f-49a4-a331-7460ed2fd0a0">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">通信理論編</span>
+        <a href="https://claude.ai/code/artifact/6a24a958-45c0-4ff7-8073-3a6753cb34cb">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="https://claude.ai/code/artifact/9e0be7be-7233-48b0-857e-821e6b40f025" aria-current="page">穴埋め</a>
+      </div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">基礎理論 &gt; 通信に関する理論 &gt; 穴埋め問題</p>
+    <h1>通信理論編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">22 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+  <section class="group">
+    <p class="group-label">通信方向・伝送方式</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データが一方向にしか流れない通信方式。送信専用・受信専用の役割が固定されている。テレビ放送やラジオ放送。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>送信と受信を交互に行う通信方式。同時には送受信できない。トランシーバー(片方が話している間、もう片方は聞くだけ)。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>送信と受信を同時に行える通信方式。電話(両方が同時に話せる)。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">変調方式</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>信号の振幅を変化させて情報を乗せる変調方式。振幅変調ともいう。AMラジオ放送。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>信号の周波数を変化させて情報を乗せる変調方式。周波数変調ともいう。FMラジオ放送。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>信号の位相を変化させて情報を乗せる変調方式。位相変調ともいう。振幅や周波数は一定に保たれる。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">多重化・デジタル化</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アナログ信号を標本化(サンプリング)・量子化・符号化して、デジタル信号に変換する方式。パルス符号変調ともいう。電話の音声をデジタル化する際などに使われる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>伝送路の周波数帯域をいくつかに分割し、それぞれ別の信号を同時に送る多重化方式。周波数分割多重ともいう。ケーブルテレビで複数のチャンネルを同時に送る仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>伝送路を使う時間を細かく分割し、順番に複数の信号を送る多重化方式。時分割多重ともいう。電話回線で複数の通話を交代で細かく送る仕組み。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">誤り検出・訂正</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>送信データから計算した検査用の値を付加しておき、受信側で同じ計算をして一致するかを確かめることで誤りを検出する方式。巡回冗長検査ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データに誤り訂正用の冗長なビットを付け加えることで、1ビットの誤りなら検出だけでなく訂正もできるようにした符号方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データのビット列の中にある「1」の個数が、偶数(または奇数)になるように検査用のビットを1つ付け加えて、誤りを検出するシンプルな方式。1の個数が奇数だと誤りありと判定する「奇数パリティ」など。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの誤りを検出するだけでなく、自動的に訂正までできる符号方式の総称。誤り訂正符号。ハミング符号もこの一種。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを一定のまとまりごとに区切って合計値を計算しておき、その値を使って誤りを検出する方式。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">同期方式</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>受信側が、1ビットずつのタイミング(区切り)を送信側と合わせるための同期方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1文字(キャラクタ)単位でデータの区切りを認識できるように、同期用の文字を使ってタイミングを合わせる同期方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>決まったビットパターン(フラグ)を使って、データのまとまりの始まりと終わりを区切る同期方式。HDLCなどの通信手順で使われる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1文字ごとにスタートビットとストップビットを付けて、送信側と受信側のタイミングをそのつど合わせる同期方式。非同期式ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>調歩同期式の通信で、1文字分のデータの先頭に付けて「これから送信を始める」ことを知らせるビット。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>調歩同期式の通信で、1文字分のデータの末尾に付けて「送信が終わった」ことを知らせるビット。ストップビットともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>決まった同期用のビットパターン(SYNコード)を送ることで、送信側と受信側のタイミングを合わせる同期方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを「フレーム」というまとまりで送るとき、そのフレームの開始・終了の位置を送信側と受信側で合わせる同期方式。</p>
+    </div>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム 用語集」を参考に、説明文を平易な表現へ書き直して作成。</footer>
+</div>
