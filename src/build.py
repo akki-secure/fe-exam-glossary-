@@ -116,6 +116,21 @@ def page(slug, kind, meta, groups):
     h += [FOOT, '</div>']
     return "\n".join(h) + "\n"
 
+PENTEST_DATA = os.path.join(ROOT, "src", "data", "pentest")
+PENTEST_PAGES = [
+    ("recon", "偵察・情報収集編"), ("web-attack", "Web攻撃編"), ("exploit-tools", "攻撃ツール・権限昇格編"),
+    ("network", "ネットワーク・プロトコル編"), ("windows", "Windows/AD編"), ("macos", "macOS編"),
+    ("forensics", "デジタルフォレンジック編"), ("malware", "マルウェア解析編"), ("crypto", "暗号・ハッシュ編"),
+    ("social", "ソーシャルエンジニアリング編"), ("ai-security", "AIセキュリティ編"), ("framework", "標準・組織・資格編"),
+]
+
+def pentest_counts():
+    counts = {}
+    for slug, _ in PENTEST_PAGES:
+        p = os.path.join(PENTEST_DATA, f"{slug}.txt")
+        counts[slug] = sum(1 for l in open(p, encoding="utf-8") if l.strip()) if os.path.exists(p) else 0
+    return counts
+
 def index(counts):
     total = sum(counts.values())
     rows = []
@@ -126,6 +141,16 @@ def index(counts):
                         f'<a href="{s}-cards.html">カード</a> / <a href="{s}-quiz.html">穴埋め</a></p>')
         rows.append('  </div></section>')
     rows.append('  <section class="group"><p class="group-label">計算問題</p><hr class="group-divider" /><div class="term-list"><p class="term-line"><span class="bullet">・</span><strong>計算のやり方</strong> <span class="arrow">→</span><a href="calc-methods.html">公式と例題</a> / <a href="formulas.html">公式の早見表</a></p></div></section>')
+    pcounts = pentest_counts()
+    ptotal = sum(pcounts.values())
+    rows.append(f'  <section class="group"><p class="group-label">セキュリティ実践編({ptotal}語)</p>'
+                 '<p class="group-desc">基本情報技術者試験のシラバスとは別に、利用者が学習用にまとめたメモをもとに作成した用語集です。</p>'
+                 '<hr class="group-divider" /><div class="term-list">')
+    for s, name in PENTEST_PAGES:
+        rows.append(f'    <p class="term-line"><span class="bullet">・</span><strong>{esc(name)}</strong>({pcounts[s]}語) <span class="arrow">→</span>'
+                    f'<a href="pentest-{s}-cards.html">カード</a> / <a href="pentest-{s}-quiz.html">穴埋め</a></p>')
+    rows.append('  </div></section>')
+    total += ptotal
     style = css("quiz").replace("</style>", "  a { color: var(--accent); }\n</style>")
     return (f'<title>目次 — 基本情報技術者試験 用語集</title>\n{style}\n<div class="page">\n  <header class="masthead">\n'
             f'    <p class="breadcrumb">fe-exam-glossary</p>\n    <h1>基本情報技術者試験 用語集</h1>\n    <div class="meta-row">'
