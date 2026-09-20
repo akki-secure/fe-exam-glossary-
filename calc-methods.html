@@ -97,7 +97,7 @@
   <header class="masthead">
     <p class="breadcrumb">基本情報技術者試験 &gt; 計算問題</p>
     <h1>計算のやり方</h1>
-    <div class="meta-row"><span class="count-badge">27 問</span></div>
+    <div class="meta-row"><span class="count-badge">37 問</span></div>
     <p class="intro">試験によく出る計算を、公式・例題・解き方の順にまとめました。「解き方を見る」を開く前に、まず自分で解いてみてください。</p>
   </header>
   <section class="group">
@@ -284,6 +284,70 @@
       <p class="formula">EOQ = √(2 × 年間需要 × 1回の発注費用 ÷ 1個あたりの年間保管費用)</p>
       <p class="q"><strong>例題</strong> 年間需要1,000個、発注費用50円/回、保管費用10円/個・年のときの経済的発注量は。</p>
       <details><summary>解き方を見る</summary><ol><li>2 × 1,000 × 50 ÷ 10 = 10,000</li><li>√10,000</li></ol><p class="ans">答え: 100個</p></details>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">アルゴリズム</p>
+    <hr class="group-divider" />
+    <div class="calc">
+      <h3>計算量とデータ量の関係</h3>
+      <p class="formula">O(n): データがk倍 → 時間k倍 / O(n²): k²倍 / O(log n): ほとんど増えない</p>
+      <p class="q"><strong>例題</strong> データ1,000件で2秒かかるO(n²)の処理に、10,000件を与えると何秒かかるか。</p>
+      <details><summary>解き方を見る</summary><ol><li>データ量は 10,000 ÷ 1,000 = 10倍</li><li>O(n²)なので、時間は 10² = 100倍</li></ol><p class="ans">答え: 2 × 100 = 200秒</p></details>
+    </div>
+    <div class="calc">
+      <h3>線形探索の比較回数</h3>
+      <p class="formula">最大 = n回 / 平均 = (n+1) ÷ 2 回</p>
+      <p class="q"><strong>例題</strong> 100件のデータを先頭から順に探すとき、平均何回比べるか。</p>
+      <details><summary>解き方を見る</summary><ol><li>(100 + 1) ÷ 2</li></ol><p class="ans">答え: 50.5回(最大は100回)</p></details>
+    </div>
+    <div class="calc">
+      <h3>バブルソートの比較回数</h3>
+      <p class="formula">比較回数 = n(n−1) ÷ 2(どんな並びでも同じ)</p>
+      <p class="q"><strong>例題</strong> 10個のデータをバブルソートで整列するときの比較回数は。</p>
+      <details><summary>解き方を見る</summary><ol><li>10 × 9 ÷ 2</li></ol><p class="ans">答え: 45回</p></details>
+    </div>
+    <div class="calc">
+      <h3>クイックソート・マージソートの比較回数の目安</h3>
+      <p class="formula">平均で約 n × log₂n 回</p>
+      <p class="q"><strong>例題</strong> 1,024個のデータを整列するとき、n log₂n と n(n−1)÷2 を比べよ。</p>
+      <details><summary>解き方を見る</summary><ol><li>log₂1,024 = 10 なので n log₂n = 1,024 × 10 = 10,240</li><li>n(n−1)÷2 = 1,024 × 1,023 ÷ 2 = 523,776</li></ol><p class="ans">答え: 約10,240回(バブルソートの約50分の1)</p></details>
+    </div>
+    <div class="calc">
+      <h3>完全2分木の節点数</h3>
+      <p class="formula">高さh(根を高さ0とする)の完全2分木: 葉 = 2^h 個、全節点 = 2^(h+1) − 1 個</p>
+      <p class="q"><strong>例題</strong> 高さ3の完全2分木の葉の数と、節点の総数は。</p>
+      <details><summary>解き方を見る</summary><ol><li>葉 = 2³ = 8</li><li>全節点 = 2⁴ − 1 = 16 − 1</li></ol><p class="ans">答え: 葉8個、節点15個</p></details>
+    </div>
+    <div class="calc">
+      <h3>ハッシュ法(格納位置の求め方)</h3>
+      <p class="formula">格納位置 = キー mod 表の大きさ。衝突したら次の空きへ進める(開番地法)</p>
+      <p class="q"><strong>例題</strong> 大きさ7の表(位置0〜6)に、キー15、22、8をこの順に格納する。それぞれの位置は。</p>
+      <details><summary>解き方を見る</summary><ol><li>15 mod 7 = 1 → 位置1</li><li>22 mod 7 = 1 → 位置1は使用済みで衝突、次の位置2</li><li>8 mod 7 = 1 → 位置1・2が使用済みで衝突、次の位置3</li></ol><p class="ans">答え: 15は位置1、22は位置2、8は位置3</p></details>
+    </div>
+    <div class="calc">
+      <h3>再帰による階乗</h3>
+      <p class="formula">n! = n × (n−1)!、0! = 1(これ以上呼び出さない条件が必要)</p>
+      <p class="q"><strong>例題</strong> 再帰で 4! を求めるときの値と、関数が呼び出される回数は。</p>
+      <details><summary>解き方を見る</summary><ol><li>f(4) = 4 × f(3)、f(3) = 3 × f(2)、f(2) = 2 × f(1)、f(1) = 1 × f(0)、f(0) = 1</li><li>戻りながら計算: 1 → 1 → 2 → 6 → 24</li><li>呼び出しは f(4) から f(0) までの5回</li></ol><p class="ans">答え: 4! = 24、呼び出しは5回</p></details>
+    </div>
+    <div class="calc">
+      <h3>フィボナッチ数</h3>
+      <p class="formula">F(n) = F(n−1) + F(n−2)、F(0)=0、F(1)=1</p>
+      <p class="q"><strong>例題</strong> F(6) を求めよ。</p>
+      <details><summary>解き方を見る</summary><ol><li>F(0)〜順に: 0, 1, 1, 2, 3, 5, 8</li><li>F(2)=1+0、F(3)=1+1、F(4)=2+1、F(5)=3+2、F(6)=5+3</li></ol><p class="ans">答え: F(6) = 8</p></details>
+    </div>
+    <div class="calc">
+      <h3>スタックとキューの取出し順</h3>
+      <p class="formula">スタック: 後入れ先出し(最後に入れたものから) / キュー: 先入れ先出し(最初に入れたものから)</p>
+      <p class="q"><strong>例題</strong> 1,2,3を順に入れ、1回取り出し、4を入れ、2回取り出す。スタックとキューで、取り出される順と残る値は。</p>
+      <details><summary>解き方を見る</summary><ol><li>スタック: [1,2,3] → 3を取出し → 4を入れて [1,2,4] → 4、2を取出し</li><li>キュー: [1,2,3] → 1を取出し → 4を入れて [2,3,4] → 2、3を取出し</li></ol><p class="ans">答え: スタックは3,4,2の順で残り1、キューは1,2,3の順で残り4</p></details>
+    </div>
+    <div class="calc">
+      <h3>ダイクストラ法(最短経路)</h3>
+      <p class="formula">出発点から近い順に、距離が確定した点を増やし、隣の点の距離を「確定した点までの距離+辺の長さ」で更新する</p>
+      <p class="q"><strong>例題</strong> A−B:4、A−C:2、C−B:1、B−D:5、C−D:8 の道がある。AからDまでの最短距離は。</p>
+      <details><summary>解き方を見る</summary><ol><li>A=0 を確定。B=4、C=2 と暫定</li><li>最小のC=2 を確定。Bは 2+1=3 に更新、Dは 2+8=10</li><li>最小のB=3 を確定。Dは 3+5=8 に更新</li><li>D=8 を確定</li></ol><p class="ans">答え: 8(経路 A→C→B→D)</p></details>
     </div>
   </section>
   <footer class="page-footer">計算例は学習用に独自に作成したものです。</footer>

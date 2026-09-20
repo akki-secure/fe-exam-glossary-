@@ -102,6 +102,43 @@ DATA = [
  ]),
 ]
 
+
+# 「計算のやり方」ページだけに載せる項目(公式の早見表には載せない)
+CALC_ONLY = [
+ ("アルゴリズム", [
+  ("計算量とデータ量の関係", "O(n): データがk倍 → 時間k倍 / O(n²): k²倍 / O(log n): ほとんど増えない",
+   "データ1,000件で2秒かかるO(n²)の処理に、10,000件を与えると何秒かかるか。",
+   ["データ量は 10,000 ÷ 1,000 = 10倍", "O(n²)なので、時間は 10² = 100倍"], "2 × 100 = 200秒"),
+  ("線形探索の比較回数", "最大 = n回 / 平均 = (n+1) ÷ 2 回",
+   "100件のデータを先頭から順に探すとき、平均何回比べるか。",
+   ["(100 + 1) ÷ 2"], "50.5回(最大は100回)"),
+  ("バブルソートの比較回数", "比較回数 = n(n−1) ÷ 2(どんな並びでも同じ)",
+   "10個のデータをバブルソートで整列するときの比較回数は。",
+   ["10 × 9 ÷ 2"], "45回"),
+  ("クイックソート・マージソートの比較回数の目安", "平均で約 n × log₂n 回",
+   "1,024個のデータを整列するとき、n log₂n と n(n−1)÷2 を比べよ。",
+   ["log₂1,024 = 10 なので n log₂n = 1,024 × 10 = 10,240", "n(n−1)÷2 = 1,024 × 1,023 ÷ 2 = 523,776"], "約10,240回(バブルソートの約50分の1)"),
+  ("完全2分木の節点数", "高さh(根を高さ0とする)の完全2分木: 葉 = 2^h 個、全節点 = 2^(h+1) − 1 個",
+   "高さ3の完全2分木の葉の数と、節点の総数は。",
+   ["葉 = 2³ = 8", "全節点 = 2⁴ − 1 = 16 − 1"], "葉8個、節点15個"),
+  ("ハッシュ法(格納位置の求め方)", "格納位置 = キー mod 表の大きさ。衝突したら次の空きへ進める(開番地法)",
+   "大きさ7の表(位置0〜6)に、キー15、22、8をこの順に格納する。それぞれの位置は。",
+   ["15 mod 7 = 1 → 位置1", "22 mod 7 = 1 → 位置1は使用済みで衝突、次の位置2", "8 mod 7 = 1 → 位置1・2が使用済みで衝突、次の位置3"], "15は位置1、22は位置2、8は位置3"),
+  ("再帰による階乗", "n! = n × (n−1)!、0! = 1(これ以上呼び出さない条件が必要)",
+   "再帰で 4! を求めるときの値と、関数が呼び出される回数は。",
+   ["f(4) = 4 × f(3)、f(3) = 3 × f(2)、f(2) = 2 × f(1)、f(1) = 1 × f(0)、f(0) = 1", "戻りながら計算: 1 → 1 → 2 → 6 → 24", "呼び出しは f(4) から f(0) までの5回"], "4! = 24、呼び出しは5回"),
+  ("フィボナッチ数", "F(n) = F(n−1) + F(n−2)、F(0)=0、F(1)=1",
+   "F(6) を求めよ。",
+   ["F(0)〜順に: 0, 1, 1, 2, 3, 5, 8", "F(2)=1+0、F(3)=1+1、F(4)=2+1、F(5)=3+2、F(6)=5+3"], "F(6) = 8"),
+  ("スタックとキューの取出し順", "スタック: 後入れ先出し(最後に入れたものから) / キュー: 先入れ先出し(最初に入れたものから)",
+   "1,2,3を順に入れ、1回取り出し、4を入れ、2回取り出す。スタックとキューで、取り出される順と残る値は。",
+   ["スタック: [1,2,3] → 3を取出し → 4を入れて [1,2,4] → 4、2を取出し", "キュー: [1,2,3] → 1を取出し → 4を入れて [2,3,4] → 2、3を取出し"], "スタックは3,4,2の順で残り1、キューは1,2,3の順で残り4"),
+  ("ダイクストラ法(最短経路)", "出発点から近い順に、距離が確定した点を増やし、隣の点の距離を「確定した点までの距離+辺の長さ」で更新する",
+   "A−B:4、A−C:2、C−B:1、B−D:5、C−D:8 の道がある。AからDまでの最短距離は。",
+   ["A=0 を確定。B=4、C=2 と暫定", "最小のC=2 を確定。Bは 2+1=3 に更新、Dは 2+8=10", "最小のB=3 を確定。Dは 3+5=8 に更新", "D=8 を確定"], "8(経路 A→C→B→D)"),
+ ]),
+]
+
 quiz_css = open(os.path.join(ROOT, "comm-theory-cards.html"), encoding="utf-8").read()
 css = re.search(r"<style>.*?</style>", quiz_css, re.S).group(0).replace("</style>", """
   .calc { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; margin: 0 0 18px; }
@@ -120,12 +157,12 @@ nav = '''  <nav class="page-nav" aria-label="ページ切り替え">
       <span class="nav-sep">|</span>
       <div class="nav-group"><a href="formulas.html">公式の早見表</a></div>
     </nav>'''
-n = sum(len(x[1]) for x in DATA)
+n = sum(len(x[1]) for x in DATA + CALC_ONLY)
 h = ["<title>計算のやり方 — 基本情報技術者試験 用語集</title>", css, '<div class="page">', nav, '  <header class="masthead">',
      '    <p class="breadcrumb">基本情報技術者試験 &gt; 計算問題</p>', '    <h1>計算のやり方</h1>',
      f'    <div class="meta-row"><span class="count-badge">{n} 問</span></div>',
      '    <p class="intro">試験によく出る計算を、公式・例題・解き方の順にまとめました。「解き方を見る」を開く前に、まず自分で解いてみてください。</p>', '  </header>']
-for g, items in DATA:
+for g, items in DATA + CALC_ONLY:
     h += ['  <section class="group">', f'    <p class="group-label">{e(g)}</p>', '    <hr class="group-divider" />']
     for t, f, q, steps, a in items:
         h += ['    <div class="calc">', f'      <h3>{e(t)}</h3>', f'      <p class="formula">{e(f)}</p>', f'      <p class="q"><strong>例題</strong> {e(q)}</p>',
@@ -176,7 +213,7 @@ missing = [t for _, items in DATA for t, *_ in items if t not in HOWTO]
 assert not missing, missing
 h = ["<title>公式の早見表 — 基本情報技術者試験 用語集</title>", fcss, '<div class="page">', fnav, '  <header class="masthead">',
      '    <p class="breadcrumb">基本情報技術者試験 &gt; 計算問題</p>', '    <h1>公式の早見表</h1>',
-     f'    <div class="meta-row"><span class="count-badge">{n} 公式</span></div>',
+     f'    <div class="meta-row"><span class="count-badge">{sum(len(x[1]) for x in DATA)} 公式</span></div>',
      '    <p class="intro">計算に使う公式を、分野ごとに一覧にしました。「やり方」では、公式の使い方と気をつける点を書いています。例題つきの解説は「計算のやり方」のページにあります。</p>', '  </header>']
 for g, items in DATA:
     h += ['  <section class="group">', f'    <p class="group-label">{e(g)}</p>', '    <hr class="group-divider" />', '    <div class="tablewrap"><table class="ftable">',
