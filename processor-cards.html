@@ -1,0 +1,324 @@
+<title>コンピュータ構成要素編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">コンピュータ構成要素編</span>
+        <a href="processor-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="processor-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="algo-cards.html">← 前: アルゴリズムとプログラミング編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="sysconf-cards.html">次 →: システム構成要素編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">コンピュータシステム &gt; コンピュータ構成要素</p>
+    <h1>コンピュータ構成要素編</h1>
+    <div class="meta-row">
+      <span class="count-badge">46 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「コンピュータシステム」の中のコンピュータ構成要素の用語集です。プロセッサ、メモリ、入出力装置、バスまで含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">プロセッサ</p>
+    <p class="group-desc">コンピュータの頭脳にあたる部分に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CPU</dt>
+        <dd class="desc">プログラムの命令を読み取って実行し、コンピュータ全体を制御する装置。中央処理装置ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>制御装置</dt>
+        <dd class="desc">命令を解読して、各装置へ指示を出す装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>演算装置</dt>
+        <dd class="desc">加減算や論理演算などを実際に行う装置。ALUともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レジスタ</dt>
+        <dd class="desc">CPU内部にある、非常に高速で小容量の記憶場所。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プログラムカウンタ</dt>
+        <dd class="desc">次に実行する命令が入っている場所(アドレス)を記憶するレジスタ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>命令レジスタ</dt>
+        <dd class="desc">いま実行しようとしている命令を保持するレジスタ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クロック周波数</dt>
+        <dd class="desc">CPUが動作するタイミングを決める信号の1秒あたりの回数。単位はHz。</dd>
+        <p class="example"><span class="ex-label">例</span>3GHzなら1秒間に30億回のクロックがある。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マルチコア</dt>
+        <dd class="desc">1つのCPUの中に複数の処理装置(コア)を入れた構成。並列処理で速くなる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GPU</dt>
+        <dd class="desc">画像処理など、大量の計算を並列で処理することが得意なプロセッサ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MPU</dt>
+        <dd class="desc">マイクロプロセッサ。CPUの機能を1つのチップに集積したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>命令サイクル</dt>
+        <dd class="desc">命令を取り出し、解読し、実行するという一連の流れ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パイプライン</dt>
+        <dd class="desc">命令の処理をいくつかの段階に分けて、少しずつずらしながら同時に進める方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CISC</dt>
+        <dd class="desc">命令の種類が多く、複雑な命令を持つCPUの設計方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RISC</dt>
+        <dd class="desc">命令を単純なものに絞り、高速に実行するCPUの設計方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CPI</dt>
+        <dd class="desc">1命令の実行にかかる平均クロック数。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MIPS</dt>
+        <dd class="desc">1秒間に実行できる命令数を100万単位で表した性能指標。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">メモリ</p>
+    <p class="group-desc">データやプログラムを記憶する装置に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>主記憶装置</dt>
+        <dd class="desc">CPUが直接読み書きする、プログラムやデータを一時的に置く装置。メインメモリともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>補助記憶装置</dt>
+        <dd class="desc">電源を切っても内容が消えない、大容量の記憶装置。</dd>
+        <p class="example"><span class="ex-label">例</span>HDDやSSD。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAM</dt>
+        <dd class="desc">読み書きができるが、電源を切ると内容が消えるメモリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DRAM</dt>
+        <dd class="desc">コンデンサに電気をためて記憶するRAM。定期的な再書込み(リフレッシュ)が必要で、主記憶に使われる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SRAM</dt>
+        <dd class="desc">フリップフロップ回路で記憶するRAM。高速でリフレッシュ不要だが高価で、キャッシュに使われる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ROM</dt>
+        <dd class="desc">基本的に読出し専用で、電源を切っても内容が消えないメモリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フラッシュメモリ</dt>
+        <dd class="desc">電気的に書換えができ、電源を切っても内容が残るメモリ。</dd>
+        <p class="example"><span class="ex-label">例</span>USBメモリ、SSD。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>キャッシュメモリ</dt>
+        <dd class="desc">CPUと主記憶の速度差を埋めるために置く、高速な小容量メモリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ヒット率</dt>
+        <dd class="desc">必要なデータがキャッシュメモリ内に見つかる割合。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>実効アクセス時間</dt>
+        <dd class="desc">キャッシュのヒット率を考慮した、記憶装置の平均的なアクセス時間。</dd>
+        <p class="example"><span class="ex-label">例</span>キャッシュ10ns・主記憶100ns・ヒット率0.9なら 0.9×10+0.1×100=19ns。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>メモリインタリーブ</dt>
+        <dd class="desc">主記憶を複数に分けて、交互に同時アクセスすることで高速化する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>仮想記憶</dt>
+        <dd class="desc">補助記憶の一部を主記憶のように使い、実際の主記憶より大きな領域を扱えるようにする仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ページング</dt>
+        <dd class="desc">仮想記憶で、記憶領域を固定長の「ページ」に分けて管理する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スラッシング</dt>
+        <dd class="desc">ページの入替えが頻発し、処理がほとんど進まなくなる状態。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">入出力装置・インタフェース</p>
+    <p class="group-desc">周辺機器やそのつなぎ方に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>入力装置</dt>
+        <dd class="desc">コンピュータへデータを入力する装置。</dd>
+        <p class="example"><span class="ex-label">例</span>キーボード、マウス、スキャナ。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>出力装置</dt>
+        <dd class="desc">コンピュータの処理結果を出力する装置。</dd>
+        <p class="example"><span class="ex-label">例</span>ディスプレイ、プリンタ。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>USB</dt>
+        <dd class="desc">パソコンと周辺機器をつなぐ、広く使われている汎用のシリアルインタフェース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HDMI</dt>
+        <dd class="desc">映像と音声を1本のケーブルでデジタル伝送するインタフェース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Bluetooth</dt>
+        <dd class="desc">近距離で機器同士をワイヤレスで接続する通信規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NFC</dt>
+        <dd class="desc">かざすだけで通信する、ごく近距離の無線通信技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SATA</dt>
+        <dd class="desc">HDDやSSDをつなぐためのシリアル方式のインタフェース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DMA</dt>
+        <dd class="desc">CPUを介さず、周辺装置と主記憶の間で直接データを転送する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>割込み</dt>
+        <dd class="desc">実行中の処理を一時中断して、別の処理を優先して実行させる仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バス</dt>
+        <dd class="desc">コンピュータ内部で、データや信号をやり取りするための共通の伝送路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シリアル伝送</dt>
+        <dd class="desc">データを1ビットずつ、順番に送る方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パラレル伝送</dt>
+        <dd class="desc">複数ビットを同時に並べて送る方式。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">入出力の性能</p>
+    <p class="group-desc">装置の性能を表す用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソリッドステートドライブ</dt>
+        <dd class="desc">フラッシュメモリで記憶する補助記憶装置。HDDより高速で衝撃にも強い。SSDともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ハードディスク</dt>
+        <dd class="desc">磁気ディスクを高速回転させ、ヘッドで読み書きする補助記憶装置。HDDともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アクセス時間</dt>
+        <dd class="desc">データの読み書きを指示してから、完了するまでにかかる時間。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データ転送速度</dt>
+        <dd class="desc">1秒間にどれだけのデータを送れるかを表す指標。</dd>
+        <p class="example"><span class="ex-label">例</span>単位はbps。</p>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

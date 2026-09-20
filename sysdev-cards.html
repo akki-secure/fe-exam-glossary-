@@ -1,0 +1,360 @@
+<title>システム開発技術編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">システム開発技術編</span>
+        <a href="sysdev-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="sysdev-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="security-cards.html">← 前: セキュリティ編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="swmgmt-cards.html">次 →: ソフトウェア開発管理技術編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">開発技術 &gt; システム開発技術</p>
+    <h1>システム開発技術編</h1>
+    <div class="meta-row">
+      <span class="count-badge">55 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「開発技術」の中のシステム開発技術の用語集です。開発プロセス、要件定義、設計、テストまで含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">開発プロセス</p>
+    <p class="group-desc">システムを作る流れに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェアライフサイクル</dt>
+        <dd class="desc">ソフトウェアの企画から開発、運用、廃棄までの一生の流れ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ウォータフォールモデル</dt>
+        <dd class="desc">要件定義から順に、滝が流れ落ちるように工程を進める開発モデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロトタイピングモデル</dt>
+        <dd class="desc">試作品を作って利用者に確認してもらい、要件を固めていく開発モデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スパイラルモデル</dt>
+        <dd class="desc">設計・試作・評価を繰り返しながら、少しずつ完成させていく開発モデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アジャイル開発</dt>
+        <dd class="desc">短い期間で、開発とテストを繰り返しながら、変化に柔軟に対応する開発手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スクラム</dt>
+        <dd class="desc">チームで役割を分担し、短い期間(スプリント)ごとに開発を進めるアジャイル手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XP</dt>
+        <dd class="desc">テスト駆動開発やペアプログラミングなどを取り入れたアジャイル手法。エクストリームプログラミングともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DevOps</dt>
+        <dd class="desc">開発チームと運用チームが協力し、開発から運用までを迅速に行う考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>共通フレーム</dt>
+        <dd class="desc">ソフトウェア開発と取引の作業内容を、共通の言葉で整理した枠組み。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">要件定義・設計</p>
+    <p class="group-desc">何を作るかを決め、設計する工程に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>要件定義</dt>
+        <dd class="desc">システムに求める機能や性能を、明確にする工程。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>機能要件</dt>
+        <dd class="desc">システムが備えるべき、機能に関する要件。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>非機能要件</dt>
+        <dd class="desc">性能・信頼性・セキュリティなど、機能以外に求められる要件。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>外部設計</dt>
+        <dd class="desc">利用者から見えるシステムの、画面や帳票などを設計する工程。基本設計ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>内部設計</dt>
+        <dd class="desc">外部設計をもとに、システムの内部の構造を設計する工程。詳細設計ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プログラム設計</dt>
+        <dd class="desc">プログラムの処理の手順や、部品(モジュール)の構造を設計する工程。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モジュール分割</dt>
+        <dd class="desc">プログラムを、機能ごとの小さな部品に分けること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モジュール強度</dt>
+        <dd class="desc">モジュールの内部の結びつきの強さ。強いほうがよい。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モジュール結合度</dt>
+        <dd class="desc">モジュール同士の結びつきの強さ。弱いほうがよい。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DFD</dt>
+        <dd class="desc">データの流れを中心に、システムを表す図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UML</dt>
+        <dd class="desc">オブジェクト指向による設計を表す、標準的な図式の表記法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユースケース図</dt>
+        <dd class="desc">システムと、利用者との関わりを表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クラス図</dt>
+        <dd class="desc">クラスの構造や、クラス同士の関係を表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シーケンス図</dt>
+        <dd class="desc">オブジェクト間のメッセージのやり取りを、時間の順に表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>状態遷移図</dt>
+        <dd class="desc">状態が、どのような条件で移り変わるかを表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>決定表</dt>
+        <dd class="desc">条件と、その結果として行う動作の組合せを、表にまとめたもの。ディシジョンテーブルともいう。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">実装</p>
+    <p class="group-desc">プログラムを作る工程に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーディング</dt>
+        <dd class="desc">設計をもとに、プログラム言語でプログラムを書くこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーディング規約</dt>
+        <dd class="desc">プログラムの書き方について、チームで決めたルール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コードレビュー</dt>
+        <dd class="desc">書かれたプログラムを、他の人が読んで確認すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リファクタリング</dt>
+        <dd class="desc">外部から見た動作を変えずに、プログラムの内部構造を整理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ライブラリ</dt>
+        <dd class="desc">よく使う機能を、部品としてまとめたプログラムの集まり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>API</dt>
+        <dd class="desc">ソフトウェアの機能を、他のプログラムから利用するための決まり事。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フレームワーク</dt>
+        <dd class="desc">アプリケーション開発の、土台となる骨組みを提供するソフトウェア。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">テスト</p>
+    <p class="group-desc">正しく動くかを確かめる工程に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>単体テスト</dt>
+        <dd class="desc">モジュールなど、プログラムの最小単位ごとに行うテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>結合テスト</dt>
+        <dd class="desc">複数のモジュールを組み合わせて、連携が正しく動くか確かめるテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システムテスト</dt>
+        <dd class="desc">システム全体が、要件どおりに動くか確かめるテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>運用テスト</dt>
+        <dd class="desc">実際の運用に近い環境で、利用者が動作を確かめるテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>受入れテスト</dt>
+        <dd class="desc">発注者が、納品されたシステムが要件を満たすか確かめるテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブラックボックステスト</dt>
+        <dd class="desc">内部の構造は気にせず、入力と出力だけを確かめるテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ホワイトボックステスト</dt>
+        <dd class="desc">プログラムの内部の構造を見て、処理経路を網羅して確かめるテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>同値分割</dt>
+        <dd class="desc">入力値を、同じ結果になるグループに分けて、代表値でテストする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>限界値分析</dt>
+        <dd class="desc">範囲の境目の値(限界値)を選んでテストする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>命令網羅</dt>
+        <dd class="desc">すべての命令を、少なくとも1回は実行するテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>判定条件網羅</dt>
+        <dd class="desc">判定条件の結果が、真と偽の両方になるようにするテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>条件網羅</dt>
+        <dd class="desc">判定を構成する個々の条件が、真と偽の両方になるようにするテスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>トップダウンテスト</dt>
+        <dd class="desc">上位のモジュールから順にテストする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ボトムアップテスト</dt>
+        <dd class="desc">下位のモジュールから順にテストする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スタブ</dt>
+        <dd class="desc">テスト対象から呼ばれる、下位モジュールの代わりになる仮のモジュール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ドライバ</dt>
+        <dd class="desc">テスト対象を呼び出す、上位モジュールの代わりになる仮のモジュール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>回帰テスト</dt>
+        <dd class="desc">プログラムを修正した後、他の部分に悪影響が出ていないか確かめるテスト。リグレッションテストともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デバッグ</dt>
+        <dd class="desc">プログラムの誤り(バグ)を見つけて、修正すること。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">保守・運用</p>
+    <p class="group-desc">完成後の工程に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>保守</dt>
+        <dd class="desc">運用が始まった後に、不具合の修正や機能の改善を行うこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア保守</dt>
+        <dd class="desc">ソフトウェアを、環境の変化や要望に合わせて修正すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リバースエンジニアリング</dt>
+        <dd class="desc">完成した製品を分析して、設計や仕様を調べること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>移行</dt>
+        <dd class="desc">新しいシステムへ、データや運用を切り替えること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>並行運用</dt>
+        <dd class="desc">新旧のシステムを、同時に動かして切り替える移行方法。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

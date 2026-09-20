@@ -1,0 +1,162 @@
+<title>アルゴリズムとプログラミング編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">アルゴリズムとプログラミング編</span>
+        <a href="algo-cards.html">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="algo-quiz.html" aria-current="page">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="comm-theory-quiz.html">← 前: 通信理論編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="processor-quiz.html">次 →: コンピュータ構成要素編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">基礎理論 &gt; アルゴリズムとプログラミング &gt; 穴埋め問題</p>
+    <h1>アルゴリズムとプログラミング編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">51 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+  <section class="group">
+    <p class="group-label">データ構造</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ型のデータを連続して並べ、番号(添字)で取り出せるようにしたデータ構造。a[0]、a[1]、a[2]…のように番号で要素を指定する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを鎖のようにつなげて並べたデータ構造。各要素が次の要素の位置(ポインタ)を持つ。途中への挿入・削除がポインタのつなぎ替えだけで済む。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>最後に入れたデータを最初に取り出す(後入れ先出し、LIFO)データ構造。積み重ねた皿は、最後に置いた皿から取る。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>最初に入れたデータを最初に取り出す(先入れ先出し、FIFO)データ構造。レジの行列は、先に並んだ人から順に会計する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>根(ルート)から枝分かれして葉へ向かう階層的なデータ構造。フォルダの階層構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>各節点の子が最大2つの木構造。左の子と右の子がある。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>左の子は親より小さく、右の子は親より大きくなるよう作った二分木。探索が速い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>親が子より常に小さい(または大きい)という決まりを持つ木構造。最大・最小値をすぐ取り出せる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データが記憶されている場所(アドレス)を指し示す値。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">アルゴリズム</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>問題を解決するための手順や計算方法のこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>先頭から順番に1つずつ比べて、目的のデータを探す方法。10個なら最悪10回、n個なら最悪n回比べる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>整列済みのデータの真ん中と比べ、探索範囲を半分ずつに絞っていく探索方法。1000個でも約10回で見つかる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データからハッシュ関数で格納位置を計算し、すばやく格納・探索する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ハッシュ法で、異なるデータが同じ格納位置に計算されてしまうこと。シノニムともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>隣り合う要素を比べて入れ替えを繰り返し、大きい値を端へ押し出していく整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>未整列部分から最小値を選んで先頭と入れ替えることを繰り返す整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>未整列の要素を、整列済み部分の正しい位置に挿入していく整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>基準値(ピボット)を決め、それより小さいグループと大きいグループに分けながら整列する高速な整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを半分ずつに分けて整列し、整列済みの列を併合(マージ)していく整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ヒープを作り、最大(最小)値を順に取り出して整列する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関数が自分自身を呼び出して処理を進める方法。階乗n!を n×(n-1)! として計算する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アルゴリズムの実行にかかる時間や記憶量を、データ量nの関数として表したもの。O(n)のように書く。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">プログラミング</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを一時的に記憶しておく名前付きの入れ物。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの実行中に値が変わらないデータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ひとまとまりの処理に名前を付け、何度でも呼び出せるようにしたもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関数を呼び出すときに渡す値。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関数が処理を終えたあと、呼び出し元に返す値。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>条件が成り立つかどうかで、実行する処理を切り替える制御構造。if文。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ処理を、条件を満たす間、何度も繰り返す制御構造。for文、while文。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>上から順に処理を実行する、基本的な制御構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>順次・選択・繰返しの3つの構造だけでプログラムを組み立てる考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理の流れを、図形と矢印で表した図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>試験で使われる、プログラム言語に近い形でアルゴリズムを書く表記法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを1行ずつ追って、変数の値がどう変わるかを確かめること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関数へ変数の値のコピーを渡す方法。関数内で変えても元の値は変わらない。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関数へ変数の場所(アドレス)を渡す方法。関数内で変えると元の値も変わる。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">プログラム言語</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースプログラムを、まとめて機械語へ翻訳するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースプログラムを1行ずつ解釈しながら実行するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アセンブリ言語のプログラムを機械語へ翻訳するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>CPUが直接理解して実行できる、0と1で表された命令。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データと処理をまとめた「オブジェクト」を組み合わせてプログラムを作る考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクトの設計図。データ(属性)と処理(メソッド)を定義する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスをもとに実際に作られたオブジェクト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>既存のクラスの性質を引き継いで、新しいクラスを作ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データと処理をひとまとめにして、内部の詳細を外から隠すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ命令を送っても、オブジェクトの種類によって違う動作をする性質。多相性ともいう。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">マークアップ言語</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webページの構造を記述するマークアップ言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が独自のタグを定義できる、汎用のマークアップ言語。&lt;name&gt;山田&lt;/name&gt;のようにデータの意味をタグで表す。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「名前:値」の組でデータを表す軽量なデータ記述形式。Webの通信でよく使われる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>HTMLで作った文書の見た目(色・配置など)を指定する言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webブラウザ上でページに動きをつけるために使われるスクリプト言語。</p>
+    </div>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

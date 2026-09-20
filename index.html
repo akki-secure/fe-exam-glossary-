@@ -1,0 +1,98 @@
+<title>目次 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+  a { color: var(--accent); }
+</style>
+<div class="page">
+  <header class="masthead">
+    <p class="breadcrumb">fe-exam-glossary</p>
+    <h1>基本情報技術者試験 用語集</h1>
+    <div class="meta-row"><span class="count-badge">1049 語</span><span class="source-note">カード形式・穴埋め形式の2種類</span></div>
+  </header>
+  <section class="group"><p class="group-label">基礎理論</p><hr class="group-divider" /><div class="term-list">
+    <p class="term-line"><span class="bullet">・</span><strong>離散数学編</strong>(34語) <span class="arrow">→</span><a href="discrete-math-cards.html">カード</a> / <a href="discrete-math-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>応用数学編</strong>(70語) <span class="arrow">→</span><a href="applied-math-cards.html">カード</a> / <a href="applied-math-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>情報理論編</strong>(62語) <span class="arrow">→</span><a href="info-theory-cards.html">カード</a> / <a href="info-theory-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>通信理論編</strong>(22語) <span class="arrow">→</span><a href="comm-theory-cards.html">カード</a> / <a href="comm-theory-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>アルゴリズムとプログラミング編</strong>(51語) <span class="arrow">→</span><a href="algo-cards.html">カード</a> / <a href="algo-quiz.html">穴埋め</a></p>
+  </div></section>
+  <section class="group"><p class="group-label">コンピュータシステム</p><hr class="group-divider" /><div class="term-list">
+    <p class="term-line"><span class="bullet">・</span><strong>コンピュータ構成要素編</strong>(46語) <span class="arrow">→</span><a href="processor-cards.html">カード</a> / <a href="processor-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>システム構成要素編</strong>(43語) <span class="arrow">→</span><a href="sysconf-cards.html">カード</a> / <a href="sysconf-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>ソフトウェア編</strong>(43語) <span class="arrow">→</span><a href="software-cards.html">カード</a> / <a href="software-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>ハードウェア編</strong>(41語) <span class="arrow">→</span><a href="hardware-cards.html">カード</a> / <a href="hardware-quiz.html">穴埋め</a></p>
+  </div></section>
+  <section class="group"><p class="group-label">技術要素</p><hr class="group-divider" /><div class="term-list">
+    <p class="term-line"><span class="bullet">・</span><strong>ユーザーインタフェース・情報メディア編</strong>(49語) <span class="arrow">→</span><a href="ui-media-cards.html">カード</a> / <a href="ui-media-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>データベース編</strong>(60語) <span class="arrow">→</span><a href="database-cards.html">カード</a> / <a href="database-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>ネットワーク編</strong>(61語) <span class="arrow">→</span><a href="network-cards.html">カード</a> / <a href="network-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>セキュリティ編</strong>(77語) <span class="arrow">→</span><a href="security-cards.html">カード</a> / <a href="security-quiz.html">穴埋め</a></p>
+  </div></section>
+  <section class="group"><p class="group-label">開発技術</p><hr class="group-divider" /><div class="term-list">
+    <p class="term-line"><span class="bullet">・</span><strong>システム開発技術編</strong>(55語) <span class="arrow">→</span><a href="sysdev-cards.html">カード</a> / <a href="sysdev-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>ソフトウェア開発管理技術編</strong>(40語) <span class="arrow">→</span><a href="swmgmt-cards.html">カード</a> / <a href="swmgmt-quiz.html">穴埋め</a></p>
+  </div></section>
+  <section class="group"><p class="group-label">マネジメント</p><hr class="group-divider" /><div class="term-list">
+    <p class="term-line"><span class="bullet">・</span><strong>プロジェクトマネジメント編</strong>(51語) <span class="arrow">→</span><a href="project-cards.html">カード</a> / <a href="project-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>サービスマネジメント編</strong>(42語) <span class="arrow">→</span><a href="service-cards.html">カード</a> / <a href="service-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>システム監査編</strong>(32語) <span class="arrow">→</span><a href="audit-cards.html">カード</a> / <a href="audit-quiz.html">穴埋め</a></p>
+  </div></section>
+  <section class="group"><p class="group-label">ストラテジ</p><hr class="group-divider" /><div class="term-list">
+    <p class="term-line"><span class="bullet">・</span><strong>システム戦略編</strong>(44語) <span class="arrow">→</span><a href="sys-strategy-cards.html">カード</a> / <a href="sys-strategy-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>経営戦略編</strong>(51語) <span class="arrow">→</span><a href="biz-strategy-cards.html">カード</a> / <a href="biz-strategy-quiz.html">穴埋め</a></p>
+    <p class="term-line"><span class="bullet">・</span><strong>企業活動と法務編</strong>(75語) <span class="arrow">→</span><a href="corp-legal-cards.html">カード</a> / <a href="corp-legal-quiz.html">穴埋め</a></p>
+  </div></section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

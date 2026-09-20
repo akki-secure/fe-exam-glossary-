@@ -1,0 +1,302 @@
+<title>サービスマネジメント編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">サービスマネジメント編</span>
+        <a href="service-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="service-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="project-cards.html">← 前: プロジェクトマネジメント編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="audit-cards.html">次 →: システム監査編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">マネジメント &gt; サービスマネジメント</p>
+    <h1>サービスマネジメント編</h1>
+    <div class="meta-row">
+      <span class="count-badge">42 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「マネジメント」の中のサービスマネジメントの用語集です。運用管理、サービスの管理、ファシリティの管理まで含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">サービスマネジメントの基本</p>
+    <p class="group-desc">ITサービスの考え方に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サービスマネジメント</dt>
+        <dd class="desc">ITサービスを、顧客の求める品質で継続的に提供するための管理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ITIL</dt>
+        <dd class="desc">ITサービスマネジメントの、成功事例をまとめたガイドライン。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ISO/IEC 20000</dt>
+        <dd class="desc">ITサービスマネジメントの、国際規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サービスデスク</dt>
+        <dd class="desc">利用者からの問合せや要望の窓口となる部署。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SLA</dt>
+        <dd class="desc">サービスの内容や品質の水準を、提供者と利用者の間で取り決めた合意。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SLM</dt>
+        <dd class="desc">SLAに基づいて、サービスの品質を維持・改善する活動。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サービスカタログ</dt>
+        <dd class="desc">提供するサービスの内容を、利用者が分かるようにまとめた一覧。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サービスレベル</dt>
+        <dd class="desc">提供するサービスの品質の水準。</dd>
+        <p class="example"><span class="ex-label">例</span>稼働率99.9%以上など。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サービスの継続</dt>
+        <dd class="desc">災害などが起きても、サービスを止めないための取組み。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">サービスの運用</p>
+    <p class="group-desc">日々の運用に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インシデント</dt>
+        <dd class="desc">サービスの中断や品質の低下など、通常の運用を妨げる出来事。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インシデント管理</dt>
+        <dd class="desc">インシデントから、できるだけ早くサービスを復旧させるための管理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>問題管理</dt>
+        <dd class="desc">インシデントの根本の原因を突き止めて、再発を防ぐための管理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>変更管理</dt>
+        <dd class="desc">サービスへの変更が、安全に行われるように管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リリース管理</dt>
+        <dd class="desc">変更したものを、本番環境へ展開する作業を管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>構成管理</dt>
+        <dd class="desc">サービスを構成する機器やソフトウェアの情報を管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CMDB</dt>
+        <dd class="desc">サービスの構成要素と、その関係の情報を蓄積したデータベース。構成管理データベースともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>キャパシティ管理</dt>
+        <dd class="desc">必要な処理能力を予測し、資源を適切に用意すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>可用性管理</dt>
+        <dd class="desc">サービスが、必要なときに利用できるように管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ITサービス継続性管理</dt>
+        <dd class="desc">災害や大きな障害の時にも、サービスを継続、または早期復旧できるようにする管理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>セキュリティ管理</dt>
+        <dd class="desc">サービスに関する、情報セキュリティを管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サービス要求</dt>
+        <dd class="desc">利用者からの、情報提供や設定変更などの依頼。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>根本原因</dt>
+        <dd class="desc">問題が起きた、本当の原因。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>恒久対策</dt>
+        <dd class="desc">問題を、根本から解決するための対策。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>暫定対策</dt>
+        <dd class="desc">一時的に、影響を抑えるための対策。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">システムの運用</p>
+    <p class="group-desc">システムを動かす作業に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システム運用</dt>
+        <dd class="desc">システムを、安定して動かし続けるための日々の作業。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>運用管理</dt>
+        <dd class="desc">システムの運用を、計画的に管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ジョブ運用</dt>
+        <dd class="desc">バッチ処理などのジョブを、計画的に実行・管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バッチ処理</dt>
+        <dd class="desc">データをある程度まとめて、一括して処理する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オンライン処理</dt>
+        <dd class="desc">利用者の要求に応じて、その場で即座に処理する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>監視</dt>
+        <dd class="desc">システムの稼働状況や、障害の有無を常に確認すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>運用手順書</dt>
+        <dd class="desc">運用の作業を、誰が行っても同じようにできるよう、手順を記したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バックアップ運用</dt>
+        <dd class="desc">データを、定期的に複製して保管する運用。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ヘルプデスク</dt>
+        <dd class="desc">利用者の、問合せなどに対応する窓口。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ログ</dt>
+        <dd class="desc">システムの動作や利用の状況を、記録したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オペレーション</dt>
+        <dd class="desc">システムの操作や、運用の作業。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">ファシリティマネジメント</p>
+    <p class="group-desc">設備や環境の管理に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ファシリティマネジメント</dt>
+        <dd class="desc">建物や設備などの施設を、最適な状態で維持・管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データセンタ</dt>
+        <dd class="desc">多数のサーバやネットワーク機器を、専用の施設で管理する拠点。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UPS</dt>
+        <dd class="desc">停電時などに、一時的に電力を供給し続ける無停電電源装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自家発電装置</dt>
+        <dd class="desc">停電が長引いたときに、電気を作り出す装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>入退室管理</dt>
+        <dd class="desc">建物や部屋への、人の出入りを管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>耐震・免震</dt>
+        <dd class="desc">地震の揺れに耐える、または揺れを建物に伝えにくくする構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>空調管理</dt>
+        <dd class="desc">機器の熱による障害を防ぐため、温度や湿度を適切に保つこと。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

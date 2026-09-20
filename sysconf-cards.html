@@ -1,0 +1,317 @@
+<title>システム構成要素編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">システム構成要素編</span>
+        <a href="sysconf-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="sysconf-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="processor-cards.html">← 前: コンピュータ構成要素編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="software-cards.html">次 →: ソフトウェア編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">コンピュータシステム &gt; システム構成要素</p>
+    <h1>システム構成要素編</h1>
+    <div class="meta-row">
+      <span class="count-badge">43 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「コンピュータシステム」の中のシステム構成要素の用語集です。システムの構成、信頼性、性能まで含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">システムの構成</p>
+    <p class="group-desc">コンピュータをどう組み合わせて使うかに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シンプレックスシステム</dt>
+        <dd class="desc">1系統のシステムだけで処理を行う最も基本的な構成。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デュプレックスシステム</dt>
+        <dd class="desc">同じシステムを2系統用意し、1つを予備にしておく構成。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デュアルシステム</dt>
+        <dd class="desc">2系統のシステムで同じ処理を同時に行い、結果を照合する構成。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ホットスタンバイ</dt>
+        <dd class="desc">予備系を常時稼働状態で待機させ、障害時にすぐ切り替える方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コールドスタンバイ</dt>
+        <dd class="desc">予備系を停止しておき、障害時に起動して切り替える方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クラスタリング</dt>
+        <dd class="desc">複数のコンピュータを連携させ、1台のシステムのように動かす方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>負荷分散</dt>
+        <dd class="desc">処理を複数のコンピュータに振り分けて、1台への集中を避ける仕組み。ロードバランシングともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>集中処理</dt>
+        <dd class="desc">1台の大きなコンピュータで、すべての処理をまとめて行う形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>分散処理</dt>
+        <dd class="desc">複数のコンピュータに処理を分担させる形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クライアントサーバシステム</dt>
+        <dd class="desc">サービスを頼む側(クライアント)と、提供する側(サーバ)に役割を分けたシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Webシステム</dt>
+        <dd class="desc">Webブラウザを使って利用するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>仮想化</dt>
+        <dd class="desc">1台のコンピュータの上に、複数の仮想的なコンピュータを作る技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クラウドコンピューティング</dt>
+        <dd class="desc">インターネット経由で、必要な分だけコンピュータ資源をサービスとして利用する形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SaaS</dt>
+        <dd class="desc">ソフトウェアの機能をインターネット経由で提供するクラウドサービス。</dd>
+        <p class="example"><span class="ex-label">例</span>Web上のメールサービス。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PaaS</dt>
+        <dd class="desc">アプリケーションを動かすための環境(基盤)をインターネット経由で提供するサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IaaS</dt>
+        <dd class="desc">サーバやネットワークなどのインフラをインターネット経由で提供するサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>エッジコンピューティング</dt>
+        <dd class="desc">データの発生源の近くで処理を行い、通信の遅延や負荷を減らす方式。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">信頼性</p>
+    <p class="group-desc">システムがどれだけ安定して動き続けるかに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>稼働率</dt>
+        <dd class="desc">システムが正常に動いている時間の割合。</dd>
+        <p class="example"><span class="ex-label">例</span>MTBF÷(MTBF+MTTR)で求める。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MTBF</dt>
+        <dd class="desc">故障から次の故障までの平均時間。長いほど信頼性が高い。平均故障間隔ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MTTR</dt>
+        <dd class="desc">故障してから修理が終わるまでの平均時間。短いほど保守性が高い。平均修復時間ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>直列システムの稼働率</dt>
+        <dd class="desc">すべての装置が動いていないと全体が動かない構成の稼働率。各装置の稼働率をかけ算する。</dd>
+        <p class="example"><span class="ex-label">例</span>0.9と0.9なら 0.9×0.9=0.81。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>並列システムの稼働率</dt>
+        <dd class="desc">どれか1台が動けば全体が動く構成の稼働率。1−(各故障率のかけ算)で求める。</dd>
+        <p class="example"><span class="ex-label">例</span>0.9と0.9なら 1−0.1×0.1=0.99。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フェールセーフ</dt>
+        <dd class="desc">故障が起きたとき、安全な方向へ動作させる設計の考え方。</dd>
+        <p class="example"><span class="ex-label">例</span>信号機が故障したら全方向を赤にする。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フェールソフト</dt>
+        <dd class="desc">故障が起きたとき、機能を絞ってでも運転を続ける設計の考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フォールトトレラント</dt>
+        <dd class="desc">一部が故障してもシステム全体は止まらないようにする設計の考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フールプルーフ</dt>
+        <dd class="desc">利用者が誤った操作をしても、危険な状態にならないようにする設計の考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バスタブ曲線</dt>
+        <dd class="desc">機器の故障率が、初期・偶発・摩耗の時期で変化する様子を表した曲線。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAS</dt>
+        <dd class="desc">信頼性・可用性・保守性の頭文字を取った、システムの評価の観点。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RASIS</dt>
+        <dd class="desc">RASに、保全性・完全性を加えたシステムの評価の観点。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">RAID</p>
+    <p class="group-desc">複数のディスクを組み合わせて使う技術に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID</dt>
+        <dd class="desc">複数のハードディスクを1つのように扱って、信頼性や性能を高める技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID0</dt>
+        <dd class="desc">データを複数のディスクに分散して書き込む方式。高速だが冗長性はない。ストライピングともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID1</dt>
+        <dd class="desc">同じデータを2つのディスクに書き込む方式。1台が壊れても平気。ミラーリングともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID5</dt>
+        <dd class="desc">パリティ(誤り訂正情報)を分散して記録する方式。1台が壊れても復旧できる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID6</dt>
+        <dd class="desc">パリティを2種類記録する方式。2台が同時に壊れても復旧できる。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">性能</p>
+    <p class="group-desc">システムの処理能力に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スループット</dt>
+        <dd class="desc">単位時間あたりに処理できる仕事の量。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レスポンスタイム</dt>
+        <dd class="desc">処理を依頼してから、結果の返答が始まるまでの時間。応答時間ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ターンアラウンドタイム</dt>
+        <dd class="desc">処理を依頼してから、すべての結果が返ってくるまでの時間。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ベンチマーク</dt>
+        <dd class="desc">標準的なプログラムを実行して、コンピュータの性能を測る方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ボトルネック</dt>
+        <dd class="desc">システム全体の性能を制限している、処理の遅い部分。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>キャパシティプランニング</dt>
+        <dd class="desc">将来の利用量を予測して、必要な処理能力を計画すること。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">システムの経済性</p>
+    <p class="group-desc">システムにかかる費用に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TCO</dt>
+        <dd class="desc">システムの導入から運用、廃棄までにかかる総費用。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>イニシャルコスト</dt>
+        <dd class="desc">システムの導入時にかかる初期費用。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ランニングコスト</dt>
+        <dd class="desc">システムの運用にかかり続ける費用。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

@@ -1,0 +1,395 @@
+<title>ネットワーク編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">ネットワーク編</span>
+        <a href="network-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="network-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="database-cards.html">← 前: データベース編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="security-cards.html">次 →: セキュリティ編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">技術要素 &gt; ネットワーク</p>
+    <h1>ネットワーク編</h1>
+    <div class="meta-row">
+      <span class="count-badge">61 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「技術要素」の中のネットワークの用語集です。ネットワークの方式、通信プロトコル、インターネット、電子メールまで含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">ネットワークの種類・構成</p>
+    <p class="group-desc">ネットワークの形や範囲に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>LAN</dt>
+        <dd class="desc">同じ建物や敷地内など、狭い範囲のネットワーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>WAN</dt>
+        <dd class="desc">離れた場所のLAN同士を結ぶ、広い範囲のネットワーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バス型</dt>
+        <dd class="desc">1本の共通の通信線に、すべての機器をつなぐ接続形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スター型</dt>
+        <dd class="desc">中心の機器から、各機器へ放射状につなぐ接続形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リング型</dt>
+        <dd class="desc">機器を輪の形につなぐ接続形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>メッシュ型</dt>
+        <dd class="desc">機器同士を網の目のようにつなぐ接続形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>イーサネット</dt>
+        <dd class="desc">LANで最も広く使われている、有線の通信規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>無線LAN</dt>
+        <dd class="desc">電波を使って、ケーブルなしで接続するLAN。Wi-Fiともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>VPN</dt>
+        <dd class="desc">インターネットなどの公衆網上に、暗号化などで専用線のような安全な通信路を作る技術。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">ネットワーク機器</p>
+    <p class="group-desc">ネットワークをつくる機器に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リピータ</dt>
+        <dd class="desc">信号が弱くなるのを防ぐため、増幅して中継する装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ハブ</dt>
+        <dd class="desc">複数の機器をつなぐ、集線装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スイッチングハブ</dt>
+        <dd class="desc">宛先のMACアドレスを見て、必要なポートにだけデータを送るハブ。L2スイッチともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブリッジ</dt>
+        <dd class="desc">2つのLANをつなぐ装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ルータ</dt>
+        <dd class="desc">異なるネットワーク間で、IPアドレスをもとにデータの経路を決めて中継する装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>L3スイッチ</dt>
+        <dd class="desc">ルータの機能を高速化した、IPアドレスを見て転送するスイッチ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ゲートウェイ</dt>
+        <dd class="desc">プロトコルが異なるネットワーク同士を、変換してつなぐ装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アクセスポイント</dt>
+        <dd class="desc">無線LANの機器と、有線LANをつなぐ装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ファイアウォール</dt>
+        <dd class="desc">外部と内部のネットワークの間で、通信を制限して守る仕組み。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">プロトコル・OSI参照モデル</p>
+    <p class="group-desc">通信のルールに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロトコル</dt>
+        <dd class="desc">通信をするときの、約束事や手順。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OSI参照モデル</dt>
+        <dd class="desc">通信機能を、7つの階層に分けて整理したモデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>物理層</dt>
+        <dd class="desc">OSI参照モデルの第1層。ケーブルや電気信号など、物理的な伝送を扱う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データリンク層</dt>
+        <dd class="desc">OSI参照モデルの第2層。隣接する機器同士で、データを正しく届けることを扱う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ネットワーク層</dt>
+        <dd class="desc">OSI参照モデルの第3層。宛先までの経路選択を扱う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>トランスポート層</dt>
+        <dd class="desc">OSI参照モデルの第4層。端末同士のデータ転送の信頼性を扱う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>セション層</dt>
+        <dd class="desc">OSI参照モデルの第5層。通信の開始から終了までの管理を扱う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プレゼンテーション層</dt>
+        <dd class="desc">OSI参照モデルの第6層。データの表現形式の変換を扱う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アプリケーション層</dt>
+        <dd class="desc">OSI参照モデルの第7層。アプリケーションのための通信サービスを扱う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TCP/IP</dt>
+        <dd class="desc">インターネットで使われている、通信プロトコルの集まり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TCP</dt>
+        <dd class="desc">通信の信頼性を確保する、コネクション型のトランスポート層のプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UDP</dt>
+        <dd class="desc">信頼性は保証しないが、高速に送れる、コネクションレス型のプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IP</dt>
+        <dd class="desc">宛先のIPアドレスへ、データを届けるためのプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ARP</dt>
+        <dd class="desc">IPアドレスから、MACアドレスを調べるプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ICMP</dt>
+        <dd class="desc">ネットワークの状態確認やエラー通知を行うプロトコル。</dd>
+        <p class="example"><span class="ex-label">例</span>pingコマンドで使われる。</p>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">アドレス</p>
+    <p class="group-desc">機器を識別する番号に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MACアドレス</dt>
+        <dd class="desc">ネットワーク機器に、あらかじめ割り当てられている固有の識別番号。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IPアドレス</dt>
+        <dd class="desc">ネットワーク上の機器を識別する番号。</dd>
+        <p class="example"><span class="ex-label">例</span>192.168.1.10。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IPv4</dt>
+        <dd class="desc">32ビットのIPアドレスを使うバージョン。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IPv6</dt>
+        <dd class="desc">128ビットのIPアドレスを使うバージョン。アドレスの不足に対応している。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サブネットマスク</dt>
+        <dd class="desc">IPアドレスの、ネットワーク部とホスト部を区別するための数値。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プライベートIPアドレス</dt>
+        <dd class="desc">組織内のネットワークだけで使える、自由に割り当てられるIPアドレス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>グローバルIPアドレス</dt>
+        <dd class="desc">インターネット上で使える、世界で重複しないIPアドレス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NAT</dt>
+        <dd class="desc">プライベートIPアドレスとグローバルIPアドレスを、相互に変換する技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DHCP</dt>
+        <dd class="desc">ネットワークに接続した機器に、IPアドレスなどを自動的に割り当てるプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DNS</dt>
+        <dd class="desc">ドメイン名と、IPアドレスとを対応させる仕組み。</dd>
+        <p class="example"><span class="ex-label">例</span>www.example.comをIPアドレスに変換する。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ポート番号</dt>
+        <dd class="desc">1台の機器の中で、どのアプリケーションと通信するかを指定する番号。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">インターネットのサービス</p>
+    <p class="group-desc">インターネットで使われるサービスに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HTTP</dt>
+        <dd class="desc">Webサーバと、Webブラウザの間で、データをやり取りするためのプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HTTPS</dt>
+        <dd class="desc">HTTPに、暗号化の仕組み(TLS)を加えた、安全なプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>URL</dt>
+        <dd class="desc">インターネット上の情報の場所を示す文字列。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>FTP</dt>
+        <dd class="desc">ファイルを転送するためのプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SMTP</dt>
+        <dd class="desc">電子メールを送信するときに使うプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>POP3</dt>
+        <dd class="desc">メールサーバから、自分のパソコンへメールを受信するときに使うプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IMAP4</dt>
+        <dd class="desc">メールをサーバに置いたまま、閲覧・管理するためのプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MIME</dt>
+        <dd class="desc">電子メールで、日本語や画像など、文字以外も送れるようにする規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Webサーバ</dt>
+        <dd class="desc">Webページのデータを、Webブラウザの要求に応じて送るサーバ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロキシサーバ</dt>
+        <dd class="desc">内部のパソコンに代わって、外部のWebサーバにアクセスする中継サーバ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NTP</dt>
+        <dd class="desc">ネットワークを通じて、機器の時刻を合わせるプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SSH</dt>
+        <dd class="desc">ネットワーク経由で、他のコンピュータを安全に遠隔操作するためのプロトコル。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">通信の性能</p>
+    <p class="group-desc">通信の速さに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>bps</dt>
+        <dd class="desc">1秒間に送れるビット数を表す、通信速度の単位。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>回線利用率</dt>
+        <dd class="desc">回線の伝送能力のうち、実際に使われている割合。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>伝送時間</dt>
+        <dd class="desc">データを送り終えるまでにかかる時間。</dd>
+        <p class="example"><span class="ex-label">例</span>データ量÷(回線速度×回線利用率)で求める。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>帯域幅</dt>
+        <dd class="desc">通信回線で、一度に送れるデータの量の上限。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>遅延</dt>
+        <dd class="desc">データを送信してから、受信されるまでの遅れ。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

@@ -1,0 +1,254 @@
+<title>システム監査編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">システム監査編</span>
+        <a href="audit-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="audit-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="service-cards.html">← 前: サービスマネジメント編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="sys-strategy-cards.html">次 →: システム戦略編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">マネジメント &gt; システム監査</p>
+    <h1>システム監査編</h1>
+    <div class="meta-row">
+      <span class="count-badge">32 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「マネジメント」の中のシステム監査の用語集です。システム監査の考え方、監査の進め方、内部統制まで含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">システム監査の基本</p>
+    <p class="group-desc">システム監査の考え方に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システム監査</dt>
+        <dd class="desc">情報システムを、独立した立場から点検・評価し、改善を助言・勧告する活動。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システム監査人</dt>
+        <dd class="desc">システム監査を行う人。監査の対象からは、独立した立場をとる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>被監査部門</dt>
+        <dd class="desc">システム監査を受ける、対象の部門。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>監査対象</dt>
+        <dd class="desc">システム監査で、点検・評価される対象。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システム監査基準</dt>
+        <dd class="desc">システム監査を行う際の、判断の基準となる規範。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システム管理基準</dt>
+        <dd class="desc">システムの管理について、あるべき状態を示した基準。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>独立性</dt>
+        <dd class="desc">監査人が、監査の対象から独立して、公正に判断できる状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>客観性</dt>
+        <dd class="desc">個人の主観に左右されず、事実にもとづいて判断すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>外部監査</dt>
+        <dd class="desc">組織の外部の人が行う監査。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>内部監査</dt>
+        <dd class="desc">組織の内部の人が行う監査。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">監査の進め方</p>
+    <p class="group-desc">監査の流れに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>監査計画</dt>
+        <dd class="desc">監査の目的や範囲、日程などを定めた計画。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>予備調査</dt>
+        <dd class="desc">監査の対象について、事前に概要を調べること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>本調査</dt>
+        <dd class="desc">監査の対象について、実際に証拠を集めて確認する調査。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>監査証拠</dt>
+        <dd class="desc">監査の結論の根拠となる、事実や資料。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>監査調書</dt>
+        <dd class="desc">監査の作業の内容や、結果を記録した書類。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>監査報告書</dt>
+        <dd class="desc">監査の結果と、結論をまとめた報告書。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フォローアップ</dt>
+        <dd class="desc">監査の指摘事項が、改善されたかを確認すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ヒアリング</dt>
+        <dd class="desc">関係者に質問して、情報を集める調査の方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>チェックリスト法</dt>
+        <dd class="desc">確認すべき項目の一覧に基づいて、点検を行う方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>現地調査</dt>
+        <dd class="desc">実際に現場へ行って、状況を確認する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>突合</dt>
+        <dd class="desc">複数の資料を、照らし合わせて内容が合っているか確認すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>監査手続</dt>
+        <dd class="desc">監査証拠を得るために行う、具体的な手順。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">内部統制</p>
+    <p class="group-desc">組織が適切に運営されるための仕組みに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>内部統制</dt>
+        <dd class="desc">組織が、業務を適正に行うために、組織内に構築する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IT統制</dt>
+        <dd class="desc">内部統制のうち、情報システムに関する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>全般統制</dt>
+        <dd class="desc">システム全体に関わる、開発や運用などの基盤の統制。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>業務処理統制</dt>
+        <dd class="desc">個別の業務で、処理が正しく行われるようにするための統制。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>職務分掌</dt>
+        <dd class="desc">業務を分け、担当者ごとに責任や権限を明確にすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>相互牽制</dt>
+        <dd class="desc">複数の人が、お互いをチェックして不正やミスを防ぐこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>承認</dt>
+        <dd class="desc">上位の権限を持つ者が、内容を確認して認めること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーポレートガバナンス</dt>
+        <dd class="desc">企業の経営を、適切に監視し、統制する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ITガバナンス</dt>
+        <dd class="desc">経営者が、ITの活用を適切に統制する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>J-SOX法</dt>
+        <dd class="desc">上場企業に、財務報告に関する内部統制の整備と評価・報告を求める法律の通称。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

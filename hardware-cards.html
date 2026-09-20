@@ -1,0 +1,298 @@
+<title>ハードウェア編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">ハードウェア編</span>
+        <a href="hardware-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="hardware-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="software-cards.html">← 前: ソフトウェア編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="ui-media-cards.html">次 →: ユーザーインタフェース・情報メディア編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">コンピュータシステム &gt; ハードウェア</p>
+    <h1>ハードウェア編</h1>
+    <div class="meta-row">
+      <span class="count-badge">41 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「コンピュータシステム」の中のハードウェアの用語集です。論理回路、組込みシステム、入出力デバイスまで含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">論理回路</p>
+    <p class="group-desc">論理演算を電子回路で実現する部品に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>論理回路</dt>
+        <dd class="desc">0と1の信号を使って、論理演算を行う電子回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ANDゲート</dt>
+        <dd class="desc">入力がすべて1のときだけ、1を出力する回路。論理積回路ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ORゲート</dt>
+        <dd class="desc">入力のどれかが1のとき、1を出力する回路。論理和回路ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NOTゲート</dt>
+        <dd class="desc">入力を反転させて出力する回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NANDゲート</dt>
+        <dd class="desc">ANDの結果を反転させて出力する回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NORゲート</dt>
+        <dd class="desc">ORの結果を反転させて出力する回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XORゲート</dt>
+        <dd class="desc">入力が異なるときだけ、1を出力する回路。排他的論理和回路ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>半加算器</dt>
+        <dd class="desc">1ビット同士の足し算を行い、和と桁上がりを出力する回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>全加算器</dt>
+        <dd class="desc">下の桁からの桁上がりも含めて、1ビット同士の足し算を行う回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フリップフロップ</dt>
+        <dd class="desc">1ビットの情報を記憶できる回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>組合せ回路</dt>
+        <dd class="desc">出力が、現在の入力だけで決まる論理回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>順序回路</dt>
+        <dd class="desc">出力が、現在の入力と過去の状態の両方で決まる論理回路。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">組込みシステム</p>
+    <p class="group-desc">機器の中に組み込まれて動くシステムに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>組込みシステム</dt>
+        <dd class="desc">家電や自動車などの機器に組み込まれ、その機器を制御するコンピュータシステム。</dd>
+        <p class="example"><span class="ex-label">例</span>炊飯器、エアコン、自動車のエンジン制御。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ファームウェア</dt>
+        <dd class="desc">機器に組み込まれた、基本的な制御を行うソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リアルタイムシステム</dt>
+        <dd class="desc">決められた時間内に、必ず処理を完了させなければならないシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リアルタイムOS</dt>
+        <dd class="desc">時間制約を守れるように設計された、組込み機器向けのOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マイコン</dt>
+        <dd class="desc">1つのチップに、CPU・メモリ・入出力機能をまとめた小さなコンピュータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SoC</dt>
+        <dd class="desc">1つのチップの上に、システムに必要な機能をまとめて載せた集積回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>FPGA</dt>
+        <dd class="desc">購入後に、利用者が回路の構成を書き換えられる集積回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ASIC</dt>
+        <dd class="desc">特定の用途のために設計・製造する集積回路。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ウォッチドッグタイマ</dt>
+        <dd class="desc">プログラムの暴走を検出するため、一定時間ごとにリセットの合図を確認するタイマ。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">センサ・アクチュエータ</p>
+    <p class="group-desc">外界の情報を取り込み、動かす装置に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>センサ</dt>
+        <dd class="desc">温度・光・圧力などの物理的な量を、電気信号に変換する装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アクチュエータ</dt>
+        <dd class="desc">電気信号を、モータなどの物理的な動きに変換する装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>A/D変換</dt>
+        <dd class="desc">アナログ信号をデジタル信号に変換すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>D/A変換</dt>
+        <dd class="desc">デジタル信号をアナログ信号に変換すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>標本化</dt>
+        <dd class="desc">アナログ信号を、一定の間隔で取り出すこと。サンプリングともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>量子化</dt>
+        <dd class="desc">標本化で取り出した値を、整数などの段階的な値に丸めること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>符号化</dt>
+        <dd class="desc">量子化した値を、2進数のデータに変換すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IoT</dt>
+        <dd class="desc">さまざまな「モノ」がインターネットにつながり、情報をやり取りする仕組み。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">入出力デバイス</p>
+    <p class="group-desc">装置の仕組みに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>液晶ディスプレイ</dt>
+        <dd class="desc">液晶に電圧をかけて光の通り方を制御し、映像を表示する装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>有機ELディスプレイ</dt>
+        <dd class="desc">自ら発光する素子を使って、映像を表示する装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>タッチパネル</dt>
+        <dd class="desc">画面に触れた位置を検出して、入力を行う装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>解像度</dt>
+        <dd class="desc">画像の細かさを表す指標。ピクセル(画素)の数で表す。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>dpi</dt>
+        <dd class="desc">1インチあたりの点(ドット)の数を表す、解像度の単位。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プリンタ</dt>
+        <dd class="desc">コンピュータのデータを、紙に印刷して出力する装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インクジェットプリンタ</dt>
+        <dd class="desc">細かいインクの粒を吹き付けて印刷するプリンタ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レーザプリンタ</dt>
+        <dd class="desc">レーザ光とトナーを使って印刷するプリンタ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロッタ</dt>
+        <dd class="desc">ペンを動かして、図面などを描く装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OCR</dt>
+        <dd class="desc">紙に書かれた文字を読み取って、文字データに変換する技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バーコードリーダ</dt>
+        <dd class="desc">バーコードを光で読み取る装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>QRコード</dt>
+        <dd class="desc">縦横に情報を持つ、2次元コード。バーコードより多くの情報を記録できる。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

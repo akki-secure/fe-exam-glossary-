@@ -1,0 +1,294 @@
+<title>ソフトウェア開発管理技術編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">ソフトウェア開発管理技術編</span>
+        <a href="swmgmt-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="swmgmt-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="sysdev-cards.html">← 前: システム開発技術編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="project-cards.html">次 →: プロジェクトマネジメント編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">開発技術 &gt; ソフトウェア開発管理技術</p>
+    <h1>ソフトウェア開発管理技術編</h1>
+    <div class="meta-row">
+      <span class="count-badge">40 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「開発技術」の中のソフトウェア開発管理技術の用語集です。開発環境の管理、開発の進め方、品質管理まで含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">開発環境の管理</p>
+    <p class="group-desc">開発のための道具や資産の管理に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>構成管理</dt>
+        <dd class="desc">ソフトウェアの構成要素(ソースやドキュメントなど)を、一貫して管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>変更管理</dt>
+        <dd class="desc">ソフトウェアへの変更を、決められた手続きで管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バージョン管理</dt>
+        <dd class="desc">ファイルの変更履歴を記録し、過去の状態を取り出せるようにすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リポジトリ</dt>
+        <dd class="desc">ソースコードなどの資産と、その変更履歴を保管する場所。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Git</dt>
+        <dd class="desc">分散型のバージョン管理システム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブランチ</dt>
+        <dd class="desc">開発の流れを分けて、並行して作業できるようにする仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マージ</dt>
+        <dd class="desc">分かれたブランチの変更を、1つにまとめること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CI</dt>
+        <dd class="desc">ソースが変更されるたびに、自動でビルドやテストを行う開発手法。継続的インテグレーションともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CD</dt>
+        <dd class="desc">テストを通ったソフトウェアを、自動的にリリースまで行う手法。継続的デリバリともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ビルド</dt>
+        <dd class="desc">ソースコードから、実行できる形のプログラムを作ること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>統合開発環境</dt>
+        <dd class="desc">エディタやデバッガなどの開発道具を、まとめて使えるようにしたソフトウェア。IDEともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CASEツール</dt>
+        <dd class="desc">ソフトウェア開発の作業を、コンピュータで支援するツールの総称。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">開発手法・レビュー</p>
+    <p class="group-desc">開発の進め方や確認に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェアレビュー</dt>
+        <dd class="desc">開発の成果物を、関係者で確認し、誤りを早期に発見する活動。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ウォークスルー</dt>
+        <dd class="desc">作成者が、関係者に成果物を説明しながら、誤りを指摘してもらうレビュー。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インスペクション</dt>
+        <dd class="desc">専門の検査者が、決まった手順で厳格に行うレビュー。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ペアプログラミング</dt>
+        <dd class="desc">2人1組で、1台のコンピュータを使ってプログラムを書く手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>テスト駆動開発</dt>
+        <dd class="desc">先にテストを書き、それを通るようにプログラムを作る開発手法。TDDともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DevSecOps</dt>
+        <dd class="desc">開発と運用に加えて、セキュリティも最初から組み込む考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア再利用</dt>
+        <dd class="desc">すでにある部品や設計を、別の開発に使い回すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェアパッケージ</dt>
+        <dd class="desc">完成した状態で、販売されているソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンポーネント</dt>
+        <dd class="desc">再利用しやすい単位にまとめた、ソフトウェアの部品。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">品質管理</p>
+    <p class="group-desc">ソフトウェアの品質に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア品質</dt>
+        <dd class="desc">ソフトウェアが、利用者の要求を満たしている度合い。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>機能性</dt>
+        <dd class="desc">ソフトウェアが、必要な機能を備えているかどうかという品質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>信頼性</dt>
+        <dd class="desc">ソフトウェアが、安定して動き続けるかという品質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>使用性</dt>
+        <dd class="desc">利用者にとって、使いやすいかという品質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>効率性</dt>
+        <dd class="desc">資源や時間を、無駄なく使えるかという品質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>保守性</dt>
+        <dd class="desc">修正や改良が、しやすいかという品質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>移植性</dt>
+        <dd class="desc">別の環境へ移しても、動かしやすいかという品質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ISO/IEC 25010</dt>
+        <dd class="desc">ソフトウェアの品質を、評価するための国際規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>品質保証</dt>
+        <dd class="desc">製品が、要求された品質を満たすことを、保証するための活動。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>品質管理</dt>
+        <dd class="desc">品質を、目標どおりに保つための活動。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バグ管理図</dt>
+        <dd class="desc">発見したバグの累積数を、時間の経過に沿って表したグラフ。信頼度成長曲線の目安にする。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バグ密度</dt>
+        <dd class="desc">プログラムの規模あたりの、バグの数。</dd>
+        <p class="example"><span class="ex-label">例</span>1,000行あたり5件など。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェアメトリクス</dt>
+        <dd class="desc">ソフトウェアの規模や品質を、数値で測るための尺度。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ステップ数</dt>
+        <dd class="desc">プログラムの、命令の行数。ソフトウェアの規模を表す指標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ファンクションポイント法</dt>
+        <dd class="desc">機能の数と複雑さから、ソフトウェアの規模を見積もる方法。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">開発の知的財産</p>
+    <p class="group-desc">ソフトウェアの権利に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>著作権</dt>
+        <dd class="desc">プログラムなどを作った人に、自動的に生じる権利。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ライセンス</dt>
+        <dd class="desc">ソフトウェアの、利用を許諾する契約や条件。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フリーソフトウェア</dt>
+        <dd class="desc">無料で使えるソフトウェア。著作権は放棄されていない。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シェアウェア</dt>
+        <dd class="desc">試用期間の後、気に入れば代金を支払って使うソフトウェア。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

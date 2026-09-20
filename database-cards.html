@@ -1,0 +1,383 @@
+<title>データベース編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">データベース編</span>
+        <a href="database-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="database-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="ui-media-cards.html">← 前: ユーザーインタフェース・情報メディア編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="network-cards.html">次 →: ネットワーク編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">技術要素 &gt; データベース</p>
+    <h1>データベース編</h1>
+    <div class="meta-row">
+      <span class="count-badge">60 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「技術要素」の中のデータベースの用語集です。データベース設計、操作、トランザクション管理まで含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">データベースの基本</p>
+    <p class="group-desc">データベースの仕組みに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データベース</dt>
+        <dd class="desc">複数のデータを整理して蓄積し、必要なときに取り出しやすくしたもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DBMS</dt>
+        <dd class="desc">データベースを管理し、検索や更新などを行うソフトウェア。データベース管理システムともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>階層型データベース</dt>
+        <dd class="desc">データを、木構造(親と子の関係)で管理するデータベース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ネットワーク型データベース</dt>
+        <dd class="desc">データ同士を、網の目のように複雑な関係で結ぶデータベース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>関係データベース</dt>
+        <dd class="desc">データを、表(テーブル)の形で管理するデータベース。RDBともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NoSQL</dt>
+        <dd class="desc">表形式にこだわらず、大量のデータを高速に扱うことを重視したデータベースの総称。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>テーブル</dt>
+        <dd class="desc">関係データベースで、データを行と列で並べた表。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レコード</dt>
+        <dd class="desc">テーブルの1行にあたる、データのまとまり。行ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フィールド</dt>
+        <dd class="desc">テーブルの1列にあたる、項目。列、属性ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スキーマ</dt>
+        <dd class="desc">データベースの構造(どんな項目があるか)を定義したもの。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">データベース設計</p>
+    <p class="group-desc">データベースの作り方に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データモデル</dt>
+        <dd class="desc">現実の物事を、データベースで扱える形に整理したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>E-R図</dt>
+        <dd class="desc">物(エンティティ)と、その関連(リレーションシップ)を図で表したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>エンティティ</dt>
+        <dd class="desc">データベースで管理する対象。</dd>
+        <p class="example"><span class="ex-label">例</span>社員、商品、顧客。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リレーションシップ</dt>
+        <dd class="desc">エンティティ同士の関連。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>主キー</dt>
+        <dd class="desc">テーブルの中で、1つのレコードを一意に決められる項目。重複も空(ヌル)も許されない。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>外部キー</dt>
+        <dd class="desc">他のテーブルの主キーを参照する項目。テーブル同士をつなぐ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>候補キー</dt>
+        <dd class="desc">主キーになる資格のある項目(の組)。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>複合キー</dt>
+        <dd class="desc">複数の項目を組み合わせて、1つのキーにしたもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NULL</dt>
+        <dd class="desc">値が入っていない、「不明」や「未設定」を表す特別な値。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>正規化</dt>
+        <dd class="desc">データの重複や矛盾が起きないように、テーブルを分割して整理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>第1正規形</dt>
+        <dd class="desc">1つの欄に複数の値が入っている(繰返し項目)状態をなくした形。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>第2正規形</dt>
+        <dd class="desc">主キーの一部だけで決まる項目を、別のテーブルへ分けた形。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>第3正規形</dt>
+        <dd class="desc">主キー以外の項目で決まる項目を、別のテーブルへ分けた形。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>参照制約</dt>
+        <dd class="desc">外部キーの値が、必ず参照先の主キーに存在するように守るルール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インデックス</dt>
+        <dd class="desc">検索を速くするために、データの場所を記録した索引。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ビュー</dt>
+        <dd class="desc">1つ以上のテーブルから作る、見せ方だけを定義した仮想的な表。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">データ操作</p>
+    <p class="group-desc">データベースの操作に関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SQL</dt>
+        <dd class="desc">関係データベースを操作するための言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SELECT</dt>
+        <dd class="desc">テーブルからデータを取り出す(検索する)SQL文。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>INSERT</dt>
+        <dd class="desc">テーブルに、新しいレコードを追加するSQL文。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UPDATE</dt>
+        <dd class="desc">テーブルの、既存のレコードの値を変更するSQL文。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DELETE</dt>
+        <dd class="desc">テーブルから、レコードを削除するSQL文。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>WHERE句</dt>
+        <dd class="desc">SELECTなどで、対象とするレコードの条件を指定する部分。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GROUP BY句</dt>
+        <dd class="desc">指定した項目の値ごとに、レコードをグループにまとめる部分。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ORDER BY句</dt>
+        <dd class="desc">結果を、指定した項目の順に並べ替える部分。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>集合関数</dt>
+        <dd class="desc">合計や平均など、複数のレコードから1つの値を求める関数。</dd>
+        <p class="example"><span class="ex-label">例</span>SUM、AVG、COUNT、MAX、MIN。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>結合</dt>
+        <dd class="desc">複数のテーブルを、共通の項目でつなげて1つの表にする操作。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>射影</dt>
+        <dd class="desc">テーブルから、必要な列だけを取り出す操作。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>選択</dt>
+        <dd class="desc">テーブルから、条件に合う行だけを取り出す操作。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>副問合せ</dt>
+        <dd class="desc">SQL文の中に、別のSELECT文を入れて使うこと。サブクエリともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CREATE TABLE</dt>
+        <dd class="desc">新しいテーブルを作成するSQL文。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">トランザクション管理</p>
+    <p class="group-desc">データの整合性を守る仕組みに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>トランザクション</dt>
+        <dd class="desc">データベースに対する、ひとまとまりの処理の単位。</dd>
+        <p class="example"><span class="ex-label">例</span>銀行振込は「引出し」と「預入れ」が1組。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コミット</dt>
+        <dd class="desc">トランザクションの処理を確定し、変更を反映させること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロールバック</dt>
+        <dd class="desc">トランザクションの処理を取り消して、開始前の状態に戻すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ACID特性</dt>
+        <dd class="desc">トランザクションが備えるべき、原子性・一貫性・独立性・耐久性の性質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>原子性</dt>
+        <dd class="desc">トランザクションの処理が、すべて実行されるか、まったく実行されないかのどちらかであること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>一貫性</dt>
+        <dd class="desc">トランザクションの前後で、データの整合性が保たれること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>独立性</dt>
+        <dd class="desc">同時に実行しても、互いの処理が影響しないこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>耐久性</dt>
+        <dd class="desc">コミットした結果が、障害が起きても失われないこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>排他制御</dt>
+        <dd class="desc">同じデータを同時に更新しないよう、順番に処理させる制御。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>共有ロック</dt>
+        <dd class="desc">他の処理が読むことは許すが、更新を許さないロック。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>専有ロック</dt>
+        <dd class="desc">他の処理の読み書きを、すべて許さないロック。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デッドロック</dt>
+        <dd class="desc">お互いが相手のロックの解除を待ち続け、処理が進まなくなる状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ログファイル</dt>
+        <dd class="desc">データベースの更新履歴を記録したファイル。障害からの復旧に使う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロールフォワード</dt>
+        <dd class="desc">障害の後、バックアップにログを適用して、障害直前の状態まで復旧すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>チェックポイント</dt>
+        <dd class="desc">メモリ上のデータをディスクへ書き出し、復旧の基準点を作る仕組み。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">データ分析</p>
+    <p class="group-desc">大量のデータを活用する仕組みに関する用語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データウェアハウス</dt>
+        <dd class="desc">意思決定のために、各システムのデータを集めて時系列に整理した大規模なデータベース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データマイニング</dt>
+        <dd class="desc">大量のデータから、有用な規則や傾向を見つけ出す技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ビッグデータ</dt>
+        <dd class="desc">従来の方法では扱いきれない、大量で多様なデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>テキストマイニング</dt>
+        <dd class="desc">文章のデータから、有用な情報を取り出す技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BI</dt>
+        <dd class="desc">企業のデータを分析して、経営の意思決定に役立てる手法。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>
