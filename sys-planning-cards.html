@@ -1,0 +1,304 @@
+<title>システム企画編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">システム企画編</span>
+        <a href="sys-planning-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="sys-planning-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="sys-strategy-cards.html">← 前: システム戦略編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="biz-strategy-cards.html">次 →: 経営戦略マネジメント編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">システム企画</p>
+    <h1>システム企画編</h1>
+    <div class="meta-row">
+      <span class="count-badge">45 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「システム企画」分野の用語集です。システム化計画、要件定義、調達計画・実施を含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">システム化計画</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システム最適化手法</dt>
+        <dd class="desc">システムを、効率的で、無駄がないように、整える手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システム化構想の共有</dt>
+        <dd class="desc">システム化の、方向性を、関係者の間で、共有すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システムデザイン</dt>
+        <dd class="desc">システムの、全体の設計や、利用の体験を、設計すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BABOK</dt>
+        <dd class="desc">ビジネスアナリシスの、知識を、体系的にまとめた、ガイド。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SoR</dt>
+        <dd class="desc">企業の、業務データを、正確に記録・管理するための、システム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SoE</dt>
+        <dd class="desc">顧客との、つながりや、体験を重視する、システム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SoI</dt>
+        <dd class="desc">データを、分析して、洞察を得るための、システム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Fit to Standard</dt>
+        <dd class="desc">独自に作り込まず、標準の機能に、業務を合わせて、導入する考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>全体システム化計画</dt>
+        <dd class="desc">組織全体の、システム化の方向性と、計画を、まとめたもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>個別システム化計画</dt>
+        <dd class="desc">個別の、システムについて、具体的に、システム化を計画したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システム適用範囲</dt>
+        <dd class="desc">システム化の、対象とする、業務や組織の範囲。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>全体開発スケジュール</dt>
+        <dd class="desc">システム開発の、全体の日程。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロジェクト推進体制</dt>
+        <dd class="desc">プロジェクトを、進めるための、体制。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>要員教育計画</dt>
+        <dd class="desc">システムの、開発や運用に関わる人員の、教育の計画。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>開発投資対効果</dt>
+        <dd class="desc">システム開発への、投資に対して、得られる効果。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ITポートフォリオ</dt>
+        <dd class="desc">IT投資を、種類ごとに、分類して、全体のバランスを考える手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システムライフサイクル</dt>
+        <dd class="desc">システムの、企画から、廃棄までの、一生の流れ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報システム導入リスク分析</dt>
+        <dd class="desc">システムの導入に、伴うリスクを、洗い出して、分析すること。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">要件定義</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユーザーニーズ調査</dt>
+        <dd class="desc">利用者の、要望や、必要としているものを、調べること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>現状分析</dt>
+        <dd class="desc">現状の、業務やシステムを、調べて、問題点を明らかにすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>課題定義</dt>
+        <dd class="desc">分析した、問題点を、整理して、解決すべき課題を、明確にすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>要求仕様書</dt>
+        <dd class="desc">システムに、求める機能や、性能をまとめた文書。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アンケート</dt>
+        <dd class="desc">質問を書いた、用紙などで、多くの人の、意見を集める調査方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インタビュー</dt>
+        <dd class="desc">関係者に、直接質問して、意見や要望を、聞き出す調査方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DFD</dt>
+        <dd class="desc">データの流れを中心に、システムを表す図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デシジョンテーブル</dt>
+        <dd class="desc">条件と、動作の、組合せを、表にまとめたもの。決定表。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UML</dt>
+        <dd class="desc">オブジェクト指向による設計を表す、標準的な図式の表記法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DOA</dt>
+        <dd class="desc">業務の、データに着目して、システムを設計する考え方。データ中心アプローチ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ステークホルダ</dt>
+        <dd class="desc">プロジェクトに関わる、利害関係者。</dd>
+        <p class="example"><span class="ex-label">例</span>顧客、経営者、開発メンバー。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ファシリテーション</dt>
+        <dd class="desc">会議などで、参加者の、意見を、引き出し、まとめる、進行役の技術。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">調達計画・実施</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>内外作基準</dt>
+        <dd class="desc">開発を、自社で行うか、外部に委託するかを、判断する基準。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェアのサプライチェーンマネジメント</dt>
+        <dd class="desc">ソフトウェアの、部品や、外部由来の要素の供給元まで含めて、管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ライセンス管理</dt>
+        <dd class="desc">ソフトウェアの、ライセンスを、把握し、適切に管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RFI</dt>
+        <dd class="desc">調達の前に、ベンダに、技術や製品に関する情報の提供を依頼する文書。情報提供依頼書ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RFP</dt>
+        <dd class="desc">ベンダに、システムの提案を依頼するための文書。提案依頼書ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RFQ</dt>
+        <dd class="desc">ベンダに、価格や、納期などの、見積りを依頼する文書。見積依頼書。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>企画競争入札</dt>
+        <dd class="desc">価格だけでなく、提案の内容も、評価して、契約の相手を選ぶ方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>一般競争入札</dt>
+        <dd class="desc">条件を満たす、誰もが参加できる、入札で、最も有利な条件の者と契約する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア開発委託モデル契約</dt>
+        <dd class="desc">ソフトウェア開発を、委託する際の、契約の、ひな形。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報システム・モデル取引・契約書</dt>
+        <dd class="desc">情報システムの、取引についての、標準的な契約書のひな形。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>準委任契約</dt>
+        <dd class="desc">作業を行うことを目的とし、成果物の完成は責任を負わない契約。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>請負契約</dt>
+        <dd class="desc">完成した成果物に対して、報酬が支払われる契約。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>知的財産権利用許諾契約</dt>
+        <dd class="desc">知的財産権を、利用することを、許諾する契約。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア使用許諾契約</dt>
+        <dd class="desc">ソフトウェアの、使用を許諾する、契約。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ライセンス契約</dt>
+        <dd class="desc">知的財産の、利用を許諾する、契約。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

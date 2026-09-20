@@ -1,0 +1,283 @@
+<title>ソフトウェア編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">ソフトウェア編</span>
+        <a href="software-cards.html">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="software-quiz.html" aria-current="page">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="sysconf-quiz.html">← 前: システム構成要素編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="hardware-quiz.html">次 →: ハードウェア編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">ソフトウェア &gt; 穴埋め問題</p>
+    <h1>ソフトウェア編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">172 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+  <section class="group">
+    <p class="group-label">オペレーティングシステム</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ハードウェアを管理し、アプリケーションが動く土台となる基本ソフトウェア。Windows、macOS、Linux。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータを動かすための、基本的な機能を提供するソフトウェア。OSやミドルウェアなど。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>多くの利用者が同時に使える、歴史のあるOS。LinuxやmacOSに影響を与えた。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>パソコンで使われるOS。Windows、macOS、Linux。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>スマートフォンやタブレットで使われるOS。Android、iOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>仕様やソースコードが公開されていて、自由に利用・改変できるOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>時間制約を守れるように設計された、組込み機器向けのOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>強制的なアクセス制御などで、セキュリティを高めたOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラウド環境での、仮想化や大規模な運用に向けて作られたOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>カーネルの機能を、最小限に絞り、他の機能はカーネルの外で動かす構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSの主要な機能を、カーネルの中に、まとめて入れた構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSとアプリケーションの間に入って、共通の機能を提供するソフトウェア。データベース管理システム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSが、すべての資源や命令に、アクセスできる実行の状態。特権モードともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アプリケーションが、制限された範囲で動作する実行の状態。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースプログラムを、まとめて機械語へ翻訳するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSに付属する、ファイル管理や整列などの、便利な機能を持つプログラム。ユーティリティともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プロセスの生成、実行、終了を、管理するOSの機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの運用を、計画的に管理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実行中の処理を一時中断して、別の処理を優先して実行させる仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のプログラムを、主記憶に置いて、切り替えながら実行する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>電源投入後、OSを、主記憶に読み込んで起動する仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ネットワーク経由で、OSを読み込んで起動する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1台のコンピュータに、複数のOSを入れ、起動時に選べるようにする方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>フラッシュメモリに格納された、OSの起動を行う小さなプログラム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ジョブ(仕事のまとまり)の実行順序や流れを管理するOSの機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ジョブの実行順序や、実行するタイミングを、管理するプログラム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ジョブスケジューラーの働きを、全体として制御するプログラム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データをある程度まとめて、一括して処理する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実行中のプログラム。OSが資源を割り当てて管理する単位。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プロセスの中で並行して動く、より小さな処理の流れ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理の実行順序や、CPUの割当てを、決めること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のプログラムを、切り替えながら同時に動かすこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実行中のタスクからCPUを取り上げて、他のタスクへ切り替えられる方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実行中のタスクが、自分から終わるか待ち状態になるまで、CPUを取り上げない方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>決まった時間ごとに、CPUを割り当てるタスクを、切り替える方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>タスクに付けた優先度が、高い順に実行する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>一定時間ごとに、順番にCPUを割り当てていく方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ラウンドロビン方式で、1つのタスクに割り当てる、CPUの使用時間。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実行可能状態のタスクにCPUを割り当てること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入出力を、CPUに代わって制御する、専用の装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入出力が完了したときに、CPUへ通知する割込み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>補助記憶に退避していたプログラムを、主記憶に戻すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>主記憶のプログラムを、補助記憶へ退避させること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>補助記憶から、主記憶へ、プログラムを読み込むこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>主記憶から、補助記憶へ、プログラムを追い出すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>大きなプログラムを、分割して、必要な部分だけを、同じ主記憶領域に順に読み込んで実行する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>使われなくなったメモリ領域を、自動的に見つけて回収する機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>細切れになった、空き領域を、1か所にまとめて、まとまった領域にする処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>補助記憶の一部を主記憶のように使い、実際の主記憶より大きな領域を扱えるようにする仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ベースアドレスに、相対アドレスを足して、実際のアドレスを求める方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを、意味のあるまとまり(セグメント)に分けて、管理する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>セグメント方式と、ページング方式を、組み合わせた方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ページの入替えが頻発し、処理がほとんど進まなくなる状態。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの実行時に、仮想アドレスを、実アドレスへ変換する仕組み。DATともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>必要なページが、主記憶になく、補助記憶から読み込む必要が生じる事象。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>主記憶がいっぱいのとき、追い出すページを選んで、入れ替えること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>最も長い間使われていない、ページを追い出す方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>最初に読み込まれた、ページから追い出す方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>通信のための、規約(プロトコル)を実行する、OSの機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>通信を行うための、取り決め。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネットで使われている、通信プロトコルの集まり。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>通信機能を、7つの階層に分けて整理した、国際標準のモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ建物や敷地内など、狭い範囲のネットワーク。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>離れた場所のLAN同士を結ぶ、広い範囲のネットワーク。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者ごとの、設定や環境の情報。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを利用するための、利用者の登録情報。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを利用してよいと認められた、権利。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ファイルを、読む・書く・実行する、ことを許可する権限。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムのすべてを管理できる、最高権限を持つ利用者。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>UNIX系OSの、スーパーユーザーのアカウント名。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Windowsの、管理者権限を持つアカウント。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>一時的な利用者として、限られた権限で使うアカウント。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの設定変更や、ユーザー管理など、管理のための権限。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ユーザー情報などが、階層的に保存されたディレクトリサービスに、アクセスするためのプロトコル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの利用状況などを、ログとして記録する機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの利用状況を、監査のために記録・分析する機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>誰が、いつ、何をしたかを、後から追跡できること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSが、安全なものとして、実行を認めたプロセス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害が起きたとき、故障した部分を切り離し、残りの資源で構成し直すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害後に、処理を最初、または途中から再開すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>機器の故障などが、原因で起きる障害。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの誤りなどが、原因で起きる障害。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">ミドルウェア</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>異なるアプリケーション同士を、つないで、データや処理を連携させるソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースを管理し、検索や更新などを行うソフトウェア。データベース管理システムともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>通信回線や、端末の管理を行うソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの開発作業を、支援するためのツールの総称。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの運用を、支援するためのツールの総称。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>トランザクション処理を、管理・制御するミドルウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者の命令を受け取り、OSに伝えるプログラム。コマンドインタプリタともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力された命令(コマンド)を解釈して、実行するプログラム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアの機能を、他のプログラムから利用するための決まり事。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースプログラムを、保管しておく場所。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンパイル済みの、オブジェクトプログラムを、保管しておく場所。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実行可能な、ロードモジュールを、保管しておく場所。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実行時に、必要なときにだけ、読み込んで使う、共有のプログラム部品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>よく使うクラスを、部品としてまとめたライブラリ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>再利用しやすい単位にまとめた、ソフトウェアの部品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Javaで作った、再利用できるソフトウェア部品の仕様。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>異なる言語や環境のオブジェクト同士を、ネットワークを通じて連携させる技術の規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Javaのプログラムを、部品(モジュール)として動的に組み込む仕組みの規格。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">ファイルシステム</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ルートディレクトリから目的のファイルまでを、すべて書いた指定方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>現在いる場所(カレントディレクトリ)を起点にして、目的のファイルを指定する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ファイルの場所など、目的のものを、見つけるための情報。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>別のファイルやディレクトリを指し示す、特殊なファイル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ファイルなどへ、すばやくアクセスするための、参照。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ファイルやコマンドなどに付けた、別名。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>階層構造の最上位にあるディレクトリ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>いま作業の基準となっているディレクトリ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ファイルなどを、探し出す方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>古くから使われている、簡易なファイルシステム。USBメモリなどに使われる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Windowsで使われている、セキュリティ機能などを備えたファイルシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ファイルシステムが、管理する記憶領域の、まとまり。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、先頭から順番に読み書きする方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>目的のデータへ、直接アクセスして読み書きする方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>状況に応じて、順次アクセスと直接アクセスを、切り替える方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ファイルの、割り当てられた領域に入りきらなかったデータを、置く領域。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>バックアップを、複数の世代にわたって、保管する管理方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>バックアップを、複数の場所や媒体に、保管すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>すべてのデータを丸ごとバックアップする方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>前回のフルバックアップからの変更分だけをバックアップする方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>前回のバックアップからの変更分だけをバックアップする方法。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">開発ツール</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>エディタやデバッガなどを、まとめて使える、統合開発環境。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの設計作業を、支援するツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>設計を行うための、ツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを、組み立て(ビルド)て、実行できる形にするツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ほとんどコードを書かずに、アプリケーションを作れる開発ツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>まったくコードを書かずに、アプリケーションを作れる開発ツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>開発に使う複数のツールを、連携させて、一連の作業を行えるようにしたもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者自身が、情報システムを構築し、活用すること。エンドユーザーコンピューティングの略。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、自分でプログラムなどを作り、システムを開発すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>あるコンピュータの動作を、別のコンピュータ上で、そっくり再現するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実際の動作を、模擬的に、再現するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>組込みシステムの開発で、実機の動作を、解析するための装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの実行の経過を、追跡して記録するツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの内部状態を、調べるツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある時点の、システムやデータの状態を、そのまま記録したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムが、想定した条件を満たしているかを、実行中に確認するツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードなどの変更履歴を管理するツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アセンブリ言語のプログラムを機械語へ翻訳するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースプログラムを1行ずつ解釈しながら実行するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のオブジェクトプログラムを、つなぎ合わせて、実行可能にするプログラム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実行するプログラムを、主記憶に読み込むプログラム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの実行中に、機械語へ変換(コンパイル)するコンパイラ。JITコンパイラともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>動作する環境とは、別の環境向けの、機械語を生成するコンパイラ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>指定した条件などから、プログラムなどを自動で生成するツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンパイルの前に、ソースプログラムを、加工する前処理のプログラム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人間が、プログラム言語で書いた、変換前のプログラム。ソースプログラムともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンパイラなどが、原始プログラムを翻訳して作った、機械語のプログラム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>リンクによって作られた、実行できる形のプログラム。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">オープンソースソフトウェア</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードが公開され、誰でも利用・改変・再配布できるソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Linux、Apache、MySQL(またはPostgreSQL)、PHP(またはPerl、Python)を組み合わせた、Web開発の基盤。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Linux OSの、中核部分。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文字列処理に強く、Webの初期のプログラムによく使われたスクリプト言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>読みやすい書き方が特徴の、AIやデータ分析でよく使われる言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>簡潔に書け、オブジェクト指向に徹した日本発のスクリプト言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードが公開されていて、自由に使えるライブラリ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Perlの、ライブラリを、集めた配布サイト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>PHPの、ライブラリを、集めた配布の仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>JavaScriptで、HTML操作などを簡単に書けるようにした、ライブラリ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアを改変・再配布した際も、同じ条件で公開し続けることを求める考え方。GPL。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じソフトウェアを、複数の異なるライセンスで、提供すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSSのライセンスの一つ。改変して再配布する場合も、同じ条件で公開しなければならない。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>改変や再配布に、あまり制限が少ない、緩やかなOSSのライセンス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>変更した部分のソースを公開すれば、他のコードとの組合せに自由度がある、OSSのライセンス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>特許の許諾も含み、改変・再配布に、比較的自由なOSSのライセンス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>多くの機器で動作するように作られた、OSSのOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSSとして開発されているOSのひとつ。サーバで広く使われている。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>パソコンやサーバ向けの、OSSのOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>セキュリティを重視して開発されている、OSSのOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>UNIXの、商標管理や標準化を行う組織。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSSを利用するときの、脆弱性や、ライセンス違反などの、リスクに対する備え。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアが、安定して動き続けるかという品質。</p>
+    </div>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

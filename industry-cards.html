@@ -1,0 +1,836 @@
+<title>ビジネスインダストリ編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">ビジネスインダストリ編</span>
+        <a href="industry-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="industry-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="tech-strategy-cards.html">← 前: 技術戦略マネジメント編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="corporate-cards.html">次 →: 企業活動編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">ビジネスインダストリ</p>
+    <h1>ビジネスインダストリ編</h1>
+    <div class="meta-row">
+      <span class="count-badge">175 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「ビジネスインダストリ」分野の用語集です。ビジネスシステム、エンジニアリングシステム、e-ビジネス、民生機器、産業機器を含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">ビジネスシステム</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>流通情報システム</dt>
+        <dd class="desc">商品の、流通に関する、情報を管理するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>会計・経理・財務システム</dt>
+        <dd class="desc">会計や財務の、処理を行うシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XBRL</dt>
+        <dd class="desc">財務情報などを、記述するための、XMLをもとにした言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>人事・給与システム</dt>
+        <dd class="desc">人事情報の、管理や、給与の計算を行うシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>営業支援システム</dt>
+        <dd class="desc">営業活動の、情報を管理して、営業を支援するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>グループウェア</dt>
+        <dd class="desc">組織内での、情報共有や共同作業を支援するソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ワークフローシステム</dt>
+        <dd class="desc">申請や承認などの、業務の流れを電子化して自動的に進める仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Web会議システム</dt>
+        <dd class="desc">離れた場所にいる人が、インターネットで、会議を行うシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>物流情報システム</dt>
+        <dd class="desc">物の輸送や、保管などの、情報を管理するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>店頭販売管理</dt>
+        <dd class="desc">店舗での、販売の、状況を管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>販売管理</dt>
+        <dd class="desc">受注から、売上、請求などまでを、管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>受発注管理</dt>
+        <dd class="desc">受注と発注の、情報を管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>在庫管理</dt>
+        <dd class="desc">在庫を、適切な量に保つよう管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>顧客管理</dt>
+        <dd class="desc">顧客の情報を、管理し、活用すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>金融情報システム</dt>
+        <dd class="desc">金融機関が、使う、預金や決済などを扱うシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>医療情報システム</dt>
+        <dd class="desc">医療機関で、使う、患者の情報や、診療の記録などを扱うシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>POSシステム</dt>
+        <dd class="desc">商品の販売時に、売上データをその場で収集・管理するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>生産管理システム</dt>
+        <dd class="desc">生産計画や、進捗、在庫などを管理するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CDN</dt>
+        <dd class="desc">Webコンテンツを、世界各地のサーバに配置して、配信を高速化する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ERP</dt>
+        <dd class="desc">企業の基幹業務を統合して管理し、経営資源を有効に活用する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>業務別パッケージ</dt>
+        <dd class="desc">特定の業務向けに作られた、市販のソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユビキタスコンピューティング</dt>
+        <dd class="desc">いつでも、どこでも、コンピュータを使えるという考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IoT</dt>
+        <dd class="desc">さまざまな「モノ」がインターネットにつながり、情報をやり取りする仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デジタルツイン</dt>
+        <dd class="desc">現実の物体などを、デジタル空間に、そっくり再現して、分析や予測に使う技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サイバーフィジカルシステム</dt>
+        <dd class="desc">現実世界の、情報を、デジタル空間で分析し、現実世界へ反映する仕組み。CPS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブロックチェーンの活用</dt>
+        <dd class="desc">取引の記録を、改ざんしにくい形で分散して管理する技術を、活用すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>e-Gov</dt>
+        <dd class="desc">行政の手続きを、オンラインで行える、電子政府の総合窓口。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>電子政府</dt>
+        <dd class="desc">行政の手続きを、電子化して、オンラインで提供する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>電子自治体</dt>
+        <dd class="desc">自治体の、行政サービスを、電子化する取組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>LGWAN</dt>
+        <dd class="desc">地方公共団体を、相互に結ぶ、行政専用のネットワーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>住民基本台帳ネットワークシステム</dt>
+        <dd class="desc">住民票の情報を、全国で、共有するための、ネットワークシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>EDINET</dt>
+        <dd class="desc">企業の、有価証券報告書などを、電子的に提出・閲覧できるシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>公共情報システム</dt>
+        <dd class="desc">国や自治体などが、公共サービスのために、運用する情報システム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スマートグリッド</dt>
+        <dd class="desc">情報通信技術を使って、電力の需要と供給を最適に制御する送電網。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>EMS</dt>
+        <dd class="desc">電子機器の、受託製造を、行うサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GPS応用システム</dt>
+        <dd class="desc">GPSを使った、位置情報を活用するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ITS</dt>
+        <dd class="desc">情報通信技術を使い、道路交通の安全や渋滞を改善する高度道路交通システム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>緊急速報</dt>
+        <dd class="desc">災害などの、緊急情報を、素早く知らせる仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Jアラート</dt>
+        <dd class="desc">国から、緊急の情報を、自治体などを通じて、住民へ、瞬時に伝えるシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マイナンバー</dt>
+        <dd class="desc">国民1人ひとりに割り当てられる、12桁の番号。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マイナポータル</dt>
+        <dd class="desc">行政手続きの、確認や申請が、オンラインでできる、政府のサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自治体窓口のキャッシュレス化</dt>
+        <dd class="desc">自治体の窓口での、支払いを、現金以外で行えるようにすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユニバーサルデザイン</dt>
+        <dd class="desc">年齢や能力にかかわらず、できるだけ多くの人が使えるように設計する考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デジタルディバイド</dt>
+        <dd class="desc">情報技術を、使える人と、使えない人の間に生じる、格差。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>人間中心のAI社会原則</dt>
+        <dd class="desc">AIを、人間中心の考え方で、社会に受け入れるための、基本原則。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AI利活用ガイドライン</dt>
+        <dd class="desc">AIの、利活用に、当たっての、指針。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>信頼できるAIのための倫理ガイドライン</dt>
+        <dd class="desc">信頼できるAIの、実現のために、守るべき倫理の指針。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>人工知能学会倫理指針</dt>
+        <dd class="desc">人工知能学会が、会員向けに、定めた、倫理の指針。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AIの社会的受容性</dt>
+        <dd class="desc">AIが、社会に受け入れられる度合い。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>特化型AI</dt>
+        <dd class="desc">特定の分野の、課題を解くために作られた、AI。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>汎用AI</dt>
+        <dd class="desc">人間のように、さまざまな課題に対応できる、AI。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フレーム問題</dt>
+        <dd class="desc">AIが、状況に関係する、必要な事柄だけを、選び出すことが、難しいという問題。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シンボルグラウンディング問題</dt>
+        <dd class="desc">AIが、記号(言葉)を、実世界の意味と結びつけて、理解できないという問題。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AIによる認識</dt>
+        <dd class="desc">AIが、画像や音声などを、判別すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AIによる自動化</dt>
+        <dd class="desc">AIを使って、作業を、自動化すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AIアシスタント</dt>
+        <dd class="desc">音声や文章による指示に、応じて、作業を支援するAI。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>生成AI</dt>
+        <dd class="desc">文章や画像などを、新しく作り出すAI。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マルチモーダルAI</dt>
+        <dd class="desc">文字・画像・音声など、複数の種類の情報を、組み合わせて扱えるAI。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ランダム性</dt>
+        <dd class="desc">AIの出力に、含まれる、偶然による、ばらつき。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>説明可能なAI</dt>
+        <dd class="desc">AIの判断の、根拠や過程を、人が理解できるようにする技術。XAI。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ヒューマンインザループ</dt>
+        <dd class="desc">AIの判断の、過程に、人間が関与して、確認・修正を行う仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AI利用者の関与によるバイアス</dt>
+        <dd class="desc">AIを使う人の、入力や、判断によって生じる、偏り。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アルゴリズムのバイアス</dt>
+        <dd class="desc">AIの、学習データや、アルゴリズムに起因する、判断の偏り。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AIサービスの責任論</dt>
+        <dd class="desc">AIサービスで、問題が起きたとき、誰が責任を負うかという議論。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ディープフェイク</dt>
+        <dd class="desc">AIを使って、本物のように見せかけた、偽の画像・音声・動画。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AIサービスのオプトアウトポリシー</dt>
+        <dd class="desc">利用者の、データを、AIの学習に使わないよう、拒否できる方針。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">エンジニアリングシステム</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>生産方式</dt>
+        <dd class="desc">製品を、作るための、方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>生産ラインの編成</dt>
+        <dd class="desc">生産の、工程や設備を、どのように並べるかを決めること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JIT</dt>
+        <dd class="desc">必要なものを、必要なときに、必要な量だけ供給する生産方式。かんばん方式ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NC</dt>
+        <dd class="desc">数値の指令によって、工作機械を、自動で動かす仕組み。数値制御。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自動監視装置</dt>
+        <dd class="desc">状況を、自動的に監視する装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>無人搬送車</dt>
+        <dd class="desc">人が乗らずに、自動で、荷物を運ぶ車両。AGVともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自動倉庫</dt>
+        <dd class="desc">コンピュータの制御で、荷物の、出し入れを自動で行う倉庫。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>FAシステム</dt>
+        <dd class="desc">工場の、生産を、自動化するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CAP</dt>
+        <dd class="desc">コンピュータを使って、生産計画を、立てるシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CAPP</dt>
+        <dd class="desc">コンピュータを使って、製造の工程の計画を、立てるシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MRP</dt>
+        <dd class="desc">生産に必要な部品の量と時期を、計算して管理する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>FMS</dt>
+        <dd class="desc">さまざまな、製品を、柔軟に作れる、自動化された生産システム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>FMC</dt>
+        <dd class="desc">工作機械などを、組み合わせた、柔軟な生産の、最小単位。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>生産性指標</dt>
+        <dd class="desc">生産の、効率を、測るための指標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CAD</dt>
+        <dd class="desc">コンピュータを使って、設計・製図を行うシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CAM</dt>
+        <dd class="desc">コンピュータを使って、製造機械を制御するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CAE</dt>
+        <dd class="desc">コンピュータで、設計した製品の、性能などを、シミュレーションして評価する技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PDM</dt>
+        <dd class="desc">製品の、設計に関する情報を、一元管理するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CIM</dt>
+        <dd class="desc">設計から、製造、販売まで、全体を、コンピュータで統合するシステム。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">e-ビジネス</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オンラインモール</dt>
+        <dd class="desc">多くの店舗が出店する、インターネット上の、商店街。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オンラインショッピング</dt>
+        <dd class="desc">インターネットで、商品を購入すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>電子入札</dt>
+        <dd class="desc">入札の、手続きを、インターネットで行う仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>金融取引</dt>
+        <dd class="desc">お金の、貸し借りや、売買などの取引。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インターネットバンキング</dt>
+        <dd class="desc">インターネットを通じて、銀行の取引を行うサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>組み込み型金融</dt>
+        <dd class="desc">非金融のサービスの中に、金融サービスを、組み込んで提供する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>EFT</dt>
+        <dd class="desc">電子的に、資金を移動する仕組み。電子資金移動。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スマートカード</dt>
+        <dd class="desc">ICチップを、埋め込んだ、カード。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ICカード・RFID応用システム</dt>
+        <dd class="desc">ICカードや、RFIDを活用した、システム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>キャッシュレス決済</dt>
+        <dd class="desc">現金を使わない、支払い方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フィンテック</dt>
+        <dd class="desc">金融と情報技術を組み合わせた、新しいサービスの分野。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>電子マネー</dt>
+        <dd class="desc">お金の価値を、電子的なデータで扱う支払いの手段。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>暗号資産</dt>
+        <dd class="desc">暗号技術を使い、インターネット上で、資産の価値をやり取りできる、電子的なデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>中央銀行発行デジタル通貨</dt>
+        <dd class="desc">中央銀行が、発行する、デジタル形式の、通貨。CBDC。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インターネットビジネス</dt>
+        <dd class="desc">インターネットを、使って行う、事業。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BtoB</dt>
+        <dd class="desc">企業と企業の間の、取引。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BtoC</dt>
+        <dd class="desc">企業と、消費者の間の取引。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CtoC</dt>
+        <dd class="desc">消費者と、消費者の間の取引。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DtoC</dt>
+        <dd class="desc">メーカーなどが、消費者に、直接販売する事業形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GtoB</dt>
+        <dd class="desc">政府や自治体と、企業の間の、取引や手続き。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GtoC</dt>
+        <dd class="desc">政府や自治体と、市民の間の、取引や手続き。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OtoO</dt>
+        <dd class="desc">オンラインの情報などを、利用して、実店舗への来店を促す仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OMO</dt>
+        <dd class="desc">オンラインと、オフラインを、区別せずに、一体で顧客体験を提供する考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アグリゲーションサービス</dt>
+        <dd class="desc">複数のサービスの、情報を、まとめて提供するサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>eマーケットプレイス</dt>
+        <dd class="desc">インターネット上で、企業が、取引を行う、市場。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロングテール</dt>
+        <dd class="desc">ニッチな商品でも、種類を多く取りそろえて、全体で大きな売上を得る考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クラウドソーシング</dt>
+        <dd class="desc">インターネットを通じて、不特定多数の人に、仕事を依頼する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NFT</dt>
+        <dd class="desc">唯一のものであることを、証明できる、ブロックチェーン上の、データ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アカウントアグリゲーション</dt>
+        <dd class="desc">複数の口座情報を、1か所にまとめて、確認できるサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>eKYC</dt>
+        <dd class="desc">オンラインで、本人確認を、完結させる技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AML・CFT</dt>
+        <dd class="desc">マネー・ローンダリング(資金洗浄)や、テロ資金供与を、防ぐための取組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Web-EDI</dt>
+        <dd class="desc">インターネットを、使って、企業間で受発注などのデータを、交換する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JIS X 7011-1</dt>
+        <dd class="desc">EDIで使われる、通信の規約などを定めた、JIS規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JIS X 7012-1</dt>
+        <dd class="desc">EDIで使われる、データ形式を定めた、JIS規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>STEP</dt>
+        <dd class="desc">製品の、設計情報を、異なるシステム間で、交換するための、国際規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>全国銀行協会手順</dt>
+        <dd class="desc">銀行間のデータの、やり取りのために、全国銀行協会が定めた、通信手順。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XML-EDI</dt>
+        <dd class="desc">XMLを使った、電子データ交換の、方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報伝達規約</dt>
+        <dd class="desc">EDIで、情報を、やり取りするときの、通信の取り決め。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報表現規約</dt>
+        <dd class="desc">EDIで、データの、形式や意味を、決める取り決め。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>業務運用規約</dt>
+        <dd class="desc">EDIを、運用するうえでの、業務上の取り決め。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>基本取引規約</dt>
+        <dd class="desc">取引の、基本的な条件についての、取り決め。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JCA手順</dt>
+        <dd class="desc">流通業界などで、使われている、EDIの通信手順。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SNS</dt>
+        <dd class="desc">人と人との、つながりを、支援する、インターネット上のサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>電子掲示板</dt>
+        <dd class="desc">インターネット上で、書き込みや閲覧ができる、掲示板。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブログ</dt>
+        <dd class="desc">日記のように、記事を時系列で、公開するWebサイト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ミニブログ</dt>
+        <dd class="desc">短い文章を、投稿する、簡易なブログ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ライフログ</dt>
+        <dd class="desc">日常の、行動や、体験を、記録したデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報銀行</dt>
+        <dd class="desc">個人の、データを、預かり、本人の同意のもとで、他の企業に、提供する事業。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シェアリングエコノミー</dt>
+        <dd class="desc">モノや場所、技術などを、多くの人で共有して活用する経済の仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CGM</dt>
+        <dd class="desc">利用者が、投稿する、コンテンツで、成り立つメディア。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">民生機器</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マイクロコンピュータ</dt>
+        <dd class="desc">CPUを中心に、メモリや入出力機能を小さくまとめたコンピュータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>エッジコンピューティング</dt>
+        <dd class="desc">データの発生源の近くで処理を行い、通信の遅延や負荷を減らす方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>エッジAI</dt>
+        <dd class="desc">端末など、データの発生源の近くで、AIの処理を行う技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>組込みOS</dt>
+        <dd class="desc">組込みシステムの、機器に組み込まれて、動作するOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リアルタイムOS</dt>
+        <dd class="desc">時間制約を守れるように設計された、組込み機器向けのOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リアルタイム制御</dt>
+        <dd class="desc">決められた時間内に、確実に、処理を完了させる制御。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>イベント</dt>
+        <dd class="desc">システムに起きる、出来事。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>センサー</dt>
+        <dd class="desc">温度・光・圧力などの物理量を検知して、電気信号に変える装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シーケンス制御</dt>
+        <dd class="desc">あらかじめ決めた順序で、順番に動作を進めていく制御。</dd>
+        <p class="example"><span class="ex-label">例</span>信号機、洗濯機。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロボティクス</dt>
+        <dd class="desc">ロボットの設計・制御などを扱う技術分野。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ファームウェア</dt>
+        <dd class="desc">機器に組み込まれた、基本的な制御を行うソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BLEビーコン</dt>
+        <dd class="desc">近距離に、Bluetooth Low Energyで、識別情報などを発信する、小型の機器。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報家電</dt>
+        <dd class="desc">インターネットに、つながる家電製品。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンピュータ周辺／OA機器</dt>
+        <dd class="desc">プリンタや、コピー機などの、事務用の、機器。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>民生用通信端末機器</dt>
+        <dd class="desc">一般の消費者が、使う、通信のための機器。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ホームネットワーク</dt>
+        <dd class="desc">家庭内の、機器を、ネットワークでつなぐ仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ウェアラブルコンピュータ</dt>
+        <dd class="desc">身に着けて使う、小型のコンピュータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ARグラス</dt>
+        <dd class="desc">現実の景色に、情報を重ねて表示する、眼鏡型の機器。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MRグラス</dt>
+        <dd class="desc">現実と、仮想の世界を、融合させて表示する、眼鏡型の機器。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>VRゴーグル</dt>
+        <dd class="desc">仮想現実の、世界に入り込むために、頭にかぶる機器。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スマートグラス</dt>
+        <dd class="desc">情報の、表示や、通信ができる、眼鏡型の機器。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スマートスピーカー</dt>
+        <dd class="desc">音声で操作する、AIを備えた、スピーカー。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>センサーネットワーク</dt>
+        <dd class="desc">多数のセンサーが、無線でつながり、情報を集めるネットワーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HEMS</dt>
+        <dd class="desc">家庭の、エネルギーの、使用状況を、見える化して、管理するシステム。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">産業機器</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>M2M</dt>
+        <dd class="desc">機械同士が、人を介さず、ネットワークを通じて、情報をやり取りする仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スマートシティ</dt>
+        <dd class="desc">ITを、活用して、都市の課題を、解決する、都市の形。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スーパーシティ</dt>
+        <dd class="desc">AIやデータを使い、生活全般を、先端的に変える、都市。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スマートファクトリー</dt>
+        <dd class="desc">IoTなどを使って、生産設備を連携させ、自動化・最適化した工場。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スマート農業</dt>
+        <dd class="desc">ロボットやICTを、活用した、省力・高品質な農業。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MaaS</dt>
+        <dd class="desc">鉄道やバスなどの、移動手段を、ITで、統合して、1つのサービスとして提供する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロボット</dt>
+        <dd class="desc">センサーやアクチュエータを持ち、自動で、作業する機械。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ドローン</dt>
+        <dd class="desc">無線などで操縦する、無人の飛行機。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自動販売機</dt>
+        <dd class="desc">お金を入れると、商品が出てくる、機械。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ATM</dt>
+        <dd class="desc">銀行などで、現金の預入れや引出しを機械で行う装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>医療機器</dt>
+        <dd class="desc">診断や、治療などに使う、機器。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>患者モニタリング装置</dt>
+        <dd class="desc">患者の、生体情報を、継続して、測定・監視する装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CASE</dt>
+        <dd class="desc">自動車産業における、つながる・自動運転・シェア・電動化の、4つの、技術動向。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コネクテッドカー</dt>
+        <dd class="desc">通信機能を持ち、インターネットに、つながる自動車。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自動運転</dt>
+        <dd class="desc">人の操作なしで、自動車が、自動で走行する技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自動運転レベル</dt>
+        <dd class="desc">自動運転の、度合いを表す、段階。レベル0〜5に分けられる。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

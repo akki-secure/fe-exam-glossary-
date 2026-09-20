@@ -1,0 +1,350 @@
+<title>情報メディア編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">情報メディア編</span>
+        <a href="media-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="media-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="ui-cards.html">← 前: ユーザーインタフェース編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="database-cards.html">次 →: データベース編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">情報メディア</p>
+    <h1>情報メディア編</h1>
+    <div class="meta-row">
+      <span class="count-badge">58 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「情報メディア」分野の用語集です。マルチメディア技術、マルチメディア応用を含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">マルチメディア技術</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インタラクティブ性</dt>
+        <dd class="desc">利用者の操作に応じて、内容が変化する性質。双方向性ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Webコンテンツ</dt>
+        <dd class="desc">Webサイト上で、提供される文章・画像・動画などの内容。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ハイパーメディア</dt>
+        <dd class="desc">文字だけでなく、画像や音声など、複数のメディアを、リンクでつないだ情報の形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンテナフォーマット</dt>
+        <dd class="desc">映像や音声などを、1つのファイルにまとめて、格納するための形式。</dd>
+        <p class="example"><span class="ex-label">例</span>MP4、AVI。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ストリーミング</dt>
+        <dd class="desc">ダウンロードの完了を待たず、受信しながら再生する配信方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オーサリング環境</dt>
+        <dd class="desc">文字・画像・音声などを組み合わせて、マルチメディアの作品を作るための環境。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PDF</dt>
+        <dd class="desc">レイアウトを保ったまま、どの環境でも、同じように文書を表示できるファイル形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>4K/8K</dt>
+        <dd class="desc">横の画素数が、約4000または約8000の、高精細な映像の規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PCM</dt>
+        <dd class="desc">アナログ信号を、標本化・量子化・符号化して、デジタルにする方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MIDI</dt>
+        <dd class="desc">電子楽器の演奏の情報を、やり取りするための規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AU</dt>
+        <dd class="desc">Sun Microsystemsが定めた、音声ファイルの形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MP3</dt>
+        <dd class="desc">音楽などの音声データを圧縮する形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ラスターデータ</dt>
+        <dd class="desc">画像を、画素(ピクセル)の集まりで表現するデータ形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ベクターデータ</dt>
+        <dd class="desc">画像を、点・線・面などの、数式で表現するデータ形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JPEG</dt>
+        <dd class="desc">写真などに向く、静止画の圧縮形式。圧縮すると画質が劣化する(非可逆圧縮)。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GIF</dt>
+        <dd class="desc">256色まで扱える、簡単なアニメーションもできる静止画の圧縮形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PNG</dt>
+        <dd class="desc">画質を劣化させず(可逆圧縮)に圧縮でき、透明も扱える静止画の形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BMP</dt>
+        <dd class="desc">Windowsで使われる、圧縮しない、画像の形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TIFF</dt>
+        <dd class="desc">印刷などで使われる、高品質な画像の形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HEIF</dt>
+        <dd class="desc">高い圧縮率で、写真などを保存できる、画像の形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Exif</dt>
+        <dd class="desc">デジタルカメラの画像に、撮影日時や設定などの、情報を付加する規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フレーム</dt>
+        <dd class="desc">動画を構成する、1枚1枚の静止画。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フレームレート</dt>
+        <dd class="desc">動画で、1秒あたりに表示する画像(フレーム)の枚数。単位はfps。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MPEG</dt>
+        <dd class="desc">動画や音声のデータを圧縮する規格の総称。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>H.264</dt>
+        <dd class="desc">動画を、高効率で圧縮する、規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HEVC</dt>
+        <dd class="desc">H.264よりも、圧縮効率が高い、動画の圧縮規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>H.265</dt>
+        <dd class="desc">HEVCと、同じ動画の圧縮規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>QuickTime</dt>
+        <dd class="desc">Appleが開発した、動画の形式や再生の仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AVI</dt>
+        <dd class="desc">Windowsで使われる、動画と音声を、格納するファイル形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ZIP</dt>
+        <dd class="desc">複数のファイルを、1つにまとめて圧縮する形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>圧縮率</dt>
+        <dd class="desc">圧縮したあとの、データの大きさが、元のデータの大きさの、どのくらいになるかを表す割合。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>可逆圧縮</dt>
+        <dd class="desc">圧縮したものを、元のデータと全く同じに戻せる圧縮方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>非可逆圧縮</dt>
+        <dd class="desc">圧縮すると、元のデータには完全に戻せない圧縮方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MR</dt>
+        <dd class="desc">現実の世界と仮想の世界を融合させ、相互に影響し合うようにする技術。複合現実ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MMR</dt>
+        <dd class="desc">ファクシミリで使われる、白黒画像の、圧縮方式。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">マルチメディア応用</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>光の3原色</dt>
+        <dd class="desc">光の色を作る、赤・緑・青の3色。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>色の3原色</dt>
+        <dd class="desc">インクなどの色を作る、シアン・マゼンタ・イエローの3色。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>加法混色</dt>
+        <dd class="desc">光を混ぜるほど、明るくなる色の混ぜ方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>減法混色</dt>
+        <dd class="desc">色を混ぜるほど、暗くなる色の混ぜ方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コントラスト</dt>
+        <dd class="desc">明るい部分と、暗い部分の、明るさの差。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>dpi</dt>
+        <dd class="desc">1インチあたりの点(ドット)の数を表す、解像度の単位。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ppi</dt>
+        <dd class="desc">画像や画面の、1インチあたりの画素数。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ペイント系ソフトウェア</dt>
+        <dd class="desc">画像を、画素の集まりとして、描く・加工するソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ドロー系ソフトウェア</dt>
+        <dd class="desc">図形を、線や面などの、数式として扱って描くソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レイヤー</dt>
+        <dd class="desc">画像を、透明なシートのように、重ねて編集するための階層。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>トリミング</dt>
+        <dd class="desc">画像の、必要な部分だけを切り取ること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CG</dt>
+        <dd class="desc">コンピュータを使って作った画像や映像。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CAD</dt>
+        <dd class="desc">コンピュータを使って、設計・製図を行うシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シミュレーター</dt>
+        <dd class="desc">実際の動作を、模擬的に、再現するソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>テレビゲーム</dt>
+        <dd class="desc">テレビ画面などで、遊ぶ、コンピュータゲーム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AR</dt>
+        <dd class="desc">現実の景色に、コンピュータの情報を重ねて表示する技術。拡張現実ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>VR</dt>
+        <dd class="desc">コンピュータで作った世界を、現実のように体験させる技術。仮想現実ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>メタバース</dt>
+        <dd class="desc">インターネット上に作られた、多くの人が、アバターなどで交流する仮想空間。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ビデオオンデマンド</dt>
+        <dd class="desc">利用者が、見たい映像を、好きなときに、選んで視聴できるサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>3次元映像</dt>
+        <dd class="desc">奥行きを、持たせて表現した映像。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ホログラム</dt>
+        <dd class="desc">光の干渉を利用して、立体的な像を再現する技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モーションキャプチャー</dt>
+        <dd class="desc">人などの動きを記録して、デジタルデータとして取り込む技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バーチャルサラウンド</dt>
+        <dd class="desc">少ないスピーカーで、立体的な音の広がりを、再現する技術。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

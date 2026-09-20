@@ -1,0 +1,255 @@
+<title>アルゴリズムとプログラミング編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">アルゴリズムとプログラミング編</span>
+        <a href="algo-cards.html">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="algo-quiz.html" aria-current="page">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="measure-quiz.html">← 前: 計測・制御理論編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="processor-quiz.html">次 →: コンピュータ構成要素編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">アルゴリズムとプログラミング &gt; 穴埋め問題</p>
+    <h1>アルゴリズムとプログラミング編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">144 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+  <section class="group">
+    <p class="group-label">データ構造</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを鎖のようにつなげて並べたデータ構造。各要素が次の要素の位置(ポインタ)を持つ。途中への挿入・削除がポインタのつなぎ替えだけで済む。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ型のデータを連続して並べ、番号(添字)で取り出せるようにしたデータ構造。a[0]、a[1]、a[2]…のように番号で要素を指定する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを一列に並べ、各データが次のデータの場所(ポインタ)を持つデータ構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>各要素が「次の要素」だけを指す線形リスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>各要素が「前の要素」と「次の要素」の両方を指すリスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>最後の要素が最初の要素を指し、輪の形につながったリスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>最後に入れたデータを最初に取り出す(後入れ先出し、LIFO)データ構造。積み重ねた皿は、最後に置いた皿から取る。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>最初に入れたデータを最初に取り出す(先入れ先出し、FIFO)データ構造。レジの行列は、先に並んだ人から順に会計する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>スタックに、データを積む(追加する)操作。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>スタックから、いちばん上のデータを取り出す操作。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>根(ルート)から枝分かれして葉へ向かう階層的なデータ構造。フォルダの階層構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>木構造の、いちばん上にある節点。ルートともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>木構造で、子を持たない末端の節点。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>木構造で、節点と節点をつなぐ線。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>各節点の子が、最大2つまでの木構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>葉を除くすべての節点が、ちょうど2つの子を持つ2分木。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>どの葉までの深さも、ほぼ等しくなるよう保たれた木構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>子の並び順に意味がある木構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1つの節点が、3つ以上の子を持てる木構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを効率よく探せるように、決まりを持たせた木構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>左の子は親より小さく、右の子は親より大きい、という決まりを持つ2分木。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1つの節点に多くのデータを持たせる、バランスした多分木。データベースの索引に使われる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>左右の部分木の高さの差を、常に1以下に保つ2分探索木。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>行き止まりまで奥へ進み、戻って次の枝を探す探索方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>起点に近い節点から順に、階層ごとに調べていく探索方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>木をたどるとき、親を先に、次に左、右の順で訪れる方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>木をたどるとき、左、右の順に訪れ、最後に親を訪れる方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>木をたどるとき、左、親、右の順で訪れる方法。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">アルゴリズム</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理の流れを、記号と矢印で表した図。フローチャートともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>未整列部分から最小値を選んで先頭と入れ替えることを繰り返す整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>隣り合う要素を比べて入れ替えを繰り返し、大きい値を端へ押し出していく整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを半分ずつに分けて整列し、整列済みの列を併合(マージ)していく整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>未整列の要素を、整列済み部分の正しい位置に挿入していく整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>間隔を空けた要素同士で挿入ソートを行い、間隔を狭めながら整列する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>基準値(ピボット)を決め、それより小さいグループと大きいグループに分けながら整列する高速な整列法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ヒープを作り、最大(最小)値を順に取り出して整列する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>先頭から順番に1つずつ比べて、目的のデータを探す方法。10個なら最悪10回、n個なら最悪n回比べる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>整列済みデータの中央と比べ、範囲を半分ずつに絞る探索方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ハッシュ関数で位置を計算し、直接データを探す方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>自分自身を呼び出す形で、問題を小さな同じ問題に置き換えて解く手順。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>グラフ上の2点間で、通る距離の合計が最も短い道筋を求める問題。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>出発点から、近い順に最短距離を確定させていく最短経路探索法。辺の重みは負でない。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>辺の重みが負でも使える最短経路探索法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>長い文字列の中から、特定の文字列を探し出す処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文を、意味を持つ最小の単位(形態素)に分けて、品詞を判定する処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文の構造(主語と述語などの関係)を明らかにする処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文の意味を、コンピュータが扱える形で明らかにする処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>前後の文とのつながりから、文の意味を読み取る処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文中の言葉が、どの言葉に係っているかを解析する処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文字や単語を、連続したn個の並びで区切って扱う方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>2つの文章が、どのくらい似ているかを表す数値。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムが、実行中に自分自身を呼び出しても、正しく動作する性質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>問題を小さく分けて解き、その結果を合わせて全体の解を得る手法。クイックソート、マージソート。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">プログラミング</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラム言語を使って、コンピュータへの命令を書くこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの書き方について、チームで決めたルール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理の構造が見やすくなるように、行頭に空白を入れること。インデントともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>条件分岐や繰返しが、入れ子になっている段数。深いと読みにくい。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>変数や関数の名前の付け方についての決まり。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>不具合の原因になりやすいため、使わないと決められた命令。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>品質を高めるため、機能・性能・使いやすさ・直しやすさに配慮して作ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを、機能ごとの小さな部品に分けること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モジュール同士の結びつきが弱く、それぞれが独立している度合い。高いほどよい。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラム全体の流れを制御する、中心となる部分。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>メインから呼び出される、ひとまとまりの処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>小数点以下を持たない、整数を扱うデータ型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>小数点以下を持つ、実数を扱うデータ型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>真と偽のどちらかを扱うデータ型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1文字を扱うデータ型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文字が並んだ、文字列を扱うデータ型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの中身の作りではなく、行える操作で定義したデータ型。スタック、キュー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の異なる型のデータを、まとめて1つの型として扱うデータ型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>変数に値を入れること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>足し算や引き算などの、数値の計算。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>2つの値の大小や等しいかを比べる演算。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>真偽の値に対して行う、AND、OR、NOTなどの演算。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ビット単位で行う、論理演算やシフト演算。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>条件によって、実行する処理を選ぶ制御構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ処理を、条件を満たす間、何度も繰り返す制御構造。for文、while文。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関数を呼び出すときに渡す値。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関数が処理を終えたあと、呼び出し元に返す値。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>定義された関数の中だけで使える変数。ローカル変数ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データと処理をまとめたオブジェクトを組み合わせて、プログラムを組み立てる方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクトを生成するときに、自動的に呼ばれる初期化のための処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスが持つ、データ(属性)を保持する変数。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>継承したメソッドを、子クラスで、内容を書き換えて定義し直すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ名前のメソッドを、引数の違いで複数定義すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webで動作するアプリケーションを作るためのプログラミング。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webサーバ側で動作するプログラムを作ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ブラウザ側でも多くの処理を行い、操作性を高めたWebアプリケーション。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ページ全体を再読み込みせず、必要な部分だけを非同期で更新する技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSSのWebサーバソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webの画面側を効率よく作るための、骨組みとなるソフトウェア。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">プログラム言語</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理の手順を、順に記述していく型のプログラム言語。C、COBOL。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクト指向の考え方でプログラムを書ける言語。Java、C++、Python。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>簡易的に、記述してすぐ実行できる、軽量なプログラム言語。JavaScript、Python。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>科学技術計算に使われる、歴史の古いプログラム言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>事務処理や、業務システムに使われてきたプログラム言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラミング教育を目的として作られた、構造化プログラミングに向く言語(正しくはPascal)。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>初心者向けに作られた、簡単なプログラム言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSや組込み機器の開発に使われる、高速で汎用的な手続型言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>統計解析やデータ分析に向く、プログラム言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSに依存せず動作する、オブジェクト指向言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>C言語にオブジェクト指向の機能を加えた言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>科学技術計算やデータ分析に向く、高速なプログラム言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Googleが開発した、並行処理に強い、シンプルな言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>JavaScriptの標準仕様。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文字列処理に強く、Webの初期のプログラムによく使われたスクリプト言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webページの生成に向く、サーバ側で動くスクリプト言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>読みやすい書き方が特徴の、AIやデータ分析でよく使われる言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>簡潔に書け、オブジェクト指向に徹した日本発のスクリプト言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のプログラム言語で作ったプログラムを、同じ環境で実行できるようにする仕組み。CLIともいう。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">その他の言語</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>タグで文書の構造や意味を表す言語。HTML、XML。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webページの構造を記述するマークアップ言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>要素の始まりを表すタグ。&lt;p&gt;</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>要素の終わりを表すタグ。&lt;/p&gt;</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XML文書の、要素や構造のルールを定義するもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文書の構造を定義するマークアップ言語の元になった規格。HTMLやXMLの原型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が独自のタグを定義できる、汎用のマークアップ言語。&lt;name&gt;山田&lt;/name&gt;のようにデータの意味をタグで表す。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>HTMLやXML文書を、木構造としてプログラムから操作するための仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XMLを使って、ネットワーク越しにメッセージをやり取りするプロトコル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XMLで、ベクタ画像を表現する形式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XML文書を先頭から順に読みながら、処理していく方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XML文書の構造や、データ型を定義する仕様。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>携帯機器向けに、XHTMLの機能を絞った仕様。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XHTMLの機能を、部品(モジュール)に分けて組み合わせられるようにした仕様。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>HTMLで作った文書の見た目(色・配置など)を指定する言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XML文書の、表示形式や変換方法を指定する言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスの構造や、クラス同士の関係を表した図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある時点の、オブジェクトとその関係を表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを構成する部品と、その依存関係を表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスなどを、パッケージにまとめて、その依存関係を表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアが、どのハードウェアに配置されるかを表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスの内部構造と、部品同士の連携を表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>業務や処理の流れを表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクトの状態が、どう変わっていくかを表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクト間のメッセージのやり取りを、時間の順に表した図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクト同士の、メッセージのやり取りを表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の相互作用の流れを、アクティビティ図のように表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>時間の経過に沿った、状態の変化を表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスが持つ処理。メソッドともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスが持つデータの項目。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関連の端で、その関連における役割を示す名前。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「名前:値」の組でデータを表す軽量なデータ記述形式。Webの通信でよく使われる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インデントで階層を表す、人間が読みやすいデータ記述形式。設定ファイルによく使う。</p>
+    </div>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

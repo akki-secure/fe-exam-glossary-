@@ -1,0 +1,589 @@
+<title>経営戦略マネジメント編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">経営戦略マネジメント編</span>
+        <a href="biz-strategy-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="biz-strategy-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="sys-planning-cards.html">← 前: システム企画編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="tech-strategy-cards.html">次 →: 技術戦略マネジメント編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">経営戦略マネジメント</p>
+    <h1>経営戦略マネジメント編</h1>
+    <div class="meta-row">
+      <span class="count-badge">115 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「経営戦略マネジメント」分野の用語集です。経営戦略手法、マーケティング、ビジネス戦略と目標・評価、経営管理システムを含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">経営戦略手法</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>企業理念</dt>
+        <dd class="desc">企業が、事業を行ううえでの、基本的な考え方や、存在意義。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>多角化</dt>
+        <dd class="desc">既存の事業とは、異なる分野に、事業を広げること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シナジー効果</dt>
+        <dd class="desc">複数の事業や、資源を組み合わせることで、単独よりも、大きな効果が生まれること。相乗効果ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>規模の経済</dt>
+        <dd class="desc">生産量が増えるほど、1つあたりの、コストが下がること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>範囲の経済</dt>
+        <dd class="desc">複数の事業を、同時に行うことで、コストを下げられること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>イノベーション</dt>
+        <dd class="desc">新しい技術や考え方で、価値や仕組みを生み出すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>チェンジマネジメント</dt>
+        <dd class="desc">組織の変革が、うまくいくように、計画・推進すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ダイナミックケイパビリティ</dt>
+        <dd class="desc">環境の変化に、対応して、自社の資源や、能力を組み替えていく能力。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ベンチマーキング</dt>
+        <dd class="desc">優れた他社の手法を調べ、自社と比較して改善に生かす手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ベストプラクティス</dt>
+        <dd class="desc">ある分野で、最も成果を上げている、優れた方法や事例。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SDGs</dt>
+        <dd class="desc">2030年までに、世界が達成すべき、持続可能な開発の目標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サーキュラーエコノミー</dt>
+        <dd class="desc">資源を、使い捨てず、再利用や、再生を繰り返して、循環させる経済の仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>競争優位</dt>
+        <dd class="desc">競合他社よりも、優れた立場にあること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>経験曲線</dt>
+        <dd class="desc">生産の累積量が、増えるにつれて、単位あたりのコストが下がる関係を示した曲線。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CS</dt>
+        <dd class="desc">顧客が、商品やサービスに対して、感じる満足の度合い。顧客満足。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>グループ経営</dt>
+        <dd class="desc">親会社と、子会社などを、グループ全体として、一体で運営すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コアコンピタンス</dt>
+        <dd class="desc">他社が容易にまねできない、企業の中核となる強み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アウトソーシング</dt>
+        <dd class="desc">自社の業務やシステムの運用を、外部の専門の会社に委託すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>M&amp;A</dt>
+        <dd class="desc">企業の合併や買収のこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TOB</dt>
+        <dd class="desc">株式を、市場を通さず、公開で買い付ける方法。株式公開買付け。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>エコシステム</dt>
+        <dd class="desc">複数の企業などが、連携して、互いに依存し合いながら、共存共栄する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アライアンス</dt>
+        <dd class="desc">複数の企業が、互いの強みを生かして提携すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PPM</dt>
+        <dd class="desc">事業を、市場の成長率と、市場占有率の2軸で分類し、資源配分を考える手法。プロダクトポートフォリオマネジメントともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シェアードサービス</dt>
+        <dd class="desc">グループ内の、共通する業務を、1か所に集約して、効率化する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ベンチャービジネス</dt>
+        <dd class="desc">新しい技術や、発想で、急成長を目指す、新興企業の事業。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クラウドファンディング</dt>
+        <dd class="desc">インターネットで、不特定多数の人から、少額ずつ資金を集める仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コストリーダーシップ戦略</dt>
+        <dd class="desc">他社より、低いコストで、価格競争に勝つ戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>差別化戦略</dt>
+        <dd class="desc">製品やサービスの、独自性を高めて、他社との違いで、競争に勝つ戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>集中戦略</dt>
+        <dd class="desc">特定の市場や、顧客に、経営資源を集中する戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>同質化戦略</dt>
+        <dd class="desc">競合他社の、優れた点を、まねて、同じレベルにする戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブルーオーシャン戦略</dt>
+        <dd class="desc">競合のいない新しい市場を切り開いて、競争を避ける戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ESG投資</dt>
+        <dd class="desc">環境・社会・企業統治の、3つの視点を考慮する、投資。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SWOT分析</dt>
+        <dd class="desc">自社の強み・弱みと、外部環境の機会・脅威を整理して、戦略を考える分析手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>VRIO分析</dt>
+        <dd class="desc">経営資源が、価値・希少性・模倣困難性・組織の、4つの観点から競争優位になるかを分析する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バリューチェーン分析</dt>
+        <dd class="desc">事業の活動を、価値を生み出す連鎖として捉えて、強みや弱みを分析する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>成長マトリクス</dt>
+        <dd class="desc">製品と市場を、既存と新規に分けて、成長戦略を考える枠組み。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">マーケティング</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>3C分析</dt>
+        <dd class="desc">顧客・競合・自社の3つの視点から、環境を分析する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>市場調査</dt>
+        <dd class="desc">市場や顧客の動向を、調べること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>STP分析</dt>
+        <dd class="desc">市場を、細分化し、狙う市場を選び、自社の立場を決める、マーケティングの手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンジョイント分析</dt>
+        <dd class="desc">商品の、複数の特徴の組合せを、評価させて、顧客が何を重視するかを分析する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サンプリング</dt>
+        <dd class="desc">全体から、一部を、抽出して調査する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>質問法</dt>
+        <dd class="desc">アンケートなどで、質問して、情報を集める調査方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>観察法</dt>
+        <dd class="desc">対象の、行動などを、観察して、情報を集める調査方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>実験法</dt>
+        <dd class="desc">条件を変えて、反応の違いを調べる調査方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デザイン思考</dt>
+        <dd class="desc">利用者の視点に立ち、課題を見つけて、解決策を作り出す考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アサンプションマップ</dt>
+        <dd class="desc">事業やサービスの前提(仮説)を、整理して、検証の優先順位を付けるための図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バリュープロポジション</dt>
+        <dd class="desc">顧客に対して、自社が提供できる、独自の価値。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブランドプロポジション</dt>
+        <dd class="desc">ブランドが、顧客に約束する、価値。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブランドアイデンティティ</dt>
+        <dd class="desc">ブランドが、どのように認識されたいかという、独自の性格や特徴。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マーケティングミックス</dt>
+        <dd class="desc">製品・価格・流通・販促を、組み合わせて、マーケティングを行うこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マーチャンダイジング</dt>
+        <dd class="desc">売れる商品を、適切な時期・価格・数量で提供するための、計画と管理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UX</dt>
+        <dd class="desc">製品やサービスを使うときに、利用者が得る体験全体のこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>顧客ロイヤルティ</dt>
+        <dd class="desc">顧客が、特定の企業や商品に対して、持つ愛着や信頼。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブランド戦略</dt>
+        <dd class="desc">ブランドの、価値を高めて、競争力にするための戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンバージョン率</dt>
+        <dd class="desc">Webサイトの訪問者のうち、購入などの、目的の行動をした人の割合。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リテンション率</dt>
+        <dd class="desc">顧客が、継続して利用してくれる割合。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カスタマージャーニーマップ</dt>
+        <dd class="desc">顧客が、商品を知ってから購入するまでの、体験を、時系列で表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ペルソナ</dt>
+        <dd class="desc">典型的な利用者像として、設定した、架空の人物。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>参加型デザイン</dt>
+        <dd class="desc">利用者も、設計の過程に参加させて、製品などを作る手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サービスブループリント</dt>
+        <dd class="desc">サービスの提供に、関わる、利用者と提供者の行動や、仕組みを、図にしたもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロダクトビジョン</dt>
+        <dd class="desc">製品が、目指す、将来の姿。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロダクトライフサイクル</dt>
+        <dd class="desc">製品が、市場に導入されてから、衰退するまでの、導入期・成長期・成熟期・衰退期の流れ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ライフサイクルエクステンション</dt>
+        <dd class="desc">製品の寿命を、延ばす、ための施策。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>製品ライン</dt>
+        <dd class="desc">関連する、製品の、まとまり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>製品ポートフォリオ</dt>
+        <dd class="desc">自社の、製品群を、分類して、その構成を、検討すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コモディティ化</dt>
+        <dd class="desc">製品の、差がなくなり、価格の競争になってしまうこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カニバリゼーション</dt>
+        <dd class="desc">自社の製品同士が、競合して、売上を奪い合うこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バリュープライシング</dt>
+        <dd class="desc">顧客が、感じる価値をもとに、価格を決める方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スキミングプライシング</dt>
+        <dd class="desc">新製品の、発売時に、高い価格を設定し、徐々に下げていく価格戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ペネトレーションプライシング</dt>
+        <dd class="desc">新製品の、発売時に、低い価格を設定して、市場に浸透させる価格戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ダイナミックプライシング</dt>
+        <dd class="desc">需要と供給の状況に応じて、価格を変動させる方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コストプラス法</dt>
+        <dd class="desc">原価に、一定の利益を、上乗せして価格を決める方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サブスクリプションモデル</dt>
+        <dd class="desc">一定の期間の、利用料を、支払って利用する、課金の仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フランチャイズチェーン</dt>
+        <dd class="desc">本部が、加盟店に、商標や、経営の仕組みを提供し、対価を受け取る事業形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>チャネル統合</dt>
+        <dd class="desc">複数の、販売経路を、連携させて、顧客に一貫した体験を提供すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オムニチャネル</dt>
+        <dd class="desc">実店舗やネットなど、あらゆる販売の経路を連携させて顧客に対応する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロモーション戦略</dt>
+        <dd class="desc">商品を知ってもらい、購入につなげるための、宣伝や販売促進の戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インターネット広告</dt>
+        <dd class="desc">インターネットの、Webサイトなどで、配信する広告。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オプトインメール広告</dt>
+        <dd class="desc">受信を、許可した人にだけ、送るメール広告。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バナー広告</dt>
+        <dd class="desc">Webページに、表示する、画像形式の広告。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ジオターゲティング広告</dt>
+        <dd class="desc">利用者の、位置情報にもとづいて配信する広告。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リスティング広告</dt>
+        <dd class="desc">検索キーワードに連動して、表示される広告。検索連動型広告。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>成功報酬型広告</dt>
+        <dd class="desc">購入などの、成果が出たときにだけ、費用が発生する広告。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SEO</dt>
+        <dd class="desc">検索エンジンで、Webサイトが上位に表示されやすくする工夫。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>LPO</dt>
+        <dd class="desc">広告から、訪れた人が、購入などにつながるように、ランディングページを、改善すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CVR</dt>
+        <dd class="desc">Webサイトの訪問者のうち、購入などに至った人の割合。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アフィリエイト</dt>
+        <dd class="desc">Webサイトなどに、広告を掲載し、成果が出たときに、報酬を得る仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レコメンデーション</dt>
+        <dd class="desc">利用者の、好みや、行動履歴から、おすすめの商品を、提示する機能。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デジタルサイネージ</dt>
+        <dd class="desc">ディスプレイなどに、映像や情報を表示する、電子的な広告媒体。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>A/Bテスト</dt>
+        <dd class="desc">2つの案を、ランダムに提示して、どちらの効果が高いかを、比較する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マスマーケティング</dt>
+        <dd class="desc">不特定多数の消費者に向けて、同じ商品を、同じ方法で、売り込む手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ワントゥワンマーケティング</dt>
+        <dd class="desc">顧客ひとりひとりの、ニーズに合わせて、対応するマーケティング手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リレーションシップマーケティング</dt>
+        <dd class="desc">顧客との、長期的な関係を築き、維持することを重視するマーケティング。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ダイレクトマーケティング</dt>
+        <dd class="desc">顧客に、直接働きかけて、販売する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クロスメディアマーケティング</dt>
+        <dd class="desc">複数の媒体を、組み合わせて、効果的に展開するマーケティング。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>市場テスト</dt>
+        <dd class="desc">新製品を、限られた地域で、試験的に販売して、反応を調べること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プッシュ戦略</dt>
+        <dd class="desc">販売側が、積極的に働きかけて、売り込む戦略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プル戦略</dt>
+        <dd class="desc">広告などで、消費者の関心を引き、自ら買いに来させる戦略。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">ビジネス戦略と目標・評価</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MVV</dt>
+        <dd class="desc">企業の、ミッション・ビジョン・バリューの、3つ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ビジネスモデルキャンバス</dt>
+        <dd class="desc">ビジネスモデルを、9つの要素で、1枚に整理する、フレームワーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>KGI</dt>
+        <dd class="desc">最終的な目標が、どれだけ達成されたかを、測る指標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>KPI</dt>
+        <dd class="desc">目標に向けた、プロセスの達成度を、測る指標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モニタリング</dt>
+        <dd class="desc">システムの稼働状況や、性能を、継続的に監視すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BSC</dt>
+        <dd class="desc">財務・顧客・業務プロセス・学習と成長の、4つの視点から、業績を評価する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ニーズ・ウォンツ分析</dt>
+        <dd class="desc">顧客の、必要性と、欲求を、分析すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>競合分析</dt>
+        <dd class="desc">競合他社の、強みや弱みを、調べて分析すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バリューエンジニアリング</dt>
+        <dd class="desc">製品などの、機能と、コストの関係を、分析して、価値を高める手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シックスシグマ</dt>
+        <dd class="desc">品質のばらつきを、統計的に減らして、不良を極限まで、なくす手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TQM</dt>
+        <dd class="desc">全社を挙げて、品質の向上に取り組む、経営の手法。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">経営管理システム</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CRM</dt>
+        <dd class="desc">顧客の情報を一元管理して、良好な関係を築き、売上を高める手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SECIモデル</dt>
+        <dd class="desc">共有された暗黙知と形式知が、変換されて、組織の知識が、生まれるプロセスを示したモデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SCM</dt>
+        <dd class="desc">原材料の調達から、生産、販売までの流れを全体で最適化する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ECR</dt>
+        <dd class="desc">小売業と、メーカーが連携して、在庫や物流を、効率化する取組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SFA</dt>
+        <dd class="desc">営業活動を支援して、効率化する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>KM</dt>
+        <dd class="desc">組織内の、知識や、ノウハウを共有し、活用する経営手法。ナレッジマネジメント。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

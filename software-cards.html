@@ -1,0 +1,828 @@
+<title>ソフトウェア編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">ソフトウェア編</span>
+        <a href="software-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="software-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="sysconf-cards.html">← 前: システム構成要素編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="hardware-cards.html">次 →: ハードウェア編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">ソフトウェア</p>
+    <h1>ソフトウェア編</h1>
+    <div class="meta-row">
+      <span class="count-badge">172 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「ソフトウェア」分野の用語集です。オペレーティングシステム、ミドルウェア、ファイルシステム、開発ツール、オープンソースソフトウェアを含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">オペレーティングシステム</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OS</dt>
+        <dd class="desc">ハードウェアを管理し、アプリケーションが動く土台となる基本ソフトウェア。</dd>
+        <p class="example"><span class="ex-label">例</span>Windows、macOS、Linux。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システムソフトウェア</dt>
+        <dd class="desc">コンピュータを動かすための、基本的な機能を提供するソフトウェア。OSやミドルウェアなど。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UNIX</dt>
+        <dd class="desc">多くの利用者が同時に使える、歴史のあるOS。LinuxやmacOSに影響を与えた。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PC用OS</dt>
+        <dd class="desc">パソコンで使われるOS。</dd>
+        <p class="example"><span class="ex-label">例</span>Windows、macOS、Linux。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モバイル端末用OS</dt>
+        <dd class="desc">スマートフォンやタブレットで使われるOS。</dd>
+        <p class="example"><span class="ex-label">例</span>Android、iOS。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オープンOS</dt>
+        <dd class="desc">仕様やソースコードが公開されていて、自由に利用・改変できるOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リアルタイムOS</dt>
+        <dd class="desc">時間制約を守れるように設計された、組込み機器向けのOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>セキュアOS</dt>
+        <dd class="desc">強制的なアクセス制御などで、セキュリティを高めたOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クラウドコンピューティング用OS</dt>
+        <dd class="desc">クラウド環境での、仮想化や大規模な運用に向けて作られたOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マイクロカーネル</dt>
+        <dd class="desc">カーネルの機能を、最小限に絞り、他の機能はカーネルの外で動かす構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モノリシックカーネル</dt>
+        <dd class="desc">OSの主要な機能を、カーネルの中に、まとめて入れた構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ミドルウェア</dt>
+        <dd class="desc">OSとアプリケーションの間に入って、共通の機能を提供するソフトウェア。</dd>
+        <p class="example"><span class="ex-label">例</span>データベース管理システム。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カーネルモード</dt>
+        <dd class="desc">OSが、すべての資源や命令に、アクセスできる実行の状態。特権モードともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユーザーモード</dt>
+        <dd class="desc">アプリケーションが、制限された範囲で動作する実行の状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンパイラ</dt>
+        <dd class="desc">ソースプログラムを、まとめて機械語へ翻訳するソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サービスプログラム</dt>
+        <dd class="desc">OSに付属する、ファイル管理や整列などの、便利な機能を持つプログラム。ユーティリティともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロセス管理</dt>
+        <dd class="desc">プロセスの生成、実行、終了を、管理するOSの機能。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>運用管理</dt>
+        <dd class="desc">システムの運用を、計画的に管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>割込み</dt>
+        <dd class="desc">実行中の処理を一時中断して、別の処理を優先して実行させる仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>多重プログラミング</dt>
+        <dd class="desc">複数のプログラムを、主記憶に置いて、切り替えながら実行する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブートストラップ</dt>
+        <dd class="desc">電源投入後、OSを、主記憶に読み込んで起動する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ネットワークブート</dt>
+        <dd class="desc">ネットワーク経由で、OSを読み込んで起動する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マルチブート</dt>
+        <dd class="desc">1台のコンピュータに、複数のOSを入れ、起動時に選べるようにする方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フラッシュブートローダ</dt>
+        <dd class="desc">フラッシュメモリに格納された、OSの起動を行う小さなプログラム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ジョブ管理</dt>
+        <dd class="desc">ジョブ(仕事のまとまり)の実行順序や流れを管理するOSの機能。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ジョブスケジューラー</dt>
+        <dd class="desc">ジョブの実行順序や、実行するタイミングを、管理するプログラム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マスタスケジューラー</dt>
+        <dd class="desc">ジョブスケジューラーの働きを、全体として制御するプログラム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バッチ処理</dt>
+        <dd class="desc">データをある程度まとめて、一括して処理する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロセス</dt>
+        <dd class="desc">実行中のプログラム。OSが資源を割り当てて管理する単位。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スレッド</dt>
+        <dd class="desc">プロセスの中で並行して動く、より小さな処理の流れ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スケジューリング</dt>
+        <dd class="desc">処理の実行順序や、CPUの割当てを、決めること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マルチタスク</dt>
+        <dd class="desc">複数のプログラムを、切り替えながら同時に動かすこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プリエンプティブ方式</dt>
+        <dd class="desc">実行中のタスクからCPUを取り上げて、他のタスクへ切り替えられる方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ノンプリエンプティブ方式</dt>
+        <dd class="desc">実行中のタスクが、自分から終わるか待ち状態になるまで、CPUを取り上げない方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>タイムスライス方式</dt>
+        <dd class="desc">決まった時間ごとに、CPUを割り当てるタスクを、切り替える方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>優先順</dt>
+        <dd class="desc">タスクに付けた優先度が、高い順に実行する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ラウンドロビン</dt>
+        <dd class="desc">一定時間ごとに、順番にCPUを割り当てていく方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>タイムクウォンタム</dt>
+        <dd class="desc">ラウンドロビン方式で、1つのタスクに割り当てる、CPUの使用時間。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ディスパッチ</dt>
+        <dd class="desc">実行可能状態のタスクにCPUを割り当てること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>チャネル</dt>
+        <dd class="desc">入出力を、CPUに代わって制御する、専用の装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>入出力割込み</dt>
+        <dd class="desc">入出力が完了したときに、CPUへ通知する割込み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロールイン</dt>
+        <dd class="desc">補助記憶に退避していたプログラムを、主記憶に戻すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロールアウト</dt>
+        <dd class="desc">主記憶のプログラムを、補助記憶へ退避させること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スワップイン</dt>
+        <dd class="desc">補助記憶から、主記憶へ、プログラムを読み込むこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スワップアウト</dt>
+        <dd class="desc">主記憶から、補助記憶へ、プログラムを追い出すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オーバーレイ方式</dt>
+        <dd class="desc">大きなプログラムを、分割して、必要な部分だけを、同じ主記憶領域に順に読み込んで実行する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ガーベジコレクション</dt>
+        <dd class="desc">使われなくなったメモリ領域を、自動的に見つけて回収する機能。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンパクション</dt>
+        <dd class="desc">細切れになった、空き領域を、1か所にまとめて、まとまった領域にする処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>仮想記憶</dt>
+        <dd class="desc">補助記憶の一部を主記憶のように使い、実際の主記憶より大きな領域を扱えるようにする仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ベースアドレス方式</dt>
+        <dd class="desc">ベースアドレスに、相対アドレスを足して、実際のアドレスを求める方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>セグメント方式</dt>
+        <dd class="desc">プログラムを、意味のあるまとまり(セグメント)に分けて、管理する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>セグメントページング方式</dt>
+        <dd class="desc">セグメント方式と、ページング方式を、組み合わせた方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スラッシング</dt>
+        <dd class="desc">ページの入替えが頻発し、処理がほとんど進まなくなる状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>動的アドレス変換</dt>
+        <dd class="desc">プログラムの実行時に、仮想アドレスを、実アドレスへ変換する仕組み。DATともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ページフォールト</dt>
+        <dd class="desc">必要なページが、主記憶になく、補助記憶から読み込む必要が生じる事象。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ページリプレースメント</dt>
+        <dd class="desc">主記憶がいっぱいのとき、追い出すページを選んで、入れ替えること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>LRU</dt>
+        <dd class="desc">最も長い間使われていない、ページを追い出す方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>FIFO</dt>
+        <dd class="desc">最初に読み込まれた、ページから追い出す方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロトコル制御</dt>
+        <dd class="desc">通信のための、規約(プロトコル)を実行する、OSの機能。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>通信プロトコル</dt>
+        <dd class="desc">通信を行うための、取り決め。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TCP/IP</dt>
+        <dd class="desc">インターネットで使われている、通信プロトコルの集まり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OSI基本参照モデル</dt>
+        <dd class="desc">通信機能を、7つの階層に分けて整理した、国際標準のモデル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>LAN</dt>
+        <dd class="desc">同じ建物や敷地内など、狭い範囲のネットワーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>WAN</dt>
+        <dd class="desc">離れた場所のLAN同士を結ぶ、広い範囲のネットワーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロファイル</dt>
+        <dd class="desc">利用者ごとの、設定や環境の情報。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユーザーアカウント</dt>
+        <dd class="desc">システムを利用するための、利用者の登録情報。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>システム利用権</dt>
+        <dd class="desc">システムを利用してよいと認められた、権利。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ファイルアクセス権</dt>
+        <dd class="desc">ファイルを、読む・書く・実行する、ことを許可する権限。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スーパーユーザー</dt>
+        <dd class="desc">システムのすべてを管理できる、最高権限を持つ利用者。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>root</dt>
+        <dd class="desc">UNIX系OSの、スーパーユーザーのアカウント名。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Administrator</dt>
+        <dd class="desc">Windowsの、管理者権限を持つアカウント。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ゲスト</dt>
+        <dd class="desc">一時的な利用者として、限られた権限で使うアカウント。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>管理者権限</dt>
+        <dd class="desc">システムの設定変更や、ユーザー管理など、管理のための権限。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>LDAP</dt>
+        <dd class="desc">ユーザー情報などが、階層的に保存されたディレクトリサービスに、アクセスするためのプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロギング機能</dt>
+        <dd class="desc">システムの利用状況などを、ログとして記録する機能。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オーディット機能</dt>
+        <dd class="desc">システムの利用状況を、監査のために記録・分析する機能。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アカウンタビリティ</dt>
+        <dd class="desc">誰が、いつ、何をしたかを、後から追跡できること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>信頼プロセス</dt>
+        <dd class="desc">OSが、安全なものとして、実行を認めたプロセス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>再構成</dt>
+        <dd class="desc">障害が起きたとき、故障した部分を切り離し、残りの資源で構成し直すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リスタート</dt>
+        <dd class="desc">障害後に、処理を最初、または途中から再開すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ハードウェア障害</dt>
+        <dd class="desc">機器の故障などが、原因で起きる障害。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア障害</dt>
+        <dd class="desc">プログラムの誤りなどが、原因で起きる障害。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">ミドルウェア</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アプリケーションプログラム間連携ソフトウェア</dt>
+        <dd class="desc">異なるアプリケーション同士を、つないで、データや処理を連携させるソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DBMS</dt>
+        <dd class="desc">データベースを管理し、検索や更新などを行うソフトウェア。データベース管理システムともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>通信管理システム</dt>
+        <dd class="desc">通信回線や、端末の管理を行うソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア開発支援ツール</dt>
+        <dd class="desc">プログラムの開発作業を、支援するためのツールの総称。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>運用管理ツール</dt>
+        <dd class="desc">システムの運用を、支援するためのツールの総称。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TPモニター</dt>
+        <dd class="desc">トランザクション処理を、管理・制御するミドルウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シェル</dt>
+        <dd class="desc">利用者の命令を受け取り、OSに伝えるプログラム。コマンドインタプリタともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コマンドインタプリタ</dt>
+        <dd class="desc">入力された命令(コマンド)を解釈して、実行するプログラム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>API</dt>
+        <dd class="desc">ソフトウェアの機能を、他のプログラムから利用するための決まり事。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソースライブラリ</dt>
+        <dd class="desc">ソースプログラムを、保管しておく場所。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オブジェクトライブラリ</dt>
+        <dd class="desc">コンパイル済みの、オブジェクトプログラムを、保管しておく場所。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロードライブラリ</dt>
+        <dd class="desc">実行可能な、ロードモジュールを、保管しておく場所。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DLL</dt>
+        <dd class="desc">実行時に、必要なときにだけ、読み込んで使う、共有のプログラム部品。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クラスライブラリ</dt>
+        <dd class="desc">よく使うクラスを、部品としてまとめたライブラリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンポーネント</dt>
+        <dd class="desc">再利用しやすい単位にまとめた、ソフトウェアの部品。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Java Beans</dt>
+        <dd class="desc">Javaで作った、再利用できるソフトウェア部品の仕様。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CORBA</dt>
+        <dd class="desc">異なる言語や環境のオブジェクト同士を、ネットワークを通じて連携させる技術の規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OSGi</dt>
+        <dd class="desc">Javaのプログラムを、部品(モジュール)として動的に組み込む仕組みの規格。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">ファイルシステム</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>絶対パス</dt>
+        <dd class="desc">ルートディレクトリから目的のファイルまでを、すべて書いた指定方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>相対パス</dt>
+        <dd class="desc">現在いる場所(カレントディレクトリ)を起点にして、目的のファイルを指定する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>参照情報</dt>
+        <dd class="desc">ファイルの場所など、目的のものを、見つけるための情報。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シンボリックリンク</dt>
+        <dd class="desc">別のファイルやディレクトリを指し示す、特殊なファイル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ショートカット</dt>
+        <dd class="desc">ファイルなどへ、すばやくアクセスするための、参照。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>エイリアス</dt>
+        <dd class="desc">ファイルやコマンドなどに付けた、別名。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ルートディレクトリ</dt>
+        <dd class="desc">階層構造の最上位にあるディレクトリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カレントディレクトリ</dt>
+        <dd class="desc">いま作業の基準となっているディレクトリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>検索手法</dt>
+        <dd class="desc">ファイルなどを、探し出す方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>FATファイルシステム</dt>
+        <dd class="desc">古くから使われている、簡易なファイルシステム。USBメモリなどに使われる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NTFS</dt>
+        <dd class="desc">Windowsで使われている、セキュリティ機能などを備えたファイルシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ボリューム</dt>
+        <dd class="desc">ファイルシステムが、管理する記憶領域の、まとまり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>順次アクセス</dt>
+        <dd class="desc">データを、先頭から順番に読み書きする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>直接アクセス</dt>
+        <dd class="desc">目的のデータへ、直接アクセスして読み書きする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>動的アクセス</dt>
+        <dd class="desc">状況に応じて、順次アクセスと直接アクセスを、切り替える方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>あふれ域</dt>
+        <dd class="desc">ファイルの、割り当てられた領域に入りきらなかったデータを、置く領域。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>世代管理</dt>
+        <dd class="desc">バックアップを、複数の世代にわたって、保管する管理方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>多重バックアップ</dt>
+        <dd class="desc">バックアップを、複数の場所や媒体に、保管すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フルバックアップ</dt>
+        <dd class="desc">すべてのデータを丸ごとバックアップする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>差分バックアップ</dt>
+        <dd class="desc">前回のフルバックアップからの変更分だけをバックアップする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>増分バックアップ</dt>
+        <dd class="desc">前回のバックアップからの変更分だけをバックアップする方法。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">開発ツール</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IDE</dt>
+        <dd class="desc">エディタやデバッガなどを、まとめて使える、統合開発環境。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>設計支援ツール</dt>
+        <dd class="desc">システムの設計作業を、支援するツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>設計ツール</dt>
+        <dd class="desc">設計を行うための、ツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>構築ツール</dt>
+        <dd class="desc">プログラムを、組み立て(ビルド)て、実行できる形にするツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ローコードツール</dt>
+        <dd class="desc">ほとんどコードを書かずに、アプリケーションを作れる開発ツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ノーコードツール</dt>
+        <dd class="desc">まったくコードを書かずに、アプリケーションを作れる開発ツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ツールチェーン</dt>
+        <dd class="desc">開発に使う複数のツールを、連携させて、一連の作業を行えるようにしたもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>EUC</dt>
+        <dd class="desc">利用者自身が、情報システムを構築し、活用すること。エンドユーザーコンピューティングの略。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>EUD</dt>
+        <dd class="desc">利用者が、自分でプログラムなどを作り、システムを開発すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>エミュレーター</dt>
+        <dd class="desc">あるコンピュータの動作を、別のコンピュータ上で、そっくり再現するソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シミュレーター</dt>
+        <dd class="desc">実際の動作を、模擬的に、再現するソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ICE</dt>
+        <dd class="desc">組込みシステムの開発で、実機の動作を、解析するための装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>トレーサー</dt>
+        <dd class="desc">プログラムの実行の経過を、追跡して記録するツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インスペクター</dt>
+        <dd class="desc">プログラムの内部状態を、調べるツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スナップショット</dt>
+        <dd class="desc">ある時点の、システムやデータの状態を、そのまま記録したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アサーションチェッカ</dt>
+        <dd class="desc">プログラムが、想定した条件を満たしているかを、実行中に確認するツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バージョン管理ツール</dt>
+        <dd class="desc">ソースコードなどの変更履歴を管理するツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アセンブラ</dt>
+        <dd class="desc">アセンブリ言語のプログラムを機械語へ翻訳するソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インタプリタ</dt>
+        <dd class="desc">ソースプログラムを1行ずつ解釈しながら実行するソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リンカ</dt>
+        <dd class="desc">複数のオブジェクトプログラムを、つなぎ合わせて、実行可能にするプログラム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ローダ</dt>
+        <dd class="desc">実行するプログラムを、主記憶に読み込むプログラム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>実行時コンパイラ</dt>
+        <dd class="desc">プログラムの実行中に、機械語へ変換(コンパイル)するコンパイラ。JITコンパイラともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クロスコンパイラ</dt>
+        <dd class="desc">動作する環境とは、別の環境向けの、機械語を生成するコンパイラ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ジェネレーター</dt>
+        <dd class="desc">指定した条件などから、プログラムなどを自動で生成するツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プリプロセッサ</dt>
+        <dd class="desc">コンパイルの前に、ソースプログラムを、加工する前処理のプログラム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>原始プログラム</dt>
+        <dd class="desc">人間が、プログラム言語で書いた、変換前のプログラム。ソースプログラムともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>目的プログラム</dt>
+        <dd class="desc">コンパイラなどが、原始プログラムを翻訳して作った、機械語のプログラム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロードモジュール</dt>
+        <dd class="desc">リンクによって作られた、実行できる形のプログラム。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">オープンソースソフトウェア</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OSS</dt>
+        <dd class="desc">ソースコードが公開され、誰でも利用・改変・再配布できるソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>LAMP/LAPP</dt>
+        <dd class="desc">Linux、Apache、MySQL(またはPostgreSQL)、PHP(またはPerl、Python)を組み合わせた、Web開発の基盤。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Linuxカーネル</dt>
+        <dd class="desc">Linux OSの、中核部分。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Perl</dt>
+        <dd class="desc">文字列処理に強く、Webの初期のプログラムによく使われたスクリプト言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Python</dt>
+        <dd class="desc">読みやすい書き方が特徴の、AIやデータ分析でよく使われる言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Ruby</dt>
+        <dd class="desc">簡潔に書け、オブジェクト指向に徹した日本発のスクリプト言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オープンソースライブラリ</dt>
+        <dd class="desc">ソースコードが公開されていて、自由に使えるライブラリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CPAN</dt>
+        <dd class="desc">Perlの、ライブラリを、集めた配布サイト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PEAR</dt>
+        <dd class="desc">PHPの、ライブラリを、集めた配布の仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>jQuery</dt>
+        <dd class="desc">JavaScriptで、HTML操作などを簡単に書けるようにした、ライブラリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コピーレフト</dt>
+        <dd class="desc">ソフトウェアを改変・再配布した際も、同じ条件で公開し続けることを求める考え方。</dd>
+        <p class="example"><span class="ex-label">例</span>GPL。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デュアルライセンス</dt>
+        <dd class="desc">同じソフトウェアを、複数の異なるライセンスで、提供すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GPL</dt>
+        <dd class="desc">OSSのライセンスの一つ。改変して再配布する場合も、同じ条件で公開しなければならない。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BSDL</dt>
+        <dd class="desc">改変や再配布に、あまり制限が少ない、緩やかなOSSのライセンス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MPL</dt>
+        <dd class="desc">変更した部分のソースを公開すれば、他のコードとの組合せに自由度がある、OSSのライセンス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Apacheライセンス</dt>
+        <dd class="desc">特許の許諾も含み、改変・再配布に、比較的自由なOSSのライセンス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NetBSD</dt>
+        <dd class="desc">多くの機器で動作するように作られた、OSSのOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Linux</dt>
+        <dd class="desc">OSSとして開発されているOSのひとつ。サーバで広く使われている。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>FreeBSD</dt>
+        <dd class="desc">パソコンやサーバ向けの、OSSのOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OpenBSD</dt>
+        <dd class="desc">セキュリティを重視して開発されている、OSSのOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>The Open Group</dt>
+        <dd class="desc">UNIXの、商標管理や標準化を行う組織。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>安全性</dt>
+        <dd class="desc">OSSを利用するときの、脆弱性や、ライセンス違反などの、リスクに対する備え。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>信頼性</dt>
+        <dd class="desc">ソフトウェアが、安定して動き続けるかという品質。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

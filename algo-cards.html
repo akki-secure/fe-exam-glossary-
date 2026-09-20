@@ -1,0 +1,727 @@
+<title>アルゴリズムとプログラミング編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">アルゴリズムとプログラミング編</span>
+        <a href="algo-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="algo-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="measure-cards.html">← 前: 計測・制御理論編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="processor-cards.html">次 →: コンピュータ構成要素編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">アルゴリズムとプログラミング</p>
+    <h1>アルゴリズムとプログラミング編</h1>
+    <div class="meta-row">
+      <span class="count-badge">144 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「アルゴリズムとプログラミング」分野の用語集です。データ構造、アルゴリズム、プログラミング、プログラム言語、その他の言語を含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">データ構造</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リスト</dt>
+        <dd class="desc">データを鎖のようにつなげて並べたデータ構造。各要素が次の要素の位置(ポインタ)を持つ。</dd>
+        <p class="example"><span class="ex-label">例</span>途中への挿入・削除がポインタのつなぎ替えだけで済む。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>配列</dt>
+        <dd class="desc">同じ型のデータを連続して並べ、番号(添字)で取り出せるようにしたデータ構造。</dd>
+        <p class="example"><span class="ex-label">例</span>a[0]、a[1]、a[2]…のように番号で要素を指定する。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>線形リスト</dt>
+        <dd class="desc">データを一列に並べ、各データが次のデータの場所(ポインタ)を持つデータ構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>単方向リスト</dt>
+        <dd class="desc">各要素が「次の要素」だけを指す線形リスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>双方向リスト</dt>
+        <dd class="desc">各要素が「前の要素」と「次の要素」の両方を指すリスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>環状リスト</dt>
+        <dd class="desc">最後の要素が最初の要素を指し、輪の形につながったリスト。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スタック</dt>
+        <dd class="desc">最後に入れたデータを最初に取り出す(後入れ先出し、LIFO)データ構造。</dd>
+        <p class="example"><span class="ex-label">例</span>積み重ねた皿は、最後に置いた皿から取る。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>キュー</dt>
+        <dd class="desc">最初に入れたデータを最初に取り出す(先入れ先出し、FIFO)データ構造。</dd>
+        <p class="example"><span class="ex-label">例</span>レジの行列は、先に並んだ人から順に会計する。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プッシュ</dt>
+        <dd class="desc">スタックに、データを積む(追加する)操作。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ポップ</dt>
+        <dd class="desc">スタックから、いちばん上のデータを取り出す操作。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>木構造</dt>
+        <dd class="desc">根(ルート)から枝分かれして葉へ向かう階層的なデータ構造。</dd>
+        <p class="example"><span class="ex-label">例</span>フォルダの階層構造。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>根</dt>
+        <dd class="desc">木構造の、いちばん上にある節点。ルートともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>葉</dt>
+        <dd class="desc">木構造で、子を持たない末端の節点。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>枝</dt>
+        <dd class="desc">木構造で、節点と節点をつなぐ線。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>2分木</dt>
+        <dd class="desc">各節点の子が、最大2つまでの木構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>完全2分木</dt>
+        <dd class="desc">葉を除くすべての節点が、ちょうど2つの子を持つ2分木。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バランス木</dt>
+        <dd class="desc">どの葉までの深さも、ほぼ等しくなるよう保たれた木構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>順序木</dt>
+        <dd class="desc">子の並び順に意味がある木構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>多分木</dt>
+        <dd class="desc">1つの節点が、3つ以上の子を持てる木構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>探索木</dt>
+        <dd class="desc">データを効率よく探せるように、決まりを持たせた木構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>2分探索木</dt>
+        <dd class="desc">左の子は親より小さく、右の子は親より大きい、という決まりを持つ2分木。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>B木</dt>
+        <dd class="desc">1つの節点に多くのデータを持たせる、バランスした多分木。データベースの索引に使われる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AVL木</dt>
+        <dd class="desc">左右の部分木の高さの差を、常に1以下に保つ2分探索木。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>深さ優先探索</dt>
+        <dd class="desc">行き止まりまで奥へ進み、戻って次の枝を探す探索方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>幅優先探索</dt>
+        <dd class="desc">起点に近い節点から順に、階層ごとに調べていく探索方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>先行順</dt>
+        <dd class="desc">木をたどるとき、親を先に、次に左、右の順で訪れる方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>後行順</dt>
+        <dd class="desc">木をたどるとき、左、右の順に訪れ、最後に親を訪れる方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>中間順</dt>
+        <dd class="desc">木をたどるとき、左、親、右の順で訪れる方法。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">アルゴリズム</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>流れ図</dt>
+        <dd class="desc">処理の流れを、記号と矢印で表した図。フローチャートともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>選択ソート</dt>
+        <dd class="desc">未整列部分から最小値を選んで先頭と入れ替えることを繰り返す整列法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バブルソート</dt>
+        <dd class="desc">隣り合う要素を比べて入れ替えを繰り返し、大きい値を端へ押し出していく整列法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マージソート</dt>
+        <dd class="desc">データを半分ずつに分けて整列し、整列済みの列を併合(マージ)していく整列法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>挿入ソート</dt>
+        <dd class="desc">未整列の要素を、整列済み部分の正しい位置に挿入していく整列法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シェルソート</dt>
+        <dd class="desc">間隔を空けた要素同士で挿入ソートを行い、間隔を狭めながら整列する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クイックソート</dt>
+        <dd class="desc">基準値(ピボット)を決め、それより小さいグループと大きいグループに分けながら整列する高速な整列法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ヒープソート</dt>
+        <dd class="desc">ヒープを作り、最大(最小)値を順に取り出して整列する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>線形探索法</dt>
+        <dd class="desc">先頭から順番に1つずつ比べて、目的のデータを探す方法。</dd>
+        <p class="example"><span class="ex-label">例</span>10個なら最悪10回、n個なら最悪n回比べる。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>2分探索法</dt>
+        <dd class="desc">整列済みデータの中央と比べ、範囲を半分ずつに絞る探索方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ハッシュ表探索法</dt>
+        <dd class="desc">ハッシュ関数で位置を計算し、直接データを探す方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>再帰的アルゴリズム</dt>
+        <dd class="desc">自分自身を呼び出す形で、問題を小さな同じ問題に置き換えて解く手順。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>最短経路探索</dt>
+        <dd class="desc">グラフ上の2点間で、通る距離の合計が最も短い道筋を求める問題。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ダイクストラ法</dt>
+        <dd class="desc">出発点から、近い順に最短距離を確定させていく最短経路探索法。辺の重みは負でない。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ベルマンフォード法</dt>
+        <dd class="desc">辺の重みが負でも使える最短経路探索法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>文字列照合</dt>
+        <dd class="desc">長い文字列の中から、特定の文字列を探し出す処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>形態素解析</dt>
+        <dd class="desc">文を、意味を持つ最小の単位(形態素)に分けて、品詞を判定する処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>構文解析</dt>
+        <dd class="desc">文の構造(主語と述語などの関係)を明らかにする処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>意味解析</dt>
+        <dd class="desc">文の意味を、コンピュータが扱える形で明らかにする処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>文脈解析</dt>
+        <dd class="desc">前後の文とのつながりから、文の意味を読み取る処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>係り受け解析</dt>
+        <dd class="desc">文中の言葉が、どの言葉に係っているかを解析する処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>n-gram</dt>
+        <dd class="desc">文字や単語を、連続したn個の並びで区切って扱う方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>文章間類似度</dt>
+        <dd class="desc">2つの文章が、どのくらい似ているかを表す数値。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>再帰性</dt>
+        <dd class="desc">プログラムが、実行中に自分自身を呼び出しても、正しく動作する性質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>分割統治法</dt>
+        <dd class="desc">問題を小さく分けて解き、その結果を合わせて全体の解を得る手法。</dd>
+        <p class="example"><span class="ex-label">例</span>クイックソート、マージソート。</p>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">プログラミング</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プログラミング</dt>
+        <dd class="desc">プログラム言語を使って、コンピュータへの命令を書くこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーディング標準</dt>
+        <dd class="desc">プログラムの書き方について、チームで決めたルール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>字下げ</dt>
+        <dd class="desc">処理の構造が見やすくなるように、行頭に空白を入れること。インデントともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ネストの深さ</dt>
+        <dd class="desc">条件分岐や繰返しが、入れ子になっている段数。深いと読みにくい。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>命名規則</dt>
+        <dd class="desc">変数や関数の名前の付け方についての決まり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>使用禁止命令</dt>
+        <dd class="desc">不具合の原因になりやすいため、使わないと決められた命令。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プログラムの機能適合性・性能効率性・使用性・保守性の向上</dt>
+        <dd class="desc">品質を高めるため、機能・性能・使いやすさ・直しやすさに配慮して作ること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モジュール分割</dt>
+        <dd class="desc">プログラムを、機能ごとの小さな部品に分けること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モジュール独立性</dt>
+        <dd class="desc">モジュール同士の結びつきが弱く、それぞれが独立している度合い。高いほどよい。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>メインルーチン</dt>
+        <dd class="desc">プログラム全体の流れを制御する、中心となる部分。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サブルーチン</dt>
+        <dd class="desc">メインから呼び出される、ひとまとまりの処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>整数型</dt>
+        <dd class="desc">小数点以下を持たない、整数を扱うデータ型。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>実数型</dt>
+        <dd class="desc">小数点以下を持つ、実数を扱うデータ型。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>論理型</dt>
+        <dd class="desc">真と偽のどちらかを扱うデータ型。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>文字型</dt>
+        <dd class="desc">1文字を扱うデータ型。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>文字列型</dt>
+        <dd class="desc">文字が並んだ、文字列を扱うデータ型。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>抽象データ型</dt>
+        <dd class="desc">データの中身の作りではなく、行える操作で定義したデータ型。</dd>
+        <p class="example"><span class="ex-label">例</span>スタック、キュー。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>構造型</dt>
+        <dd class="desc">複数の異なる型のデータを、まとめて1つの型として扱うデータ型。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>代入</dt>
+        <dd class="desc">変数に値を入れること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>算術演算</dt>
+        <dd class="desc">足し算や引き算などの、数値の計算。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>比較演算</dt>
+        <dd class="desc">2つの値の大小や等しいかを比べる演算。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>論理演算</dt>
+        <dd class="desc">真偽の値に対して行う、AND、OR、NOTなどの演算。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ビット演算</dt>
+        <dd class="desc">ビット単位で行う、論理演算やシフト演算。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>選択処理</dt>
+        <dd class="desc">条件によって、実行する処理を選ぶ制御構造。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>繰返し処理</dt>
+        <dd class="desc">同じ処理を、条件を満たす間、何度も繰り返す制御構造。</dd>
+        <p class="example"><span class="ex-label">例</span>for文、while文。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>引数</dt>
+        <dd class="desc">関数を呼び出すときに渡す値。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>戻り値</dt>
+        <dd class="desc">関数が処理を終えたあと、呼び出し元に返す値。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>局所変数</dt>
+        <dd class="desc">定義された関数の中だけで使える変数。ローカル変数ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オブジェクト指向プログラミング</dt>
+        <dd class="desc">データと処理をまとめたオブジェクトを組み合わせて、プログラムを組み立てる方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンストラクタ</dt>
+        <dd class="desc">オブジェクトを生成するときに、自動的に呼ばれる初期化のための処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>メンバ変数</dt>
+        <dd class="desc">クラスが持つ、データ(属性)を保持する変数。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オーバーライド</dt>
+        <dd class="desc">継承したメソッドを、子クラスで、内容を書き換えて定義し直すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オーバーロード</dt>
+        <dd class="desc">同じ名前のメソッドを、引数の違いで複数定義すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Webプログラミング</dt>
+        <dd class="desc">Webで動作するアプリケーションを作るためのプログラミング。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サーバサイドプログラミング</dt>
+        <dd class="desc">Webサーバ側で動作するプログラムを作ること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リッチクライアント</dt>
+        <dd class="desc">ブラウザ側でも多くの処理を行い、操作性を高めたWebアプリケーション。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Ajax</dt>
+        <dd class="desc">ページ全体を再読み込みせず、必要な部分だけを非同期で更新する技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Apache</dt>
+        <dd class="desc">OSSのWebサーバソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フロントエンドフレーム</dt>
+        <dd class="desc">Webの画面側を効率よく作るための、骨組みとなるソフトウェア。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">プログラム言語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>手続型言語</dt>
+        <dd class="desc">処理の手順を、順に記述していく型のプログラム言語。</dd>
+        <p class="example"><span class="ex-label">例</span>C、COBOL。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オブジェクト指向言語</dt>
+        <dd class="desc">オブジェクト指向の考え方でプログラムを書ける言語。</dd>
+        <p class="example"><span class="ex-label">例</span>Java、C++、Python。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スクリプト言語</dt>
+        <dd class="desc">簡易的に、記述してすぐ実行できる、軽量なプログラム言語。</dd>
+        <p class="example"><span class="ex-label">例</span>JavaScript、Python。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Fortran</dt>
+        <dd class="desc">科学技術計算に使われる、歴史の古いプログラム言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>COBOL</dt>
+        <dd class="desc">事務処理や、業務システムに使われてきたプログラム言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Pacal</dt>
+        <dd class="desc">プログラミング教育を目的として作られた、構造化プログラミングに向く言語(正しくはPascal)。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BASIC</dt>
+        <dd class="desc">初心者向けに作られた、簡単なプログラム言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>C</dt>
+        <dd class="desc">OSや組込み機器の開発に使われる、高速で汎用的な手続型言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>R</dt>
+        <dd class="desc">統計解析やデータ分析に向く、プログラム言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Java</dt>
+        <dd class="desc">OSに依存せず動作する、オブジェクト指向言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>C++</dt>
+        <dd class="desc">C言語にオブジェクト指向の機能を加えた言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Julia</dt>
+        <dd class="desc">科学技術計算やデータ分析に向く、高速なプログラム言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Go</dt>
+        <dd class="desc">Googleが開発した、並行処理に強い、シンプルな言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ECMAScript</dt>
+        <dd class="desc">JavaScriptの標準仕様。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Perl</dt>
+        <dd class="desc">文字列処理に強く、Webの初期のプログラムによく使われたスクリプト言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PHP</dt>
+        <dd class="desc">Webページの生成に向く、サーバ側で動くスクリプト言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Python</dt>
+        <dd class="desc">読みやすい書き方が特徴の、AIやデータ分析でよく使われる言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Ruby</dt>
+        <dd class="desc">簡潔に書け、オブジェクト指向に徹した日本発のスクリプト言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>共通言語基盤</dt>
+        <dd class="desc">複数のプログラム言語で作ったプログラムを、同じ環境で実行できるようにする仕組み。CLIともいう。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">その他の言語</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マークアップ言語</dt>
+        <dd class="desc">タグで文書の構造や意味を表す言語。</dd>
+        <p class="example"><span class="ex-label">例</span>HTML、XML。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HTML</dt>
+        <dd class="desc">Webページの構造を記述するマークアップ言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>開始タグ</dt>
+        <dd class="desc">要素の始まりを表すタグ。</dd>
+        <p class="example"><span class="ex-label">例</span>&lt;p&gt;</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>終了タグ</dt>
+        <dd class="desc">要素の終わりを表すタグ。</dd>
+        <p class="example"><span class="ex-label">例</span>&lt;/p&gt;</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DTD</dt>
+        <dd class="desc">XML文書の、要素や構造のルールを定義するもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SGML</dt>
+        <dd class="desc">文書の構造を定義するマークアップ言語の元になった規格。HTMLやXMLの原型。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XML</dt>
+        <dd class="desc">利用者が独自のタグを定義できる、汎用のマークアップ言語。</dd>
+        <p class="example"><span class="ex-label">例</span>&lt;name&gt;山田&lt;/name&gt;のようにデータの意味をタグで表す。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DOM</dt>
+        <dd class="desc">HTMLやXML文書を、木構造としてプログラムから操作するための仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SOAP</dt>
+        <dd class="desc">XMLを使って、ネットワーク越しにメッセージをやり取りするプロトコル。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SVG</dt>
+        <dd class="desc">XMLで、ベクタ画像を表現する形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SAX</dt>
+        <dd class="desc">XML文書を先頭から順に読みながら、処理していく方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XML Schema</dt>
+        <dd class="desc">XML文書の構造や、データ型を定義する仕様。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XHTML Basic</dt>
+        <dd class="desc">携帯機器向けに、XHTMLの機能を絞った仕様。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XHTML Modularization</dt>
+        <dd class="desc">XHTMLの機能を、部品(モジュール)に分けて組み合わせられるようにした仕様。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CSS</dt>
+        <dd class="desc">HTMLで作った文書の見た目(色・配置など)を指定する言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XSL</dt>
+        <dd class="desc">XML文書の、表示形式や変換方法を指定する言語。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クラス図</dt>
+        <dd class="desc">クラスの構造や、クラス同士の関係を表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オブジェクト図</dt>
+        <dd class="desc">ある時点の、オブジェクトとその関係を表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンポーネント図</dt>
+        <dd class="desc">システムを構成する部品と、その依存関係を表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パッケージ図</dt>
+        <dd class="desc">クラスなどを、パッケージにまとめて、その依存関係を表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>配置図</dt>
+        <dd class="desc">ソフトウェアが、どのハードウェアに配置されるかを表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンポジット構造図</dt>
+        <dd class="desc">クラスの内部構造と、部品同士の連携を表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アクティビティ図</dt>
+        <dd class="desc">業務や処理の流れを表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ステートマシン図</dt>
+        <dd class="desc">オブジェクトの状態が、どう変わっていくかを表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シーケンス図</dt>
+        <dd class="desc">オブジェクト間のメッセージのやり取りを、時間の順に表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コミュニケーション図</dt>
+        <dd class="desc">オブジェクト同士の、メッセージのやり取りを表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>相互作用概要図</dt>
+        <dd class="desc">複数の相互作用の流れを、アクティビティ図のように表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>タイミング図</dt>
+        <dd class="desc">時間の経過に沿った、状態の変化を表すUMLの図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>操作</dt>
+        <dd class="desc">クラスが持つ処理。メソッドともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>属性</dt>
+        <dd class="desc">クラスが持つデータの項目。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロール名</dt>
+        <dd class="desc">関連の端で、その関連における役割を示す名前。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JSON</dt>
+        <dd class="desc">「名前:値」の組でデータを表す軽量なデータ記述形式。Webの通信でよく使われる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>YAML</dt>
+        <dd class="desc">インデントで階層を表す、人間が読みやすいデータ記述形式。設定ファイルによく使う。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

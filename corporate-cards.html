@@ -1,0 +1,1099 @@
+<title>企業活動編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">企業活動編</span>
+        <a href="corporate-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="corporate-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="industry-cards.html">← 前: ビジネスインダストリ編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="legal-cards.html">次 →: 法務編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">企業活動</p>
+    <h1>企業活動編</h1>
+    <div class="meta-row">
+      <span class="count-badge">243 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「企業活動」分野の用語集です。経営・組織論、業務分析・データ利活用、会計・財務を含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">経営・組織論</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>企業理念</dt>
+        <dd class="desc">企業が、事業を行ううえでの、基本的な考え方や、存在意義。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>企業の社会的責任</dt>
+        <dd class="desc">企業が、利益の追求だけでなく、社会に対して負う責任。CSRともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>グリーンIT</dt>
+        <dd class="desc">環境への負荷を、減らすための、ITの活用や、省エネの取組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カーボンフットプリント</dt>
+        <dd class="desc">商品やサービスの、生産から廃棄までに排出される、温室効果ガスの量を、CO2に換算して表したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>持分会社</dt>
+        <dd class="desc">合名会社・合資会社・合同会社の、総称。出資者が、経営に、直接関わる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>株式会社</dt>
+        <dd class="desc">株式を発行して資金を集め、株主が出資者となる会社。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>株式公開</dt>
+        <dd class="desc">会社の株式を、証券取引所で、売買できるようにすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>所有と経営の分離</dt>
+        <dd class="desc">会社の所有者(株主)と、経営を行う者が、分かれていること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ゴーイングコンサーン</dt>
+        <dd class="desc">企業が、将来にわたって、事業を継続するという前提。継続企業の前提。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーポレートガバナンス</dt>
+        <dd class="desc">企業の経営を、適切に監視し、統制する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーポレートガバナンス・コード</dt>
+        <dd class="desc">上場企業が、守るべき、企業統治の原則や指針。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IR</dt>
+        <dd class="desc">企業が、株主や投資家に対して、経営情報を提供する活動。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>統合報告書</dt>
+        <dd class="desc">財務情報と、環境・社会などの、非財務情報を、統合してまとめた報告書。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アニュアルレポート</dt>
+        <dd class="desc">企業の、1年間の、経営状況をまとめた年次報告書。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CSR報告書</dt>
+        <dd class="desc">企業の、社会的責任に関する取組みを、まとめた報告書。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BCP</dt>
+        <dd class="desc">災害などの緊急時にも、事業を継続または早期に復旧するための計画。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーポレートアイデンティティ</dt>
+        <dd class="desc">企業の、理念や、個性を明確にして、社内外に示す活動。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーポレートブランド</dt>
+        <dd class="desc">企業そのものに対する、イメージや、信頼。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>経営目標</dt>
+        <dd class="desc">企業が、達成を目指す、経営上の目標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>財務・資産・人事・情報管理</dt>
+        <dd class="desc">経営資源である、お金・物・人・情報を、管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PDCA</dt>
+        <dd class="desc">計画・実行・評価・改善を繰り返して、継続的に、改善する考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TQM</dt>
+        <dd class="desc">全社を挙げて、品質の向上に取り組む、経営の手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンピテンシー</dt>
+        <dd class="desc">高い成果を出す人に見られる、行動の特性や、能力。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーチング</dt>
+        <dd class="desc">対話を通じて、相手の、自発的な行動を促し、目標達成を支援する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>メンタリング</dt>
+        <dd class="desc">経験豊富な人が、助言や支援を通じて、相手の成長を、助ける手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ケーススタディ</dt>
+        <dd class="desc">実際の事例を、題材にして、問題解決の力を養う学習方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>e-ラーニング</dt>
+        <dd class="desc">インターネットなどを、利用して行う、学習。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リスキリング</dt>
+        <dd class="desc">新しい業務に、必要な、知識や技能を、身につけ直すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アダプティブラーニング</dt>
+        <dd class="desc">学習者の、理解度や進度に応じて、内容を調整する学習方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HRテック</dt>
+        <dd class="desc">人事の業務に、ITを活用する、技術やサービス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リテンション</dt>
+        <dd class="desc">優秀な人材が、辞めないよう、つなぎ止めること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>タレントマネジメント</dt>
+        <dd class="desc">人材の、能力や経験を、把握して、適材適所に活用・育成すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>エンパワーメント</dt>
+        <dd class="desc">従業員に、権限を与えて、自主的な判断や、行動を促すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HPI</dt>
+        <dd class="desc">業務の成果を、高めるために、その要因を分析し、改善策を実施する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ワークエンゲージメント</dt>
+        <dd class="desc">仕事に、意欲的に取り組み、活力を感じている状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ワークライフバランス</dt>
+        <dd class="desc">仕事と、私生活の、調和がとれている状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ワークシェアリング</dt>
+        <dd class="desc">1人あたりの、労働時間を減らして、仕事を分け合うこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>テレワーク</dt>
+        <dd class="desc">情報通信技術を使って、時間や場所にとらわれず、働く形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DE&amp;I</dt>
+        <dd class="desc">多様性・公平性・包括性を、尊重する取組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ウェルビーイング</dt>
+        <dd class="desc">身体的・精神的・社会的に、良好な状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロジカルシンキング</dt>
+        <dd class="desc">物事を、筋道立てて、論理的に考える方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>垂直思考</dt>
+        <dd class="desc">論理を積み重ね、順序立てて、深く考える思考法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>水平思考</dt>
+        <dd class="desc">既成の枠にとらわれず、自由な発想で考える思考法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>仮説思考</dt>
+        <dd class="desc">先に、仮の答えを立て、それを検証しながら、問題を解決する考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>衛生理論</dt>
+        <dd class="desc">仕事の不満を、なくす要因(衛生要因)と、満足を高める要因(動機づけ要因)は、別だとする理論。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>XY理論</dt>
+        <dd class="desc">人間は、働くことを嫌う(X理論)、または進んで働く(Y理論)と、2つの見方で、管理の方法を論じた理論。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BCM</dt>
+        <dd class="desc">事業継続計画を、策定し、維持・改善していく、経営管理の活動。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JIS Q 22301</dt>
+        <dd class="desc">事業継続マネジメントシステムの、要求事項を定めた、JIS規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>事業影響度分析</dt>
+        <dd class="desc">業務が、中断したときの、影響を、分析すること。BIAともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>階層型組織</dt>
+        <dd class="desc">上位から下位へ、指揮命令が流れる、ピラミッド型の組織。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>事業部制組織</dt>
+        <dd class="desc">製品や地域ごとに、独立した事業部を設ける組織形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>職能別組織</dt>
+        <dd class="desc">営業・製造・経理など、機能ごとに、部門を分けた組織。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マトリックス組織</dt>
+        <dd class="desc">機能別と、プロジェクト別など2つの軸を組み合わせた組織形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロジェクト組織</dt>
+        <dd class="desc">プロジェクトを進めるために、一時的に作る体制。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カンパニー制組織</dt>
+        <dd class="desc">事業部門を、独立した、会社のように、扱う組織。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ラインアンドスタッフ組織</dt>
+        <dd class="desc">指揮命令を行う、ラインと、それを助言・支援するスタッフに、分けた組織。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CEO</dt>
+        <dd class="desc">企業の、最高経営責任者。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CIO</dt>
+        <dd class="desc">企業の、情報化を統括する最高情報責任者。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CDO</dt>
+        <dd class="desc">データや、デジタル活用を、統括する、最高デジタル責任者(最高データ責任者)。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CISO</dt>
+        <dd class="desc">組織の、情報セキュリティを、統括する、最高情報セキュリティ責任者。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CPO</dt>
+        <dd class="desc">最高製品責任者、または、最高プライバシー責任者。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CFO</dt>
+        <dd class="desc">企業の、財務面を統括する最高財務責任者。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>COO</dt>
+        <dd class="desc">日々の業務執行を、統括する、最高執行責任者。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レピュテーションリスク</dt>
+        <dd class="desc">企業の評判が、悪化して、事業に損害が生じるリスク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SRI</dt>
+        <dd class="desc">企業の、社会的責任も、評価して、行う投資。社会的責任投資。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サテライトオフィス</dt>
+        <dd class="desc">本社とは、離れた場所に、設ける小規模なオフィス。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>在宅勤務</dt>
+        <dd class="desc">自宅で、業務を行う働き方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>AI言語モデルのスケーリング則</dt>
+        <dd class="desc">AIの言語モデルの、規模を大きくするほど、性能が、規則的に向上するという法則。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>第4次産業革命</dt>
+        <dd class="desc">IoTやAIなどによる、産業や社会の、大きな変革。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Society5.0</dt>
+        <dd class="desc">サイバー空間と、現実空間を高度に融合させた、人間中心の社会。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>超スマート社会</dt>
+        <dd class="desc">必要なものやサービスを、必要な人に、必要なときに、提供できる社会。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データ駆動型社会</dt>
+        <dd class="desc">データの、活用によって、価値を生み出す社会。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デジタルトランスフォーメーション</dt>
+        <dd class="desc">デジタル技術によって、ビジネスや社会を、変革すること。DXともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コーポレートトランスフォーメーション</dt>
+        <dd class="desc">企業が、組織や事業のあり方を、根本から変革すること。CX。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>グリーントランスフォーメーション</dt>
+        <dd class="desc">脱炭素の実現に向けて、産業や社会を、変革すること。GX。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GXリーグ基本構想</dt>
+        <dd class="desc">脱炭素社会への、変革に取り組む、企業などが、協働する場に関する構想。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カーボンニュートラル</dt>
+        <dd class="desc">温室効果ガスの、排出量と吸収量を、差し引きして、実質ゼロにすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カーボントレーシング</dt>
+        <dd class="desc">製品などの、温室効果ガスの排出量を、供給網全体で、追跡する取組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>国家戦略特別区域法</dt>
+        <dd class="desc">規制を緩和し、新しい取組みを、特定の区域で、先行して行えるようにする法律。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スーパーシティ構想</dt>
+        <dd class="desc">AIやデータ連携で、暮らし全般を、先端的に変える、都市の構想。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">業務分析・データ利活用</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>線形計画法</dt>
+        <dd class="desc">制約のもとで、利益を最大にするなど、最適な解を求める手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シンプレックス法</dt>
+        <dd class="desc">線形計画法の、最適解を求めるための、代表的な計算方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>配分問題</dt>
+        <dd class="desc">限られた資源を、複数の用途に、最も効果的に割り当てる問題。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>輸送問題</dt>
+        <dd class="desc">複数の供給地から、複数の需要地へ、費用が最小になるよう、輸送する問題。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>安全在庫</dt>
+        <dd class="desc">需要の変動などに備えて、余分に持っておく在庫。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>EOQ</dt>
+        <dd class="desc">発注費用と、在庫の保管費用の、合計が、最小になる発注量。経済的発注量。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>発注点</dt>
+        <dd class="desc">在庫が、この量になったら、発注する、基準の量。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>日程計画</dt>
+        <dd class="desc">作業の、開始と終了の、日程を決めること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アローダイアグラム</dt>
+        <dd class="desc">作業を、矢印で表し、順序関係を示した図。PERT図ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クリティカルパス</dt>
+        <dd class="desc">プロジェクトの開始から終了までの経路のうち、最も長い時間がかかる経路。遅れると全体が遅れる。</dd>
+        <p class="example"><span class="ex-label">例</span>A(3日)→B(5日)と、C(4日)のうち長いほうが全体の期間を決める。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ゼロ和2人ゲーム</dt>
+        <dd class="desc">一方の利益が、他方の損失になる、2人の勝負の、ゲーム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マクシミン原理</dt>
+        <dd class="desc">最悪の場合の利益が、最も大きくなる選択肢を選ぶ、判断の基準。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デシジョンツリー</dt>
+        <dd class="desc">決定に伴う複数の選択肢と、その結果を、木の形で表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>作業時間分析法</dt>
+        <dd class="desc">作業に、かかる時間を測定・分析して、改善する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PTS法</dt>
+        <dd class="desc">作業を、基本動作に分解して、あらかじめ定めた時間値で、作業時間を求める方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ワークサンプリング法</dt>
+        <dd class="desc">ランダムな時点で、作業を観察し、作業の割合を、統計的に求める方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サーブリック</dt>
+        <dd class="desc">作業を、基本的な動作に分けて、分析するための、記号。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>作業分析</dt>
+        <dd class="desc">作業の内容を、調べて、改善点を見つける手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>稼働分析</dt>
+        <dd class="desc">機械や、人が稼働している、時間の割合を、分析すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>OC曲線</dt>
+        <dd class="desc">抜取検査で、ロットの不良率と、合格する確率の、関係を表した曲線。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>不良率</dt>
+        <dd class="desc">製品の、うち不良品の割合。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>故障率曲線</dt>
+        <dd class="desc">時間の経過に伴う、故障率の変化を表した曲線。バスタブ曲線。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>品質特性</dt>
+        <dd class="desc">品質を、評価する視点となる、性質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>品質機能展開</dt>
+        <dd class="desc">顧客の要望を、製品の品質に、変換して、設計に反映させる手法。QFD。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>不良率推定</dt>
+        <dd class="desc">検査の結果から、全体の、不良率を、推定すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>時系列分析</dt>
+        <dd class="desc">時間の経過に伴う、データの変化を分析すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>層別管理</dt>
+        <dd class="desc">データを、性質ごとに、グループ分けして、管理・分析すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ヒストグラム</dt>
+        <dd class="desc">データの分布を、棒グラフで表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パレート図</dt>
+        <dd class="desc">原因ごとの件数を、多い順に並べ、累積の割合を折れ線で加えた図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>散布図</dt>
+        <dd class="desc">2つの項目の関係を、点で表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>特性要因図</dt>
+        <dd class="desc">問題の原因を、魚の骨のような形で整理した図。フィッシュボーンともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>チェックシート</dt>
+        <dd class="desc">確認の項目や、点検の結果を記録するための表。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>管理図</dt>
+        <dd class="desc">工程が安定しているかを、上下の限界線を使って確認する図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>親和図法</dt>
+        <dd class="desc">多くの意見や情報を、似たもの同士でまとめ、整理する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>連関図法</dt>
+        <dd class="desc">原因と結果の、複雑な関係を、矢印でつないで、整理する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>系統図法</dt>
+        <dd class="desc">目的を達成するための手段を、木の形に、展開して整理する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マトリックス図法</dt>
+        <dd class="desc">2つの要素を、行と列に並べて、その関係を、整理する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マトリックスデータ解析法</dt>
+        <dd class="desc">多くの項目のデータを、整理して、傾向を見つける手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PDPC</dt>
+        <dd class="desc">計画の進行中に、起こりうる問題を予測して、対応策を考えておく手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アローダイアグラム法</dt>
+        <dd class="desc">作業の順序関係を、矢印で表して、最適な日程を計画する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>最小二乗法</dt>
+        <dd class="desc">データに最も当てはまる、直線や曲線を求めるため、誤差の二乗の合計を最小にする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>相関係数</dt>
+        <dd class="desc">2つの量の、関係の強さを、−1〜1の数値で表したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>移動平均法</dt>
+        <dd class="desc">一定期間の平均を、順にずらしながら求めて、変動をならす手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パレート分析</dt>
+        <dd class="desc">要因を、影響の大きい順に並べて、重要な要因を特定する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フォーカスグループ</dt>
+        <dd class="desc">少人数の集団に、意見を自由に話し合ってもらい、ニーズなどを探る調査方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データマイニング</dt>
+        <dd class="desc">大量のデータから、有用な規則や傾向を見つけ出す技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブレーンストーミング</dt>
+        <dd class="desc">批判せずに、自由に、アイデアを出し合う会議の手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブレーンライティング</dt>
+        <dd class="desc">アイデアを、紙に書いて回し、他の人の案を、発展させていく手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レーダーチャート</dt>
+        <dd class="desc">複数の項目の値を、放射状の軸に取って、多角形で表したグラフ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クラスタ分析法</dt>
+        <dd class="desc">データを、似たもの同士の、グループに分ける分析手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デルファイ法</dt>
+        <dd class="desc">専門家に、繰り返しアンケートを行い、意見を集約して、将来を予測する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モンテカルロ法</dt>
+        <dd class="desc">乱数を使った、試行を、繰り返して、近似の解を求める手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>決定木</dt>
+        <dd class="desc">条件による、分岐を、木の形で表し、判断や分類を行う手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モデル化</dt>
+        <dd class="desc">現実の物事を、単純化して、扱いやすい形で、表すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>調査データ</dt>
+        <dd class="desc">アンケートなどの、調査で集めた、データ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>実験データ</dt>
+        <dd class="desc">実験を行って、得られたデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>人の行動ログデータ</dt>
+        <dd class="desc">人の行動を、記録した、データ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>機械の稼働ログデータ</dt>
+        <dd class="desc">機械の、稼働状況を、記録したデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソーシャルメディアデータ</dt>
+        <dd class="desc">SNSなどに、投稿された、データ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GISデータ</dt>
+        <dd class="desc">地図上の位置情報を、含む、データ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>量的データ</dt>
+        <dd class="desc">数値で表される、データ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>質的データ</dt>
+        <dd class="desc">数値では表せない、分類や、性質を表すデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>1次データ</dt>
+        <dd class="desc">自分で、調査・収集した、データ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>2次データ</dt>
+        <dd class="desc">他の人が、収集した、既存のデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>メタデータ</dt>
+        <dd class="desc">データそのものではなく、データについての情報。</dd>
+        <p class="example"><span class="ex-label">例</span>ファイルの作成日時、作成者。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>構造化データ</dt>
+        <dd class="desc">表のように、決まった形式で、整理されたデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>非構造化データ</dt>
+        <dd class="desc">決まった形式を持たない、データ。</dd>
+        <p class="example"><span class="ex-label">例</span>文章、画像、音声。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>時系列データ</dt>
+        <dd class="desc">時間の順に、並んだデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クロスセクションデータ</dt>
+        <dd class="desc">ある時点での、複数の対象の、データ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Webクローリング</dt>
+        <dd class="desc">プログラムが、Webサイトを、巡回して、情報を収集すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スクレイピング</dt>
+        <dd class="desc">Webページから、必要な情報を、自動的に抽出すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データレイク</dt>
+        <dd class="desc">構造化・非構造化を問わず、大量のデータを、そのままの形で蓄積する、保管場所。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データのサイロ化</dt>
+        <dd class="desc">データが、部門ごとに、分断され、共有・活用できない状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データ結合</dt>
+        <dd class="desc">複数の、データを、共通の項目でつなげて、1つにまとめること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>名寄せ</dt>
+        <dd class="desc">同一の人や物を、表す、複数のデータを、1つにまとめること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>外れ値・異常値・欠損値の処理</dt>
+        <dd class="desc">他と大きく離れた値や、抜けている値を、適切に、扱うこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>標準化</dt>
+        <dd class="desc">製品やサービスの、仕様や手順を統一すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アノテーション</dt>
+        <dd class="desc">データに、意味や、正解などの、情報を付けること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>季節調整</dt>
+        <dd class="desc">データから、季節による、変動の影響を取り除くこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>移動平均</dt>
+        <dd class="desc">一定期間の平均を、順にずらしながら求めたもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>周期性</dt>
+        <dd class="desc">一定の間隔で、同じ変動が、繰り返される性質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>BI</dt>
+        <dd class="desc">企業のデータを分析して、経営の意思決定に役立てる手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>テキストマイニング</dt>
+        <dd class="desc">文章のデータから、有用な情報を取り出す技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アソシエーション分析</dt>
+        <dd class="desc">商品の、同時購入など、データの間にある、関連性を見つける分析手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ビッグデータ</dt>
+        <dd class="desc">従来の方法では扱いきれない、大量で多様なデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オープンデータ</dt>
+        <dd class="desc">誰でも、自由に、利用できる形で、公開されたデータ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パーソナルデータ</dt>
+        <dd class="desc">個人に関する、データ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データサイエンスのサイクル</dt>
+        <dd class="desc">課題の設定から、データの収集・分析・活用までを、繰り返す流れ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シミュレーション</dt>
+        <dd class="desc">現実の現象を、模擬的に、再現して、結果を予測すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シミュレーションのデータ同化</dt>
+        <dd class="desc">観測データを、シミュレーションに取り込み、予測の精度を高める手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パターン発見</dt>
+        <dd class="desc">データの中から、規則性を、見つけ出すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>最適化</dt>
+        <dd class="desc">条件のもとで、最も良い結果になるよう、解を求めること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データサイエンティスト</dt>
+        <dd class="desc">データを、分析して、価値ある知見を、引き出す専門家。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>母集団</dt>
+        <dd class="desc">調査の、対象となる、全体の集まり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>国勢調査</dt>
+        <dd class="desc">国内の、人口や、世帯の実態を調べる、全数調査。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アンケート調査</dt>
+        <dd class="desc">質問票によって、多くの人の意見や、事実を集める調査。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>全数調査</dt>
+        <dd class="desc">対象となる、すべてを調べる調査。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>単純無作為抽出</dt>
+        <dd class="desc">母集団から、偶然に基づいて、無作為に選ぶ方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>層別抽出</dt>
+        <dd class="desc">母集団を、性質ごとの層に分け、各層から、抽出する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>多段抽出</dt>
+        <dd class="desc">段階的に、グループを選び、その中から、抽出する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>精度と偏り</dt>
+        <dd class="desc">調査の結果の、ばらつきの小ささと、真の値からのずれ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>選択バイアス</dt>
+        <dd class="desc">調査対象の選び方が、偏っているために生じる、偏り。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報バイアス</dt>
+        <dd class="desc">情報の収集や、測定の仕方が原因で生じる、偏り。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>交絡バイアス</dt>
+        <dd class="desc">別の要因の影響で、本来の関係を、誤って解釈してしまう偏り。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ハロー効果</dt>
+        <dd class="desc">ある一つの、目立つ特徴に、引きずられて、全体を評価してしまう傾向。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バンドワゴン効果</dt>
+        <dd class="desc">多くの人が、選んでいるものが、さらに、選ばれやすくなる傾向。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>正常性バイアス</dt>
+        <dd class="desc">異常な事態を、正常の範囲だと思い込んでしまう傾向。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>確証バイアス</dt>
+        <dd class="desc">自分の考えを、支持する情報だけを、集めてしまう傾向。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>棒グラフ</dt>
+        <dd class="desc">量の大きさを、棒の長さで表したグラフ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>折れ線グラフ</dt>
+        <dd class="desc">時間の経過に伴う変化を、線でつないで表したグラフ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>箱ひげ図</dt>
+        <dd class="desc">データの、分布を、最小値・四分位数・最大値などで、表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ヒートマップ</dt>
+        <dd class="desc">値の大きさを、色の濃淡で表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モザイク図</dt>
+        <dd class="desc">分割表のデータを、面積の大きさで表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クロス集計表</dt>
+        <dd class="desc">2つ以上の項目を、組み合わせて、集計した表。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>分割表</dt>
+        <dd class="desc">2つの項目の、組合せごとの、度数を表にしたもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>相関係数行列</dt>
+        <dd class="desc">複数の項目の、相関係数を、行列の形にまとめた表。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>散布図行列</dt>
+        <dd class="desc">複数の項目の、組合せごとの、散布図を、並べて表示したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デンドログラム</dt>
+        <dd class="desc">クラスタ分析の結果を、樹形図の形で表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>複合グラフ</dt>
+        <dd class="desc">棒グラフと、折れ線グラフなど、複数の種類を、組み合わせたグラフ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>2軸グラフ</dt>
+        <dd class="desc">左右に、異なる目盛りの軸を持つ、グラフ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロジックツリー</dt>
+        <dd class="desc">課題を、論理的に、木の形に分解して、整理する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンセプトマップ</dt>
+        <dd class="desc">概念同士の関係を、線で結んで、表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シェープファイル</dt>
+        <dd class="desc">地図の、形状や位置の情報を、格納する、GISのデータ形式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>共起キーワード</dt>
+        <dd class="desc">文章の中で、同時に、現れやすい、言葉。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">会計・財務</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>機会損失</dt>
+        <dd class="desc">ある選択をしたために、他の選択で得られたはずの利益を、失うこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>損益分岐点</dt>
+        <dd class="desc">売上高と、総費用が等しくなって、利益がちょうどゼロになる点。</dd>
+        <p class="example"><span class="ex-label">例</span>固定費÷(1−変動費率)で求める。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>仕訳帳帳</dt>
+        <dd class="desc">日々の取引を、発生した順に、記録する帳簿(仕訳帳)。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>総勘定元帳</dt>
+        <dd class="desc">すべての勘定科目ごとに、取引を、まとめて記録する、主要な帳簿。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>試算表</dt>
+        <dd class="desc">総勘定元帳の、集計が、正しいかを確認するために作る、一覧表。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>精算表</dt>
+        <dd class="desc">決算の手続きを、進めるために、試算表から、財務諸表を作る過程を、まとめた表。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>財務諸表</dt>
+        <dd class="desc">企業の、財務状況や経営成績を示す書類の総称。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>貸借対照表</dt>
+        <dd class="desc">一定時点の、資産・負債・純資産を表した財務諸表。バランスシートともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>損益計算書</dt>
+        <dd class="desc">一定期間の、収益と費用、利益を表した財務諸表。PLともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>決算短信</dt>
+        <dd class="desc">上場企業が、決算の内容を、速報として、発表する書類。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>のれん</dt>
+        <dd class="desc">企業を買収したときの、買収価格と、純資産との差額。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IFRS</dt>
+        <dd class="desc">世界共通の、会計の基準。国際財務報告基準。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>流動資産</dt>
+        <dd class="desc">現金や、売掛金など、1年以内に現金化される資産。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>固定資産</dt>
+        <dd class="desc">建物や設備など、長期間、使用する資産。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>繰延資産</dt>
+        <dd class="desc">支出した費用のうち、将来の収益に貢献するとして、資産に計上したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>流動負債</dt>
+        <dd class="desc">買掛金など、1年以内に、支払う必要のある負債。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>固定負債</dt>
+        <dd class="desc">長期借入金など、返済が、1年を超える負債。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>純資産</dt>
+        <dd class="desc">資産から、負債を引いた残り。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>株主資本</dt>
+        <dd class="desc">株主が、出資した資金と、会社が、稼いだ利益の、蓄積。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>費用</dt>
+        <dd class="desc">システムの、開発や運用にかかる費用。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>収益</dt>
+        <dd class="desc">事業活動によって、得られた、収入。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>販売費及び一般管理費</dt>
+        <dd class="desc">商品の販売や、会社の管理に、かかる費用。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>営業外損益</dt>
+        <dd class="desc">本業以外の、活動による、収益や費用。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>特別損益</dt>
+        <dd class="desc">臨時的に、発生した、損益。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>会計基準</dt>
+        <dd class="desc">会計処理の、ルールを定めた基準。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>財務指標</dt>
+        <dd class="desc">企業の、財務状況を、評価するための、指標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>収益性指標</dt>
+        <dd class="desc">企業が、どれだけ、効率よく、利益を上げているかを示す指標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ROA</dt>
+        <dd class="desc">総資産に対して、どれだけ、利益を上げたかを示す指標。総資産利益率。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ROE</dt>
+        <dd class="desc">自己資本に対して、どれだけ利益を上げたかを表す指標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>安全性指標</dt>
+        <dd class="desc">企業の、支払い能力や、財務の安定性を示す指標。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>流動比率</dt>
+        <dd class="desc">短期的な支払い能力を示す指標。流動資産を流動負債で割った値。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自己資本比率</dt>
+        <dd class="desc">総資産のうち、返済不要の自己資本が占める割合。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>経済性計算</dt>
+        <dd class="desc">投資などの、経済的な、有利さを、金額で評価すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>キャッシュフロー経営</dt>
+        <dd class="desc">現金の、流れを重視して、行う経営。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>キャッシュマネジメント</dt>
+        <dd class="desc">企業の現金を、効率よく管理・運用すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>棚卸資産評価</dt>
+        <dd class="desc">在庫の、価値を、決められた方法で、評価すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>先入先出法</dt>
+        <dd class="desc">先に、仕入れたものから、先に払い出したと、みなして、在庫を評価する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>総平均法</dt>
+        <dd class="desc">一定期間の、仕入れの平均単価で、在庫を評価する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オフバランス</dt>
+        <dd class="desc">資産や、負債を、貸借対照表に、載せないこと。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>
