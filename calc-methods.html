@@ -1,0 +1,288 @@
+<title>計算のやり方 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+
+  .calc { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; margin: 0 0 18px; }
+  .calc h3 { margin: 0 0 8px; font-size: 17px; }
+  .calc .formula { background: var(--accent-soft); border-radius: 6px; padding: 8px 12px; font-size: 14.5px; margin: 0 0 10px; }
+  .calc .q { margin: 0 0 8px; font-size: 15.5px; }
+  .calc details { font-size: 15px; }
+  .calc summary { cursor: pointer; color: var(--accent); font-weight: 700; }
+  .calc ol { margin: 8px 0 8px 1.3em; padding: 0; }
+  .calc .ans { font-weight: 700; margin: 6px 0 0; }
+</style>
+<div class="page">
+  <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><span class="nav-label">計算のやり方</span></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">基本情報技術者試験 &gt; 計算問題</p>
+    <h1>計算のやり方</h1>
+    <div class="meta-row"><span class="count-badge">27 問</span></div>
+    <p class="intro">試験によく出る計算を、公式・例題・解き方の順にまとめました。「解き方を見る」を開く前に、まず自分で解いてみてください。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">数の表現</p>
+    <hr class="group-divider" />
+    <div class="calc">
+      <h3>2進数と10進数の変換</h3>
+      <p class="formula">2進→10進: 各桁の「重み(1,2,4,8…)」を足す / 10進→2進: 2で割った余りを下から並べる</p>
+      <p class="q"><strong>例題</strong> 2進数 1011 を10進数に、10進数 13 を2進数にせよ。</p>
+      <details><summary>解き方を見る</summary><ol><li>1011 = 1×8 + 0×4 + 1×2 + 1×1 = 8+2+1</li><li>13 ÷ 2 = 6 余り1、6 ÷ 2 = 3 余り0、3 ÷ 2 = 1 余り1、1 ÷ 2 = 0 余り1</li><li>余りを下から並べると 1101</li></ol><p class="ans">答え: 1011(2) = 11、13 = 1101(2)</p></details>
+    </div>
+    <div class="calc">
+      <h3>16進数と2進数の変換</h3>
+      <p class="formula">16進の1桁 = 2進の4桁。4桁ずつ区切って対応させる</p>
+      <p class="q"><strong>例題</strong> 16進数 3A を2進数と10進数で表せ。</p>
+      <details><summary>解き方を見る</summary><ol><li>3 = 0011、A(=10) = 1010 なので 0011 1010</li><li>10進数は 3×16 + 10 = 58</li></ol><p class="ans">答え: 3A(16) = 00111010(2) = 58</p></details>
+    </div>
+    <div class="calc">
+      <h3>2の補数(負の数の表し方)</h3>
+      <p class="formula">負の数 = 「ビットを全部反転」して「1を足す」</p>
+      <p class="q"><strong>例題</strong> 8ビットの2の補数で −5 を表せ。</p>
+      <details><summary>解き方を見る</summary><ol><li>5 = 00000101</li><li>全ビット反転 → 11111010</li><li>1を足す → 11111011</li></ol><p class="ans">答え: −5 = 11111011</p></details>
+    </div>
+    <div class="calc">
+      <h3>PCM音声のデータ量</h3>
+      <p class="formula">データ量(bit) = 標本化周波数 × 量子化ビット数 × チャンネル数 × 秒数</p>
+      <p class="q"><strong>例題</strong> 44.1kHz・16ビット・ステレオ(2ch)の音声1分間のデータ量は約何MBか。</p>
+      <details><summary>解き方を見る</summary><ol><li>44,100 × 16 × 2 × 60 = 84,672,000 bit</li><li>8で割って byte に直す → 10,584,000 byte</li></ol><p class="ans">答え: 約10.6MB</p></details>
+    </div>
+    <div class="calc">
+      <h3>画像のデータ量</h3>
+      <p class="formula">データ量 = 縦の画素数 × 横の画素数 × 1画素のビット数 ÷ 8</p>
+      <p class="q"><strong>例題</strong> 1024×768画素、1画素24ビット(フルカラー)の画像は何バイトか。</p>
+      <details><summary>解き方を見る</summary><ol><li>1024 × 768 = 786,432 画素</li><li>24ビット = 3バイトなので 786,432 × 3</li></ol><p class="ans">答え: 2,359,296 バイト(約2.25MiB)</p></details>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">確率・統計</p>
+    <hr class="group-divider" />
+    <div class="calc">
+      <h3>組合せの数</h3>
+      <p class="formula">nCr = n! ÷ (r! × (n−r)!)</p>
+      <p class="q"><strong>例題</strong> 5人から3人の代表を選ぶ方法は何通りか。</p>
+      <details><summary>解き方を見る</summary><ol><li>5C3 = (5×4×3) ÷ (3×2×1)</li><li>= 60 ÷ 6</li></ol><p class="ans">答え: 10通り</p></details>
+    </div>
+    <div class="calc">
+      <h3>ベイズの定理</h3>
+      <p class="formula">P(A|結果) = A経由の確率 ÷ 結果が起こる全体の確率</p>
+      <p class="q"><strong>例題</strong> A工場が全体の60%(不良率2%)、B工場が40%(不良率5%)を作る。不良品を1つ選んだとき、A工場製である確率は。</p>
+      <details><summary>解き方を見る</summary><ol><li>A工場の不良品 = 0.6×0.02 = 0.012</li><li>B工場の不良品 = 0.4×0.05 = 0.020</li><li>不良品全体 = 0.012 + 0.020 = 0.032</li><li>0.012 ÷ 0.032</li></ol><p class="ans">答え: 0.375(37.5%)</p></details>
+    </div>
+    <div class="calc">
+      <h3>平均・分散・標準偏差</h3>
+      <p class="formula">分散 = (各値−平均)² の平均、標準偏差 = √分散</p>
+      <p class="q"><strong>例題</strong> データ 2,4,4,4,5,5,7,9 の平均・分散・標準偏差を求めよ。</p>
+      <details><summary>解き方を見る</summary><ol><li>平均 = 40 ÷ 8 = 5</li><li>各値−平均の2乗: 9,1,1,1,0,0,4,16 → 合計32</li><li>分散 = 32 ÷ 8 = 4、標準偏差 = √4</li></ol><p class="ans">答え: 平均5、分散4、標準偏差2</p></details>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">コンピュータの性能・容量</p>
+    <hr class="group-divider" />
+    <div class="calc">
+      <h3>CPUの命令実行速度(MIPS)</h3>
+      <p class="formula">MIPS = クロック周波数 ÷ CPI ÷ 10⁶(CPI: 1命令あたりの平均クロック数)</p>
+      <p class="q"><strong>例題</strong> クロック周波数2GHz、CPI 4のCPUは何MIPSか。</p>
+      <details><summary>解き方を見る</summary><ol><li>1秒あたりの命令数 = 2×10⁹ ÷ 4 = 5×10⁸</li><li>100万で割る</li></ol><p class="ans">答え: 500 MIPS</p></details>
+    </div>
+    <div class="calc">
+      <h3>キャッシュの実効アクセス時間</h3>
+      <p class="formula">実効アクセス時間 = ヒット率×キャッシュの時間 + (1−ヒット率)×主記憶の時間</p>
+      <p class="q"><strong>例題</strong> キャッシュ10ns、主記憶100ns、ヒット率90%のときの実効アクセス時間は。</p>
+      <details><summary>解き方を見る</summary><ol><li>0.9 × 10 = 9</li><li>0.1 × 100 = 10</li><li>9 + 10</li></ol><p class="ans">答え: 19ns</p></details>
+    </div>
+    <div class="calc">
+      <h3>HDDの平均アクセス時間</h3>
+      <p class="formula">平均アクセス時間 = 平均シーク時間 + 平均回転待ち時間(1回転の半分) + データ転送時間</p>
+      <p class="q"><strong>例題</strong> 回転数7,200rpm、平均シーク時間5ms、1トラックの1/10を読む場合の平均アクセス時間は。</p>
+      <details><summary>解き方を見る</summary><ol><li>1回転 = 60秒 ÷ 7,200 ≒ 8.33ms</li><li>平均回転待ち = 8.33 ÷ 2 ≒ 4.17ms</li><li>転送時間 = 8.33 × 1/10 ≒ 0.83ms</li><li>5 + 4.17 + 0.83</li></ol><p class="ans">答え: 約10ms</p></details>
+    </div>
+    <div class="calc">
+      <h3>RAIDの実効容量</h3>
+      <p class="formula">RAID0: 台数×容量 / RAID1: 台数÷2×容量 / RAID5: (台数−1)×容量</p>
+      <p class="q"><strong>例題</strong> 1TBのディスク4台でRAID5を組んだときの使える容量は。</p>
+      <details><summary>解き方を見る</summary><ol><li>パリティ用に1台ぶんを使う</li><li>(4−1) × 1TB</li></ol><p class="ans">答え: 3TB</p></details>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">信頼性・待ち行列</p>
+    <hr class="group-divider" />
+    <div class="calc">
+      <h3>稼働率</h3>
+      <p class="formula">稼働率 = MTBF ÷ (MTBF + MTTR)</p>
+      <p class="q"><strong>例題</strong> MTBFが900時間、MTTRが100時間の装置の稼働率は。</p>
+      <details><summary>解き方を見る</summary><ol><li>900 ÷ (900+100)</li></ol><p class="ans">答え: 0.9(90%)</p></details>
+    </div>
+    <div class="calc">
+      <h3>直列・並列システムの稼働率</h3>
+      <p class="formula">直列: A×B(全部動く必要) / 並列: 1−(1−A)×(1−B)(どちらか動けばよい)</p>
+      <p class="q"><strong>例題</strong> 稼働率0.9の装置Aと0.8の装置Bを、直列・並列につないだときの稼働率は。</p>
+      <details><summary>解き方を見る</summary><ol><li>直列 = 0.9 × 0.8 = 0.72</li><li>並列 = 1 − (1−0.9)×(1−0.8) = 1 − 0.1×0.2 = 1 − 0.02</li></ol><p class="ans">答え: 直列0.72、並列0.98</p></details>
+    </div>
+    <div class="calc">
+      <h3>待ち行列(M/M/1)</h3>
+      <p class="formula">利用率ρ = 到着率 ÷ サービス率 / 平均待ち時間 = ρ ÷ (1−ρ) × 平均サービス時間</p>
+      <p class="q"><strong>例題</strong> 平均サービス時間2分、利用率50%のときの平均待ち時間は。</p>
+      <details><summary>解き方を見る</summary><ol><li>ρ ÷ (1−ρ) = 0.5 ÷ 0.5 = 1</li><li>1 × 2分</li></ol><p class="ans">答え: 2分</p></details>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">ネットワーク・セキュリティ・アルゴリズム</p>
+    <hr class="group-divider" />
+    <div class="calc">
+      <h3>データの伝送時間</h3>
+      <p class="formula">伝送時間 = データ量(bit) ÷ (回線速度 × 回線利用率)</p>
+      <p class="q"><strong>例題</strong> 10MBのファイルを、100Mbps・回線利用率50%の回線で送る時間は。</p>
+      <details><summary>解き方を見る</summary><ol><li>10MB = 10×8 = 80Mbit</li><li>実効速度 = 100 × 0.5 = 50Mbps</li><li>80 ÷ 50</li></ol><p class="ans">答え: 1.6秒</p></details>
+    </div>
+    <div class="calc">
+      <h3>サブネットのホスト数</h3>
+      <p class="formula">使えるホスト数 = 2^(ホスト部のビット数) − 2(ネットワークアドレスとブロードキャストを除く)</p>
+      <p class="q"><strong>例題</strong> 192.168.1.0/26 のネットワークに割り当てられる機器の最大数は。</p>
+      <details><summary>解き方を見る</summary><ol><li>32 − 26 = 6 ビットがホスト部</li><li>2⁶ = 64、64 − 2</li></ol><p class="ans">答え: 62台</p></details>
+    </div>
+    <div class="calc">
+      <h3>暗号方式ごとの鍵の数</h3>
+      <p class="formula">共通鍵: n(n−1)÷2 個 / 公開鍵: 2n 個(1人につき公開鍵と秘密鍵)</p>
+      <p class="q"><strong>例題</strong> 10人が互いに暗号通信するとき、必要な鍵の数を共通鍵方式・公開鍵方式で比べよ。</p>
+      <details><summary>解き方を見る</summary><ol><li>共通鍵 = 10×9÷2 = 45</li><li>公開鍵 = 2×10 = 20</li></ol><p class="ans">答え: 共通鍵45個、公開鍵20個</p></details>
+    </div>
+    <div class="calc">
+      <h3>2分探索の比較回数</h3>
+      <p class="formula">n個のデータなら、最大で約 log₂n 回(切り上げ)</p>
+      <p class="q"><strong>例題</strong> 1,000個の整列済みデータを2分探索するとき、最大何回比べるか。</p>
+      <details><summary>解き方を見る</summary><ol><li>2¹⁰ = 1,024 ≧ 1,000</li><li>1回ごとに範囲が半分になる</li></ol><p class="ans">答え: 10回</p></details>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">プロジェクト・経営</p>
+    <hr class="group-divider" />
+    <div class="calc">
+      <h3>クリティカルパス</h3>
+      <p class="formula">各経路の所要日数を足し、最も長い経路が全体の期間になる</p>
+      <p class="q"><strong>例題</strong> A(3日)→B(5日)→D(2日)、A(3日)→C(4日)→D(2日)の作業がある。全体の最短日数は。</p>
+      <details><summary>解き方を見る</summary><ol><li>A→B→D = 3+5+2 = 10日</li><li>A→C→D = 3+4+2 = 9日</li></ol><p class="ans">答え: 10日(A→B→Dがクリティカルパス)</p></details>
+    </div>
+    <div class="calc">
+      <h3>人月と期間</h3>
+      <p class="formula">期間 = 工数(人月) ÷ 人数</p>
+      <p class="q"><strong>例題</strong> 120人月の開発を6人で行うと何か月かかるか。</p>
+      <details><summary>解き方を見る</summary><ol><li>120 ÷ 6</li></ol><p class="ans">答え: 20か月</p></details>
+    </div>
+    <div class="calc">
+      <h3>アーンドバリュー(EVM)</h3>
+      <p class="formula">SV = EV−PV、CV = EV−AC、SPI = EV÷PV、CPI = EV÷AC</p>
+      <p class="q"><strong>例題</strong> PV=100万円、EV=80万円、AC=90万円のときのSPIとCPIは。</p>
+      <details><summary>解き方を見る</summary><ol><li>SPI = 80 ÷ 100 = 0.8(遅れ)</li><li>CPI = 80 ÷ 90 ≒ 0.89(予算超過)</li></ol><p class="ans">答え: SPI 0.8、CPI 約0.89</p></details>
+    </div>
+    <div class="calc">
+      <h3>損益分岐点売上高</h3>
+      <p class="formula">損益分岐点 = 固定費 ÷ (1 − 変動費率)</p>
+      <p class="q"><strong>例題</strong> 固定費300万円、変動費率60%のときの損益分岐点売上高は。</p>
+      <details><summary>解き方を見る</summary><ol><li>1 − 0.6 = 0.4</li><li>300 ÷ 0.4</li></ol><p class="ans">答え: 750万円</p></details>
+    </div>
+    <div class="calc">
+      <h3>ROI(投資利益率)</h3>
+      <p class="formula">ROI = 利益 ÷ 投資額 × 100</p>
+      <p class="q"><strong>例題</strong> 200万円を投資して30万円の利益が出た。ROIは。</p>
+      <details><summary>解き方を見る</summary><ol><li>30 ÷ 200 × 100</li></ol><p class="ans">答え: 15%</p></details>
+    </div>
+    <div class="calc">
+      <h3>減価償却(定額法)</h3>
+      <p class="formula">毎年の償却額 = (取得価額 − 残存価額) ÷ 耐用年数</p>
+      <p class="q"><strong>例題</strong> 取得価額100万円、残存価額0、耐用年数5年のときの毎年の償却額は。</p>
+      <details><summary>解き方を見る</summary><ol><li>(100 − 0) ÷ 5</li></ol><p class="ans">答え: 20万円</p></details>
+    </div>
+    <div class="calc">
+      <h3>流動比率</h3>
+      <p class="formula">流動比率 = 流動資産 ÷ 流動負債 × 100</p>
+      <p class="q"><strong>例題</strong> 流動資産300万円、流動負債200万円のときの流動比率は。</p>
+      <details><summary>解き方を見る</summary><ol><li>300 ÷ 200 × 100</li></ol><p class="ans">答え: 150%</p></details>
+    </div>
+    <div class="calc">
+      <h3>経済的発注量(EOQ)</h3>
+      <p class="formula">EOQ = √(2 × 年間需要 × 1回の発注費用 ÷ 1個あたりの年間保管費用)</p>
+      <p class="q"><strong>例題</strong> 年間需要1,000個、発注費用50円/回、保管費用10円/個・年のときの経済的発注量は。</p>
+      <details><summary>解き方を見る</summary><ol><li>2 × 1,000 × 50 ÷ 10 = 10,000</li><li>√10,000</li></ol><p class="ans">答え: 100個</p></details>
+    </div>
+  </section>
+  <footer class="page-footer">計算例は学習用に独自に作成したものです。</footer>
+</div>
