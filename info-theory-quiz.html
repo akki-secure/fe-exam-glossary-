@@ -163,7 +163,7 @@
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習の途中で、モデルの設定(パラメータ)がうまくいっているかを確認するために使うデータ。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習が終わったモデルの、最終的な性能を確かめるために使う、学習には使っていないデータ。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習に使っていない新しいデータに対しても、どれだけ正しく予測できるかを表す能力。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習データに合わせすぎてしまい、新しいデータへの予測精度がかえって下がってしまう現象。オーバーフィッティングともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習データに合わせすぎてしまい、新しいデータへの予測精度がかえって下がってしまう現象。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データをいくつかに分割し、順番にテスト用と学習用を入れ替えながら、モデルの性能を何度も確かめる評価方法。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データをあらかじめ「学習用」と「テスト用」の2つに分けておき、1回だけ評価を行うシンプルな検証方法。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>分類モデルの性能を、閾値を変えながら視覚的に評価するためのグラフ。曲線が左上に近いほど性能が良い。</p>
@@ -176,7 +176,7 @@
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人間の脳の仕組みを参考にした「ニューラルネットワーク」を何層も重ねて、複雑なパターンを学習する機械学習の手法。深層学習。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>脳の神経細胞(ニューロン)のつながりを模した、機械学習のモデルの仕組み。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力層・中間層(隠れ層)・出力層のように、ニューロンを何層にも重ねた基本的なニューラルネットワークの構造。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ニューラルネットワークの予測の誤差を、出力側から入力側に向かって逆に伝えながら、各ニューロンのパラメータを調整していく学習方法。誤差逆伝播法ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ニューラルネットワークの予測の誤差を、出力側から入力側に向かって逆に伝えながら、各ニューロンのパラメータを調整していく学習方法。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ニューラルネットワークの層を深くしすぎると、誤差を逆伝播する際にその影響がどんどん小さくなり、うまく学習が進まなくなる問題。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ニューロンに入ってきた値を、そのまま出さずに変換して次の層へ渡すための関数。シグモイド関数やReLUなどがある。</p>
     </div>
@@ -198,7 +198,7 @@
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>過去の情報を内部に記憶しながら処理する、時系列データ(文章や音声など)に強いニューラルネットワーク。RNN。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>学習したデータの特徴をもとに、それらしい新しいデータ(画像や文章など)を作り出すモデル。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「本物そっくりのデータを作る生成器」と「本物か偽物かを見抜く識別器」を競わせながら学習させる、生成モデルの手法。GAN。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>大量のデータで事前学習された、様々な用途に応用できる汎用的な大規模モデル。ファウンデーションモデルともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>大量のデータで事前学習された、様々な用途に応用できる汎用的な大規模モデル。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データに徐々にノイズを加えて壊し、そのノイズを取り除く過程を学習することで、新しい画像などを生成するモデル。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「次にどんな単語が来やすいか」といった、言葉のつながりの確率を学習したモデル。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>非常に大量のテキストデータと、多くのパラメータを使って学習させた言語モデル。LLM。文章生成や対話に使われる。</p>
@@ -217,7 +217,7 @@
     <hr class="group-divider" />
     <div class="term-list">
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードを機械語に変換する途中で使われる、コンピュータの種類に依存しない橋渡し用のプログラム表現。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードをコンパイルしてできた、コンピュータが直接実行できる形式のプログラム。オブジェクトプログラムともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードをコンパイルしてできた、コンピュータが直接実行できる形式のプログラム。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>「何をどの順番で行うか」という手続き(処理の流れ)を記述していく、昔からある伝統的なプログラミング言語の分類。C言語などが該当する。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データとそれを操作する処理をひとまとめにした「オブジェクト」を中心にプログラムを組み立てる言語。Javaなどが該当する。</p>
     </div>

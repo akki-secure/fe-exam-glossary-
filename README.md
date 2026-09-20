@@ -34,6 +34,53 @@ fe-siken.com の用語集(シラバスVer9.2)の23カテゴリすべてを収録
 用語データは `src/data/pentest/*.txt`、生成は `python3 src/build_pentest.py` です。
 ツール名や用語の意味は執筆時点の理解にもとづくもので、正確性を保証するものではありません。
 
+## Git編(別編、59語)
+
+利用者が学習用にまとめたGit・GitHubのメモをもとにした用語集です。用語データは `src/data/git/git.txt`、
+生成は `python3 src/build_pentest.py`(ページは `git-cards.html` / `git-quiz.html`)です。
+
+## Docker編(別編、19語)
+
+利用者が学習用にまとめたDockerのメモをもとにした用語集です。用語データは `src/data/docker/docker.txt`、
+生成は `python3 src/build_pentest.py`(ページは `docker-cards.html` / `docker-quiz.html`)です。
+
+## 使い方(起動の仕方)
+
+静的なHTMLなので、サーバーやインストールは不要です。
+
+### 開く
+
+[`index.html`](./index.html) をブラウザで開くだけです。ターミナルからは次のとおりです。
+
+```
+open index.html
+```
+
+ローカルサーバーで見たい場合は、次を実行します。
+
+```
+python3 -m http.server 8000
+```
+
+1. 実行すると `Serving HTTP on :: port 8000 ...` と表示されます。これは正常に起動した状態で、エラーではありません。
+2. ブラウザのアドレス欄に http://localhost:8000 と入力すると、目次ページが表示されます。
+3. 表示したままの間は、サーバーが動き続けています。このターミナルは閉じないでください。
+4. ページを開くと `GET /index.html 200` のような行が増えていきます。アクセスの記録なので、気にする必要はありません。
+5. 他のコマンドを打ちたいときは、新しいターミナルを開いてください。
+6. 止めるときは、ターミナルで Ctrl+C を押します。止めると、ページは見られなくなります。
+
+### 用語を編集したあとの再生成
+
+ページは用語データから自動生成しています。データを直したら、次の順に実行してください。
+Pythonの標準ライブラリだけで動くので、追加のインストールは不要です。
+
+```
+python3 src/build_pentest.py   # セキュリティ実践編・Git編・Docker編
+python3 src/build.py           # 基本情報の各編と目次(index.html)
+```
+
+用語データの場所は、基本情報技術者試験が `src/data/desc/`、Git編が `src/data/git/git.txt`、Docker編が `src/data/docker/docker.txt` です。
+
 ## ファイル
 
 各編は `<名前>-cards.html`(カード形式:用語・説明・例を読む)と `<名前>-quiz.html`(穴埋め形式:説明から用語を当てる)の2つです。
