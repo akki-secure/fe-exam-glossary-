@@ -37,12 +37,21 @@ def css(kind):
     src = open(os.path.join(ROOT, f"comm-theory-{kind}.html"), encoding="utf-8").read()
     return re.search(r"<style>.*?</style>", src, re.S).group(0)
 
+ALIAS = re.compile(r"^(.*。)([^。]+?)とも(?:いう|呼ばれる|言う|称される)。$")
+
+def split_alias(desc):
+    """説明末尾の「Xともいう。」を取り除き、(説明, 別名)を返す。別名は用語名の後ろに「用語(別名)」と表示する。"""
+    m = ALIAS.match(desc)
+    return (m.group(1), m.group(2)) if m else (desc, None)
+
 def load_desc():
     d = {}
     for f in sorted(glob.glob(os.path.join(DATA, "desc", "*.txt"))):
         for line in open(f, encoding="utf-8"):
             p = line.rstrip("\n").split("|")
-            if len(p) >= 2 and p[0]: d[p[0]] = (p[1], p[2] if len(p) > 2 and p[2] else None)
+            if len(p) >= 2 and p[0]:
+                text, alias = split_alias(p[1])
+                d[p[0]] = (text, p[2] if len(p) > 2 and p[2] else None, alias)
     return d
 
 def build_page_data(pid, slug, desc, structure, missing):
@@ -55,7 +64,8 @@ def build_page_data(pid, slug, desc, structure, missing):
             if t in seen: continue
             seen.add(t)
             if t not in desc: missing.append(f"{slug}: {t}"); continue
-            terms.append((t, *desc[t]))
+            text, ex, alias = desc[t]
+            terms.append((f"{t}({alias})" if alias else t, text, ex))
         groups.append((sub["name"], "", terms))
     if pid == "1-5":
         meta = ["計測・制御理論編", "基礎理論 > 計測・制御に関する理論", "基本情報技術者試験「基礎理論」の中の計測・制御に関する理論分野の用語集です。"]
@@ -151,6 +161,15 @@ def index(counts):
                     f'<a href="pentest-{s}-cards.html">カード</a> / <a href="pentest-{s}-quiz.html">穴埋め</a></p>')
     rows.append('  </div></section>')
     total += ptotal
+    for slug, title, note in (("git", "Git編", ""), ("docker", "Docker編", "")):
+        gpath = os.path.join(ROOT, "src", "data", slug, f"{slug}.txt")
+        gcount = sum(1 for l in open(gpath, encoding="utf-8") if l.strip())
+        rows.append(f'  <section class="group"><p class="group-label">{title}({gcount}語)</p>'
+                    '<p class="group-desc">こちらも利用者が学習用にまとめたメモをもとにした用語集で、基本情報技術者試験のシラバスとは別です。</p>'
+                    '<hr class="group-divider" /><div class="term-list">'
+                    f'<p class="term-line"><span class="bullet">・</span><strong>{title}</strong>({gcount}語) <span class="arrow">→</span>'
+                    f'<a href="{slug}-cards.html">カード</a> / <a href="{slug}-quiz.html">穴埋め</a></p></div></section>')
+        total += gcount
     style = css("quiz").replace("</style>", "  a { color: var(--accent); }\n</style>")
     return (f'<title>目次 — 基本情報技術者試験 用語集</title>\n{style}\n<div class="page">\n  <header class="masthead">\n'
             f'    <p class="breadcrumb">fe-exam-glossary</p>\n    <h1>基本情報技術者試験 用語集</h1>\n    <div class="meta-row">'

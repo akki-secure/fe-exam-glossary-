@@ -1,0 +1,342 @@
+<title>Git編 — 学習メモ</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+<nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">Git編</span>
+        <a href="git-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="git-quiz.html">穴埋め</a>
+      </div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">Git編</p>
+    <h1>Git編</h1>
+    <div class="meta-row">
+      <span class="count-badge">59 語</span>
+      <span class="source-note">利用者作成のメモをもとに独自にまとめた用語集</span>
+    </div>
+    <p class="intro">Gitとバージョン管理、GitHubの使い方に関する用語</p>
+  </header>
+  <section class="group">
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>VCS(バージョン管理システム)</dt>
+        <dd class="desc">ファイルやディレクトリの変更履歴を記録して管理するツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バージョン管理のメリット</dt>
+        <dd class="desc">変更履歴を追跡・確認できる、複数人で共同作業できる、コミット履歴から誰が変更したかを確認できる、の3点が主な利点。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Git</dt>
+        <dd class="desc">ファイルの変更履歴を管理する分散型のバージョン管理システム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GitHub</dt>
+        <dd class="desc">Gitのリポジトリをインターネット上に保存・共有できるクラウドサービス。リモートリポジトリの置き場として使う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リポジトリ</dt>
+        <dd class="desc">ファイルとその変更履歴をまとめて保存する場所。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ローカルリポジトリ</dt>
+        <dd class="desc">自分のPC上にあるリポジトリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リモートリポジトリ</dt>
+        <dd class="desc">GitHubなど、共有サーバー上にあるリポジトリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>origin</dt>
+        <dd class="desc">リモートリポジトリに付けられる、標準の呼び名(別名)。cloneすると自動で設定される。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>.git</dt>
+        <dd class="desc">リポジトリの履歴や設定を保存している隠しディレクトリ。これがあるフォルダがリポジトリになる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パブリックリポジトリ</dt>
+        <dd class="desc">誰でも見られるように公開されているGitHubのリモートリポジトリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プライベートリポジトリ</dt>
+        <dd class="desc">許可した人だけが見られる、非公開のGitHubのリモートリポジトリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>集中型バージョン管理システム</dt>
+        <dd class="desc">ローカルに履歴を持たず、PCから直接サーバーに変更を記録する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>分散型バージョン管理システム</dt>
+        <dd class="desc">各PCのローカルリポジトリに履歴を持ち、あとでリモートリポジトリと同期する方式。Gitはこちら。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SSH</dt>
+        <dd class="desc">暗号化された通信でリモートのコンピュータと安全につなぐ仕組み。鍵のペアで認証すれば、毎回パスワードを入力せずに接続できる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>秘密鍵</dt>
+        <dd class="desc">自分だけが持ち、他人に渡してはいけない鍵。SSHでは、この鍵を持つことが本人の証明になる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>公開鍵</dt>
+        <dd class="desc">相手(GitHubなど)に渡しておく鍵。秘密鍵とペアで作られ、手元の秘密鍵が正しいか照合するために使われる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>id_rsa</dt>
+        <dd class="desc">SSH鍵のペアを作ったときにできる、秘密鍵のファイル名(RSA方式の場合)。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>id_rsa.pub</dt>
+        <dd class="desc">SSH鍵のペアを作ったときにできる、公開鍵のファイル名(RSA方式の場合)。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>初期化</dt>
+        <dd class="desc">新しいローカルリポジトリを作ること。git initで行う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>clone</dt>
+        <dd class="desc">リモートリポジトリの内容を丸ごとPCにコピーして、ローカルリポジトリを作るコマンド。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Working Tree(作業ツリー)</dt>
+        <dd class="desc">リポジトリのフォルダの中で、実際に編集しているファイル群。まだcommitされていない変更も含む。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ステージングエリア</dt>
+        <dd class="desc">次のcommitに含めたい変更を、いったん置いておく場所。git addで置く。荷造り前の「荷物置き場」のようなもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>commit</dt>
+        <dd class="desc">ステージングエリアの変更を、ローカルリポジトリに履歴として記録すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>commitの4つの情報</dt>
+        <dd class="desc">commit ID、Author(作成者)、Date(日時)、Commit Message(変更内容の説明)の4つ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コミットハッシュ(commit ID)</dt>
+        <dd class="desc">commitごとに自動でつく、40桁ほどの英数字の識別番号。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スナップショット</dt>
+        <dd class="desc">commitした瞬間の、すべてのファイルの中身を丸ごと記録したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>log</dt>
+        <dd class="desc">commitの履歴(ID・作成者・日時・メッセージ)を一覧で表示するコマンド。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>diff</dt>
+        <dd class="desc">変更前と変更後のファイル内容の違いを表示するコマンド。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>変更差分</dt>
+        <dd class="desc">ファイルの変更前と変更後の内容の違い。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>restore</dt>
+        <dd class="desc">作業ツリーのファイルを、ステージング済みの状態(なければ直前のcommitの状態)に戻すコマンド。編集を取り消したいときに使う。--stagedを付けると、ステージングを取り消せる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>revert</dt>
+        <dd class="desc">指定したcommitの変更を打ち消す、新しいcommitを作るコマンド。履歴は消えずに残る。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>gitignore</dt>
+        <dd class="desc">Gitの管理対象から外したいファイル名を書いておく専用ファイル。パスワードなどの機密情報や自動生成ファイルを、誤って登録しないために使う。すでに管理中のファイルには効かない。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ブランチ</dt>
+        <dd class="desc">履歴を枝分かれさせて、本流に影響を与えず並行して作業できる仕組み。実体は、枝の先端のcommitを指すポインタ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ポインタ</dt>
+        <dd class="desc">特定のcommitを指し示す「しおり」のようなもの。中身はcommit IDを書いたファイル。ブランチやHEADもポインタの一種。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>switch</dt>
+        <dd class="desc">作業中のブランチを、別のブランチに切り替えるコマンド。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>*(アスタリスク)</dt>
+        <dd class="desc">git branchの一覧で、今作業中のブランチにつく印。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HEAD</dt>
+        <dd class="desc">今作業中のブランチ(その先頭のcommit)を指すポインタ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>head</dt>
+        <dd class="desc">各ブランチの先頭のcommitを指すポインタ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>トラッキングブランチ</dt>
+        <dd class="desc">リモートのブランチと紐づけたローカルのブランチ。pullやpushの相手が自動で決まる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>merge</dt>
+        <dd class="desc">指定したブランチの変更を、今のブランチに取り込んで合流させるコマンド。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コンフリクト</dt>
+        <dd class="desc">複数のブランチが同じファイルの同じ行を別々に変更していて、どちらを採用すべきかGitが判断できない状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>rebase</dt>
+        <dd class="desc">ブランチの起点を付け替えて、commitを別のcommitの上に積み直すコマンド。commit履歴が書き換わる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>fetch</dt>
+        <dd class="desc">リモートリポジトリの最新情報を取得するだけのコマンド。作業中のブランチは変更しない。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>pull</dt>
+        <dd class="desc">fetchとmergeをまとめて行い、リモートリポジトリの変更をローカルに取り込むコマンド。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>push</dt>
+        <dd class="desc">ローカルリポジトリのcommitを、リモートリポジトリに反映させるコマンド。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>pull request(PR)</dt>
+        <dd class="desc">自分のブランチの変更を取り込んでもらうよう依頼し、レビューを受ける仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レビュー</dt>
+        <dd class="desc">他の人のコードを確認して、改善点などの意見を伝えること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フィードバック</dt>
+        <dd class="desc">相手の成果物に対して、感想や意見を伝えること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>git config</dt>
+        <dd class="desc">Gitの設定を確認・編集するコマンド。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Gitの設定の3つの適用範囲</dt>
+        <dd class="desc">system(PC上の全ユーザー)、global(今のユーザー)、local(特定のリポジトリ)の3つ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Gitの設定の優先順位</dt>
+        <dd class="desc">local &gt; global &gt; system の順に優先される。狭い範囲の設定が広い範囲の設定より優先される。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>prefix</dt>
+        <dd class="desc">名前の先頭につけて種類を区別するための文字列(接頭辞)。例:featureブランチを「feature/login」のように名づける。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>stash@{n}</dt>
+        <dd class="desc">git stashで退避した変更を区別する識別名。nは番号で、最新のものがstash@{0}。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>GitHub Actions</dt>
+        <dd class="desc">コードのテストやデプロイなどを、GitHub上で自動実行する機能。CI/CDに使う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CI(継続的インテグレーション)</dt>
+        <dd class="desc">コードをpushしたりPRを作ったりするたびに、テストや構文チェックを自動実行する仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CD(継続的デリバリー)</dt>
+        <dd class="desc">CIのあと、アプリを利用者が使える状態にするまでを自動化する仕組み。GitHubなら、サーバーへの配置(デプロイ)と公開まで自動で行う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Lint(Linting)</dt>
+        <dd class="desc">コードの文法ミスや書き方の問題点を、実行前に自動で検出するツール、またはその作業。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>作業ログ</dt>
+        <dd class="desc">調べたことや考えたことを、Discordなどのチャットツールにスレッド形式でメモとして残す記録の方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スレッド</dt>
+        <dd class="desc">ひとつの話題に対するコメントの流れ。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">Git編は、利用者が学習用にまとめたメモをもとに作成した独自の用語集です。基本情報技術者試験のシラバスとは無関係です。</footer>
+</div>
