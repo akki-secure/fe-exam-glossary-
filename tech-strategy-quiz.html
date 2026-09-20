@@ -1,0 +1,133 @@
+<title>技術戦略マネジメント編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">技術戦略マネジメント編</span>
+        <a href="tech-strategy-cards.html">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="tech-strategy-quiz.html" aria-current="page">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="biz-strategy-quiz.html">← 前: 経営戦略マネジメント編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="industry-quiz.html">次 →: ビジネスインダストリ編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">技術戦略マネジメント &gt; 穴埋め問題</p>
+    <h1>技術戦略マネジメント編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">40 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+  <section class="group">
+    <p class="group-label">技術開発戦略の立案</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>技術を、経営に生かして、価値を生み出すための手法。技術経営ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>自社だけでなく、外部の知識や技術も取り入れて、新しい価値をつくる方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>最小限の製品を、素早く作って、検証し、改善を重ねる、起業の手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>APIを、公開し、他の企業や、開発者と連携して、新しい価値を生む経済の仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新しい技術や製品を、生み出すための、研究開発。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>将来性のある、成長企業へ、出資する投資会社。ベンチャーキャピタル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>事業会社が、自社の戦略のために、ベンチャー企業へ出資する仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新しい価値を、生み出すための、3つの要素。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>技術の、性能の向上が、時間とともに、S字を描く様子を示したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新しい製品が、初期の利用者から、一般の利用者へ、広がるときの、深い溝。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>研究段階から、開発段階へ進むときの、障壁。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>研究開発から、事業化へ進む過程で、資金や人材が足りずに行き詰まる時期。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>事業化した製品が、市場の競争にさらされ、生き残るのが難しくなる時期。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>企業が、競争力の源泉として、持つ、中核となる技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新しい技術の、原理や、応用を探る研究。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>研究を、外部の機関に、委託して行うこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の機関が、共同で行う研究。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者の視点に立ち、課題を見つけて、解決策を作り出す考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>架空の利用者像(ペルソナ)を、具体的に設定して、製品開発に生かす手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新しい技術や、アイデアが、実現可能かを、小規模に試して確認すること。概念実証。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新しい技術や、アイデアの、価値があるかを、検証すること。価値実証。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>自社にない技術を、外部から得ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>自社の技術を、他社に提供すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>企業同士が、技術面で、協力する契約。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>企業・大学・行政が、連携して、研究開発などを行うこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>自社の、技術を、標準にして、市場での、優位性を得る戦略。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アイデアを、出し合って、新しい発想や、企画を生み出すイベント。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>短期間に、チームで、集中して、システムやサービスを開発するイベント。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">技術開発計画</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>技術開発に、どれだけ、投資するかを決める計画。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>技術開発を行う、拠点を、どこに置くかの計画。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>必要な人材を、確保・育成するための、計画。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人・物・金・情報などの、経営資源を、最も効果的に、割り当てること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムに投資する費用に対して、得られる効果。ROIともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>設計や、製造などの、工程を、同時並行で進めて、開発期間を短縮する手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>本格的な生産の前に、試験的に、小規模で生産すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>特許などの、知的財産を、適切に、取得・管理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>市場で、求められている、ニーズ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>技術開発の、将来の方向性と、時期を示した計画。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>技術を、どの製品に、いつ応用するかを、示した計画。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>特許の取得を、いつ、どの技術で行うかを、示した計画。</p>
+    </div>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

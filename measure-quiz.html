@@ -1,0 +1,111 @@
+<title>計測・制御理論編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">計測・制御理論編</span>
+        <a href="measure-cards.html">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="measure-quiz.html" aria-current="page">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="comm-theory-quiz.html">← 前: 通信理論編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="algo-quiz.html">次 →: アルゴリズムとプログラミング編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">基礎理論 &gt; 計測・制御に関する理論 &gt; 穴埋め問題</p>
+    <h1>計測・制御理論編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">24 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+  <section class="group">
+    <p class="group-label">計測・制御に関する理論</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データや信号から、条件に合うものだけを選び出したり、不要な成分を取り除いたりする処理。迷惑メールを除外する、ノイズを取り除く。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>デジタル信号をアナログ信号に変換すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アナログ信号をデジタル信号に変換すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>時間制約を守れるように設計された、組込み機器向けのOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>出力の結果を入力側へ戻さず、決められた操作だけを行う制御方式。設定した時間だけ加熱する電子レンジ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムに入力を与えたとき、出力がどのように変化するかを表す性質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>外乱があっても、制御対象が目標の状態に落ち着き、それを保てる性質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>温度・光・圧力などの物理量を検知して、電気信号に変える装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>電気信号を受けて、モータなどで物理的な動きを生み出す装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>光の強さや有無を検知するセンサー。自動ドアの人感検知、照明の自動点灯。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>赤外線の量を検知して、物の有無や温度を調べるセンサー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>磁力の変化を検知するセンサー。ドアの開閉検知、方位磁石。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>速度の変化(加速度)や傾きを検知するセンサー。スマホの画面の自動回転。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>回転の速さ(角速度)を検知するセンサー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>超音波を出して、反射して返るまでの時間から距離を測るセンサー。車のバックセンサー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>温度を検知して、電気信号に変えるセンサー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>空気中の湿度を検知するセンサー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>加わる圧力を検知して、電気信号に変えるセンサー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>物体が伸び縮みしたときの、わずかな変形を電気抵抗の変化で測る素子。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>温度によって電気抵抗が大きく変わる素子。温度センサーに使う。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>磁界の強さに応じた電圧が発生する素子。磁気センサーに使う。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>電気の力で回転運動を生み出す、アクチュエータの代表的な装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>油の圧力で、ピストンを直線的に動かす装置。強い力が出せる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>圧縮空気の力で、ピストンを直線的に動かす装置。</p>
+    </div>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

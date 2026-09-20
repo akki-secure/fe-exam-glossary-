@@ -93,70 +93,122 @@
       <div class="nav-group"><a href="software-cards.html">次 →: ソフトウェア編</a></div>
     </nav>
   <header class="masthead">
-    <p class="breadcrumb">コンピュータシステム &gt; システム構成要素</p>
+    <p class="breadcrumb">システム構成要素</p>
     <h1>システム構成要素編</h1>
     <div class="meta-row">
-      <span class="count-badge">43 語</span>
+      <span class="count-badge">89 語</span>
       <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
     </div>
-    <p class="intro">基本情報技術者試験「コンピュータシステム」の中のシステム構成要素の用語集です。システムの構成、信頼性、性能まで含みます。</p>
+    <p class="intro">基本情報技術者試験「システム構成要素」分野の用語集です。システムの構成、システムの評価指標を含みます。</p>
   </header>
   <section class="group">
     <p class="group-label">システムの構成</p>
-    <p class="group-desc">コンピュータをどう組み合わせて使うかに関する用語</p>
     <hr class="group-divider" />
     <dl class="term-list">
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>シンプレックスシステム</dt>
-        <dd class="desc">1系統のシステムだけで処理を行う最も基本的な構成。</dd>
+        <dt class="term"><span class="arrow">・</span>バッチ処理</dt>
+        <dd class="desc">データをある程度まとめて、一括して処理する方式。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>デュプレックスシステム</dt>
-        <dd class="desc">同じシステムを2系統用意し、1つを予備にしておく構成。</dd>
+        <dt class="term"><span class="arrow">・</span>リアルタイム処理</dt>
+        <dd class="desc">要求を受けたら、決められた時間内に、必ず処理して応答する方式。</dd>
+        <p class="example"><span class="ex-label">例</span>航空機の制御、銀行のATM。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>並列処理</dt>
+        <dd class="desc">複数の処理を、複数のプロセッサで、同時に行うこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クライアントサーバ処理</dt>
+        <dd class="desc">依頼する側(クライアント)と、処理する側(サーバ)で、役割を分担して行う処理。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>トランザクション処理</dt>
+        <dd class="desc">ひとまとまりの処理を、確定または取消しの単位として、扱う処理方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>対話型処理</dt>
+        <dd class="desc">利用者が、コンピュータとやり取りしながら、進める処理方式。</dd>
       </div>
       <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>デュアルシステム</dt>
         <dd class="desc">2系統のシステムで同じ処理を同時に行い、結果を照合する構成。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ホットスタンバイ</dt>
-        <dd class="desc">予備系を常時稼働状態で待機させ、障害時にすぐ切り替える方式。</dd>
+        <dt class="term"><span class="arrow">・</span>デュプレックスシステム</dt>
+        <dd class="desc">同じシステムを2系統用意し、1つを予備にしておく構成。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>コールドスタンバイ</dt>
-        <dd class="desc">予備系を停止しておき、障害時に起動して切り替える方式。</dd>
+        <dt class="term"><span class="arrow">・</span>クラスタ</dt>
+        <dd class="desc">複数のコンピュータを連携させて、1台のように動かす構成。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>クラスタリング</dt>
-        <dd class="desc">複数のコンピュータを連携させ、1台のシステムのように動かす方式。</dd>
+        <dt class="term"><span class="arrow">・</span>マルチプロセッサシステム</dt>
+        <dd class="desc">複数のプロセッサを備えて、処理を分担するシステム。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>負荷分散</dt>
-        <dd class="desc">処理を複数のコンピュータに振り分けて、1台への集中を避ける仕組み。ロードバランシングともいう。</dd>
+        <dt class="term"><span class="arrow">・</span>ロードシェアリングシステム</dt>
+        <dd class="desc">複数のシステムで、負荷を分け合って処理する構成。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>集中処理</dt>
-        <dd class="desc">1台の大きなコンピュータで、すべての処理をまとめて行う形態。</dd>
+        <dt class="term"><span class="arrow">・</span>バックアップサイト</dt>
+        <dd class="desc">災害などに備えて、別の場所に用意する、予備のシステムの拠点。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>分散処理</dt>
-        <dd class="desc">複数のコンピュータに処理を分担させる形態。</dd>
+        <dt class="term"><span class="arrow">・</span>ホットサイト</dt>
+        <dd class="desc">本番と同じ環境を、常時稼働させておく、バックアップサイト。すぐ切り替えられる。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>クライアントサーバシステム</dt>
-        <dd class="desc">サービスを頼む側(クライアント)と、提供する側(サーバ)に役割を分けたシステム。</dd>
+        <dt class="term"><span class="arrow">・</span>ウォームサイト</dt>
+        <dd class="desc">機器は用意しておくが、データの同期などは、切替時に行うバックアップサイト。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>Webシステム</dt>
-        <dd class="desc">Webブラウザを使って利用するシステム。</dd>
+        <dt class="term"><span class="arrow">・</span>コールドサイト</dt>
+        <dd class="desc">場所や設備だけを、用意しておくバックアップサイト。復旧に時間がかかる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>主系</dt>
+        <dd class="desc">通常時に、処理を行うほうのシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>従系</dt>
+        <dd class="desc">主系に障害が起きたとき、代わりに動く、予備のシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>密結合</dt>
+        <dd class="desc">複数のプロセッサが、メモリを共有して、密接に連携している構成。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>疎結合</dt>
+        <dd class="desc">複数のシステムが、それぞれ独立し、通信で連携している構成。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ピアツーピア</dt>
+        <dd class="desc">特定のサーバを置かず、対等な端末同士が、直接やり取りする方式。P2Pともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>グリッドコンピューティング</dt>
+        <dd class="desc">ネットワークでつないだ、多数のコンピュータを、1つの大きな計算機として使う技術。</dd>
       </div>
       <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>仮想化</dt>
         <dd class="desc">1台のコンピュータの上に、複数の仮想的なコンピュータを作る技術。</dd>
       </div>
       <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>VM</dt>
+        <dd class="desc">1台の物理的なコンピュータ上で動作する、仮想的なコンピュータ。仮想マシンともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>VDI</dt>
+        <dd class="desc">デスクトップ環境を、サーバ上に集約して、端末から利用する仕組み。</dd>
+      </div>
+      <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>クラウドコンピューティング</dt>
         <dd class="desc">インターネット経由で、必要な分だけコンピュータ資源をサービスとして利用する形態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>IaC</dt>
+        <dd class="desc">サーバやネットワークの構成を、コードで記述して、自動的に構築する手法。</dd>
       </div>
       <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>SaaS</dt>
@@ -172,38 +224,128 @@
         <dd class="desc">サーバやネットワークなどのインフラをインターネット経由で提供するサービス。</dd>
       </div>
       <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サーバレス</dt>
+        <dd class="desc">利用者がサーバの管理を意識せずに、プログラムを実行できる、クラウドの仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>FaaS</dt>
+        <dd class="desc">関数(プログラム)単位で、クラウド上で実行できるサービス。</dd>
+      </div>
+      <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>エッジコンピューティング</dt>
         <dd class="desc">データの発生源の近くで処理を行い、通信の遅延や負荷を減らす方式。</dd>
       </div>
-    </dl>
-  </section>
-  <section class="group">
-    <p class="group-label">信頼性</p>
-    <p class="group-desc">システムがどれだけ安定して動き続けるかに関する用語</p>
-    <hr class="group-divider" />
-    <dl class="term-list">
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>稼働率</dt>
-        <dd class="desc">システムが正常に動いている時間の割合。</dd>
-        <p class="example"><span class="ex-label">例</span>MTBF÷(MTBF+MTTR)で求める。</p>
+        <dt class="term"><span class="arrow">・</span>マイグレーション</dt>
+        <dd class="desc">システムやデータを、別の環境へ移行すること。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>MTBF</dt>
-        <dd class="desc">故障から次の故障までの平均時間。長いほど信頼性が高い。平均故障間隔ともいう。</dd>
+        <dt class="term"><span class="arrow">・</span>プレゼンテーション層</dt>
+        <dd class="desc">OSI参照モデルの第6層。データの表現形式の変換を扱う。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>MTTR</dt>
-        <dd class="desc">故障してから修理が終わるまでの平均時間。短いほど保守性が高い。平均修復時間ともいう。</dd>
+        <dt class="term"><span class="arrow">・</span>ファンクション層</dt>
+        <dd class="desc">3層構造のシステムで、業務処理を担う層。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>直列システムの稼働率</dt>
-        <dd class="desc">すべての装置が動いていないと全体が動かない構成の稼働率。各装置の稼働率をかけ算する。</dd>
-        <p class="example"><span class="ex-label">例</span>0.9と0.9なら 0.9×0.9=0.81。</p>
+        <dt class="term"><span class="arrow">・</span>データベースアクセス層</dt>
+        <dd class="desc">3層構造のシステムで、データベースへのアクセスを担う層。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>並列システムの稼働率</dt>
-        <dd class="desc">どれか1台が動けば全体が動く構成の稼働率。1−(各故障率のかけ算)で求める。</dd>
-        <p class="example"><span class="ex-label">例</span>0.9と0.9なら 1−0.1×0.1=0.99。</p>
+        <dt class="term"><span class="arrow">・</span>クライアント</dt>
+        <dd class="desc">サービスを依頼する側の、コンピュータやソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サーバ</dt>
+        <dd class="desc">サービスを提供する側の、コンピュータやソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シンクライアントシステム</dt>
+        <dd class="desc">端末に最低限の機能だけを持たせ、処理やデータをサーバ側で管理する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RPC</dt>
+        <dd class="desc">ネットワーク上の、別のコンピュータにあるプログラムを、手元にあるように呼び出す仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Webシステム</dt>
+        <dd class="desc">Webブラウザを使って利用するシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Webブラウザ</dt>
+        <dd class="desc">Webページを閲覧するための、ソフトウェア。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>Webサーバ</dt>
+        <dd class="desc">Webページのデータを、Webブラウザの要求に応じて送るサーバ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID0</dt>
+        <dd class="desc">データを複数のディスクに分散して書き込む方式。高速だが冗長性はない。ストライピングともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID1</dt>
+        <dd class="desc">同じデータを2つのディスクに書き込む方式。1台が壊れても平気。ミラーリングともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID10</dt>
+        <dd class="desc">ミラーリングとストライピングを組み合わせた方式。RAID1+0ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID2</dt>
+        <dd class="desc">データをビット単位で分散し、ハミング符号で誤り訂正する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID3</dt>
+        <dd class="desc">データをビット/バイト単位で分散し、専用のディスクにパリティを記録する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID4</dt>
+        <dd class="desc">データをブロック単位で分散し、専用のディスクにパリティを記録する方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID5</dt>
+        <dd class="desc">パリティ(誤り訂正情報)を分散して記録する方式。1台が壊れても復旧できる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RAID6</dt>
+        <dd class="desc">パリティを2種類記録する方式。2台が同時に壊れても復旧できる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ストライピング</dt>
+        <dd class="desc">データを分割して、複数のディスクに並行して書き込む方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ミラーリング</dt>
+        <dd class="desc">同じデータを、複数のディスクに、同時に書き込む方式。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パリティ</dt>
+        <dd class="desc">誤りの検出や、データの復元のために付ける、検査用の情報。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NAS</dt>
+        <dd class="desc">ネットワークにつないで、ファイルを共有するための、専用の記憶装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SAN</dt>
+        <dd class="desc">ストレージを、専用の高速ネットワークで、つないだシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フォールト</dt>
+        <dd class="desc">システムに、障害を引き起こす原因となる、欠陥や故障。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フォールトマスキング</dt>
+        <dd class="desc">故障が起きても、多重化などで、その影響が表に出ないようにする方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フォールトトレラントシステム</dt>
+        <dd class="desc">一部が故障しても、システム全体は動き続けられるように、設計されたシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フォールトアボイダンス</dt>
+        <dd class="desc">故障の発生自体を、避けるという考え方。高品質な部品の採用など。</dd>
       </div>
       <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>フェールセーフ</dt>
@@ -215,63 +357,23 @@
         <dd class="desc">故障が起きたとき、機能を絞ってでも運転を続ける設計の考え方。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>フォールトトレラント</dt>
-        <dd class="desc">一部が故障してもシステム全体は止まらないようにする設計の考え方。</dd>
-      </div>
-      <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>フールプルーフ</dt>
         <dd class="desc">利用者が誤った操作をしても、危険な状態にならないようにする設計の考え方。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>バスタブ曲線</dt>
-        <dd class="desc">機器の故障率が、初期・偶発・摩耗の時期で変化する様子を表した曲線。</dd>
+        <dt class="term"><span class="arrow">・</span>アクティブ-スタンバイ構成</dt>
+        <dd class="desc">片方を稼働させ、もう一方を待機させておく構成。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>RAS</dt>
-        <dd class="desc">信頼性・可用性・保守性の頭文字を取った、システムの評価の観点。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>RASIS</dt>
-        <dd class="desc">RASに、保全性・完全性を加えたシステムの評価の観点。</dd>
+        <dt class="term"><span class="arrow">・</span>アクティブ-アクティブ構成</dt>
+        <dd class="desc">複数のシステムを、すべて稼働させておく構成。</dd>
       </div>
     </dl>
   </section>
   <section class="group">
-    <p class="group-label">RAID</p>
-    <p class="group-desc">複数のディスクを組み合わせて使う技術に関する用語</p>
+    <p class="group-label">システムの評価指標</p>
     <hr class="group-divider" />
     <dl class="term-list">
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>RAID</dt>
-        <dd class="desc">複数のハードディスクを1つのように扱って、信頼性や性能を高める技術。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>RAID0</dt>
-        <dd class="desc">データを複数のディスクに分散して書き込む方式。高速だが冗長性はない。ストライピングともいう。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>RAID1</dt>
-        <dd class="desc">同じデータを2つのディスクに書き込む方式。1台が壊れても平気。ミラーリングともいう。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>RAID5</dt>
-        <dd class="desc">パリティ(誤り訂正情報)を分散して記録する方式。1台が壊れても復旧できる。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>RAID6</dt>
-        <dd class="desc">パリティを2種類記録する方式。2台が同時に壊れても復旧できる。</dd>
-      </div>
-    </dl>
-  </section>
-  <section class="group">
-    <p class="group-label">性能</p>
-    <p class="group-desc">システムの処理能力に関する用語</p>
-    <hr class="group-divider" />
-    <dl class="term-list">
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>スループット</dt>
-        <dd class="desc">単位時間あたりに処理できる仕事の量。</dd>
-      </div>
       <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>レスポンスタイム</dt>
         <dd class="desc">処理を依頼してから、結果の返答が始まるまでの時間。応答時間ともいう。</dd>
@@ -281,27 +383,73 @@
         <dd class="desc">処理を依頼してから、すべての結果が返ってくるまでの時間。</dd>
       </div>
       <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スループット</dt>
+        <dd class="desc">単位時間あたりに処理できる仕事の量。</dd>
+      </div>
+      <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>ベンチマーク</dt>
         <dd class="desc">標準的なプログラムを実行して、コンピュータの性能を測る方法。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ボトルネック</dt>
-        <dd class="desc">システム全体の性能を制限している、処理の遅い部分。</dd>
+        <dt class="term"><span class="arrow">・</span>TPC</dt>
+        <dd class="desc">データベースの、トランザクション処理性能を測る、ベンチマーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SPECint</dt>
+        <dd class="desc">整数演算を中心とした、CPUの性能を測るベンチマーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SPECfp</dt>
+        <dd class="desc">浮動小数点演算を中心とした、CPUの性能を測るベンチマーク。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モニタリング</dt>
+        <dd class="desc">システムの稼働状況や、性能を、継続的に監視すること。</dd>
       </div>
       <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>キャパシティプランニング</dt>
         <dd class="desc">将来の利用量を予測して、必要な処理能力を計画すること。</dd>
       </div>
-    </dl>
-  </section>
-  <section class="group">
-    <p class="group-label">システムの経済性</p>
-    <p class="group-desc">システムにかかる費用に関する用語</p>
-    <hr class="group-divider" />
-    <dl class="term-list">
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>TCO</dt>
-        <dd class="desc">システムの導入から運用、廃棄までにかかる総費用。</dd>
+        <dt class="term"><span class="arrow">・</span>サイジング</dt>
+        <dd class="desc">必要な性能から、システムの規模や構成を、見積もること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スケールアウト</dt>
+        <dd class="desc">サーバの台数を増やして、システムの処理能力を高めること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スケールアップ</dt>
+        <dd class="desc">1台のサーバの性能を、高めて処理能力を上げること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>容量・能力管理</dt>
+        <dd class="desc">将来の需要を見越して、システムの容量や処理能力を、計画的に管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロビジョニング</dt>
+        <dd class="desc">必要な資源を、用意して、使える状態にすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>RASIS</dt>
+        <dd class="desc">RASに、保全性・完全性を加えたシステムの評価の観点。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MTBF</dt>
+        <dd class="desc">故障から次の故障までの平均時間。長いほど信頼性が高い。平均故障間隔ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>MTTR</dt>
+        <dd class="desc">故障してから修理が終わるまでの平均時間。短いほど保守性が高い。平均修復時間ともいう。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>稼働率</dt>
+        <dd class="desc">システムが正常に動いている時間の割合。</dd>
+        <p class="example"><span class="ex-label">例</span>MTBF÷(MTBF+MTTR)で求める。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バスタブ曲線</dt>
+        <dd class="desc">機器の故障率が、初期・偶発・摩耗の時期で変化する様子を表した曲線。</dd>
       </div>
       <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>イニシャルコスト</dt>
@@ -310,6 +458,18 @@
       <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>ランニングコスト</dt>
         <dd class="desc">システムの運用にかかり続ける費用。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>TCO</dt>
+        <dd class="desc">システムの導入から運用、廃棄までにかかる総費用。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>直接コスト</dt>
+        <dd class="desc">特定のシステムなどに対して、直接かかった費用。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>間接コスト</dt>
+        <dd class="desc">特定のシステムなどに、直接ひもづけられない、共通してかかる費用。</dd>
       </div>
     </dl>
   </section>

@@ -70,10 +70,10 @@
       <div class="nav-group"><a href="software-quiz.html">次 →: ソフトウェア編</a></div>
     </nav>
   <header class="masthead">
-    <p class="breadcrumb">コンピュータシステム &gt; システム構成要素 &gt; 穴埋め問題</p>
+    <p class="breadcrumb">システム構成要素 &gt; 穴埋め問題</p>
     <h1>システム構成要素編(穴埋め)</h1>
     <div class="meta-row">
-      <span class="count-badge">43 語</span>
+      <span class="count-badge">89 語</span>
       <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
     </div>
   </header>
@@ -81,73 +81,101 @@
     <p class="group-label">システムの構成</p>
     <hr class="group-divider" />
     <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1系統のシステムだけで処理を行う最も基本的な構成。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じシステムを2系統用意し、1つを予備にしておく構成。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データをある程度まとめて、一括して処理する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>要求を受けたら、決められた時間内に、必ず処理して応答する方式。航空機の制御、銀行のATM。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の処理を、複数のプロセッサで、同時に行うこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>依頼する側(クライアント)と、処理する側(サーバ)で、役割を分担して行う処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ひとまとまりの処理を、確定または取消しの単位として、扱う処理方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、コンピュータとやり取りしながら、進める処理方式。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>2系統のシステムで同じ処理を同時に行い、結果を照合する構成。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>予備系を常時稼働状態で待機させ、障害時にすぐ切り替える方式。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>予備系を停止しておき、障害時に起動して切り替える方式。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のコンピュータを連携させ、1台のシステムのように動かす方式。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理を複数のコンピュータに振り分けて、1台への集中を避ける仕組み。ロードバランシングともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1台の大きなコンピュータで、すべての処理をまとめて行う形態。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のコンピュータに処理を分担させる形態。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サービスを頼む側(クライアント)と、提供する側(サーバ)に役割を分けたシステム。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webブラウザを使って利用するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じシステムを2系統用意し、1つを予備にしておく構成。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のコンピュータを連携させて、1台のように動かす構成。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のプロセッサを備えて、処理を分担するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のシステムで、負荷を分け合って処理する構成。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>災害などに備えて、別の場所に用意する、予備のシステムの拠点。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>本番と同じ環境を、常時稼働させておく、バックアップサイト。すぐ切り替えられる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>機器は用意しておくが、データの同期などは、切替時に行うバックアップサイト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>場所や設備だけを、用意しておくバックアップサイト。復旧に時間がかかる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>通常時に、処理を行うほうのシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>主系に障害が起きたとき、代わりに動く、予備のシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のプロセッサが、メモリを共有して、密接に連携している構成。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のシステムが、それぞれ独立し、通信で連携している構成。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>特定のサーバを置かず、対等な端末同士が、直接やり取りする方式。P2Pともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ネットワークでつないだ、多数のコンピュータを、1つの大きな計算機として使う技術。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1台のコンピュータの上に、複数の仮想的なコンピュータを作る技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1台の物理的なコンピュータ上で動作する、仮想的なコンピュータ。仮想マシンともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>デスクトップ環境を、サーバ上に集約して、端末から利用する仕組み。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネット経由で、必要な分だけコンピュータ資源をサービスとして利用する形態。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サーバやネットワークの構成を、コードで記述して、自動的に構築する手法。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアの機能をインターネット経由で提供するクラウドサービス。Web上のメールサービス。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アプリケーションを動かすための環境(基盤)をインターネット経由で提供するサービス。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サーバやネットワークなどのインフラをインターネット経由で提供するサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者がサーバの管理を意識せずに、プログラムを実行できる、クラウドの仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関数(プログラム)単位で、クラウド上で実行できるサービス。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの発生源の近くで処理を行い、通信の遅延や負荷を減らす方式。</p>
-    </div>
-  </section>
-  <section class="group">
-    <p class="group-label">信頼性</p>
-    <hr class="group-divider" />
-    <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが正常に動いている時間の割合。MTBF÷(MTBF+MTTR)で求める。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障から次の故障までの平均時間。長いほど信頼性が高い。平均故障間隔ともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障してから修理が終わるまでの平均時間。短いほど保守性が高い。平均修復時間ともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>すべての装置が動いていないと全体が動かない構成の稼働率。各装置の稼働率をかけ算する。0.9と0.9なら 0.9×0.9=0.81。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>どれか1台が動けば全体が動く構成の稼働率。1−(各故障率のかけ算)で求める。0.9と0.9なら 1−0.1×0.1=0.99。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障が起きたとき、安全な方向へ動作させる設計の考え方。信号機が故障したら全方向を赤にする。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障が起きたとき、機能を絞ってでも運転を続ける設計の考え方。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>一部が故障してもシステム全体は止まらないようにする設計の考え方。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が誤った操作をしても、危険な状態にならないようにする設計の考え方。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>機器の故障率が、初期・偶発・摩耗の時期で変化する様子を表した曲線。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>信頼性・可用性・保守性の頭文字を取った、システムの評価の観点。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>RASに、保全性・完全性を加えたシステムの評価の観点。</p>
-    </div>
-  </section>
-  <section class="group">
-    <p class="group-label">RAID</p>
-    <hr class="group-divider" />
-    <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のハードディスクを1つのように扱って、信頼性や性能を高める技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムやデータを、別の環境へ移行すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSI参照モデルの第6層。データの表現形式の変換を扱う。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>3層構造のシステムで、業務処理を担う層。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>3層構造のシステムで、データベースへのアクセスを担う層。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サービスを依頼する側の、コンピュータやソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サービスを提供する側の、コンピュータやソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>端末に最低限の機能だけを持たせ、処理やデータをサーバ側で管理する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ネットワーク上の、別のコンピュータにあるプログラムを、手元にあるように呼び出す仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webブラウザを使って利用するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webページを閲覧するための、ソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webページのデータを、Webブラウザの要求に応じて送るサーバ。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを複数のディスクに分散して書き込む方式。高速だが冗長性はない。ストライピングともいう。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じデータを2つのディスクに書き込む方式。1台が壊れても平気。ミラーリングともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ミラーリングとストライピングを組み合わせた方式。RAID1+0ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データをビット単位で分散し、ハミング符号で誤り訂正する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データをビット/バイト単位で分散し、専用のディスクにパリティを記録する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データをブロック単位で分散し、専用のディスクにパリティを記録する方式。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>パリティ(誤り訂正情報)を分散して記録する方式。1台が壊れても復旧できる。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>パリティを2種類記録する方式。2台が同時に壊れても復旧できる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを分割して、複数のディスクに並行して書き込む方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じデータを、複数のディスクに、同時に書き込む方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>誤りの検出や、データの復元のために付ける、検査用の情報。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ネットワークにつないで、ファイルを共有するための、専用の記憶装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ストレージを、専用の高速ネットワークで、つないだシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムに、障害を引き起こす原因となる、欠陥や故障。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障が起きても、多重化などで、その影響が表に出ないようにする方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>一部が故障しても、システム全体は動き続けられるように、設計されたシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障の発生自体を、避けるという考え方。高品質な部品の採用など。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障が起きたとき、安全な方向へ動作させる設計の考え方。信号機が故障したら全方向を赤にする。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障が起きたとき、機能を絞ってでも運転を続ける設計の考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が誤った操作をしても、危険な状態にならないようにする設計の考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>片方を稼働させ、もう一方を待機させておく構成。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のシステムを、すべて稼働させておく構成。</p>
     </div>
   </section>
   <section class="group">
-    <p class="group-label">性能</p>
+    <p class="group-label">システムの評価指標</p>
     <hr class="group-divider" />
     <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>単位時間あたりに処理できる仕事の量。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理を依頼してから、結果の返答が始まるまでの時間。応答時間ともいう。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理を依頼してから、すべての結果が返ってくるまでの時間。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>単位時間あたりに処理できる仕事の量。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>標準的なプログラムを実行して、コンピュータの性能を測る方法。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システム全体の性能を制限している、処理の遅い部分。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースの、トランザクション処理性能を測る、ベンチマーク。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>整数演算を中心とした、CPUの性能を測るベンチマーク。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>浮動小数点演算を中心とした、CPUの性能を測るベンチマーク。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの稼働状況や、性能を、継続的に監視すること。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>将来の利用量を予測して、必要な処理能力を計画すること。</p>
-    </div>
-  </section>
-  <section class="group">
-    <p class="group-label">システムの経済性</p>
-    <hr class="group-divider" />
-    <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの導入から運用、廃棄までにかかる総費用。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>必要な性能から、システムの規模や構成を、見積もること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サーバの台数を増やして、システムの処理能力を高めること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1台のサーバの性能を、高めて処理能力を上げること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>将来の需要を見越して、システムの容量や処理能力を、計画的に管理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>必要な資源を、用意して、使える状態にすること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>RASに、保全性・完全性を加えたシステムの評価の観点。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障から次の故障までの平均時間。長いほど信頼性が高い。平均故障間隔ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>故障してから修理が終わるまでの平均時間。短いほど保守性が高い。平均修復時間ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが正常に動いている時間の割合。MTBF÷(MTBF+MTTR)で求める。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>機器の故障率が、初期・偶発・摩耗の時期で変化する様子を表した曲線。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの導入時にかかる初期費用。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの運用にかかり続ける費用。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの導入から運用、廃棄までにかかる総費用。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>特定のシステムなどに対して、直接かかった費用。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>特定のシステムなどに、直接ひもづけられない、共通してかかる費用。</p>
     </div>
   </section>
   <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>

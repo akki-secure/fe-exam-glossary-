@@ -1,0 +1,167 @@
+<title>ユーザーインタフェース編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">ユーザーインタフェース編</span>
+        <a href="ui-cards.html">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="ui-quiz.html" aria-current="page">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="hardware-quiz.html">← 前: ハードウェア編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="media-quiz.html">次 →: 情報メディア編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">ユーザーインタフェース &gt; 穴埋め問題</p>
+    <h1>ユーザーインタフェース編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">74 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+  <section class="group">
+    <p class="group-label">ユーザーインタフェース技術</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報を、分類や順序などのルールで整理して、探しやすく理解しやすくすること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報を、階層や関連づけによって、まとまりのある構造に整理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>項目や内容が、何であるかを示す名前や見出し。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人が一度に処理しやすいように、まとめた情報のかたまり。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、目的の情報へ迷わずたどり着くための、案内の仕組み。メニュー、パンくずリスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>使いやすさ。利用者が目的を、効率よく満足に達成できる度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>高齢者や障害のある人を含め、誰もが情報や機能を利用できる度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者の操作に応じて、システムが反応を返す、対話的なシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者とシステムの、やり取りを設計するときの、守るべき基本的な考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人と機械との間で、情報をやり取りするための接点。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人の話した声を、文字などのデータに変換する技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>画像の中に、何が写っているかを判別する技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>動画の中の、物や動きを判別する技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データから、識別に役立つ特徴を、取り出すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人が、多くの情報の中から、関心のあるものだけに注意を向ける性質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、どのように操作しているかを記録・分析して、使いやすさの改善に生かすこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人の体の特性(手の大きさや姿勢)に、合った作りになっていること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>物の使い方を、利用者に伝える手がかり。押せそうに見えるボタン。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>言葉ではなく、表情や動作など、言葉以外の手段を使うインタフェース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>普段使う言葉(自然言語)で、指示できるインタフェース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>タッチや音声、身振りなど、人の自然な動作で操作できる、インタフェース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>音声で操作する、インタフェース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>手や体の動きで、操作するインタフェース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の指で同時に触れて操作する、インタフェース。ピンチ操作での拡大・縮小。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>画面上で、アプリケーションなどの表示に使う、四角い領域。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>機能やファイルを、小さな絵で表したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の選択肢から、1つだけ選ぶための部品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>押すたびに、オンとオフが切り替わるボタン。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の選択肢から、いくつでも選べる部品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>選択肢が、一覧で表示され、その中から選ぶ部品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クリックすると選択肢が下に表示される部品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>操作をきっかけに、その場に現れるメニュー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>項目を押すと、内容が開閉して表示される、部品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>マウスポインタを、要素の上に乗せた状態。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ポインタを乗せたとき、補足の説明を表示する、小さな吹き出し。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文字を入力するための、欄。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">UX/UIデザイン</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>製品やサービスを通じた、利用者の体験全体を、設計すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>戦略・要件・構造・骨格・表層の5段階で、UXを設計する考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>近接・整列・反復・対比など、見やすいデザインにするための、基本的な決まり。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報やデータを、図や絵を使って、分かりやすく表現したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文字の書体・大きさ・配置などを、読みやすく整えるデザイン。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>デザインの方向性を、共有するために、画像や色などを集めて貼ったボード。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>画面に、どの部品をどう配置するかという、全体の構成。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報同士のつながりや、上下関係。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力された値が、数字だけで構成されているかを確認する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力された値が、決められた形式に従っているかを確認する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力された値が、決められた範囲内にあるかを確認する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の項目の値の組合せが、矛盾していないかを確認する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力値が、すでに登録されているデータと一致するかを確認する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>合計値などが、つり合っているかを確認する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コードの誤りを見つけるための、末尾に付ける検査用の文字。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>帳票の様式を、あらかじめ用意した用紙に重ねて印刷する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データに、連続した番号を順番に付けるコード。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、いくつかの区分に分けて、区分ごとに付けるコード。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>桁ごとに意味を持たせたコード。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コードそのものが、意味を連想させる、コード。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のコードを、組み合わせて作るコード。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>動画を構成する、1枚1枚の静止画。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webサイトの内部の情報を、探すための機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>異なる種類のWebブラウザでも、同じように表示・動作すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>基本の機能を、すべての環境で使えるようにし、高機能な環境ではさらに機能を追加する設計の考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>画面の大きさに応じて、レイアウトが自動的に変わる、Webデザイン。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、迷わず操作できるよう、画面上の文章を分かりやすく書くこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>画面の配置を、線と枠で簡単に表した、設計図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>画面の幅などの条件に応じて、CSSを切り替える仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の画像などを、横にスライドして、順番に表示する部品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人間中心設計のプロセスについての、規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>高齢者や障害のある人を含めた、情報通信の利用しやすさ(アクセシビリティ)に関する規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報を、絵文字のように、単純な図で表したもの。非常口の表示。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>誰にとっても、読みやすいように設計された、書体。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webのアクセシビリティを、向上させるための、W3Cの取組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webコンテンツを、誰にでも利用できるようにするための、ガイドライン。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>専門家が、使いやすさの経験則にもとづいて、画面などを評価する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実際の利用者に、製品を使ってもらい、使いにくい点を見つけるテスト。</p>
+    </div>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

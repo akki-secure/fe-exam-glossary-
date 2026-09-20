@@ -1,0 +1,417 @@
+<title>ユーザーインタフェース編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">ユーザーインタフェース編</span>
+        <a href="ui-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="ui-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="hardware-cards.html">← 前: ハードウェア編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="media-cards.html">次 →: 情報メディア編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">ユーザーインタフェース</p>
+    <h1>ユーザーインタフェース編</h1>
+    <div class="meta-row">
+      <span class="count-badge">74 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「ユーザーインタフェース」分野の用語集です。ユーザーインタフェース技術、UX/UIデザインを含みます。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">ユーザーインタフェース技術</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報の組織化</dt>
+        <dd class="desc">情報を、分類や順序などのルールで整理して、探しやすく理解しやすくすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報の構造化</dt>
+        <dd class="desc">情報を、階層や関連づけによって、まとまりのある構造に整理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ラベル</dt>
+        <dd class="desc">項目や内容が、何であるかを示す名前や見出し。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>チャンク</dt>
+        <dd class="desc">人が一度に処理しやすいように、まとめた情報のかたまり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ナビゲーション</dt>
+        <dd class="desc">利用者が、目的の情報へ迷わずたどり着くための、案内の仕組み。</dd>
+        <p class="example"><span class="ex-label">例</span>メニュー、パンくずリスト。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユーザビリティ</dt>
+        <dd class="desc">使いやすさ。利用者が目的を、効率よく満足に達成できる度合い。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アクセシビリティ</dt>
+        <dd class="desc">高齢者や障害のある人を含め、誰もが情報や機能を利用できる度合い。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インタラクティブシステム</dt>
+        <dd class="desc">利用者の操作に応じて、システムが反応を返す、対話的なシステム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インタラクションの原則</dt>
+        <dd class="desc">利用者とシステムの、やり取りを設計するときの、守るべき基本的な考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ヒューマンインタフェース</dt>
+        <dd class="desc">人と機械との間で、情報をやり取りするための接点。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>音声認識</dt>
+        <dd class="desc">人の話した声を、文字などのデータに変換する技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>画像認識</dt>
+        <dd class="desc">画像の中に、何が写っているかを判別する技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>動画認識</dt>
+        <dd class="desc">動画の中の、物や動きを判別する技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>特徴抽出</dt>
+        <dd class="desc">データから、識別に役立つ特徴を、取り出すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>選択的知覚</dt>
+        <dd class="desc">人が、多くの情報の中から、関心のあるものだけに注意を向ける性質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユーザー操作の分析</dt>
+        <dd class="desc">利用者が、どのように操作しているかを記録・分析して、使いやすさの改善に生かすこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>身体的適合性</dt>
+        <dd class="desc">人の体の特性(手の大きさや姿勢)に、合った作りになっていること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>シグニファイア</dt>
+        <dd class="desc">物の使い方を、利用者に伝える手がかり。</dd>
+        <p class="example"><span class="ex-label">例</span>押せそうに見えるボタン。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ノンバーバルインタフェース</dt>
+        <dd class="desc">言葉ではなく、表情や動作など、言葉以外の手段を使うインタフェース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>自然言語インタフェース</dt>
+        <dd class="desc">普段使う言葉(自然言語)で、指示できるインタフェース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>NUI</dt>
+        <dd class="desc">タッチや音声、身振りなど、人の自然な動作で操作できる、インタフェース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>VUI</dt>
+        <dd class="desc">音声で操作する、インタフェース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ジェスチャーインタフェース</dt>
+        <dd class="desc">手や体の動きで、操作するインタフェース。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>マルチタッチインタフェース</dt>
+        <dd class="desc">複数の指で同時に触れて操作する、インタフェース。</dd>
+        <p class="example"><span class="ex-label">例</span>ピンチ操作での拡大・縮小。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ウィンドウ</dt>
+        <dd class="desc">画面上で、アプリケーションなどの表示に使う、四角い領域。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アイコン</dt>
+        <dd class="desc">機能やファイルを、小さな絵で表したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ラジオボタン</dt>
+        <dd class="desc">複数の選択肢から、1つだけ選ぶための部品。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>トグルボタン</dt>
+        <dd class="desc">押すたびに、オンとオフが切り替わるボタン。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>チェックボックス</dt>
+        <dd class="desc">複数の選択肢から、いくつでも選べる部品。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リストボックス</dt>
+        <dd class="desc">選択肢が、一覧で表示され、その中から選ぶ部品。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プルダウンメニュー</dt>
+        <dd class="desc">クリックすると選択肢が下に表示される部品。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ポップアップメニュー</dt>
+        <dd class="desc">操作をきっかけに、その場に現れるメニュー。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アコーディオン</dt>
+        <dd class="desc">項目を押すと、内容が開閉して表示される、部品。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ホバー</dt>
+        <dd class="desc">マウスポインタを、要素の上に乗せた状態。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ツールチップ</dt>
+        <dd class="desc">ポインタを乗せたとき、補足の説明を表示する、小さな吹き出し。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>テキストボックス</dt>
+        <dd class="desc">文字を入力するための、欄。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">UX/UIデザイン</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UXデザイン</dt>
+        <dd class="desc">製品やサービスを通じた、利用者の体験全体を、設計すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UXデザインの五段階モデル</dt>
+        <dd class="desc">戦略・要件・構造・骨格・表層の5段階で、UXを設計する考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>デザインの原則</dt>
+        <dd class="desc">近接・整列・反復・対比など、見やすいデザインにするための、基本的な決まり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>インフォグラフィック</dt>
+        <dd class="desc">情報やデータを、図や絵を使って、分かりやすく表現したもの。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>タイポグラフィ</dt>
+        <dd class="desc">文字の書体・大きさ・配置などを、読みやすく整えるデザイン。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ムードボード</dt>
+        <dd class="desc">デザインの方向性を、共有するために、画像や色などを集めて貼ったボード。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>画面構成</dt>
+        <dd class="desc">画面に、どの部品をどう配置するかという、全体の構成。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>情報の関係性</dt>
+        <dd class="desc">情報同士のつながりや、上下関係。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ニューメリックチェック</dt>
+        <dd class="desc">入力された値が、数字だけで構成されているかを確認する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フォーマットチェック</dt>
+        <dd class="desc">入力された値が、決められた形式に従っているかを確認する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リミットチェック</dt>
+        <dd class="desc">入力された値が、決められた範囲内にあるかを確認する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>組合せチェック</dt>
+        <dd class="desc">複数の項目の値の組合せが、矛盾していないかを確認する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>照合チェック</dt>
+        <dd class="desc">入力値が、すでに登録されているデータと一致するかを確認する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バランスチェック</dt>
+        <dd class="desc">合計値などが、つり合っているかを確認する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>チェックキャラクター</dt>
+        <dd class="desc">コードの誤りを見つけるための、末尾に付ける検査用の文字。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フォームオーバーレイ</dt>
+        <dd class="desc">帳票の様式を、あらかじめ用意した用紙に重ねて印刷する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>順番コード</dt>
+        <dd class="desc">データに、連続した番号を順番に付けるコード。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>区分コード</dt>
+        <dd class="desc">データを、いくつかの区分に分けて、区分ごとに付けるコード。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>桁別コード</dt>
+        <dd class="desc">桁ごとに意味を持たせたコード。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>表意コード</dt>
+        <dd class="desc">コードそのものが、意味を連想させる、コード。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>合成コード</dt>
+        <dd class="desc">複数のコードを、組み合わせて作るコード。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フレーム</dt>
+        <dd class="desc">動画を構成する、1枚1枚の静止画。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サイト内検索機能</dt>
+        <dd class="desc">Webサイトの内部の情報を、探すための機能。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>クロスブラウザ</dt>
+        <dd class="desc">異なる種類のWebブラウザでも、同じように表示・動作すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プログレッシブエンハンスメント</dt>
+        <dd class="desc">基本の機能を、すべての環境で使えるようにし、高機能な環境ではさらに機能を追加する設計の考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>レスポンシブWebデザイン</dt>
+        <dd class="desc">画面の大きさに応じて、レイアウトが自動的に変わる、Webデザイン。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>UXライティング</dt>
+        <dd class="desc">利用者が、迷わず操作できるよう、画面上の文章を分かりやすく書くこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ワイヤーフレーム</dt>
+        <dd class="desc">画面の配置を、線と枠で簡単に表した、設計図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>メディアクエリ</dt>
+        <dd class="desc">画面の幅などの条件に応じて、CSSを切り替える仕組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カルーセル</dt>
+        <dd class="desc">複数の画像などを、横にスライドして、順番に表示する部品。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JIS Z 8530</dt>
+        <dd class="desc">人間中心設計のプロセスについての、規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JIS X 8341</dt>
+        <dd class="desc">高齢者や障害のある人を含めた、情報通信の利用しやすさ(アクセシビリティ)に関する規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ピクトグラム</dt>
+        <dd class="desc">情報を、絵文字のように、単純な図で表したもの。</dd>
+        <p class="example"><span class="ex-label">例</span>非常口の表示。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユニバーサルデザインフォント</dt>
+        <dd class="desc">誰にとっても、読みやすいように設計された、書体。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>WAI</dt>
+        <dd class="desc">Webのアクセシビリティを、向上させるための、W3Cの取組み。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>WCAG</dt>
+        <dd class="desc">Webコンテンツを、誰にでも利用できるようにするための、ガイドライン。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ヒューリスティック評価</dt>
+        <dd class="desc">専門家が、使いやすさの経験則にもとづいて、画面などを評価する方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユーザビリティテスト</dt>
+        <dd class="desc">実際の利用者に、製品を使ってもらい、使いにくい点を見つけるテスト。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

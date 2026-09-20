@@ -1,0 +1,213 @@
+<title>計測・制御理論編 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">計測・制御理論編</span>
+        <a href="measure-cards.html" aria-current="page">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="measure-quiz.html">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="comm-theory-cards.html">← 前: 通信理論編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="algo-cards.html">次 →: アルゴリズムとプログラミング編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">基礎理論 &gt; 計測・制御に関する理論</p>
+    <h1>計測・制御理論編</h1>
+    <div class="meta-row">
+      <span class="count-badge">24 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+    <p class="intro">基本情報技術者試験「基礎理論」の中の計測・制御に関する理論分野の用語集です。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">計測・制御に関する理論</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>フィルタリング</dt>
+        <dd class="desc">データや信号から、条件に合うものだけを選び出したり、不要な成分を取り除いたりする処理。</dd>
+        <p class="example"><span class="ex-label">例</span>迷惑メールを除外する、ノイズを取り除く。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>D/A変換</dt>
+        <dd class="desc">デジタル信号をアナログ信号に変換すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>A/D変換</dt>
+        <dd class="desc">アナログ信号をデジタル信号に変換すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リアルタイムOS</dt>
+        <dd class="desc">時間制約を守れるように設計された、組込み機器向けのOS。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>オープンループ</dt>
+        <dd class="desc">出力の結果を入力側へ戻さず、決められた操作だけを行う制御方式。</dd>
+        <p class="example"><span class="ex-label">例</span>設定した時間だけ加熱する電子レンジ。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>応答特性</dt>
+        <dd class="desc">システムに入力を与えたとき、出力がどのように変化するかを表す性質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>制御安定性</dt>
+        <dd class="desc">外乱があっても、制御対象が目標の状態に落ち着き、それを保てる性質。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>センサー</dt>
+        <dd class="desc">温度・光・圧力などの物理量を検知して、電気信号に変える装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アクチュエーター</dt>
+        <dd class="desc">電気信号を受けて、モータなどで物理的な動きを生み出す装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>光学センサー</dt>
+        <dd class="desc">光の強さや有無を検知するセンサー。</dd>
+        <p class="example"><span class="ex-label">例</span>自動ドアの人感検知、照明の自動点灯。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>赤外線センサー</dt>
+        <dd class="desc">赤外線の量を検知して、物の有無や温度を調べるセンサー。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>磁気センサー</dt>
+        <dd class="desc">磁力の変化を検知するセンサー。</dd>
+        <p class="example"><span class="ex-label">例</span>ドアの開閉検知、方位磁石。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>加速度センサー</dt>
+        <dd class="desc">速度の変化(加速度)や傾きを検知するセンサー。</dd>
+        <p class="example"><span class="ex-label">例</span>スマホの画面の自動回転。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ジャイロセンサー</dt>
+        <dd class="desc">回転の速さ(角速度)を検知するセンサー。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>超音波センサー</dt>
+        <dd class="desc">超音波を出して、反射して返るまでの時間から距離を測るセンサー。</dd>
+        <p class="example"><span class="ex-label">例</span>車のバックセンサー。</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>温度センサー</dt>
+        <dd class="desc">温度を検知して、電気信号に変えるセンサー。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>湿度センサー</dt>
+        <dd class="desc">空気中の湿度を検知するセンサー。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>圧力センサー</dt>
+        <dd class="desc">加わる圧力を検知して、電気信号に変えるセンサー。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ひずみゲージ</dt>
+        <dd class="desc">物体が伸び縮みしたときの、わずかな変形を電気抵抗の変化で測る素子。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>サーミスタ</dt>
+        <dd class="desc">温度によって電気抵抗が大きく変わる素子。温度センサーに使う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ホール素子</dt>
+        <dd class="desc">磁界の強さに応じた電圧が発生する素子。磁気センサーに使う。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モーター</dt>
+        <dd class="desc">電気の力で回転運動を生み出す、アクチュエータの代表的な装置。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>油圧シリンダ</dt>
+        <dd class="desc">油の圧力で、ピストンを直線的に動かす装置。強い力が出せる。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>空気圧シリンダ</dt>
+        <dd class="desc">圧縮空気の力で、ピストンを直線的に動かす装置。</dd>
+      </div>
+    </dl>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

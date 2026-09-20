@@ -70,96 +70,385 @@
       <div class="nav-group"><a href="swmgmt-quiz.html">次 →: ソフトウェア開発管理技術編</a></div>
     </nav>
   <header class="masthead">
-    <p class="breadcrumb">開発技術 &gt; システム開発技術 &gt; 穴埋め問題</p>
+    <p class="breadcrumb">システム開発技術 &gt; 穴埋め問題</p>
     <h1>システム開発技術編(穴埋め)</h1>
     <div class="meta-row">
-      <span class="count-badge">55 語</span>
+      <span class="count-badge">338 語</span>
       <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
     </div>
   </header>
   <section class="group">
-    <p class="group-label">開発プロセス</p>
+    <p class="group-label">システム要件定義・ソフトウェア要件定義</p>
     <hr class="group-divider" />
     <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアの企画から開発、運用、廃棄までの一生の流れ。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>要件定義から順に、滝が流れ落ちるように工程を進める開発モデル。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>試作品を作って利用者に確認してもらい、要件を固めていく開発モデル。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>設計・試作・評価を繰り返しながら、少しずつ完成させていく開発モデル。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>短い期間で、開発とテストを繰り返しながら、変化に柔軟に対応する開発手法。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>チームで役割を分担し、短い期間(スプリント)ごとに開発を進めるアジャイル手法。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テスト駆動開発やペアプログラミングなどを取り入れたアジャイル手法。エクストリームプログラミングともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>開発チームと運用チームが協力し、開発から運用までを迅速に行う考え方。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェア開発と取引の作業内容を、共通の言葉で整理した枠組み。</p>
-    </div>
-  </section>
-  <section class="group">
-    <p class="group-label">要件定義・設計</p>
-    <hr class="group-divider" />
-    <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムに求める機能や性能を、明確にする工程。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、どんな人が、どんな場面で、使われるかという状況。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、実際に運用される場面を、時系列などで具体的に描いたもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアの機能を、他のプログラムから利用するための決まり事。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アイコンやウィンドウをマウスなどで操作する、視覚的なユーザーインタフェース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>他のシステムとの、データのやり取りに使う、ファイル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、利用者や他のシステムに、提供する機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、備えるべき機能を、具体的に記述した仕様。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理を依頼してから、結果の返答が始まるまでの時間。応答時間ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>単位時間あたりに処理できる仕事の量。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、扱うデータや、データベースに対する要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムのテストで、確認すべき事項に対する要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、備えるべき、セキュリティに関する要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>旧システムから、新システムへ、移行するための要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、運用するうえでの要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、保守するうえでの要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害が起きたときの、対応の方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを利用する人に、使い方などを、教えること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実際の場面を想定して、操作などを、練習すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、開発や運用にかかる費用。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、動作する環境に対する要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、接続する周辺の機器やシステムとの、インタフェースに対する要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが満たすべき、品質に対する要件。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが備えるべき、機能に関する要件。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>性能・信頼性・セキュリティなど、機能以外に求められる要件。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者から見えるシステムの、画面や帳票などを設計する工程。基本設計ともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>外部設計をもとに、システムの内部の構造を設計する工程。詳細設計ともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの処理の手順や、部品(モジュール)の構造を設計する工程。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを、機能ごとの小さな部品に分けること。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モジュールの内部の結びつきの強さ。強いほうがよい。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モジュール同士の結びつきの強さ。弱いほうがよい。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>製品やサービスを通じた、利用者の体験全体を、設計すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>要件から成果物へ、成果物から要件へ、どちらの向きにも、たどれること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>レビューに、参加する人。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>レビューの、進め方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアを、構成する、管理の単位となる要素。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システム間や、モジュール間の、インタフェースを設計すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>セキュリティ要件を、実現するための、具体的な方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>業務の、流れや、構造を、図などを使って表すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>さまざまな「モノ」がインターネットにつながり、情報をやり取りする仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力や表示のための画面を設計すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>請求書や納品書などの書類の様式を設計すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>伝票の、様式や記載項目を、設計すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>業務で扱うデータを、整理して、データの構造をモデルとして表すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、システムを使って、目的を達成する、一連の流れ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者の視点から、望む機能を、短い文で表したもの。「利用者として、〇〇したい。なぜなら〜だから」</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、利用や動作の、流れを、場面ごとに記述したもの。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの流れを中心に、システムを表す図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>物(エンティティ)と、その関連(リレーションシップ)を図で表したもの。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクト指向による設計を表す、標準的な図式の表記法。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムと、利用者との関わりを表した図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>提供するサービスの、内容や、条件を、定めること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実装にあたって、守らなければならない、条件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>品質を、評価する視点となる、性質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>要件と、設計やテストなどの成果物との、対応関係を、表にしたもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関係者に質問して、情報を集める調査の方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>画面や、帳票の、見た目を、確認するために作る、実物に似せた模型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>要件や、設計を確認するために作る、試作品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ワークパッケージを実行するために必要な、個々の作業。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスの構造や、クラス同士の関係を表した図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスが持つ処理。メソッドともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスが持つデータの項目。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関連の端で、その関連における役割を示す名前。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムと、利用者との関わりを表した図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクトの状態が、どう変わっていくかを表すUMLの図。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクト間のメッセージのやり取りを、時間の順に表した図。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>状態が、どのような条件で移り変わるかを表した図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクト同士の、メッセージのやり取りを表すUMLの図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アジャイル開発で、複数のユーザーストーリーに、分けられる、大きな要求。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アジャイル開発で、ユーザーストーリーの、規模や、難しさを表す、相対的な見積りの単位。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アジャイル開発で、製品に必要な要求を、優先順位を付けて並べた一覧。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>条件と、その結果として行う動作の組合せを、表にまとめたもの。ディシジョンテーブルともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システム全体の設計を、表すための、モデリング言語。UMLを拡張している。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>状態が、どのような条件で移り変わるかを表した図。</p>
     </div>
   </section>
   <section class="group">
-    <p class="group-label">実装</p>
+    <p class="group-label">設計</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを構成する、ハードウェアの、管理の単位。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータではなく、人が行う作業。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの利用者が、行う作業の、範囲。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、基本的な構造や、設計の考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを構成する、ハードウェアの要素。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サーバやネットワークなどのインフラをインターネット経由で提供するサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アプリケーションを動かすための環境(基盤)をインターネット経由で提供するサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアの機能をインターネット経由で提供するクラウドサービス。Web上のメールサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを構成する、ソフトウェアの、まとまりとなる要素。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアを構成する、要素。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1台の大きなコンピュータで、すべての処理をまとめて行う形態。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のコンピュータに処理を分担させる形態。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>小さな独立したサービスを、組み合わせて、システムを構築する設計の考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サーバの管理を、クラウド事業者に任せて、機能単位で構築する設計の考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webブラウザを使って利用するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サービスを頼む側(クライアント)と、提供する側(サーバ)に役割を分けたシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>現実の物事を、データベースで扱える形に整理したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの処理を、プログラム言語に近い形で、簡略に記述したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インタフェースの、データ形式や、手順などを、定めた仕様。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>サービスの内容や、利用方法を、記述したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>作業を行う、順序や、方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、表(テーブル)の形で管理する、関係データベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、網の目のような関係で、管理する、ネットワーク型データベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データと、その処理を、オブジェクトとして管理する、オブジェクト指向データベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XML形式のデータを、そのまま格納して、扱えるデータベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、主記憶(メモリ)上に置いて、高速に処理するデータベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の場所に、分かれて置いたデータベースを、1つのデータベースのように扱う方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関係データベース以外の、方式で、データを扱う、データベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストで確認する、必要がある事項。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>業務の中心となる部分を、外部の技術から独立させる、設計の考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムや設計を、整理された構造で、組み立てること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアを、構成する、最小のテスト・管理の単位。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアを、ユニットに分けること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>各ユニットの、機能の仕様を、決めること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>再利用できる、プログラムなどの、まとまり。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力と出力の、方法や形式を、設計すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムなどを、再利用できる、部品にすること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>すでにある、部品や設計を、別の開発で使うこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入出力の、詳細な項目や、形式を決めること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インタフェースを設計する際の、守るべき基準。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアユニット同士が、やり取りするための、インタフェース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者とコンピュータの間で、情報をやり取りする接点や仕組み。UIともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>画面に、どの部品をどう配置するかという、全体の構成。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>帳票の様式を、あらかじめ用意した用紙に重ねて印刷する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力された値が、決められた範囲内にあるかを確認する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>確認すべき項目を、一覧にしたもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの内部の構造を見て、処理経路を網羅して確かめるテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアを、統合してテストするための、仕様。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>内部の構造は気にせず、入力と出力だけを確かめるテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムやソフトウェアの、品質を、評価するための、品質モデルを定めた、規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>品質マネジメントシステムに関する、国際規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、目標を、正確かつ完全に達成できる度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>資源や時間を、無駄なく使えるかという品質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、使ったときに、満足できる度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、利用による、リスクを、抑えられる度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>想定される、さまざまな利用状況で、使える度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>必要な機能を、備え、正しく動作する度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>資源の使用量に対して、十分な性能が得られる度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>他のシステムなどと、情報を交換したり、共存したりできる度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者にとって、使いやすいかという品質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアが、安定して動き続けるかという品質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報や、データを、不正なアクセスから、守れる度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>修正や改良が、しやすいかという品質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>別の環境へ移しても、動かしやすいかという品質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベース設計で、管理の対象となる、もの。エンティティ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>エンティティ同士の、つながり。リレーションシップ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの重複や矛盾が起きないように、テーブルを分割して整理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ事実を、複数の場所に、持たず、1か所だけに記録するという、原則。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>上下関係を持った、構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>大きな処理を、少しずつ、詳しい処理に、分けていく設計の方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理を、上から順に、実行する構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルから、条件に合う行だけを取り出す操作。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ処理を、条件が満たされる間、繰り返す構造。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>構造化プログラミングの処理を、箱を使って表す図。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの機能を、階層的に表し、入力・処理・出力を、整理する設計技法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力や出力の、データの構造から、プログラムの構造を導く設計技法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>出力データの構造から、プログラムの構造を導く設計技法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを、機能ごとの小さな部品に分けること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアを、設計するときに、守るべき、基本的な考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オブジェクトの設計図。データ(属性)と処理(メソッド)を定義する。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスをもとに実際に作られたオブジェクト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスが持つ、処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データと処理をひとまとめにして、内部の詳細を外から隠すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>継承によって、親クラスの性質を、引き継いで作るクラス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>既存のクラスの性質を引き継いで、新しいクラスを作ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ命令でも、オブジェクトの種類によって、異なる動作をする性質。ポリモーフィズム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関連する、クラスなどを、まとめたもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のクラスに、共通する性質を、取り出して、上位のクラスにまとめること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>上位のクラスから、より具体的な、下位のクラスを作ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>大きなものを、小さな要素に分けること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>全体と部分の関係で、部分が独立して存在できる関係。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネット上で、組織などを識別する、名前の領域。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>業務の、対象領域(ドメイン)の、概念や関係を、表したモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>業務の、ルールに関する、処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>開発者と業務の担当者が、共通して使う、用語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のファイルを、1つにまとめること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>設計や、プログラムが、理解しやすい度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>OSSを利用するときの、脆弱性や、ライセンス違反などの、リスクに対する備え。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>開発に、かかる労力に対して、得られる成果の度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>運用のしやすさ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>一定の時間に、処理できる量。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>部品などを、他の開発で、再利用しやすい度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを、入力(Source)・変換(Transform)・出力(Sink)に、分割する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力される、トランザクションの種類ごとに、処理を分割する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の処理に、共通する機能を、独立したモジュールとして取り出す方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>メインから呼び出される、ひとまとまりの処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>あるモジュールが、直接または間接に、呼び出せるモジュールの範囲。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>あるモジュールの、判断の結果が、影響を及ぼすモジュールの範囲。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モジュールを、分割する、大きさの目安。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モジュールが大きすぎる場合に、さらに分割すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>他のモジュールから、呼び出される、下位のモジュール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理の流れを、記号と矢印で表した図。フローチャートともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアの部品を、組み合わせて、システムを構築する開発手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理を、データ(Model)・表示(View)・制御(Controller)に、分ける設計の考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>書かれたプログラムを、他の人が読んで確認すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じ立場の、仲間同士で、行うレビュー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>設計の、内容を、関係者で確認する、レビュー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>専門の検査者が、決まった手順で厳格に行うレビュー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>レビューを、進行し、取りまとめる人。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>設計の内容を、文書として、記述する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>作成者が、関係者に成果物を説明しながら、誤りを指摘してもらうレビュー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>開発者と、発注者などが共同で、行うレビュー。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">実装・構築</p>
     <hr class="group-divider" />
     <div class="term-list">
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>設計をもとに、プログラム言語でプログラムを書くこと。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの書き方について、チームで決めたルール。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>書かれたプログラムを、他の人が読んで確認すること。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>外部から見た動作を変えずに、プログラムの内部構造を整理すること。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>よく使う機能を、部品としてまとめたプログラムの集まり。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアの機能を、他のプログラムから利用するための決まり事。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>アプリケーション開発の、土台となる骨組みを提供するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを書くための、言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>問題を解決するための手順や計算方法のこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、加工したり、計算したりする処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のデータを整理して蓄積し、必要なときに取り出しやすくしたもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>順次・選択・繰返しの3つの構造だけでプログラムを組み立てる考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モジュールの、機能や、インタフェースを、定めた仕様。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>要件と、成果物の、対応関係を、たどれること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>上位の成果物と、矛盾していないこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>成果物の、内部で、矛盾がないこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>必要な、テストの項目が、もれなく、含まれている度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コーディングの方法や、作業の標準が、適切であるかどうか。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアを、統合してテストできる、見込みがあること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>運用や保守が、無理なく行えること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理の構造が、見やすくなるよう、行頭に空白を入れること。字下げ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>条件分岐や繰返しの、中に、さらに条件分岐や繰返しを、入れること。入れ子。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>変数や関数の名前の付け方についての決まり。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>不具合の原因になりやすいため、使わないと決められた命令。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力の途中で、候補を表示して、コードの入力を、支援する機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>改行時に、自動で字下げを、行う機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードを、編集するための、エディタ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの文法要素ごとに、色分けして表示する機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>デバッグ時に、プログラムの実行を、一時停止させる位置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの、規模や複雑さなどを、数値で測ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードを、詳細に検査して、誤りを見つける手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>開発者の、仲間が、コードを、読み合って確認する手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの、分岐の数から、複雑さを測る指標。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>デバッグを、行うための環境や、ツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを、実行せずに、ソースコードを解析して問題を見つける手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを、実際に、実行して行うテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの、特定の場所で、成り立つべき条件を、記述しておく仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの、誤りを、見つけて直すための、支援ツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの実行の経過を、追跡して記録するツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある時点の、システムやデータの状態を、そのまま記録したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、正常に動作しなくなること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムなどにある、障害の原因となる、誤り。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害の原因や、影響を、調べること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストを、体系的に進めるための、考え方や方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストの対象とする、範囲。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストを、実施するための、準備の作業。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストを、実際に行う人。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの、最小の単位(ユニット)ごとに行うテスト。単体テストともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テスト対象を呼び出す、上位モジュールの代わりになる仮のモジュール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テスト対象から呼ばれる、下位モジュールの代わりになる仮のモジュール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストに使う、データを、自動的に作るツール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストの、設計と、進捗を管理するための、手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストで、確認する、入力と、期待する結果の組。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>すべての命令を、少なくとも1回は実行するテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>判定を構成する個々の条件が、真と偽の両方になるようにするテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>判定条件の結果が、真と偽の両方になるようにするテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>判定条件の、条件の、すべての組合せを、網羅するテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力範囲の、境界の値を、選んで確認する、テストの設計手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力を、同じ結果になるグループに分けて、代表値で確認する、テストの設計手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>原因と結果の、関係を図に表して、テストケースを、導く手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムに、意図的に誤りを埋め込み、そのうち見つかった数から、残りの誤りを推定する手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>少ない実験で、効率よく結果を得るために、要因の組合せを、計画する手法。</p>
     </div>
   </section>
   <section class="group">
-    <p class="group-label">テスト</p>
+    <p class="group-label">統合・テスト</p>
     <hr class="group-divider" />
     <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モジュールなど、プログラムの最小単位ごとに行うテスト。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のモジュールを組み合わせて、連携が正しく動くか確かめるテスト。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システム全体が、要件どおりに動くか確かめるテスト。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実際の運用に近い環境で、利用者が動作を確かめるテスト。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>発注者が、納品されたシステムが要件を満たすか確かめるテスト。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>内部の構造は気にせず、入力と出力だけを確かめるテスト。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの内部の構造を見て、処理経路を網羅して確かめるテスト。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力値を、同じ結果になるグループに分けて、代表値でテストする方法。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>範囲の境目の値(限界値)を選んでテストする方法。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>すべての命令を、少なくとも1回は実行するテスト。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>判定条件の結果が、真と偽の両方になるようにするテスト。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>判定を構成する個々の条件が、真と偽の両方になるようにするテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストを、実施する、手順。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストで使う、入力用のデータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアに求められる、機能や、性能などの、要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>活動や、成果物を、第三者が、点検・評価すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モジュールを、結合してテストする、順番。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>統合テストで、変更したモジュールを、繰り返しテストする戦略。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストの目的や、範囲、日程などを定めた計画。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェア統合テストの、結果を、まとめた報告書。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>上位のモジュールから順にテストする方法。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>下位のモジュールから順にテストする方法。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テスト対象から呼ばれる、下位モジュールの代わりになる仮のモジュール。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テスト対象を呼び出す、上位モジュールの代わりになる仮のモジュール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、仕様どおりの機能を、備えているかを確認するテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>性能・信頼性・セキュリティなど、機能以外の要件を確認するテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>処理速度や応答時間などが、要件を満たすかを確認するテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>大量のデータや、多数のアクセスを与えて、耐えられるかを確認するテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>セキュリティの、要件を満たし、脆弱性がないかを確認するテスト。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムを修正した後、他の部分に悪影響が出ていないか確かめるテスト。リグレッションテストともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの誤り(バグ)を見つけて、修正すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ランダムなデータを、大量に入力し、不具合や脆弱性を見つけるテスト手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システム全体に、求められる要件。</p>
     </div>
   </section>
   <section class="group">
-    <p class="group-label">保守・運用</p>
+    <p class="group-label">導入・受入れ支援</p>
     <hr class="group-divider" />
     <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>運用が始まった後に、不具合の修正や機能の改善を行うこと。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアを、環境の変化や要望に合わせて修正すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>完成した成果物を、発注者に、引き渡すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを導入するときの、要件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、導入してよいかを判断するための、基準。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、インストールするための、計画を、作ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、実際に、利用環境へ設置・設定する作業。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、導入するための手順。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、導入を行うための、体制。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、実際に、使う部門。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、運用を担当する部門。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>仮想化技術で作られた、コンピュータなどの環境。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者などに、教育・訓練を行うための、資料。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>納品されたものを、受け入れるための、手順。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>受け入れてよいかを判断する、基準。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>発注者が、納品されたシステムが要件を満たすか確かめるテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>納品された成果物が、要件を満たしているかを、発注者が確認して、受け取ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>検収の、合否を判断する、基準。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>受入れを、行うための、体制。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>教育・訓練のために、用意する、システム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの運用に関する、規則。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、システムを使うために必要な、文書。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、利用方法を、説明した文書。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソフトウェアの、利用方法を、説明した文書。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムが、利用者の要求を、満たしていることを確認する、テストの目的。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テストなどの、成功を判断する、基準。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>妥当性確認テストで、使う、技法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>妥当性確認テストを、実施するために必要な、環境の条件。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>不具合が起きた、根本にある、真の原因。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>見つかった問題の、原因を取り除き、再発を防ぐための、処置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>見つかった欠陥を、直すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、より良くするための、作業。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>作業から得た、知見や反省を、記録して、今後に生かすこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、使いやすさを、確認するテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>正式な、リリースの前に、一部の利用者に、実際に使ってもらって行うテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>運用担当者が、実際の運用操作が、行えるかを確認するテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、実際に使って、要求を満たしているか確認するテスト。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">保守・廃棄</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守作業を、行う手順。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守作業を、行う、体制。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守が、無理なく、行えること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守で、変更した内容を、確認するテスト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>外部から見た動作を変えずに、プログラムの内部構造を整理すること。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>完成した製品を分析して、設計や仕様を調べること。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新しいシステムへ、データや運用を切り替えること。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新旧のシステムを、同時に動かして切り替える移行方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守の、作業が、組織の、運用に、悪影響を与えないこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守作業について、取り決めた、契約。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守に、求められる要件を、明確にすること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ハードウェアの、点検・修理などを行うこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>日々の、状態確認を、行う、保守作業。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>見つかった障害を、修正するための保守。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>性能や保守性などを、より良くするための、保守。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害が起きる前に、点検や部品の交換を、行う保守。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>環境の変化に、合わせて、システムを変更する保守。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>機能の追加や、性能の改善など、システムの価値を高めるための保守。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守の担当者が、現地に出向いて行う、保守。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ネットワークを通じて、離れた場所から行う、保守。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、導入から廃棄までの、全体を通した、評価。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>開発が終わった後、保守に必要な、成果物を、保守担当に引き継ぐこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守の、計画や、手続きを、作ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>問題を、記録・追跡・解決する、手続きを、確立すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>保守作業に必要な、文書を、作ること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>報告された問題や、修正の依頼を、分析すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>報告された問題を、実際に再現して、確認すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>問題を、修正する、方法の選択肢を、用意すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>修正の対象となる、システム・ソフトウェア・文書を、決めること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムに、新しい機能を、加えること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムの、性能を、高めること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>見つかった問題を、修正すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、移行するための、計画を文書にして、確認すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>移行の計画などを、関係者全員へ、知らせること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新旧の環境を、同時に動かしたあと、旧環境を停止すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>移行を行うことを、関係者全員に、知らせること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>移行が、正しく行われたかを、確認すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>移行の、結果や、進め方を、評価すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>移行後も、旧環境のデータを、保持し、安全に保管すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、廃棄するための、計画を、立てること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>廃棄の計画などを、利用者へ知らせること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>廃棄に備え、新旧の環境を、並行して動かし、利用者を訓練すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムを、廃棄することを、関係者全員に、知らせること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>廃棄後も、必要なデータを、保持して、参照できるようにしておくこと。</p>
     </div>
   </section>
   <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>

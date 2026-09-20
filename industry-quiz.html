@@ -1,0 +1,286 @@
+<title>ビジネスインダストリ編(穴埋め) — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.8; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  section.group { margin-top: 44px; }
+  .group-label { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label); text-transform: uppercase; margin: 0 0 4px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  .term-list { display: flex; flex-direction: column; gap: 14px; }
+  .term-line { margin: 0; font-size: 16px; color: var(--text); }
+  .term-line .bullet { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  .term-line .arrow { color: var(--accent); font-weight: 700; margin: 0 2px; }
+  footer.page-footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--text-muted); }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+</style>
+<div class="page">
+    <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group">
+        <span class="nav-label">ビジネスインダストリ編</span>
+        <a href="industry-cards.html">カード</a>
+        <span class="nav-sep">/</span>
+        <a href="industry-quiz.html" aria-current="page">穴埋め</a>
+      </div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="tech-strategy-quiz.html">← 前: 技術戦略マネジメント編</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="corporate-quiz.html">次 →: 企業活動編</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">ビジネスインダストリ &gt; 穴埋め問題</p>
+    <h1>ビジネスインダストリ編(穴埋め)</h1>
+    <div class="meta-row">
+      <span class="count-badge">175 語</span>
+      <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
+    </div>
+  </header>
+  <section class="group">
+    <p class="group-label">ビジネスシステム</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>商品の、流通に関する、情報を管理するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>会計や財務の、処理を行うシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>財務情報などを、記述するための、XMLをもとにした言語。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人事情報の、管理や、給与の計算を行うシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>営業活動の、情報を管理して、営業を支援するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>組織内での、情報共有や共同作業を支援するソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>申請や承認などの、業務の流れを電子化して自動的に進める仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>離れた場所にいる人が、インターネットで、会議を行うシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>物の輸送や、保管などの、情報を管理するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>店舗での、販売の、状況を管理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>受注から、売上、請求などまでを、管理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>受注と発注の、情報を管理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>在庫を、適切な量に保つよう管理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>顧客の情報を、管理し、活用すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>金融機関が、使う、預金や決済などを扱うシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>医療機関で、使う、患者の情報や、診療の記録などを扱うシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>商品の販売時に、売上データをその場で収集・管理するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>生産計画や、進捗、在庫などを管理するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>Webコンテンツを、世界各地のサーバに配置して、配信を高速化する仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>企業の基幹業務を統合して管理し、経営資源を有効に活用する仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>特定の業務向けに作られた、市販のソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>いつでも、どこでも、コンピュータを使えるという考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>さまざまな「モノ」がインターネットにつながり、情報をやり取りする仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>現実の物体などを、デジタル空間に、そっくり再現して、分析や予測に使う技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>現実世界の、情報を、デジタル空間で分析し、現実世界へ反映する仕組み。CPS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>取引の記録を、改ざんしにくい形で分散して管理する技術を、活用すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>行政の手続きを、オンラインで行える、電子政府の総合窓口。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>行政の手続きを、電子化して、オンラインで提供する仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>自治体の、行政サービスを、電子化する取組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>地方公共団体を、相互に結ぶ、行政専用のネットワーク。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>住民票の情報を、全国で、共有するための、ネットワークシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>企業の、有価証券報告書などを、電子的に提出・閲覧できるシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>国や自治体などが、公共サービスのために、運用する情報システム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報通信技術を使って、電力の需要と供給を最適に制御する送電網。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>電子機器の、受託製造を、行うサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>GPSを使った、位置情報を活用するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報通信技術を使い、道路交通の安全や渋滞を改善する高度道路交通システム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>災害などの、緊急情報を、素早く知らせる仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>国から、緊急の情報を、自治体などを通じて、住民へ、瞬時に伝えるシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>国民1人ひとりに割り当てられる、12桁の番号。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>行政手続きの、確認や申請が、オンラインでできる、政府のサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>自治体の窓口での、支払いを、現金以外で行えるようにすること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>年齢や能力にかかわらず、できるだけ多くの人が使えるように設計する考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報技術を、使える人と、使えない人の間に生じる、格差。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIを、人間中心の考え方で、社会に受け入れるための、基本原則。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIの、利活用に、当たっての、指針。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>信頼できるAIの、実現のために、守るべき倫理の指針。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人工知能学会が、会員向けに、定めた、倫理の指針。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIが、社会に受け入れられる度合い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>特定の分野の、課題を解くために作られた、AI。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人間のように、さまざまな課題に対応できる、AI。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIが、状況に関係する、必要な事柄だけを、選び出すことが、難しいという問題。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIが、記号(言葉)を、実世界の意味と結びつけて、理解できないという問題。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIが、画像や音声などを、判別すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIを使って、作業を、自動化すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>音声や文章による指示に、応じて、作業を支援するAI。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文章や画像などを、新しく作り出すAI。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文字・画像・音声など、複数の種類の情報を、組み合わせて扱えるAI。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIの出力に、含まれる、偶然による、ばらつき。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIの判断の、根拠や過程を、人が理解できるようにする技術。XAI。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIの判断の、過程に、人間が関与して、確認・修正を行う仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIを使う人の、入力や、判断によって生じる、偏り。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIの、学習データや、アルゴリズムに起因する、判断の偏り。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIサービスで、問題が起きたとき、誰が責任を負うかという議論。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIを使って、本物のように見せかけた、偽の画像・音声・動画。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者の、データを、AIの学習に使わないよう、拒否できる方針。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">エンジニアリングシステム</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>製品を、作るための、方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>生産の、工程や設備を、どのように並べるかを決めること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>必要なものを、必要なときに、必要な量だけ供給する生産方式。かんばん方式ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>数値の指令によって、工作機械を、自動で動かす仕組み。数値制御。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>状況を、自動的に監視する装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人が乗らずに、自動で、荷物を運ぶ車両。AGVともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータの制御で、荷物の、出し入れを自動で行う倉庫。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>工場の、生産を、自動化するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータを使って、生産計画を、立てるシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータを使って、製造の工程の計画を、立てるシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>生産に必要な部品の量と時期を、計算して管理する手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>さまざまな、製品を、柔軟に作れる、自動化された生産システム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>工作機械などを、組み合わせた、柔軟な生産の、最小単位。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>生産の、効率を、測るための指標。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータを使って、設計・製図を行うシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータを使って、製造機械を制御するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コンピュータで、設計した製品の、性能などを、シミュレーションして評価する技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>製品の、設計に関する情報を、一元管理するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>設計から、製造、販売まで、全体を、コンピュータで統合するシステム。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">e-ビジネス</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>多くの店舗が出店する、インターネット上の、商店街。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネットで、商品を購入すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入札の、手続きを、インターネットで行う仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>お金の、貸し借りや、売買などの取引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネットを通じて、銀行の取引を行うサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>非金融のサービスの中に、金融サービスを、組み込んで提供する仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>電子的に、資金を移動する仕組み。電子資金移動。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ICチップを、埋め込んだ、カード。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ICカードや、RFIDを活用した、システム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>現金を使わない、支払い方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>金融と情報技術を組み合わせた、新しいサービスの分野。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>お金の価値を、電子的なデータで扱う支払いの手段。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>暗号技術を使い、インターネット上で、資産の価値をやり取りできる、電子的なデータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>中央銀行が、発行する、デジタル形式の、通貨。CBDC。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネットを、使って行う、事業。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>企業と企業の間の、取引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>企業と、消費者の間の取引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>消費者と、消費者の間の取引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>メーカーなどが、消費者に、直接販売する事業形態。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>政府や自治体と、企業の間の、取引や手続き。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>政府や自治体と、市民の間の、取引や手続き。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オンラインの情報などを、利用して、実店舗への来店を促す仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オンラインと、オフラインを、区別せずに、一体で顧客体験を提供する考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のサービスの、情報を、まとめて提供するサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネット上で、企業が、取引を行う、市場。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ニッチな商品でも、種類を多く取りそろえて、全体で大きな売上を得る考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネットを通じて、不特定多数の人に、仕事を依頼する仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>唯一のものであることを、証明できる、ブロックチェーン上の、データ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の口座情報を、1か所にまとめて、確認できるサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>オンラインで、本人確認を、完結させる技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>マネー・ローンダリング(資金洗浄)や、テロ資金供与を、防ぐための取組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネットを、使って、企業間で受発注などのデータを、交換する仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>EDIで使われる、通信の規約などを定めた、JIS規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>EDIで使われる、データ形式を定めた、JIS規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>製品の、設計情報を、異なるシステム間で、交換するための、国際規格。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>銀行間のデータの、やり取りのために、全国銀行協会が定めた、通信手順。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XMLを使った、電子データ交換の、方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>EDIで、情報を、やり取りするときの、通信の取り決め。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>EDIで、データの、形式や意味を、決める取り決め。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>EDIを、運用するうえでの、業務上の取り決め。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>取引の、基本的な条件についての、取り決め。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>流通業界などで、使われている、EDIの通信手順。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人と人との、つながりを、支援する、インターネット上のサービス。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネット上で、書き込みや閲覧ができる、掲示板。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>日記のように、記事を時系列で、公開するWebサイト。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>短い文章を、投稿する、簡易なブログ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>日常の、行動や、体験を、記録したデータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>個人の、データを、預かり、本人の同意のもとで、他の企業に、提供する事業。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>モノや場所、技術などを、多くの人で共有して活用する経済の仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、投稿する、コンテンツで、成り立つメディア。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">民生機器</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>CPUを中心に、メモリや入出力機能を小さくまとめたコンピュータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの発生源の近くで処理を行い、通信の遅延や負荷を減らす方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>端末など、データの発生源の近くで、AIの処理を行う技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>組込みシステムの、機器に組み込まれて、動作するOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>時間制約を守れるように設計された、組込み機器向けのOS。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>決められた時間内に、確実に、処理を完了させる制御。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>システムに起きる、出来事。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>温度・光・圧力などの物理量を検知して、電気信号に変える装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>あらかじめ決めた順序で、順番に動作を進めていく制御。信号機、洗濯機。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ロボットの設計・制御などを扱う技術分野。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>機器に組み込まれた、基本的な制御を行うソフトウェア。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>近距離に、Bluetooth Low Energyで、識別情報などを発信する、小型の機器。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>インターネットに、つながる家電製品。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プリンタや、コピー機などの、事務用の、機器。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>一般の消費者が、使う、通信のための機器。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>家庭内の、機器を、ネットワークでつなぐ仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>身に着けて使う、小型のコンピュータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>現実の景色に、情報を重ねて表示する、眼鏡型の機器。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>現実と、仮想の世界を、融合させて表示する、眼鏡型の機器。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>仮想現実の、世界に入り込むために、頭にかぶる機器。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>情報の、表示や、通信ができる、眼鏡型の機器。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>音声で操作する、AIを備えた、スピーカー。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>多数のセンサーが、無線でつながり、情報を集めるネットワーク。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>家庭の、エネルギーの、使用状況を、見える化して、管理するシステム。</p>
+    </div>
+  </section>
+  <section class="group">
+    <p class="group-label">産業機器</p>
+    <hr class="group-divider" />
+    <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>機械同士が、人を介さず、ネットワークを通じて、情報をやり取りする仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ITを、活用して、都市の課題を、解決する、都市の形。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AIやデータを使い、生活全般を、先端的に変える、都市。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>IoTなどを使って、生産設備を連携させ、自動化・最適化した工場。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ロボットやICTを、活用した、省力・高品質な農業。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>鉄道やバスなどの、移動手段を、ITで、統合して、1つのサービスとして提供する仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>センサーやアクチュエータを持ち、自動で、作業する機械。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>無線などで操縦する、無人の飛行機。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>お金を入れると、商品が出てくる、機械。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>銀行などで、現金の預入れや引出しを機械で行う装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>診断や、治療などに使う、機器。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>患者の、生体情報を、継続して、測定・監視する装置。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>自動車産業における、つながる・自動運転・シェア・電動化の、4つの、技術動向。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>通信機能を持ち、インターネットに、つながる自動車。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>人の操作なしで、自動車が、自動で走行する技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>自動運転の、度合いを表す、段階。レベル0〜5に分けられる。</p>
+    </div>
+  </section>
+  <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>
+</div>

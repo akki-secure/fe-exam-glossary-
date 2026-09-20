@@ -93,200 +93,396 @@
       <div class="nav-group"><a href="project-cards.html">次 →: プロジェクトマネジメント編</a></div>
     </nav>
   <header class="masthead">
-    <p class="breadcrumb">開発技術 &gt; ソフトウェア開発管理技術</p>
+    <p class="breadcrumb">ソフトウェア開発管理技術</p>
     <h1>ソフトウェア開発管理技術編</h1>
     <div class="meta-row">
-      <span class="count-badge">40 語</span>
+      <span class="count-badge">90 語</span>
       <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
     </div>
-    <p class="intro">基本情報技術者試験「開発技術」の中のソフトウェア開発管理技術の用語集です。開発環境の管理、開発の進め方、品質管理まで含みます。</p>
+    <p class="intro">基本情報技術者試験「ソフトウェア開発管理技術」分野の用語集です。開発プロセス・手法、知的財産適用管理、開発環境管理、構成管理・変更管理を含みます。</p>
   </header>
   <section class="group">
-    <p class="group-label">開発環境の管理</p>
-    <p class="group-desc">開発のための道具や資産の管理に関する用語</p>
+    <p class="group-label">開発プロセス・手法</p>
     <hr class="group-divider" />
     <dl class="term-list">
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>構成管理</dt>
-        <dd class="desc">ソフトウェアの構成要素(ソースやドキュメントなど)を、一貫して管理すること。</dd>
+        <dt class="term"><span class="arrow">・</span>ウォーターフォールモデル</dt>
+        <dd class="desc">要件定義から保守まで、工程を、順番に進める、開発モデル。前の工程には戻らない。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>変更管理</dt>
-        <dd class="desc">ソフトウェアへの変更を、決められた手続きで管理すること。</dd>
+        <dt class="term"><span class="arrow">・</span>プロトタイピングモデル</dt>
+        <dd class="desc">試作品を作って利用者に確認してもらい、要件を固めていく開発モデル。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>バージョン管理</dt>
-        <dd class="desc">ファイルの変更履歴を記録し、過去の状態を取り出せるようにすること。</dd>
+        <dt class="term"><span class="arrow">・</span>アジャイル</dt>
+        <dd class="desc">短い期間で、開発とテストを繰り返し、変化に柔軟に対応する開発手法。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>リポジトリ</dt>
-        <dd class="desc">ソースコードなどの資産と、その変更履歴を保管する場所。</dd>
+        <dt class="term"><span class="arrow">・</span>DevOps</dt>
+        <dd class="desc">開発チームと運用チームが協力し、開発から運用までを迅速に行う考え方。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>Git</dt>
-        <dd class="desc">分散型のバージョン管理システム。</dd>
+        <dt class="term"><span class="arrow">・</span>MLOps</dt>
+        <dd class="desc">機械学習モデルの、開発から運用までを、継続的に、効率よく行うための、考え方や仕組み。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ブランチ</dt>
-        <dd class="desc">開発の流れを分けて、並行して作業できるようにする仕組み。</dd>
+        <dt class="term"><span class="arrow">・</span>ソフトウェアプロダクトライン</dt>
+        <dd class="desc">共通の部品を、再利用して、似た製品群を、効率的に開発する手法。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>マージ</dt>
-        <dd class="desc">分かれたブランチの変更を、1つにまとめること。</dd>
+        <dt class="term"><span class="arrow">・</span>段階的モデル</dt>
+        <dd class="desc">システムを、いくつかの段階に分けて、順に完成させて提供する開発モデル。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>CI</dt>
-        <dd class="desc">ソースが変更されるたびに、自動でビルドやテストを行う開発手法。継続的インテグレーションともいう。</dd>
+        <dt class="term"><span class="arrow">・</span>進展的モデル</dt>
+        <dd class="desc">開発を進めながら、要件を見直し、成果物を、進化させていく開発モデル。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>CD</dt>
-        <dd class="desc">テストを通ったソフトウェアを、自動的にリリースまで行う手法。継続的デリバリともいう。</dd>
+        <dt class="term"><span class="arrow">・</span>アジャイルソフトウェア開発宣言</dt>
+        <dd class="desc">アジャイル開発の、価値観を示した宣言。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ビルド</dt>
-        <dd class="desc">ソースコードから、実行できる形のプログラムを作ること。</dd>
+        <dt class="term"><span class="arrow">・</span>アジャイルソフトウェアの12の原則</dt>
+        <dd class="desc">アジャイル宣言の背景にある、12の行動の原則。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>統合開発環境</dt>
-        <dd class="desc">エディタやデバッガなどの開発道具を、まとめて使えるようにしたソフトウェア。IDEともいう。</dd>
+        <dt class="term"><span class="arrow">・</span>XP</dt>
+        <dd class="desc">テスト駆動開発やペアプログラミングなどを取り入れたアジャイル手法。エクストリームプログラミングともいう。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>CASEツール</dt>
-        <dd class="desc">ソフトウェア開発の作業を、コンピュータで支援するツールの総称。</dd>
-      </div>
-    </dl>
-  </section>
-  <section class="group">
-    <p class="group-label">開発手法・レビュー</p>
-    <p class="group-desc">開発の進め方や確認に関する用語</p>
-    <hr class="group-divider" />
-    <dl class="term-list">
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ソフトウェアレビュー</dt>
-        <dd class="desc">開発の成果物を、関係者で確認し、誤りを早期に発見する活動。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ウォークスルー</dt>
-        <dd class="desc">作成者が、関係者に成果物を説明しながら、誤りを指摘してもらうレビュー。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>インスペクション</dt>
-        <dd class="desc">専門の検査者が、決まった手順で厳格に行うレビュー。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ペアプログラミング</dt>
-        <dd class="desc">2人1組で、1台のコンピュータを使ってプログラムを書く手法。</dd>
+        <dt class="term"><span class="arrow">・</span>スクラム</dt>
+        <dd class="desc">チームで役割を分担し、短い期間(スプリント)ごとに開発を進めるアジャイル手法。</dd>
       </div>
       <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>テスト駆動開発</dt>
         <dd class="desc">先にテストを書き、それを通るようにプログラムを作る開発手法。TDDともいう。</dd>
       </div>
       <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ユーザーストーリー</dt>
+        <dd class="desc">利用者の視点から、望む機能を、短い文で表したもの。</dd>
+        <p class="example"><span class="ex-label">例</span>「利用者として、〇〇したい。なぜなら〜だから」</p>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モブプログラミング</dt>
+        <dd class="desc">チーム全員が、1台のコンピュータを使い、一緒にプログラムを書く手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リファクタリング</dt>
+        <dd class="desc">外部から見た動作を変えずに、プログラムの内部構造を整理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ふりかえり</dt>
+        <dd class="desc">スプリントなどの、終了時に、チームで、進め方を振り返り、改善策を考えること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>KPT</dt>
+        <dd class="desc">Keep(続けること)・Problem(問題)・Try(挑戦すること)の、3つに整理する、ふりかえりの手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>継続的インテグレーション</dt>
+        <dd class="desc">変更のたびに、自動でビルドやテストを行い、統合していく開発手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ペアプログラミング</dt>
+        <dd class="desc">2人1組で、1台のコンピュータを使ってプログラムを書く手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソースコードの共同所有</dt>
+        <dd class="desc">チームの全員が、どのソースコードも、変更してよいという考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>YAGNI</dt>
+        <dd class="desc">今は必要のない機能は、作らないという、考え方。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スクラムチーム</dt>
+        <dd class="desc">スクラムで、開発を行う、プロダクトオーナー、スクラムマスター、開発者から成るチーム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スプリント</dt>
+        <dd class="desc">スクラムで、開発を繰り返す、短い期間。1〜4週間程度。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プロダクトバックログ</dt>
+        <dd class="desc">アジャイル開発で、製品に必要な要求を、優先順位を付けて並べた一覧。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>スプリントバックログ</dt>
+        <dd class="desc">スプリントの間に、行う作業を、まとめた一覧。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SRE</dt>
+        <dd class="desc">システムの信頼性を、ソフトウェア開発の考え方で高める、運用の手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>継続的デリバリー</dt>
+        <dd class="desc">ソフトウェアを、いつでもリリースできる状態に、保ち続ける手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>継続的デプロイ</dt>
+        <dd class="desc">テストを通った変更を、自動的に、本番環境へ反映する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>カオスエンジニアリング</dt>
+        <dd class="desc">意図的に障害を起こして、システムの耐障害性を、確認・向上させる手法。</dd>
+      </div>
+      <div class="term-entry">
         <dt class="term"><span class="arrow">・</span>DevSecOps</dt>
         <dd class="desc">開発と運用に加えて、セキュリティも最初から組み込む考え方。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ソフトウェア再利用</dt>
-        <dd class="desc">すでにある部品や設計を、別の開発に使い回すこと。</dd>
+        <dt class="term"><span class="arrow">・</span>モジュールの独立性</dt>
+        <dd class="desc">モジュール同士の結びつきが弱く、それぞれが、独立している度合い。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ソフトウェアパッケージ</dt>
-        <dd class="desc">完成した状態で、販売されているソフトウェア。</dd>
+        <dt class="term"><span class="arrow">・</span>標準化</dt>
+        <dd class="desc">製品やサービスの、仕様や手順を統一すること。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>コンポーネント</dt>
-        <dd class="desc">再利用しやすい単位にまとめた、ソフトウェアの部品。</dd>
+        <dt class="term"><span class="arrow">・</span>カスタマイズ</dt>
+        <dd class="desc">パッケージなどを、利用者の要望に合わせて、変更すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リバースエンジニアリング</dt>
+        <dd class="desc">完成した製品を分析して、設計や仕様を調べること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>互換性</dt>
+        <dd class="desc">他のシステムなどと、情報を交換したり、共存したりできる度合い。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>コールグラフ</dt>
+        <dd class="desc">プログラムの中の、関数やメソッドの、呼び出し関係を、表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>プレゼンテーションマッシュアップ</dt>
+        <dd class="desc">複数のサービスの、画面を、組み合わせて表示する手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>データマッシュアップ</dt>
+        <dd class="desc">複数のサービスの、データを、組み合わせて、新しいサービスを作る手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ロジックマッシュアップ</dt>
+        <dd class="desc">複数のサービスの、処理(ロジック)を、組み合わせる手法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>モバイル用Webアプリケーションソフトウェア</dt>
+        <dd class="desc">スマートフォンなどの、ブラウザ上で動作する、アプリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ネイティブアプリケーションソフトウェア</dt>
+        <dd class="desc">端末のOS向けに、作られて、直接動作するアプリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ハイブリッドアプリケーションソフトウェア</dt>
+        <dd class="desc">ネイティブアプリの中に、Web技術を組み込んだ、アプリ。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>PWA</dt>
+        <dd class="desc">Webサイトを、アプリのように、使えるようにする技術。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>User-Agent</dt>
+        <dd class="desc">Webブラウザなどが、サーバに、送る、自分の種類を示す情報。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>パーミッション要求</dt>
+        <dd class="desc">アプリが、端末の機能やデータを、使う許可を、利用者に求めること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アプリケーションソフトウェア審査</dt>
+        <dd class="desc">アプリの、配布前に、安全性や品質を、確認する審査。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アプリケーションソフトウェア配布</dt>
+        <dd class="desc">アプリを、利用者に、届けること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>階層構造化</dt>
+        <dd class="desc">システムなどを、階層的に整理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>段階的詳細化</dt>
+        <dd class="desc">大きな処理を、少しずつ、詳しい処理に、分けていく設計の方法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>構造化チャート</dt>
+        <dd class="desc">プログラムの、モジュールの構成と、関係を、表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>状態遷移図</dt>
+        <dd class="desc">状態が、どのような条件で移り変わるかを表した図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>HIPO</dt>
+        <dd class="desc">システムの機能を、階層的に表し、入力・処理・出力を、整理する設計技法。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>DFD</dt>
+        <dd class="desc">データの流れを中心に、システムを表す図。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア構造</dt>
+        <dd class="desc">ソフトウェアを構成する、要素と、その関係。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>VDMTools</dt>
+        <dd class="desc">形式的な仕様記述を支援する、開発ツール。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>JIS X 0160</dt>
+        <dd class="desc">ソフトウェアの、ライフサイクルプロセスを、定めた規格。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SLCP-JCF</dt>
+        <dd class="desc">日本の、ソフトウェア開発と取引の、作業内容を定めた、共通フレーム。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>CMMI</dt>
+        <dd class="desc">組織の、ソフトウェア開発プロセスの、成熟度を、評価するモデル。</dd>
       </div>
     </dl>
   </section>
   <section class="group">
-    <p class="group-label">品質管理</p>
-    <p class="group-desc">ソフトウェアの品質に関する用語</p>
+    <p class="group-label">知的財産適用管理</p>
     <hr class="group-divider" />
     <dl class="term-list">
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ソフトウェア品質</dt>
-        <dd class="desc">ソフトウェアが、利用者の要求を満たしている度合い。</dd>
+        <dt class="term"><span class="arrow">・</span>プログラムの著作者</dt>
+        <dd class="desc">プログラムを、創作した人。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>機能性</dt>
-        <dd class="desc">ソフトウェアが、必要な機能を備えているかどうかという品質。</dd>
+        <dt class="term"><span class="arrow">・</span>職務著作</dt>
+        <dd class="desc">会社などの指示で、従業員が作った著作物の著作権が、会社に帰属する制度。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>信頼性</dt>
-        <dd class="desc">ソフトウェアが、安定して動き続けるかという品質。</dd>
+        <dt class="term"><span class="arrow">・</span>特許権</dt>
+        <dd class="desc">新しい発明を、一定期間、独占して利用できる権利。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>使用性</dt>
-        <dd class="desc">利用者にとって、使いやすいかという品質。</dd>
+        <dt class="term"><span class="arrow">・</span>専用実施権</dt>
+        <dd class="desc">特許などを、特定の人だけが、独占して実施できる権利。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>効率性</dt>
-        <dd class="desc">資源や時間を、無駄なく使えるかという品質。</dd>
+        <dt class="term"><span class="arrow">・</span>通常実施権</dt>
+        <dd class="desc">特許などを、複数の人が、実施できる権利。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>保守性</dt>
-        <dd class="desc">修正や改良が、しやすいかという品質。</dd>
+        <dt class="term"><span class="arrow">・</span>ライセンサー</dt>
+        <dd class="desc">ライセンスを、与える人。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>移植性</dt>
-        <dd class="desc">別の環境へ移しても、動かしやすいかという品質。</dd>
+        <dt class="term"><span class="arrow">・</span>ライセンシー</dt>
+        <dd class="desc">ライセンスを、受ける人。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ISO/IEC 25010</dt>
-        <dd class="desc">ソフトウェアの品質を、評価するための国際規格。</dd>
+        <dt class="term"><span class="arrow">・</span>コピーガード</dt>
+        <dd class="desc">不正なコピーを、防ぐための仕組み。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>品質保証</dt>
-        <dd class="desc">製品が、要求された品質を満たすことを、保証するための活動。</dd>
+        <dt class="term"><span class="arrow">・</span>DRM</dt>
+        <dd class="desc">デジタルコンテンツの、複製や利用を、制限する技術。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>品質管理</dt>
-        <dd class="desc">品質を、目標どおりに保つための活動。</dd>
+        <dt class="term"><span class="arrow">・</span>アクティベーション</dt>
+        <dd class="desc">ソフトウェアを、利用するために、ライセンスを認証する手続き。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>バグ管理図</dt>
-        <dd class="desc">発見したバグの累積数を、時間の経過に沿って表したグラフ。信頼度成長曲線の目安にする。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>バグ密度</dt>
-        <dd class="desc">プログラムの規模あたりの、バグの数。</dd>
-        <p class="example"><span class="ex-label">例</span>1,000行あたり5件など。</p>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ソフトウェアメトリクス</dt>
-        <dd class="desc">ソフトウェアの規模や品質を、数値で測るための尺度。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ステップ数</dt>
-        <dd class="desc">プログラムの、命令の行数。ソフトウェアの規模を表す指標。</dd>
-      </div>
-      <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ファンクションポイント法</dt>
-        <dd class="desc">機能の数と複雑さから、ソフトウェアの規模を見積もる方法。</dd>
+        <dt class="term"><span class="arrow">・</span>CPRM</dt>
+        <dd class="desc">記録媒体に、コンテンツの、コピーを制限する、著作権保護技術。</dd>
       </div>
     </dl>
   </section>
   <section class="group">
-    <p class="group-label">開発の知的財産</p>
-    <p class="group-desc">ソフトウェアの権利に関する用語</p>
+    <p class="group-label">開発環境管理</p>
     <hr class="group-divider" />
     <dl class="term-list">
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>著作権</dt>
-        <dd class="desc">プログラムなどを作った人に、自動的に生じる権利。</dd>
+        <dt class="term"><span class="arrow">・</span>構成品目</dt>
+        <dd class="desc">構成管理の、対象となる、要素。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>ライセンス</dt>
-        <dd class="desc">ソフトウェアの、利用を許諾する契約や条件。</dd>
+        <dt class="term"><span class="arrow">・</span>ソフトウェアライセンス</dt>
+        <dd class="desc">ソフトウェアを、利用するための、許諾の条件。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>フリーソフトウェア</dt>
-        <dd class="desc">無料で使えるソフトウェア。著作権は放棄されていない。</dd>
+        <dt class="term"><span class="arrow">・</span>ステージング環境</dt>
+        <dd class="desc">本番環境と、ほぼ同じ構成で作る、最終確認用の環境。</dd>
       </div>
       <div class="term-entry">
-        <dt class="term"><span class="arrow">・</span>シェアウェア</dt>
-        <dd class="desc">試用期間の後、気に入れば代金を支払って使うソフトウェア。</dd>
+        <dt class="term"><span class="arrow">・</span>資源管理</dt>
+        <dd class="desc">開発に使う、資源を管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>運用管理</dt>
+        <dd class="desc">システムの運用を、計画的に管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>更新履歴管理</dt>
+        <dd class="desc">変更の、履歴を、記録し管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>アクセス権管理</dt>
+        <dd class="desc">開発資産に対する、アクセス権限を、管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>検索</dt>
+        <dd class="desc">必要な資産や情報を、探し出すこと。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>リポジトリ</dt>
+        <dd class="desc">ソースコードなどの資産と、その変更履歴を保管する場所。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>バージョン管理</dt>
+        <dd class="desc">ファイルの変更履歴を記録し、過去の状態を取り出せるようにすること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>不正コピー</dt>
+        <dd class="desc">ソフトウェアなどを、許可なく複製すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>棚卸</dt>
+        <dd class="desc">保有するソフトウェアなどの、数や状態を、実際に確認すること。</dd>
+      </div>
+    </dl>
+  </section>
+  <section class="group">
+    <p class="group-label">構成管理・変更管理</p>
+    <hr class="group-divider" />
+    <dl class="term-list">
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア構成管理</dt>
+        <dd class="desc">ソフトウェアの、構成要素と、変更の履歴を、管理すること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>ソフトウェア構成品目</dt>
+        <dd class="desc">ソフトウェアを、構成する、管理の単位となる要素。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SLCP</dt>
+        <dd class="desc">ソフトウェアの、ライフサイクルの、全体にわたる、作業のまとまり。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>構成管理計画</dt>
+        <dd class="desc">構成管理を、どのように行うかを、定めた計画。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>SBOM</dt>
+        <dd class="desc">ソフトウェアに、含まれる部品を、一覧にした、ソフトウェア部品表。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>一貫性</dt>
+        <dd class="desc">トランザクションの前後で、データの整合性が保たれること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>正確性</dt>
+        <dd class="desc">情報が、間違いなく正確であること。</dd>
+      </div>
+      <div class="term-entry">
+        <dt class="term"><span class="arrow">・</span>保管期間</dt>
+        <dd class="desc">資料などを、保管しておく期間。</dd>
       </div>
     </dl>
   </section>

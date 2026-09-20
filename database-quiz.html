@@ -65,106 +65,180 @@
         <a href="database-quiz.html" aria-current="page">穴埋め</a>
       </div>
       <span class="nav-sep">|</span>
-      <div class="nav-group"><a href="ui-media-quiz.html">← 前: ユーザーインタフェース・情報メディア編</a></div>
+      <div class="nav-group"><a href="media-quiz.html">← 前: 情報メディア編</a></div>
       <span class="nav-sep">|</span>
       <div class="nav-group"><a href="network-quiz.html">次 →: ネットワーク編</a></div>
     </nav>
   <header class="masthead">
-    <p class="breadcrumb">技術要素 &gt; データベース &gt; 穴埋め問題</p>
+    <p class="breadcrumb">データベース &gt; 穴埋め問題</p>
     <h1>データベース編(穴埋め)</h1>
     <div class="meta-row">
-      <span class="count-badge">60 語</span>
+      <span class="count-badge">134 語</span>
       <span class="source-note">fe-siken.com 用語集(シラバスVer9.2)をもとに作成</span>
     </div>
   </header>
   <section class="group">
-    <p class="group-label">データベースの基本</p>
+    <p class="group-label">データベース方式</p>
     <hr class="group-divider" />
     <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のデータを整理して蓄積し、必要なときに取り出しやすくしたもの。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースを管理し、検索や更新などを行うソフトウェア。データベース管理システムともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、木構造(親と子の関係)で管理するデータベース。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データ同士を、網の目のように複雑な関係で結ぶデータベース。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、表(テーブル)の形で管理するデータベース。RDBともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表形式にこだわらず、大量のデータを高速に扱うことを重視したデータベースの総称。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関係データベースで、データを行と列で並べた表。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルの1行にあたる、データのまとまり。行ともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルの1列にあたる、項目。列、属性ともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースの構造(どんな項目があるか)を定義したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、表(テーブル)の形で管理する、関係データベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、あらかじめ決めた構造に従って、管理するデータベースの総称。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、親子の関係で、木構造に管理する、階層型データベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、網の目のような関係で、管理する、ネットワーク型データベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データと、その処理を、オブジェクトとして管理する、オブジェクト指向データベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>XML形式のデータを、そのまま格納して、扱えるデータベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の場所に、分かれて置いたデータベースを、1つのデータベースのように扱う方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>JSONなどの文書の形で、データを格納するNoSQLのデータベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、列単位でまとめて保存する、データベース。集計処理に強い。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データ同士のつながりを、グラフ構造で表現して、扱うデータベース。SNSの友人関係の分析。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>キーと値の組で、データを保存する、単純なデータベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、主記憶(メモリ)上に置いて、高速に処理するデータベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースの構造を、外部・概念・内部の3つの層で表す考え方。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベース全体の、論理的な構造を、定義したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者やアプリケーションから見える、データの見せ方を、定義したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、記憶装置に、どのように格納するかを定義したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実現方法に、依存せず、データの構造や関係を表したモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実際の、データベースの製品に合わせて、テーブル構造などを具体化したモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、行と列の表(関係)で、表すデータモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、親と子の、木構造で表すデータモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、網の目のような、関係で表すデータモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、節点と辺の、グラフで表すデータモデル。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関係データベースにおける、表のこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表の、1行分のデータ。レコードにあたる。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>クラスが持つデータの項目。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある属性が、実際にとっている値。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある属性が、とることのできる値の範囲。ドメインともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表の名前と、その列(属性)の構成を、定義したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースの構造を、定義する、DBMSの機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの検索や更新を、行う、DBMSの機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの整合性や、同時実行などを、制御する、DBMSの機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの障害や誤りから、データベースを守る、機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>許可された人だけが、データを使えるようにする、機能。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の利用者が、同時にデータを扱っても、矛盾が起きないようにする制御。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害が起きたとき、データベースを、正常な状態に戻すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、不正なアクセスなどから、守ること。</p>
     </div>
   </section>
   <section class="group">
     <p class="group-label">データベース設計</p>
     <hr class="group-divider" />
     <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>現実の物事を、データベースで扱える形に整理したもの。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>物(エンティティ)と、その関連(リレーションシップ)を図で表したもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じデータを、複数の場所に持たないようにして、矛盾を防ぐこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データそのものではなく、データについての情報。ファイルの作成日時、作成者。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの定義や、意味を管理する、辞書のような仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>現実の世界の物事とその関係を、分かりやすく表した、データモデル。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースで管理する対象。社員、商品、顧客。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>エンティティ同士の関連。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>エンティティ同士の、関連の数の関係。1対1、1対多など。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルの中で、1つのレコードを一意に決められる項目。重複も空(ヌル)も許されない。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>他のテーブルの主キーを参照する項目。テーブル同士をつなぐ。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>主キーになる資格のある項目(の組)。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の項目を組み合わせて、1つのキーにしたもの。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルの1列にあたる、項目。列、属性ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルの1行にあたる、データのまとまり。行ともいう。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関連するデータを、まとめて記録した、もの。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>値が入っていない、「不明」や「未設定」を表す特別な値。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの重複や矛盾が起きないように、テーブルを分割して整理すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある列の値が、テーブル内で重複しないことを、保証する制約。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1つの欄に複数の値が入っている(繰返し項目)状態をなくした形。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>主キーの一部だけで決まる項目を、別のテーブルへ分けた形。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>主キー以外の項目で決まる項目を、別のテーブルへ分けた形。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>外部キーの値が、必ず参照先の主キーに存在するように守るルール。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>検索を速くするために、データの場所を記録した索引。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1つ以上のテーブルから作る、見せ方だけを定義した仮想的な表。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある項目が、複合キー全体によって決まっている関係。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ある項目が、複合キーの一部によって、決まっている関係。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>AでBが決まり、BでCが決まることで、AでCが間接的に決まる関係。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースに必要な、ディスクの容量を、見積もること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>論理的なデータ構造を、実際のデータベースの構造へ、割り当てること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースの、処理速度などが要求を満たしているかを、評価すること。</p>
     </div>
   </section>
   <section class="group">
     <p class="group-label">データ操作</p>
     <hr class="group-divider" />
     <div class="term-list">
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関係(表)に対する、演算の体系。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>和・差・積などの、集合に対する演算。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>選択・射影・結合などの、関係(表)に対する演算。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの構造を、定義するための、SQLの命令群。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの検索や更新を行う、SQLの命令群。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>関係データベースを操作するための言語。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルからデータを取り出す(検索する)SQL文。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルに、新しいレコードを追加するSQL文。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルの、既存のレコードの値を変更するSQL文。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルから、レコードを削除するSQL文。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>SELECTなどで、対象とするレコードの条件を指定する部分。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>指定した項目の値ごとに、レコードをグループにまとめる部分。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>結果を、指定した項目の順に並べ替える部分。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>合計や平均など、複数のレコードから1つの値を求める関数。SUM、AVG、COUNT、MAX、MIN。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のテーブルを、共通の項目でつなげて1つの表にする操作。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルから、必要な列だけを取り出す操作。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>テーブルから、条件に合う行だけを取り出す操作。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>SQL文の中に、別のSELECT文を入れて使うこと。サブクエリともいう。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>新しいテーブルを作成するSQL文。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>端末から、SQL文を入力して、対話的に実行する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>プログラムの中に、SQL文を、埋め込んで使う方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>SQL文を、プログラムから、独立した部品として記述する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>命令(コマンド)を入力して、データベースを、操作する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>入力や表示のための、画面の様式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースに対して、条件を指定して、データを検索すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>実際に、データが格納されている表。ビューに対する呼び名。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1文字を扱うデータ型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>数値を扱う、データ型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>日付を扱う、データ型。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>外部キーの値が、必ず参照先の主キーに存在するように守るルール。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>列の値が、満たすべき条件を、定義する制約。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>列に、NULLを入れることを、禁止する制約。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースの、表などに対する、操作を許可する権限。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表から、条件に合う、データを取り出すSQL文。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>合計や平均など、複数の行から、1つの値を求める関数。SUM、AVG、COUNT。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>LIKE述語で、文字列の一部が一致するかを調べるための、ワイルドカードを含む文字列。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>SQLで、表につける、別名。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表に、新しい行を、追加するSQL文。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表の、既存の行の値を、変更するSQL文。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表から、行を削除するSQL文。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ユーザーに、表などへの、操作の権限を与えるSQL文。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>SELECTの結果を、1行ずつ、取り出して処理するための仕組み。</p>
     </div>
   </section>
   <section class="group">
-    <p class="group-label">トランザクション管理</p>
+    <p class="group-label">トランザクション処理</p>
     <hr class="group-divider" />
     <div class="term-list">
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースに対する、ひとまとまりの処理の単位。銀行振込は「引出し」と「預入れ」が1組。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>トランザクションの処理を確定し、変更を反映させること。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>トランザクションの処理を取り消して、開始前の状態に戻すこと。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>トランザクションが備えるべき、原子性・一貫性・独立性・耐久性の性質。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>トランザクションの処理が、すべて実行されるか、まったく実行されないかのどちらかであること。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>トランザクションの前後で、データの整合性が保たれること。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同時に実行しても、互いの処理が影響しないこと。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>コミットした結果が、障害が起きても失われないこと。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>同じデータを同時に更新しないよう、順番に処理させる制御。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>他の処理が読むことは許すが、更新を許さないロック。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データに鍵をかけて、他の処理から更新できないようにする、排他制御の方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>資源の、利用可能な数を管理して、排他制御を行う方式。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>他の処理の読み書きを、すべて許さないロック。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>お互いが相手のロックの解除を待ち続け、処理が進まなくなる状態。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースの更新履歴を記録したファイル。障害からの復旧に使う。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害の後、バックアップにログを適用して、障害直前の状態まで復旧すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>他の処理が読むことは許すが、更新を許さないロック。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ロックをかける、対象の大きさ。行、ページ、表など。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数の処理が、お互いに相手の持つ資源の解放を待って、永久に進めなくなる状態。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のデータベースの更新を、全部確定するか、全部取り消すかを、そろえるための、手順。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースの、更新の履歴を記録した、ファイル。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>メモリ上のデータをディスクへ書き出し、復旧の基準点を作る仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>トランザクションの処理を取り消して、開始前の状態に戻すこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害の後、バックアップにログを適用して、障害直前の状態まで復旧すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害後に、ログを使って、直前の状態から、再開する方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>障害後に、バックアップなどからデータを戻し、最初からやり直す方法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>トランザクションが備えるべき、原子性・一貫性・独立性・耐久性の性質。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>1つの表に、作成した、索引の数。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>重複した値を、許さない索引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの物理的な並びを、索引の順にそろえる索引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>B木の構造を使った、範囲検索にも強い、一般的な索引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>値ごとに、ビットの列を持つ、値の種類が少ない列に向く索引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ハッシュ関数を使った、一致検索に強い索引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>検索に必要な、列をすべて含む、表を見に行かなくて済む索引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>単語から、その単語を含む文書を引く、全文検索用の索引。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表などのデータを、読み取る権限。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表に、行を追加する権限。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表から、行を削除する権限。</p>
     </div>
   </section>
   <section class="group">
-    <p class="group-label">データ分析</p>
+    <p class="group-label">データベース応用</p>
     <hr class="group-divider" />
     <div class="term-list">
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>意思決定のために、各システムのデータを集めて時系列に整理した大規模なデータベース。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データウェアハウスから、特定の目的用に、切り出した小規模なデータベース。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>大量のデータから、有用な規則や傾向を見つけ出す技術。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>受注や振込など、日々の取引を、リアルタイムに処理する方式。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、抽出・変換したうえで、データウェアハウスへ、書き出す処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データを、先に取り込んでから、変換する処理。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの、誤りや重複などを、取り除いて、品質を高める作業。</p>
       <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>従来の方法では扱いきれない、大量で多様なデータ。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文章のデータから、有用な情報を取り出す技術。</p>
-      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>企業のデータを分析して、経営の意思決定に役立てる手法。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>文書を、電子的に保管・検索・管理するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>営業活動の、情報を管理して、営業を支援するシステム。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>利用者が、データの、置き場所などを意識せず、使えること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>トランザクションの、確定を、制御すること。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データベースの複製を作り、別の場所に、同じ内容を保つこと。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>ソースコードなどの資産と、その変更履歴を保管する場所。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>データの、定義などを、管理するための、標準的な仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>複数のコンピュータに、ファイルを、分散して保存し、1つのように扱う仕組み。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>表のように、決まった形式で、整理されたデータ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>完全には、決まった形式ではないが、タグなどで構造を持つデータ。XML、JSON。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>決まった形式を持たない、データ。文章、画像、音声。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>絶え間なく、継続して発生し続ける、データ。</p>
+      <p class="term-line"><span class="bullet">・</span>(　　　　　　　　) <span class="arrow">→</span>構造化・非構造化を問わず、大量のデータを、そのままの形で蓄積する、保管場所。</p>
     </div>
   </section>
   <footer class="page-footer">出典: fe-siken.com「基本情報技術者試験ドットコム」の用語集構成(シラバスVer9.2)を参考に、説明文を平易な表現で独自に書き下ろして作成。</footer>

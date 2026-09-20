@@ -11,23 +11,25 @@ import glob, html, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "src", "data")
 
-# (大分類, [(slug, 表示名)])  ※既存4ページは手書きHTMLのため index にのみ載せる
-CATEGORIES = [
-    ("基礎理論", [("discrete-math", "離散数学編"), ("applied-math", "応用数学編"),
-                 ("info-theory", "情報理論編"), ("comm-theory", "通信理論編"),
-                 ("algo", "アルゴリズムとプログラミング編")]),
-    ("コンピュータシステム", [("processor", "コンピュータ構成要素編"), ("sysconf", "システム構成要素編"),
-                     ("software", "ソフトウェア編"), ("hardware", "ハードウェア編")]),
-    ("技術要素", [("ui-media", "ユーザーインタフェース・情報メディア編"), ("database", "データベース編"),
-               ("network", "ネットワーク編"), ("security", "セキュリティ編")]),
-    ("開発技術", [("sysdev", "システム開発技術編"), ("swmgmt", "ソフトウェア開発管理技術編")]),
-    ("マネジメント", [("project", "プロジェクトマネジメント編"), ("service", "サービスマネジメント編"),
-                 ("audit", "システム監査編")]),
-    ("ストラテジ", [("sys-strategy", "システム戦略編"), ("biz-strategy", "経営戦略編"),
-                ("corp-legal", "企業活動と法務編")]),
-]
-HAND_MADE = {"discrete-math", "applied-math", "info-theory", "comm-theory"}
-ALL = [s for _, items in CATEGORIES for s in items]
+import json
+# 分野ID -> (slug, 表示名)。1-5 は「計測・制御に関する理論」の単独ページ
+PAGES = [("1-5", "measure", "計測・制御理論編"), (2, "algo", "アルゴリズムとプログラミング編"), (3, "processor", "コンピュータ構成要素編"),
+    (4, "sysconf", "システム構成要素編"), (5, "software", "ソフトウェア編"), (6, "hardware", "ハードウェア編"),
+    (7, "ui", "ユーザーインタフェース編"), (8, "media", "情報メディア編"), (9, "database", "データベース編"),
+    (10, "network", "ネットワーク編"), (11, "security", "セキュリティ編"), (12, "sysdev", "システム開発技術編"),
+    (13, "swmgmt", "ソフトウェア開発管理技術編"), (14, "project", "プロジェクトマネジメント編"), (15, "service", "サービスマネジメント編"),
+    (16, "audit", "システム監査編"), (17, "sys-strategy", "システム戦略編"), (18, "sys-planning", "システム企画編"),
+    (19, "biz-strategy", "経営戦略マネジメント編"), (20, "tech-strategy", "技術戦略マネジメント編"),
+    (21, "industry", "ビジネスインダストリ編"), (22, "corporate", "企業活動編"), (23, "legal", "法務編")]
+GROUPS = [("基礎理論", ["discrete-math", "applied-math", "info-theory", "comm-theory", "measure"]),
+    ("アルゴリズムとプログラミング", ["algo"]), ("コンピュータシステム", ["processor", "sysconf", "software", "hardware"]),
+    ("技術要素", ["ui", "media", "database", "network", "security"]), ("開発技術", ["sysdev", "swmgmt"]),
+    ("マネジメント", ["project", "service", "audit"]), ("ストラテジ", ["sys-strategy", "sys-planning", "biz-strategy", "tech-strategy", "industry", "corporate", "legal"])]
+HAND_NAMES = {"discrete-math": "離散数学編", "applied-math": "応用数学編", "info-theory": "情報理論編", "comm-theory": "通信理論編"}
+HAND_MADE = set(HAND_NAMES)
+NAMES = dict(HAND_NAMES, **{s: n for _, s, n in PAGES})
+CATEGORIES = [(c, [(s, NAMES[s]) for s in ss]) for c, ss in GROUPS]
+ALL = [x for _, items in CATEGORIES for x in items]
 
 def esc(s): return html.escape(s, quote=False)
 
@@ -35,20 +37,31 @@ def css(kind):
     src = open(os.path.join(ROOT, f"comm-theory-{kind}.html"), encoding="utf-8").read()
     return re.search(r"<style>.*?</style>", src, re.S).group(0)
 
-def parse(path):
-    meta, groups = None, []
-    for line in open(path, encoding="utf-8"):
-        line = line.rstrip("\n")
-        if not line.strip() or line.startswith("#"): continue
-        if line.startswith("@meta "):
-            meta = line[6:].split("|")
-        elif line.startswith("@group "):
-            n, d = (line[7:].split("|") + [""])[:2]
-            groups.append((n, d, []))
-        else:
-            p = line.split("|")
-            if len(p) < 2: sys.exit(f"形式エラー {path}: {line}")
-            groups[-1][2].append((p[0], p[1], p[2] if len(p) > 2 and p[2] else None))
+def load_desc():
+    d = {}
+    for f in sorted(glob.glob(os.path.join(DATA, "desc", "*.txt"))):
+        for line in open(f, encoding="utf-8"):
+            p = line.rstrip("\n").split("|")
+            if len(p) >= 2 and p[0]: d[p[0]] = (p[1], p[2] if len(p) > 2 and p[2] else None)
+    return d
+
+def build_page_data(pid, slug, desc, structure, missing):
+    cat = next(c for c in structure if c["id"] == (1 if pid == "1-5" else pid))
+    subs = [x for x in cat["subs"] if pid != "1-5" or x["id"] == "1-5"]
+    groups, seen = [], set()
+    for sub in subs:
+        terms = []
+        for t, _ in sub["terms"]:
+            if t in seen: continue
+            seen.add(t)
+            if t not in desc: missing.append(f"{slug}: {t}"); continue
+            terms.append((t, *desc[t]))
+        groups.append((sub["name"], "", terms))
+    if pid == "1-5":
+        meta = ["計測・制御理論編", "基礎理論 > 計測・制御に関する理論", "基本情報技術者試験「基礎理論」の中の計測・制御に関する理論分野の用語集です。"]
+    else:
+        names = "、".join(x["name"] for x in subs)
+        meta = [NAMES[slug], cat["name"], f"基本情報技術者試験「{cat['name']}」分野の用語集です。{names}を含みます。"]
     return meta, groups
 
 def nav(slug, kind):
@@ -87,7 +100,7 @@ def page(slug, kind, meta, groups):
     h.append('  </header>')
     for gn, gd, terms in groups:
         h += ['  <section class="group">', f'    <p class="group-label">{esc(gn)}</p>']
-        if not q: h.append(f'    <p class="group-desc">{esc(gd)}</p>')
+        if not q and gd: h.append(f'    <p class="group-desc">{esc(gd)}</p>')
         h.append('    <hr class="group-divider" />')
         h.append('    <div class="term-list">' if q else '    <dl class="term-list">')
         for t, d, e in terms:
@@ -119,22 +132,20 @@ def index(counts):
             + "\n".join(rows) + f'\n{FOOT}\n</div>\n')
 
 def main():
-    counts = {}
-    have = lambda s: s in HAND_MADE or os.path.exists(os.path.join(DATA, f"{s}.txt"))
-    ALL[:] = [x for x in ALL if have(x[0])]
-    for s, _ in ALL:
-        if s in HAND_MADE:
-            _, g = None, None
-            src = open(os.path.join(ROOT, f"{s}-cards.html"), encoding="utf-8").read()
-            counts[s] = int(re.search(r'count-badge">(\d+)', src).group(1))
-            continue
-        p = os.path.join(DATA, f"{s}.txt")
-        meta, groups = parse(p)
-        counts[s] = sum(len(g[2]) for g in groups)
+    structure = json.load(open(os.path.join(DATA, "..", "site", "structure.json"), encoding="utf-8"))
+    desc, missing, counts = load_desc(), [], {}
+    for s in HAND_MADE:
+        src = open(os.path.join(ROOT, f"{s}-cards.html"), encoding="utf-8").read()
+        counts[s] = int(re.search(r'count-badge">(\d+)', src).group(1))
+    for pid, slug, _ in PAGES:
+        meta, groups = build_page_data(pid, slug, desc, structure, missing)
+        counts[slug] = sum(len(g[2]) for g in groups)
+        if missing: continue
         for kind in ("cards", "quiz"):
-            open(os.path.join(ROOT, f"{s}-{kind}.html"), "w", encoding="utf-8").write(page(s, kind, meta, groups))
-    for cat in range(len(CATEGORIES)):
-        CATEGORIES[cat] = (CATEGORIES[cat][0], [x for x in CATEGORIES[cat][1] if x[0] in counts])
+            open(os.path.join(ROOT, f"{slug}-{kind}.html"), "w", encoding="utf-8").write(page(slug, kind, meta, groups))
+    if missing:
+        open(os.path.join(ROOT, "src", "missing.txt"), "w", encoding="utf-8").write("\n".join(missing) + "\n")
+        sys.exit(f"説明が未作成の用語が {len(missing)} 件あります(src/missing.txt)")
     open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8").write(index(counts))
     print(counts, sum(counts.values()))
 
