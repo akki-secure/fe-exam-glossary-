@@ -201,7 +201,13 @@ HOWTO = {
  "流動比率": "流動資産を流動負債で割って100を掛ける。100%を超えていれば短期の支払いに余裕がある。",
  "経済的発注量(EOQ)": "2×需要×発注費用÷保管費用を先に計算してから、平方根を取る。",
 }
-fnav = nav.replace('<span class="nav-label">計算のやり方</span>', '<a href="calc-methods.html">計算のやり方</a></div>\n      <span class="nav-sep">|</span>\n      <div class="nav-group"><span class="nav-label">公式の早見表</span>')
+fnav = '''  <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="calc-methods.html">計算のやり方</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><span class="nav-label">公式の早見表</span></div>
+    </nav>'''
 fcss = css.replace("</style>", """
   table.ftable { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--surface); }
   table.ftable th, table.ftable td { border: 1px solid var(--rule); padding: 8px 10px; text-align: left; vertical-align: top; }
