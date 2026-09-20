@@ -125,7 +125,7 @@ def index(counts):
             rows.append(f'    <p class="term-line"><span class="bullet">・</span><strong>{esc(name)}</strong>({counts[s]}語) <span class="arrow">→</span>'
                         f'<a href="{s}-cards.html">カード</a> / <a href="{s}-quiz.html">穴埋め</a></p>')
         rows.append('  </div></section>')
-    rows.append('  <section class="group"><p class="group-label">計算問題</p><hr class="group-divider" /><div class="term-list"><p class="term-line"><span class="bullet">・</span><strong>計算のやり方</strong> <span class="arrow">→</span><a href="calc-methods.html">公式と例題</a></p></div></section>')
+    rows.append('  <section class="group"><p class="group-label">計算問題</p><hr class="group-divider" /><div class="term-list"><p class="term-line"><span class="bullet">・</span><strong>計算のやり方</strong> <span class="arrow">→</span><a href="calc-methods.html">公式と例題</a> / <a href="formulas.html">公式の早見表</a></p></div></section>')
     style = css("quiz").replace("</style>", "  a { color: var(--accent); }\n</style>")
     return (f'<title>目次 — 基本情報技術者試験 用語集</title>\n{style}\n<div class="page">\n  <header class="masthead">\n'
             f'    <p class="breadcrumb">fe-exam-glossary</p>\n    <h1>基本情報技術者試験 用語集</h1>\n    <div class="meta-row">'

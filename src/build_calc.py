@@ -117,6 +117,8 @@ nav = '''  <nav class="page-nav" aria-label="ページ切り替え">
       <div class="nav-group"><a href="index.html">目次</a></div>
       <span class="nav-sep">|</span>
       <div class="nav-group"><span class="nav-label">計算のやり方</span></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="formulas.html">公式の早見表</a></div>
     </nav>'''
 n = sum(len(x[1]) for x in DATA)
 h = ["<title>計算のやり方 — 基本情報技術者試験 用語集</title>", css, '<div class="page">', nav, '  <header class="masthead">',
@@ -131,4 +133,57 @@ for g, items in DATA:
     h.append('  </section>')
 h += ['  <footer class="page-footer">計算例は学習用に独自に作成したものです。</footer>', '</div>']
 open(os.path.join(ROOT, "calc-methods.html"), "w", encoding="utf-8").write("\n".join(h) + "\n")
+
+# ---- 公式の早見表 ----
+HOWTO = {
+ "2進数と10進数の変換": "2進→10進は、1の立っている桁の重み(右から1,2,4,8…)を足す。10進→2進は、2で割り続けて余りを下から並べる。",
+ "16進数と2進数の変換": "16進1桁を2進4桁に置き換える(A=1010、F=1111など)。10進にするときは、上の桁に16を掛けて足す。",
+ "2の補数(負の数の表し方)": "正の数を2進で書く → 全ビット反転 → 1を足す。元に戻すときも同じ操作をする。",
+ "PCM音声のデータ量": "4つの値を全部掛けてbitを求め、8で割ってbyteにする。周波数の単位(kHz→×1000)に注意。",
+ "画像のデータ量": "縦×横で画素数を出し、1画素のビット数を掛けて、8で割る。24ビット=3バイトと覚える。",
+ "組合せの数": "上はnからr個ぶん掛け算(n×(n−1)×…)、下はr!。約分してから計算すると楽。",
+ "ベイズの定理": "「結果に至る道すじ」ごとの確率を出し、知りたい道すじの確率を、全部の道すじの合計で割る。",
+ "平均・分散・標準偏差": "平均を出す → 各値との差を2乗 → その平均が分散 → 平方根が標準偏差。",
+ "CPUの命令実行速度(MIPS)": "クロック周波数をCPIで割って1秒の命令数を出し、100万で割る。GHz=10⁹Hzに注意。",
+ "キャッシュの実効アクセス時間": "ヒット時と外れ時の時間に、それぞれの確率を掛けて足す。",
+ "HDDの平均アクセス時間": "シーク時間、回転待ち(1回転の半分)、転送時間の3つを足す。1回転=60秒÷回転数。",
+ "RAIDの実効容量": "RAID0は全台、RAID1は半分、RAID5は1台ぶんを引いた台数に、1台の容量を掛ける。",
+ "稼働率": "MTBF÷(MTBF+MTTR)。MTBF+MTTRは、故障から次の故障までの全期間。",
+ "直列・並列システムの稼働率": "直列は掛け算。並列は「全部が止まる確率」を出して、1から引く。",
+ "待ち行列(M/M/1)": "利用率ρ=到着率÷サービス率を求め、ρ÷(1−ρ)に平均サービス時間を掛ける。",
+ "データの伝送時間": "データ量をbitに直し(×8)、回線速度×利用率で割る。単位(MB/Mbps)をそろえる。",
+ "サブネットのホスト数": "32からプレフィックス長を引いてホスト部のビット数を出し、2の累乗から2を引く。",
+ "暗号方式ごとの鍵の数": "共通鍵は「2人で1本」なので組合せ数、公開鍵は「1人2本」なので2倍。",
+ "2分探索の比較回数": "2の何乗でnを超えるかを調べる。その指数が最大の比較回数。",
+ "クリティカルパス": "すべての経路の日数を足し、いちばん長い経路を選ぶ。その経路の作業が遅れると全体が遅れる。",
+ "人月と期間": "工数(人月)を人数で割る。人数を増やしても、必ずしも比例して短くならない点に注意。",
+ "アーンドバリュー(EVM)": "EVを基準に、PVとの比でスケジュール、ACとの比でコストを見る。1未満は遅れ・超過。",
+ "損益分岐点売上高": "変動費率を1から引いた「限界利益率」で、固定費を割る。",
+ "ROI(投資利益率)": "利益を投資額で割り、100を掛けてパーセントにする。",
+ "減価償却(定額法)": "取得価額から残存価額を引き、耐用年数で割る。毎年同じ額になる。",
+ "流動比率": "流動資産を流動負債で割って100を掛ける。100%を超えていれば短期の支払いに余裕がある。",
+ "経済的発注量(EOQ)": "2×需要×発注費用÷保管費用を先に計算してから、平方根を取る。",
+}
+fnav = nav.replace('<span class="nav-label">計算のやり方</span>', '<a href="calc-methods.html">計算のやり方</a></div>\n      <span class="nav-sep">|</span>\n      <div class="nav-group"><span class="nav-label">公式の早見表</span>')
+fcss = css.replace("</style>", """
+  table.ftable { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--surface); }
+  table.ftable th, table.ftable td { border: 1px solid var(--rule); padding: 8px 10px; text-align: left; vertical-align: top; }
+  table.ftable th { background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  table.ftable td.name { font-weight: 700; white-space: nowrap; }
+  @media (max-width: 640px) { table.ftable td.name { white-space: normal; } .tablewrap { overflow-x: auto; } }
+</style>""")
+missing = [t for _, items in DATA for t, *_ in items if t not in HOWTO]
+assert not missing, missing
+h = ["<title>公式の早見表 — 基本情報技術者試験 用語集</title>", fcss, '<div class="page">', fnav, '  <header class="masthead">',
+     '    <p class="breadcrumb">基本情報技術者試験 &gt; 計算問題</p>', '    <h1>公式の早見表</h1>',
+     f'    <div class="meta-row"><span class="count-badge">{n} 公式</span></div>',
+     '    <p class="intro">計算に使う公式を、分野ごとに一覧にしました。「やり方」では、公式の使い方と気をつける点を書いています。例題つきの解説は「計算のやり方」のページにあります。</p>', '  </header>']
+for g, items in DATA:
+    h += ['  <section class="group">', f'    <p class="group-label">{e(g)}</p>', '    <hr class="group-divider" />', '    <div class="tablewrap"><table class="ftable">',
+          '      <tr><th>名前</th><th>公式</th><th>やり方</th></tr>']
+    for t, f, q, steps, a in items:
+        h.append(f'      <tr><td class="name">{e(t)}</td><td>{e(f)}</td><td>{e(HOWTO[t])}</td></tr>')
+    h += ['    </table></div>', '  </section>']
+h += ['  <footer class="page-footer">公式と解説は学習用に独自に作成したものです。</footer>', '</div>']
+open(os.path.join(ROOT, "formulas.html"), "w", encoding="utf-8").write("\n".join(h) + "\n")
 print(n, "問")

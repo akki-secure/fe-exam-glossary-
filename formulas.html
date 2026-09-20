@@ -1,0 +1,181 @@
+<title>公式の早見表 — 基本情報技術者試験 用語集</title>
+<style>
+  :root {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+      --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12151b; --surface: #1a1e26; --text: #e7eaf0; --text-muted: #9aa3b2;
+    --accent: #7fa6f2; --accent-soft: rgba(127, 166, 242, 0.12); --rule: #2b3140; --group-label: #7a8496;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f8; --surface: #ffffff; --text: #1b1f27; --text-muted: #5b6472;
+    --accent: #2a5db0; --accent-soft: #e8eef9; --rule: #d8dce3; --group-label: #8892a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  header.masthead { margin-bottom: 40px; }
+  .breadcrumb { font-size: 13px; letter-spacing: 0.06em; color: var(--text-muted); text-transform: uppercase; margin: 0 0 14px; }
+  h1 { font-size: clamp(32px, 6vw, 44px); font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+  .meta-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .count-badge {
+    display: inline-flex; align-items: baseline; gap: 4px; background: var(--accent-soft);
+    color: var(--accent); font-weight: 700; font-size: 14px; padding: 5px 12px;
+    border-radius: 999px; font-variant-numeric: tabular-nums;
+  }
+  .source-note { font-size: 13px; color: var(--text-muted); }
+  .intro { margin-top: 20px; color: var(--text-muted); font-size: 15px; max-width: 62ch; }
+  section.group { margin-top: 44px; }
+  .group-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: var(--group-label);
+    text-transform: uppercase; margin: 0 0 4px;
+  }
+  .group-desc { font-size: 13px; color: var(--text-muted); margin: 0 0 18px; }
+  .group-divider { border: none; border-top: 1px solid var(--rule); margin: 0 0 18px; }
+  dl.term-list { display: flex; flex-direction: column; gap: 20px; margin: 0; }
+  .term-entry {
+    display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 4px 14px; align-items: baseline;
+  }
+  dt.term { font-weight: 700; color: var(--text); font-size: 16px; white-space: nowrap; }
+  dt.term .arrow { color: var(--accent); font-weight: 700; margin-right: 2px; }
+  dd.desc { margin: 0; color: var(--text); font-size: 15.5px; line-height: 1.75; }
+  p.example {
+    grid-column: 2; margin: 2px 0 0; padding: 6px 10px; background: var(--accent-soft);
+    border-radius: 6px; font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+  }
+  p.example .ex-label { color: var(--accent); font-weight: 700; margin-right: 4px; }
+  @media (max-width: 560px) {
+    .term-entry { grid-template-columns: 1fr; }
+    dt.term { white-space: normal; }
+    p.example { grid-column: 1; }
+  }
+  footer.page-footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule);
+    font-size: 12.5px; color: var(--text-muted);
+  }
+  .page-nav {
+    display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline;
+    padding-bottom: 20px; margin-bottom: 28px; border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .page-nav .nav-group { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .page-nav .nav-label { color: var(--text-muted); font-weight: 700; margin-right: 2px; }
+  .page-nav a { color: var(--accent); text-decoration: none; padding: 2px 4px; border-radius: 4px; }
+  .page-nav a:hover { background: var(--accent-soft); }
+  .page-nav a[aria-current="page"] { color: var(--text); font-weight: 700; background: var(--accent-soft); cursor: default; }
+  .page-nav .nav-sep { color: var(--rule); }
+
+  .calc { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; margin: 0 0 18px; }
+  .calc h3 { margin: 0 0 8px; font-size: 17px; }
+  .calc .formula { background: var(--accent-soft); border-radius: 6px; padding: 8px 12px; font-size: 14.5px; margin: 0 0 10px; }
+  .calc .q { margin: 0 0 8px; font-size: 15.5px; }
+  .calc details { font-size: 15px; }
+  .calc summary { cursor: pointer; color: var(--accent); font-weight: 700; }
+  .calc ol { margin: 8px 0 8px 1.3em; padding: 0; }
+  .calc .ans { font-weight: 700; margin: 6px 0 0; }
+
+  table.ftable { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--surface); }
+  table.ftable th, table.ftable td { border: 1px solid var(--rule); padding: 8px 10px; text-align: left; vertical-align: top; }
+  table.ftable th { background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  table.ftable td.name { font-weight: 700; white-space: nowrap; }
+  @media (max-width: 640px) { table.ftable td.name { white-space: normal; } .tablewrap { overflow-x: auto; } }
+</style>
+<div class="page">
+  <nav class="page-nav" aria-label="ページ切り替え">
+      <div class="nav-group"><a href="index.html">目次</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="calc-methods.html">計算のやり方</a></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><span class="nav-label">公式の早見表</span></div>
+      <span class="nav-sep">|</span>
+      <div class="nav-group"><a href="formulas.html">公式の早見表</a></div>
+    </nav>
+  <header class="masthead">
+    <p class="breadcrumb">基本情報技術者試験 &gt; 計算問題</p>
+    <h1>公式の早見表</h1>
+    <div class="meta-row"><span class="count-badge">27 公式</span></div>
+    <p class="intro">計算に使う公式を、分野ごとに一覧にしました。「やり方」では、公式の使い方と気をつける点を書いています。例題つきの解説は「計算のやり方」のページにあります。</p>
+  </header>
+  <section class="group">
+    <p class="group-label">数の表現</p>
+    <hr class="group-divider" />
+    <div class="tablewrap"><table class="ftable">
+      <tr><th>名前</th><th>公式</th><th>やり方</th></tr>
+      <tr><td class="name">2進数と10進数の変換</td><td>2進→10進: 各桁の「重み(1,2,4,8…)」を足す / 10進→2進: 2で割った余りを下から並べる</td><td>2進→10進は、1の立っている桁の重み(右から1,2,4,8…)を足す。10進→2進は、2で割り続けて余りを下から並べる。</td></tr>
+      <tr><td class="name">16進数と2進数の変換</td><td>16進の1桁 = 2進の4桁。4桁ずつ区切って対応させる</td><td>16進1桁を2進4桁に置き換える(A=1010、F=1111など)。10進にするときは、上の桁に16を掛けて足す。</td></tr>
+      <tr><td class="name">2の補数(負の数の表し方)</td><td>負の数 = 「ビットを全部反転」して「1を足す」</td><td>正の数を2進で書く → 全ビット反転 → 1を足す。元に戻すときも同じ操作をする。</td></tr>
+      <tr><td class="name">PCM音声のデータ量</td><td>データ量(bit) = 標本化周波数 × 量子化ビット数 × チャンネル数 × 秒数</td><td>4つの値を全部掛けてbitを求め、8で割ってbyteにする。周波数の単位(kHz→×1000)に注意。</td></tr>
+      <tr><td class="name">画像のデータ量</td><td>データ量 = 縦の画素数 × 横の画素数 × 1画素のビット数 ÷ 8</td><td>縦×横で画素数を出し、1画素のビット数を掛けて、8で割る。24ビット=3バイトと覚える。</td></tr>
+    </table></div>
+  </section>
+  <section class="group">
+    <p class="group-label">確率・統計</p>
+    <hr class="group-divider" />
+    <div class="tablewrap"><table class="ftable">
+      <tr><th>名前</th><th>公式</th><th>やり方</th></tr>
+      <tr><td class="name">組合せの数</td><td>nCr = n! ÷ (r! × (n−r)!)</td><td>上はnからr個ぶん掛け算(n×(n−1)×…)、下はr!。約分してから計算すると楽。</td></tr>
+      <tr><td class="name">ベイズの定理</td><td>P(A|結果) = A経由の確率 ÷ 結果が起こる全体の確率</td><td>「結果に至る道すじ」ごとの確率を出し、知りたい道すじの確率を、全部の道すじの合計で割る。</td></tr>
+      <tr><td class="name">平均・分散・標準偏差</td><td>分散 = (各値−平均)² の平均、標準偏差 = √分散</td><td>平均を出す → 各値との差を2乗 → その平均が分散 → 平方根が標準偏差。</td></tr>
+    </table></div>
+  </section>
+  <section class="group">
+    <p class="group-label">コンピュータの性能・容量</p>
+    <hr class="group-divider" />
+    <div class="tablewrap"><table class="ftable">
+      <tr><th>名前</th><th>公式</th><th>やり方</th></tr>
+      <tr><td class="name">CPUの命令実行速度(MIPS)</td><td>MIPS = クロック周波数 ÷ CPI ÷ 10⁶(CPI: 1命令あたりの平均クロック数)</td><td>クロック周波数をCPIで割って1秒の命令数を出し、100万で割る。GHz=10⁹Hzに注意。</td></tr>
+      <tr><td class="name">キャッシュの実効アクセス時間</td><td>実効アクセス時間 = ヒット率×キャッシュの時間 + (1−ヒット率)×主記憶の時間</td><td>ヒット時と外れ時の時間に、それぞれの確率を掛けて足す。</td></tr>
+      <tr><td class="name">HDDの平均アクセス時間</td><td>平均アクセス時間 = 平均シーク時間 + 平均回転待ち時間(1回転の半分) + データ転送時間</td><td>シーク時間、回転待ち(1回転の半分)、転送時間の3つを足す。1回転=60秒÷回転数。</td></tr>
+      <tr><td class="name">RAIDの実効容量</td><td>RAID0: 台数×容量 / RAID1: 台数÷2×容量 / RAID5: (台数−1)×容量</td><td>RAID0は全台、RAID1は半分、RAID5は1台ぶんを引いた台数に、1台の容量を掛ける。</td></tr>
+    </table></div>
+  </section>
+  <section class="group">
+    <p class="group-label">信頼性・待ち行列</p>
+    <hr class="group-divider" />
+    <div class="tablewrap"><table class="ftable">
+      <tr><th>名前</th><th>公式</th><th>やり方</th></tr>
+      <tr><td class="name">稼働率</td><td>稼働率 = MTBF ÷ (MTBF + MTTR)</td><td>MTBF÷(MTBF+MTTR)。MTBF+MTTRは、故障から次の故障までの全期間。</td></tr>
+      <tr><td class="name">直列・並列システムの稼働率</td><td>直列: A×B(全部動く必要) / 並列: 1−(1−A)×(1−B)(どちらか動けばよい)</td><td>直列は掛け算。並列は「全部が止まる確率」を出して、1から引く。</td></tr>
+      <tr><td class="name">待ち行列(M/M/1)</td><td>利用率ρ = 到着率 ÷ サービス率 / 平均待ち時間 = ρ ÷ (1−ρ) × 平均サービス時間</td><td>利用率ρ=到着率÷サービス率を求め、ρ÷(1−ρ)に平均サービス時間を掛ける。</td></tr>
+    </table></div>
+  </section>
+  <section class="group">
+    <p class="group-label">ネットワーク・セキュリティ・アルゴリズム</p>
+    <hr class="group-divider" />
+    <div class="tablewrap"><table class="ftable">
+      <tr><th>名前</th><th>公式</th><th>やり方</th></tr>
+      <tr><td class="name">データの伝送時間</td><td>伝送時間 = データ量(bit) ÷ (回線速度 × 回線利用率)</td><td>データ量をbitに直し(×8)、回線速度×利用率で割る。単位(MB/Mbps)をそろえる。</td></tr>
+      <tr><td class="name">サブネットのホスト数</td><td>使えるホスト数 = 2^(ホスト部のビット数) − 2(ネットワークアドレスとブロードキャストを除く)</td><td>32からプレフィックス長を引いてホスト部のビット数を出し、2の累乗から2を引く。</td></tr>
+      <tr><td class="name">暗号方式ごとの鍵の数</td><td>共通鍵: n(n−1)÷2 個 / 公開鍵: 2n 個(1人につき公開鍵と秘密鍵)</td><td>共通鍵は「2人で1本」なので組合せ数、公開鍵は「1人2本」なので2倍。</td></tr>
+      <tr><td class="name">2分探索の比較回数</td><td>n個のデータなら、最大で約 log₂n 回(切り上げ)</td><td>2の何乗でnを超えるかを調べる。その指数が最大の比較回数。</td></tr>
+    </table></div>
+  </section>
+  <section class="group">
+    <p class="group-label">プロジェクト・経営</p>
+    <hr class="group-divider" />
+    <div class="tablewrap"><table class="ftable">
+      <tr><th>名前</th><th>公式</th><th>やり方</th></tr>
+      <tr><td class="name">クリティカルパス</td><td>各経路の所要日数を足し、最も長い経路が全体の期間になる</td><td>すべての経路の日数を足し、いちばん長い経路を選ぶ。その経路の作業が遅れると全体が遅れる。</td></tr>
+      <tr><td class="name">人月と期間</td><td>期間 = 工数(人月) ÷ 人数</td><td>工数(人月)を人数で割る。人数を増やしても、必ずしも比例して短くならない点に注意。</td></tr>
+      <tr><td class="name">アーンドバリュー(EVM)</td><td>SV = EV−PV、CV = EV−AC、SPI = EV÷PV、CPI = EV÷AC</td><td>EVを基準に、PVとの比でスケジュール、ACとの比でコストを見る。1未満は遅れ・超過。</td></tr>
+      <tr><td class="name">損益分岐点売上高</td><td>損益分岐点 = 固定費 ÷ (1 − 変動費率)</td><td>変動費率を1から引いた「限界利益率」で、固定費を割る。</td></tr>
+      <tr><td class="name">ROI(投資利益率)</td><td>ROI = 利益 ÷ 投資額 × 100</td><td>利益を投資額で割り、100を掛けてパーセントにする。</td></tr>
+      <tr><td class="name">減価償却(定額法)</td><td>毎年の償却額 = (取得価額 − 残存価額) ÷ 耐用年数</td><td>取得価額から残存価額を引き、耐用年数で割る。毎年同じ額になる。</td></tr>
+      <tr><td class="name">流動比率</td><td>流動比率 = 流動資産 ÷ 流動負債 × 100</td><td>流動資産を流動負債で割って100を掛ける。100%を超えていれば短期の支払いに余裕がある。</td></tr>
+      <tr><td class="name">経済的発注量(EOQ)</td><td>EOQ = √(2 × 年間需要 × 1回の発注費用 ÷ 1個あたりの年間保管費用)</td><td>2×需要×発注費用÷保管費用を先に計算してから、平方根を取る。</td></tr>
+    </table></div>
+  </section>
+  <footer class="page-footer">公式と解説は学習用に独自に作成したものです。</footer>
+</div>
